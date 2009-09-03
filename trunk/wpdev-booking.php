@@ -72,7 +72,7 @@ TODO: Neet to do all these
 
 // If    A J A X so then make it
 if ( isset( $_POST['AJAX_WPDEV_PLUGIN'] ) )
-    if ($_POST['AJAX_WPDEV_PLUGIN'] === 'yes') {
+    if ( ($_POST['AJAX_WPDEV_PLUGIN'] === basename( __FILE__ ) ) ) {
         define('DOING_AJAX', true);
         require_once( dirname(__FILE__) . '/../../../wp-load.php' );
         @header('Content-Type: text/html; charset=' . get_option('blog_charset'));
@@ -827,7 +827,7 @@ if (!class_exists('wpdev_booking')) {
                                                 var mysack = new sack( "<?php  echo WPDEV_BK_PLUGIN_URL; ?>/<?php echo WPDEV_BK_PLUGIN_FILENAME; ?>" );
                                                 mysack.execute = 1;
                                                 mysack.method = 'POST';
-                                                mysack.setVar( "AJAX_WPDEV_PLUGIN", 'yes' );
+                                                mysack.setVar( "AJAX_WPDEV_PLUGIN", '<?php echo basename( __FILE__ ); ?>' );
 
                                                 if (is_delete)
                                                     mysack.setVar( "AJAX_WPDEV_TYPE", 'DELETE_APPROVE' );
@@ -1685,7 +1685,7 @@ padding:12px;
 
                 mysack.execute = 1;
                 mysack.method = 'POST';
-                mysack.setVar( "AJAX_WPDEV_PLUGIN", 'yes' );
+                mysack.setVar( "AJAX_WPDEV_PLUGIN", '<?php echo basename( __FILE__ ); ?>' );
 
                 mysack.setVar( "AJAX_WPDEV_TYPE", 'INSERT_INTO_TABLE' );
 
