@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Booking Calendar
-Plugin URI: http://wpdevelop.com/wp-plugins/booking-calendar/
+Plugin URI: http://booking.wpdevelop.com/
 Description: Reservation calendar for booking service
 Version: 1.0
-Author: wpdevelop.com
+Author: Dima Sereda
 Author URI: http://www.wpdevelop.com
 */
 
