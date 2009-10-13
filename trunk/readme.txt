@@ -1,5 +1,5 @@
-=== Booking Calendar ===
-Contributors: wpdevelop.com
+﻿=== Booking Calendar ===
+Contributors: Dima Sereda
 Donate link: http://www.wpdevelop.com/
 Tags: Reservation, Booking, Calendar, Booking calendar, reservation service, reservation dates, booking date, hotel rooms, ajax
 Requires at least: 2.7
