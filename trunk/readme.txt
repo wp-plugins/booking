@@ -6,10 +6,10 @@ Requires at least: 2.7
 Tested up to: 2.8.5
 Stable tag: 1.3
 
-Booking calendar for making reservation at your site and blogs. Book ing days of diferent type of properties on calendar with online payment.
+Booking calendar for making reservation at your site and blogs. Booking days of diferent type of properties on calendar with online payment.
 == Description ==
 
-This wordpress plugin is <strong>add booking service</strong> to your site. Your site visitors can make book ing for one or several days of one or several properties (appartments, hotel rooms, cars and so on) and make online payment.  Its can be  interesting for hotel <strong>reservation service</strong>, <strong>rental service</strong> or any other service, where is needed making reservation at specific dates.
+This wordpress plugin is <strong>add booking service</strong> to your site. Your site visitors can make Booking for one or several days of one or several properties (appartments, hotel rooms, cars and so on) and make online payment.  Its can be  interesting for hotel <strong>reservation service</strong>, <strong>rental service</strong> or any other service, where is needed making reservation at specific dates.
 
 Plugin extremly easy to use and very flexible, fully Ajax supported.
 
