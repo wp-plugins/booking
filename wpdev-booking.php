@@ -47,6 +47,7 @@ Change Log and Features for Future Releases :
   * Paypal static Deposit payment do not depends from count of booking days for some booking properties (delux version).
  * Features and issue fixings in All versions:
   * Translation to other languages
+  * Fixed issue with uncorrect showing dates at the Booking administration (approval / reserved) tables in some timezone (for example in Losangeles).
 
 
 = 1.2 =
@@ -704,31 +705,31 @@ if (!class_exists('wpdev_booking')) {
         <td <?php echo $alternative_color; ?> 
             <span><a href="#" class="booking_overmause<?php echo $outColorClass; ?>"
                onmouseover="javascript:highlightDay('<?php
-                                       echo "cal4date-" . ( date('m',  mysql2date('G',$bk->booking_date)) + 0 ) . '-' .
-                                           ( date('d',  mysql2date('G',$bk->booking_date)) + 0 ) . '-' .
-                                           ( date('Y',  mysql2date('G',$bk->booking_date)) + 0 );
+                                       echo "cal4date-" . ( date('m',  mysql2date('U',$bk->booking_date)) + 0 ) . '-' .
+                                           ( date('d',  mysql2date('U',$bk->booking_date)) + 0 ) . '-' .
+                                           ( date('Y',  mysql2date('U',$bk->booking_date)) + 0 );
                                        ?>','#ff0000');"
                onmouseout="javascript:highlightDay('<?php
-                                       echo "cal4date-" . ( date('m',  mysql2date('G',$bk->booking_date)) + 0 ) . '-' .
-                                           ( date('d',  mysql2date('G',$bk->booking_date)) + 0 ) . '-' .
-                                           ( date('Y',  mysql2date('G',$bk->booking_date)) + 0 );
+                                       echo "cal4date-" . ( date('m',  mysql2date('U',$bk->booking_date)) + 0 ) . '-' .
+                                           ( date('d',  mysql2date('U',$bk->booking_date)) + 0 ) . '-' .
+                                           ( date('Y',  mysql2date('U',$bk->booking_date)) + 0 );
                                        ?>','<?php echo $outColor; ?>');"
-               ><?php echo $this->get_showing_date_format( mysql2date('G',$bk->booking_date) );?></a></span><?php
+               ><?php echo $this->get_showing_date_format( mysql2date('U',$bk->booking_date) );?></a></span><?php
 
                                 } else {                            // add only dates
                                     echo ', '; ?>
             <span><a href="#" class="booking_overmause<?php echo $outColorClass; ?>"
                onmouseover="javascript:highlightDay('<?php
-                                       echo "cal4date-" . ( date('m',  mysql2date('G',$bk->booking_date)) + 0 ) . '-' .
-                                           ( date('d',  mysql2date('G',$bk->booking_date)) + 0 ) . '-' .
-                                           ( date('Y',  mysql2date('G',$bk->booking_date)) + 0 );
+                                       echo "cal4date-" . ( date('m',  mysql2date('U',$bk->booking_date)) + 0 ) . '-' .
+                                           ( date('d',  mysql2date('U',$bk->booking_date)) + 0 ) . '-' .
+                                           ( date('Y',  mysql2date('U',$bk->booking_date)) + 0 );
                                        ?>','#ff0000');"
                onmouseout="javascript:highlightDay('<?php
-                                       echo "cal4date-" . ( date('m',  mysql2date('G',$bk->booking_date)) + 0 ) . '-' .
-                                           ( date('d',  mysql2date('G',$bk->booking_date)) + 0 ) . '-' .
-                                           ( date('Y',  mysql2date('G',$bk->booking_date)) + 0 );
+                                       echo "cal4date-" . ( date('m',  mysql2date('U',$bk->booking_date)) + 0 ) . '-' .
+                                           ( date('d',  mysql2date('U',$bk->booking_date)) + 0 ) . '-' .
+                                           ( date('Y',  mysql2date('U',$bk->booking_date)) + 0 );
                                        ?>','<?php echo $outColor; ?>');"
-               ><?php echo $this->get_showing_date_format( mysql2date('G',$bk->booking_date) );?></a></span><?php
+               ><?php echo $this->get_showing_date_format( mysql2date('U',$bk->booking_date) );?></a></span><?php
                                    }
                                }
                             ?> </td></tr></table> <?php
