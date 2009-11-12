@@ -1,0 +1,358 @@
+      /* Calendar styling */ 
+    #calendar_booking {
+        margin:20px auto;
+    }
+    .datepick-inline {
+        float:none;
+        margin:0 auto;
+    }
+
+    /* table list */
+    .table_list {border-collapse:collapse;
+                 border:solid #cccccc 1px;
+                 width:100%;}
+    .table_list td {padding:5px;
+                    border:solid #efefef 1px;}
+    .table_list th {background:#75b2d1;
+                    padding:5px;
+                    color:#ffffff;}
+    .table_list tr.odd {background:#e1eff5;}
+
+    .booking_table {
+        width:99%;
+        border:1px solid #aaa;
+        -moz-border-radius:5px;
+        -moz-box-sizing:content-box;
+    }
+    .booking_table td{
+        padding:5px 20px;
+        border:none;
+
+    }
+    .booking_table th{
+        padding:5px 20px;
+        border:none;
+        font-size:12px;
+        background:#888;
+        color:#fff;
+    }
+    .booking_table td.alternative_color{
+        background:#ececec;
+    }
+
+    #admin_bk_messages0, #admin_bk_messages1 {
+        float:left;
+        margin:15px 5px;
+    }
+
+    .submiting_content{
+        background:#EEFDED none repeat scroll 0 0;
+        border:2px solid #ACCFC9;
+        font-size:14px;
+        font-weight:bold;
+        padding:5px 20px;
+        color:black;
+    }
+    .reserved_mark, .selected_mark {
+        float:left;
+        height:25px;
+        width:30px;
+        border:1px solid #9EEFEE;
+        background:#9be;
+        margin:20px 10px 0px 0px;
+
+    }
+    .selected_mark {
+        background:#FFBB45;
+    }
+    a.booking_overmause1 ,a.booking_overmause1:visited , a.booking_overmause0 ,a.booking_overmause0:visited {
+        background:#FFBB45 none repeat scroll 0 0;
+        color:#FFFFFF;
+        font-weight:bold;
+        padding:2px 10px;
+        text-decoration:underline;
+        line-height:22px;
+    }
+    a.booking_overmause1 ,a.booking_overmause1:visited {
+        background:#9be none repeat scroll 0 0;
+    }
+
+
+    .datepick  .date2approve {                   /* DATES TO APPROVE INADMIN */
+    background:#FFBB45;
+    color:#fff ;
+    font-weight:bold;
+}
+    .datepick  .date_approved {                  /*  DATES NEED TO Approve AND  CLIENT RESERVED DATES*/
+    background:#9be;
+    color:#fff ;
+    font-weight:bold;
+}
+
+    a.booking_overmause1:hover, a.booking_overmause0:hover{
+        background:#FF0000;
+    }
+
+    .copyright_info {
+        font-size:10px;
+        line-height:14px;
+        padding:5px;
+        text-align:center;
+        width:99%;
+    }
+    .error_message, .info_message, .accept_message, .warning_message{
+        font-size:14px;
+        padding:11px;
+        padding-left:55px;
+        text-align:center;
+        margin:5px 10px 30px 10px;
+        line-height:22px;
+        -moz-border-radius:5px;
+    }
+    .error_message a, info_message a, .accept_message a, .warning_message a{
+        text-decoration:underline;
+    }
+    .error_message{
+        border:1px solid red;
+        background:#ffeeee url('../img/remove-32x32.png') no-repeat 10px 50%;
+    }
+    .info_message {
+        border:1px solid #eaefff;
+        background:#fdfffd url('../img/info-32x32.png') no-repeat 10px 50%;
+    }
+    .accept_message {
+        border:1px solid #b0ef55;
+        background:#f7fff7 url('../img/accept-32x32.png') no-repeat 10px 50%;
+    }
+    .warning_message {
+        border:1px solid #fedab9;
+        background:#fffae5 url('../img/warning-32x32.png') no-repeat 10px 50%;
+    }
+    .textleft{ text-align:left; }
+    .textcenter{ text-align:center; }
+    .textright {text-align:right; }
+    code{
+        background:#f5f5f5;
+        color:#0066ab;
+        font-size:12px;
+        padding:5px;
+        font-weight:bold;
+        font-style:normal;
+    }
+    span.example-code {
+     font-size:11px;
+     font-style:normal;
+    }
+    /* Settings CSS */
+    .form-table th{
+        width:160px;
+        line-height:15px;
+         font-size:11px;
+         font-style:italic;
+    }
+    .form-table th label{
+        font-size:12px;
+        font-weight:bold;
+        font-style:normal;
+    }
+    .form-table input.regular-text, .form-table select {
+        width:90px;
+    }
+    .form-table span.description{
+        font-size:12px;
+    }
+
+    .email-table th{
+        width:50px;
+    }
+
+    .email-table input.regular-text, .email-table select {
+        width:350px;
+    }
+    .code_description span.description {
+        line-height:20px;
+    }
+    table.email-table {
+        background-color:#fcfcfc;
+        border:1px solid #ccc;
+        margin:10px 0px !important;
+    }
+    #poststuff table.email-table td h2 {
+        line-height:15px !important;
+        margin-top:3px;
+        margin-bottom:0px;
+    }
+    .email-table td.th-title {
+        background-color:#eeeeee;
+        border-bottom:1px solid #ccc;
+        height:15px;
+        padding:5px 10px;
+    }
+    .email-table textarea, .email-table input, .email-table select, .darker-border {
+        border-color:#bbbbbb;
+    }
+
+    .settings-table th{
+        width:180px;
+    }
+
+    .settings-table input.regular-text, .settings-table select {
+        width:250px;
+    }
+
+
+    /* Front Page settings GRID */
+    .gderror {
+-moz-border-radius-bottomleft:3px;
+-moz-border-radius-bottomright:3px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-topright:3px;
+background-color:#FFEBE8;
+border:1px solid #CC0000;
+padding:12px;
+}
+    .gdpttitle span {
+    color:red;
+    font-size:12px;
+    font-weight:bold;
+    margin-left:5px;
+    vertical-align:14px;
+    }
+    .gdrgrid .disabled {
+    color:gray;
+    }
+    .gdrgrid .table {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#F9F9F9 none repeat scroll 0 0;
+    border-bottom:1px solid #ECECEC;
+    border-top:1px solid #ECECEC;
+    margin:0 -6px 10px;
+    padding:0 10px;
+    table-layout:fixed;
+    }
+    .gdrgrid div.inside {
+    margin:10px;
+    }
+
+    #poststuff .gdrgrid p.sub {
+    color:#777777;
+    font-family:Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+    font-size:12px;
+    font-style:italic;
+    margin:-12px;
+    padding:7px 15px 17px;
+    }
+    #poststuff .gdrgrid p.sub span.spanlink {
+    color:#777777;
+    font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+    font-size:12px;
+    font-style:italic;
+    margin:-12px;
+    padding:7px 15px 17px;
+    }
+
+    .gdrgrid table {
+    width:100%;
+    }
+    .gdrgrid table tr.first th {
+    color:#990000;
+    font-weight:bold;
+    }
+    .gdrgrid table tr.first th, .gdrgrid table tr.first td {
+    border-top:medium none;
+    }
+    .gdrgrid td {
+    border-top:1px solid #ECECEC;
+    font-size:18px;
+    padding:2px 0;
+    white-space:nowrap;
+    }
+    .gdrgrid td.b, .gdrgrid th.first {
+    font-family:Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+    font-size:14px;
+    padding-right:6px;
+    text-align:right;
+    white-space:nowrap;
+    }
+    .gdrgrid td.i {
+    font-family:Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+    font-size:14px;
+    padding-right:6px;
+    white-space:nowrap;
+    font-style:italic;
+    }
+    .gdrgrid td.first, .gdrgrid td.last {
+    width:1px;
+    }
+    .gdrgrid td.options {
+    padding-right:0 !important;
+    text-align:right;
+    white-space:normal;
+    }
+    .gdrgrid td.t {
+    padding-bottom:3px;
+    white-space:normal;
+    }
+    .gdrgrid td.t, .gdrgrid th {
+    color:#777777;
+    font-size:12px;
+    padding-right:12px;
+    padding-top:6px;
+    }
+    .gdrgrid th {
+    background-color:#ECECEC;
+    padding:3px 5px;
+    text-align:left;
+    }
+    .gdrgrid td.comparision, .gdrgrid th.comparision{
+        text-align:center;
+        font-size:12px;
+    }
+
+    .bk_types{
+        float:left;
+        margin:0px 2px;
+    }
+
+    .selected_bk_type{
+        font-weight:bold;
+    }
+
+    .ajax_message{
+        height:16px;
+        line-height:16px;
+        margin:3px auto;
+        margin-left:-50px;
+        position:fixed;
+        top:0px;
+        left:50%;
+    }
+    * html .ajax_message{
+        position: absolute;
+        /*top: expression( document.getElementsByTagName( 'body' )[0].scrollTop + "px" );/**/
+    }
+
+    #bk_type_plus a{
+        color:#83CD22;
+    }
+
+    a.bktypetitle{
+        color:#21759B;
+        text-decoration:underline;
+    }
+
+
+    a.selected{
+        font-weight:bold;
+    }
+    .fieldvalue{
+        color:#111;
+        background:#feefa4;
+        padding:2px 3px;
+    }
+
+    input.wpdev-validates-as-time{
+        width:50px;
+    }
