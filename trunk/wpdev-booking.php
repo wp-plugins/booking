@@ -39,13 +39,14 @@ Change Log and Features for Future Releases :
  * Dublicated emeils sending to specific emeil for audit of each reservation or approval or cancellation (pro version).
  * Showing booking from all booking types at admin panel
  * User roles management for access inside of plugin
- * Posibility to add at the booking bookmark how many days to select in range there.
+ 
  * Set export import data through CSV files
 
 = 1.4.1 =
  * Professional and Premium version features:
   * Set unavailable dayes for the booking.
-
+  * Posibility to add at the booking bookmark how many days to select in range there.
+ 
 = 1.4 =
  * Professional and Premium version features:
   * New versions of Booking Calendar - Booking Calendar Premium. Version Booking Calendar Deluxe is closed alternative - Booking Calendar Premium
@@ -1697,7 +1698,7 @@ if (!class_exists('wpdev_booking')) {
         // Write copyright notice if its saved
         function wp_footer(){
             if ( ( get_option( 'booking_wpdev_copyright' )  == 'On' ) && (! defined('WPDEV_COPYRIGHT')) ) {
-                        printf(__('%sPowered by wordpress plugins developed by %', 'wpdev-booking'),'<span style="font-size:9px;text-align:center;margin:0 auto;">','<a href="http://www.wpdevelop.com" target="_blank">swww.wpdevelop.com</a></span>','&amp;');
+                        printf(__('%sPowered by wordpress plugins developed by %s', 'wpdev-booking'),'<span style="font-size:9px;text-align:center;margin:0 auto;">','<a href="http://www.wpdevelop.com" target="_blank">www.wpdevelop.com</a></span>','&amp;');
                         define('WPDEV_COPYRIGHT',  1 );
             }
         }
