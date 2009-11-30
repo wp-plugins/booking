@@ -3,8 +3,8 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://booking.wpdevelop.com/
 Description: Online reservation and availability checking service for your site.
-Version: 1.4
-Author: wpdevelop.com
+Version: 1.4.1
+Author: wpdevelop
 Author URI: http://www.wpdevelop.com
 */
 
@@ -38,14 +38,19 @@ Change Log and Features for Future Releases :
  * Captcha to the form
  * Dublicated emeils sending to specific emeil for audit of each reservation or approval or cancellation (pro version).
  * Showing booking from all booking types at admin panel
- * User roles management for access inside of plugin
- 
+ * If a Booker wants to change the time of a booking ,  and /or the Date or, if necesary, cancel a booking, then this should be possible. [Jeremy Davies] For security, I suspect that the original confirmation e-mail must have a generated booking reference number that must be used to mofify or cancel the booking.
  * Set export import data through CSV files
 
-= 1.4.1 =
+= 1.4.2 =
  * Professional and Premium version features:
   * Set unavailable dayes for the booking.
   * Posibility to add at the booking bookmark how many days to select in range there.
+  
+= 1.4.1 =
+ * Professional and Premium version features:
+  * Fixing Checking of start time today if time is gone already.
+ * Features and issue fixings in All versions:
+  * User roles management for access inside of plugin
  
 = 1.4 =
  * Professional and Premium version features:
@@ -142,7 +147,7 @@ Change Log and Features for Future Releases :
 
 
 function wpdev_bk_define_static() {
-    if (!defined('WPDEV_BK_VERSION'))    define('WPDEV_BK_VERSION',  '1.4' );                             // 0.1
+    if (!defined('WPDEV_BK_VERSION'))    define('WPDEV_BK_VERSION',  '1.4.1' );                             // 0.1
     if (!defined('WP_CONTENT_DIR'))   define('WP_CONTENT_DIR', ABSPATH . 'wp-content');                   // Z:\home\test.wpdevelop.com\www/wp-content
     if (!defined('WP_CONTENT_URL'))   define('WP_CONTENT_URL', get_option('siteurl') . '/wp-content');    // http://test.wpdevelop.com/wp-content
     if (!defined('WP_PLUGIN_DIR'))       define('WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins');               // Z:\home\test.wpdevelop.com\www/wp-content/plugins
@@ -210,18 +215,26 @@ if (!class_exists('wpdev_booking')) {
                 $this->wpdev_bk_pro = new wpdev_bk_pro();
             } else { $this->wpdev_bk_pro = false; }
 
+            $users_roles = array(get_option( 'booking_user_role_booking' ), get_option( 'booking_user_role_addbooking' ), get_option( 'booking_user_role_settings' ) );
+            for ($i = 0 ; $i < count($users_roles) ; $i++) {
+                if ( $users_roles[$i] == 'administrator' )  $users_roles[$i] = 10;
+                if ( $users_roles[$i] == 'editor' )         $users_roles[$i] = 7;
+                if ( $users_roles[$i] == 'author' )         $users_roles[$i] = 2;
+                if ( $users_roles[$i] == 'contributor' )    $users_roles[$i] = 1;
+                if ( $users_roles[$i] == 'subscriber')      $users_roles[$i] = 0;
+            }
             $this->gui_booking = new wpdev_gui_bk('wpdev-booking',__FILE__,__('Booking services', 'wpdev-booking'), __('Booking', 'wpdev-booking'),'');
             add_action('admin_menu', array(&$this->gui_booking, 'on_admin_menu'));
-            $this->gui_booking->user_level = 0;
+            $this->gui_booking->user_level = $users_roles[0];
             $this->gui_booking->set_icon(array(WPDEV_BK_PLUGIN_URL . '/img/calendar-16x16.png', WPDEV_BK_PLUGIN_URL . '/img/calendar-48x48.png'));
             $this->gui_booking->add_content(array($this, 'content_of_booking_page'));
 
-            $this->gui_reservation = new wpdev_gui_bk('wpdev-booking-reservation',__FILE__  ,__('Add booking', 'wpdev-booking'), __('Add booking', 'wpdev-booking'),'submenu','', __FILE__ . $this->gui_booking->gui_html_id_prefix,0);
+            $this->gui_reservation = new wpdev_gui_bk('wpdev-booking-reservation',__FILE__  ,__('Add booking', 'wpdev-booking'), __('Add booking', 'wpdev-booking'),'submenu','', __FILE__ . $this->gui_booking->gui_html_id_prefix,$users_roles[1]);
             add_action('admin_menu', array(&$this->gui_reservation, 'on_admin_menu'));
             $this->gui_reservation->set_icon(array('', WPDEV_BK_PLUGIN_URL . '/img/add-1-48x48.png'));
             $this->gui_reservation->add_content(array($this, 'content_of_reservation_page'));
 
-            $this->gui_settings = new wpdev_gui_bk('wpdev-booking-option',__FILE__  ,__('Booking settings', 'wpdev-booking'), __('Settings', 'wpdev-booking'),'submenu','', __FILE__ . $this->gui_booking->gui_html_id_prefix,1);
+            $this->gui_settings = new wpdev_gui_bk('wpdev-booking-option',__FILE__  ,__('Booking settings', 'wpdev-booking'), __('Settings', 'wpdev-booking'),'submenu','', __FILE__ . $this->gui_booking->gui_html_id_prefix,$users_roles[2]);
             add_action('admin_menu', array(&$this->gui_settings, 'on_admin_menu'));
             $this->gui_settings->set_icon(array('', WPDEV_BK_PLUGIN_URL . '/img/application-48x48.png'));
             $this->gui_settings->add_content(array($this, 'content_of_settings_page'));/**/
@@ -970,6 +983,8 @@ if (!class_exists('wpdev_booking')) {
                     <script  type="text/javascript">
                         var jWPDev = jQuery.noConflict();
                         var wpdev_bk_plugin_url = '<?php echo WPDEV_BK_PLUGIN_URL; ?>';
+                        var wpdev_bk_today = [<?php echo  date('Y') .', '. date('m').', '. date('d').', '. date('H').', '. date('i') ; ?>];
+                        
                         // Check for correct URL based on Location.href URL, its need for correct aJax request
                         var real_domain = window.location.href;
                         var start_url = '';
@@ -1136,7 +1151,15 @@ if (!class_exists('wpdev_booking')) {
                         $is_delete_if_deactive =  $_POST['is_delete_if_deactive']; // check
                         $wpdev_copyright  = $_POST['wpdev_copyright'];             // check
 
+                        $user_role_booking      = $_POST['user_role_booking'];
+                        $user_role_addbooking   = $_POST['user_role_addbooking'];
+                        $user_role_settings     = $_POST['user_role_settings'];
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        update_option( 'booking_user_role_booking', $user_role_booking );
+                        update_option( 'booking_user_role_addbooking', $user_role_addbooking );
+                        update_option( 'booking_user_role_settings', $user_role_settings );
+
+
                         update_option( 'booking_admin_cal_count' , $admin_cal_count );
                         update_option( 'booking_client_cal_count' , $client_cal_count );
                         update_option( 'booking_start_day_weeek' , $start_day_weeek );
@@ -1171,6 +1194,10 @@ if (!class_exists('wpdev_booking')) {
                         $multiple_day_selections =  get_option( 'booking_multiple_day_selections' );
                         $is_delete_if_deactive =  get_option( 'booking_is_delete_if_deactive' ); // check
                         $wpdev_copyright  = get_option( 'booking_wpdev_copyright' );             // check
+
+                        $user_role_booking      = get_option( 'booking_user_role_booking' );
+                        $user_role_addbooking   = get_option( 'booking_user_role_addbooking' );
+                        $user_role_settings     = get_option( 'booking_user_role_settings' );
                     }
 
 
@@ -1254,6 +1281,56 @@ if (!class_exists('wpdev_booking')) {
                                                             </td>
                                                         </tr>
 
+
+                                                        <tr valign="top">
+                                                            <td colspan="2"><div style="border-bottom:1px solid #cccccc;"></div></td>
+                                                        </tr>
+
+
+
+                                                        <tr valign="top">
+                                                            <th scope="row"><label for="start_day_weeek" ><?php _e('Booking calendar', 'wpdev-booking'); ?>:</label><br><?php _e('access level', 'wpdev-booking'); ?></th>
+                                                            <td>
+                                                                <select id="user_role_booking" name="user_role_booking">
+                                                                    <option <?php if($user_role_booking == 'subscriber') echo "selected"; ?> value="subscriber" ><?php echo translate_user_role('Subscriber'); ?></option>
+                                                                    <option <?php if($user_role_booking == 'administrator') echo "selected"; ?> value="administrator" ><?php echo translate_user_role('Administrator'); ?></option>
+                                                                    <option <?php if($user_role_booking == 'editor') echo "selected"; ?> value="editor" ><?php echo translate_user_role('Editor'); ?></option>
+                                                                    <option <?php if($user_role_booking == 'author') echo "selected"; ?> value="author" ><?php echo translate_user_role('Author'); ?></option>
+                                                                    <option <?php if($user_role_booking == 'contributor') echo "selected"; ?> value="contributor" ><?php echo translate_user_role('Contributor'); ?></option>
+                                                                </select>
+                                                                <span class="description"><?php _e('Select user access level for this administration page', 'wpdev-booking');?></span>
+                                                            </td>
+                                                        </tr>
+
+
+                                                        <tr valign="top">
+                                                            <th scope="row"><label for="start_day_weeek" ><?php _e('Add booking', 'wpdev-booking'); ?>:</label><br><?php _e('access level', 'wpdev-booking'); ?></th>
+                                                            <td>
+                                                                <select id="user_role_addbooking" name="user_role_addbooking">
+                                                                    <option <?php if($user_role_addbooking == 'subscriber') echo "selected"; ?> value="subscriber" ><?php echo translate_user_role('Subscriber'); ?></option>
+                                                                    <option <?php if($user_role_addbooking == 'administrator') echo "selected"; ?> value="administrator" ><?php echo translate_user_role('Administrator'); ?></option>
+                                                                    <option <?php if($user_role_addbooking == 'editor') echo "selected"; ?> value="editor" ><?php echo translate_user_role('Editor'); ?></option>
+                                                                    <option <?php if($user_role_addbooking == 'author') echo "selected"; ?> value="author" ><?php echo translate_user_role('Author'); ?></option>
+                                                                    <option <?php if($user_role_addbooking == 'contributor') echo "selected"; ?> value="contributor" ><?php echo translate_user_role('Contributor'); ?></option>
+                                                                </select>
+                                                                <span class="description"><?php _e('Select user access level for this administration page', 'wpdev-booking');?></span>
+                                                            </td>
+                                                        </tr>
+
+
+                                                        <tr valign="top">
+                                                            <th scope="row"><label for="start_day_weeek" ><?php _e('Settings', 'wpdev-booking'); ?>:</label><br><?php _e('access level', 'wpdev-booking'); ?></th>
+                                                            <td>
+                                                                <select id="user_role_settings" name="user_role_settings">
+                                                                    <option <?php if($user_role_settings == 'subscriber') echo "selected"; ?> value="subscriber" ><?php echo translate_user_role('Subscriber'); ?></option>
+                                                                    <option <?php if($user_role_settings == 'administrator') echo "selected"; ?> value="administrator" ><?php echo translate_user_role('Administrator'); ?></option>
+                                                                    <option <?php if($user_role_settings == 'editor') echo "selected"; ?> value="editor" ><?php echo translate_user_role('Editor'); ?></option>
+                                                                    <option <?php if($user_role_settings == 'author') echo "selected"; ?> value="author" ><?php echo translate_user_role('Author'); ?></option>
+                                                                    <option <?php if($user_role_settings == 'contributor') echo "selected"; ?> value="contributor" ><?php echo translate_user_role('Contributor'); ?></option>
+                                                                </select>
+                                                                <span class="description"><?php _e('Select user access level for this administration page', 'wpdev-booking');?></span>
+                                                            </td>
+                                                        </tr>
 
 
                                                         <tr valign="top">
@@ -1717,7 +1794,11 @@ if (!class_exists('wpdev_booking')) {
            add_option( 'booking_is_delete_if_deactive' ,'Off'); // check
            add_option( 'booking_dif_colors_approval_pending' , 'On' );
            add_option( 'booking_multiple_day_selections' , 'On');
-           
+
+           add_option( 'booking_user_role_booking', 'editor' );
+           add_option( 'booking_user_role_addbooking', 'editor' );
+           add_option( 'booking_user_role_settings', 'administrator' );
+
            add_option( 'booking_email_reservation_adress', htmlspecialchars('"Booking system" <' .get_option('admin_email').'>'));
            add_option( 'booking_email_reservation_from_adress', htmlspecialchars('"Booking system" <' .get_option('admin_email').'>'));
            add_option( 'booking_email_reservation_subject',__('New reservation', 'wpdev-booking'));
@@ -1815,6 +1896,12 @@ if (!class_exists('wpdev_booking')) {
                 delete_option( 'booking_wpdev_copyright' );             // check
                 delete_option( 'booking_dif_colors_approval_pending'   );
                 delete_option( 'booking_multiple_day_selections' );
+
+                add_option( 'booking_user_role_booking' );
+                add_option( 'booking_user_role_addbooking' );
+                add_option( 'booking_user_role_settings' );
+
+
 
                 delete_option( 'booking_email_reservation_adress');
                 delete_option( 'booking_email_reservation_from_adress');
