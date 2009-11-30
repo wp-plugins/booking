@@ -1,10 +1,10 @@
 ﻿=== Booking Calendar ===
-Contributors: wpdevelop.com
-Donate link: http://www.wpdevelop.com/
-Tags: Reservation, Booking, Book, to book, Calendar, Booking calendar, reservation service, reservation dates, booking date, hotel rooms, ajax, paypal, online payment, rent, appointment, scheduling, scheduling, availability, event, resource scheduling, Rental, Rooms, houses, apartments, Equipment, Car pools, Hotel rooms, client scheduling, Beauty salon, Spa management, Hairdresser, Massage therapist, Acupuncture, Meeting scheduling, Coaching, Phone advice, Event scheduling, Conference, Course, Fitness center, Yoga class, Gym, Patient scheduling, Doctor, Clinic, Medical, time
+Contributors: wpdevelop
+Donate link: http://wpdevelop.com/booking-calendar-professional/
+Tags: Reservation, Booking, Book, to book, Calendar, Booking calendar, reservation service, reservation dates, booking date, hotel rooms, ajax, paypal, online payment, rent, appointment, scheduling, scheduling, availability, event, resource scheduling, Rental, Rooms, houses, apartments, Equipment, Car pools, Hotel rooms, boats, yachts, car, client scheduling, Beauty salon, Spa management, Hairdresser, Massage therapist, Acupuncture, Meeting scheduling, Coaching, Phone advice, Event scheduling, Conference, Course, Fitness center, Yoga class, Gym, Patient scheduling, Doctor, Clinic, Medical, time, hire, reservation plugin
 Requires at least: 2.7
 Tested up to: 2.8.6
-Stable tag: 1.4
+Stable tag: 1.4.1
 
 Booking Calendar - its plugin for online booking, reservation, availability checking service for your site. 
 == Description ==
