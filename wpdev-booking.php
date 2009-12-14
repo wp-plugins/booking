@@ -275,7 +275,7 @@ function wpdev_bk_define_static() {
     require_once(WPDEV_BK_PLUGIN_DIR. '/include/wpdev-gui-bk.php' );           // Connect my GUI class
     require_once(WPDEV_BK_PLUGIN_DIR. '/include/captcha/captcha.php' );           // Connect my GUI class
 
-    if (file_exists(WPDEV_BK_PLUGIN_DIR. '/include/wpdev-pro.php')) { require_once(WPDEV_BK_PLUGIN_DIR. '/include/wpdev-pro.php' ); }
+   // if (file_exists(WPDEV_BK_PLUGIN_DIR. '/include/wpdev-pro.php')) { require_once(WPDEV_BK_PLUGIN_DIR. '/include/wpdev-pro.php' ); }
 
     // Localization
     if ( ! loadLocale() )  loadLocale('en_US');
@@ -322,7 +322,7 @@ if (!class_exists('wpdev_booking')) {
 
         function wpdev_booking() {
 
-            $this->captcha_instance = new ReallySimpleCaptcha();
+            $this->captcha_instance = new wpdevReallySimpleCaptcha();
             $this->prefix = 'wpdev_bk';
             $this->settings = array(  'custom_buttons' =>array(),
                                 'custom_buttons_func_name_from_js_file' => 'set_bk_buttons', //Edit this name at the JS file of custom buttons
@@ -2375,7 +2375,7 @@ function wpdev_bk_ajax_responder() {
             $the_answer_from_respondent = $_POST['captcha_user_input'];
             $prefix = $_POST['captcha_chalange'];
             if (! ( ($the_answer_from_respondent == '') && ($prefix == '') )) {
-                $captcha_instance = new ReallySimpleCaptcha();
+                $captcha_instance = new wpdevReallySimpleCaptcha();
                 $correct = $captcha_instance->check($prefix, $the_answer_from_respondent);
 
                 if (! $correct) {
