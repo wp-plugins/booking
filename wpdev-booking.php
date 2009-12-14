@@ -1975,7 +1975,7 @@ if (!class_exists('wpdev_booking')) {
 
             $nl = '<div style="clear:both;height:10px;"></div>';                                                            // New line
             $calendar  = '<div id="calendar_booking'.$my_boook_type.'"></div>';
-            if(  $this->wpdev_bk_pro == false  )   $calendar .= '<div style="font-size:9px;text-align:center;">Powered by <a href="http://onlinebookingcalendar.com" target="_blank">Booking Calendar</a></div>';
+            if(  $this->wpdev_bk_pro == false  )   $calendar .= '<div style="font-size:9px;text-align:left;">Powered by <a href="http://onlinebookingcalendar.com" target="_blank">Booking Calendar</a></div>';
             $calendar .= '<textarea rows="3" cols="50" id="date_booking'.$my_boook_type.'" name="date_booking'.$my_boook_type.'" style="display:none;"></textarea>';   // Calendar code
 
             $form = '<div id="booking_form_div'.$my_boook_type.'" class="booking_form_div">';
