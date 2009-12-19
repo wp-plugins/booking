@@ -266,7 +266,7 @@ function remove_bk_action($action_type, $action){  global $wpdev_bk_action;
 
 
 function wpdev_bk_define_static() {
-    if (!defined('WPDEV_BK_VERSION'))    define('WPDEV_BK_VERSION',  '1.4.3' );                             // 0.1
+    if (!defined('WPDEV_BK_VERSION'))    define('WPDEV_BK_VERSION',  '1.4.4' );                             // 0.1
     if (!defined('WP_CONTENT_DIR'))   define('WP_CONTENT_DIR', ABSPATH . 'wp-content');                   // Z:\home\test.wpdevelop.com\www/wp-content
     if (!defined('WP_CONTENT_URL'))   define('WP_CONTENT_URL', get_option('siteurl') . '/wp-content');    // http://test.wpdevelop.com/wp-content
     if (!defined('WP_PLUGIN_DIR'))       define('WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins');               // Z:\home\test.wpdevelop.com\www/wp-content/plugins
