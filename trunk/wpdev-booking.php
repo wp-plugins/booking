@@ -3,7 +3,7 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://onlinebookingcalendar.com/
 Description: Online reservation and availability checking service for your site.
-Version: 1.4.3
+Version: 1.4.4
 Author: wpdevelop
 Author URI: http://www.wpdevelop.com
 */
@@ -28,7 +28,7 @@ Author URI: http://www.wpdevelop.com
 */
 
 /*
-Tested WordPress Versions: 2.8.3 - 2.8.6
+Tested WordPress Versions: 2.8.3 - 2.9
 -----------------------------------------------
 Change Log and Features for Future Releases :
 -----------------------------------------------
@@ -46,6 +46,10 @@ TODOList:
  * Payment cost calculation depends from the period - July and August the price for a day is € 100,00. From January until March the price is € 50,00 and during April and May the price is € 70,00 and so on. - Discounts for packages of days in specific seasons. The above prices cambiarl need for different seasons. - Discounts for packages of days in specific seasons
  * Set export import data through CSV files
  * Dublicated emeils sending to specific emeil for audit of each reservation or approval or cancellation (pro version).
+
+ = 1.4.4 =
+ * Features and issue fixings in All versions:
+  * WordPress 2.9 support
 
 = 1.4.3 =
  * Features and issue fixings in All versions:
