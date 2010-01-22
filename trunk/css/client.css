@@ -1,0 +1,208 @@
+                 .submiting_content {
+                    border:1px solid #55CC55;
+                    font-size:15px;
+                    font-weight:bold;
+                    height:45px;
+                    margin:15px auto;
+                    padding:15px 10px;
+                    text-align:center;
+                    width:100%;
+                }
+
+                textarea, input, select {
+                    border-color:#DFDFDF;
+                }
+                textarea, input, select {
+                    -moz-border-radius-bottomleft:4px;
+                    -moz-border-radius-bottomright:4px;
+                    -moz-border-radius-topleft:4px;
+                    -moz-border-radius-topright:4px;
+                    border-style:solid;
+                    border-width:1px;
+                }
+                textarea, input, select {
+                    margin:1px;
+                    padding:3px;
+                }
+                textarea {
+                    line-height:1.4em;
+                }
+                textarea, input, select {
+                    font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+                    font-size:13px;
+                }
+                .booking_form {
+                    text-align:left;
+                }
+                .button, .submit, .button-secondary {
+                    -moz-background-clip:border;
+                    -moz-background-inline-policy:continuous;
+                    -moz-background-origin:padding;
+                    background:#F2F2F2 url(../images/white-grad.png) repeat-x scroll left top;
+                }
+                .submit, .button, .button-primary, .button-secondary, .button-highlighted, #postcustomstuff .submit input {
+                    -moz-border-radius-bottomleft:11px;
+                    -moz-border-radius-bottomright:11px;
+                    -moz-border-radius-topleft:11px;
+                    -moz-border-radius-topright:11px;
+                    -moz-box-sizing:content-box;
+                    border-style:solid;
+                    border-width:1px;
+                    cursor:pointer;
+                    font-size:11px !important;
+                    line-height:16px;
+                    padding:2px 8px;
+                    text-decoration:none;
+                    font-weight:bold;
+                    margin:10px 0px;
+                    float:right;
+                }
+
+                .booking_form .field {clear:both; text-align:right; line-height:25px;margin:5px 0px;}
+                .booking_form label {float:left; padding-right:10px;width:80px;text-align:left;}
+                .booking_form .main_div {float:left;}
+                .booking_form_div {text-align:left;}
+                .booking_form .submit {float:left;}
+                .form_bk_messages {
+                    display:none;
+                    float:left;
+                    font-size:14px;
+                    font-weight:bold;
+                    border:1px solid #99ddaa;
+                    padding:3px 10px;
+                    margin:2px 5px;
+                    background:#fef9ed;
+                    color:#555555;
+                    margin:15px auto;
+                    padding:5px 10px;
+                    text-align:center;
+                    width:100%;
+                    clear:both;
+                }
+                .redBorders {
+                    background: red;
+                }
+
+                input.wpdev-validates-as-time {
+                    width:50px;
+                }
+
+
+                .widget_wpdev_booking {
+                        padding:0px;
+                        margin:0px;
+                        vertical-align:top;
+                }
+                .widget_wpdev_booking .datepick-inline table.datepick td{
+                    height:25px;
+                    width:25px;
+                }
+                .widget_wpdev_booking .datepick-inline table.datepick td a {
+                    line-height:25px;
+                }
+
+                .widget_wpdev_booking .datepick-inline {
+                    width:175px !important;
+                    
+
+                }
+
+                .widget_wpdev_booking .datepick-header {
+                    width:175px !important;
+                    
+
+                }
+
+                .widget_wpdev_booking input, .widget_wpdev_booking select, .widget_wpdev_booking textarea {
+                    width:95%;
+                     margin:1%;
+                }
+
+                .datepick  .date2approve, .datepick  .date_approved {
+                    background:#e5e5e5;
+                    color:#aaa;
+                    font-weight:bold;
+                }
+
+                .datepick  .timespartly a {
+                    background:#F2F2F2 url('../img/clock_fill.png') no-repeat 100% 100%;
+                    /*color:#Fca;
+                    font-weight:bold;/**/
+                }
+
+                .tooltips {
+                    /*display:none;
+                    background:transparent url(../js/tooltip/img/black_arrow.png);
+                    font-size:12px;
+                    height:70px;
+                    width:160px;
+                    padding:25px;
+                    color:#fff;/**/
+
+                    /*
+                         background-color:#000;
+                        border:1px solid #fff;
+                        padding:10px 15px;
+                        width:200px;
+                        display:none;
+                        color:#fff;
+                        text-align:left;
+                        font-size:12px;
+                        -moz-box-shadow:0 0 10px #000;
+                        -webkit-box-shadow:0 0 10px #000; /**/
+
+                        background-color:#ececec;
+                        border:1px solid #aaa;
+                        padding:10px 15px;
+                        width:100px;
+                        display:none;
+                        color:#444;
+                        text-align:left;
+                        font-size:12px;
+                        font-weight:bold;
+                        /* outline radius for mozilla/firefox only */
+                        -moz-box-shadow:0 0 10px #000;
+                        -webkit-box-shadow:0 0 10px #000;
+
+                }
+
+                img.captcha_img{
+                    vertical-align: middle;
+                }
+                .captachinput {
+                    width:120px;
+                }
+
+
+                .block_hints{
+                    font-size:11px;
+                    clear: both;
+                    margin:10px 0px 30px 0px !important;
+                    border:none;
+                    height:30px;
+                }
+                .block_text {
+                    float:left;
+                    margin:0px 0px 10px 0px;
+                    height:30px;
+                    padding: 0px 10px 0px 2px;
+                    line-height:32px;
+                }
+                .block_pending, .block_time, .block_booked, .block_free {
+                    width:30px;
+                    height: 30px;
+                    line-height:28px;
+
+                    
+                    border:1px solid #FFeeaa;
+                    
+                    display:block;
+                    font-weight:bold;
+
+                    text-align: center;
+                    vertical-align: middle;
+                    float:left;
+                }
+                .block_time a{
+                    padding:7px 10px 8px 10px;
+                }
