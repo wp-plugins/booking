@@ -1,4 +1,4 @@
-﻿=== Booking Calendar ===
+﻿﻿=== Booking Calendar ===
 Contributors: wpdevelop
 Donate link: http://wpdevelop.com/booking-calendar-professional/
 Tags: Reservation, Booking, Book, to book, Calendar, Booking calendar, reservation service, reservation dates, booking date, hotel rooms, ajax, paypal, online payment, rent, appointment, scheduling, scheduling, availability, availability calendar, event, events, event calendar, resource scheduling, Rental, Rooms, houses, apartments, Equipment, Car pools, Hotel rooms, boats, yachts, car, client scheduling, Beauty salon, Spa management, Hairdresser, Massage therapist, Acupuncture, Meeting scheduling, Coaching, Phone advice, Event scheduling, Conference, Course, Fitness center, Yoga class, Gym, Patient scheduling, Doctor, Clinic, Medical, time, hire, reservation plugin, Accommodation, accommodation deals, accommodations, Budget Accommodation, Budget Hotels, hotel accommodation, hotel accommodation deals, hotel accommodations, Hotel Accomodation, Hotel Booking, Hotel Deals, Hotel Prices, Hotel Rates, hotel reservation, hotel search, Hotels Accommodation, Hotels Reservation, Lodging, Luxury Hotels, dates
@@ -11,6 +11,18 @@ Booking Calendar - its plugin for online reservation and availability checking s
 
 This Wordpress plugin will enable <strong>online booking services</strong> for your site. Visitors to your site will be able to <strong>check availability</strong> of apartments, houses, hotel rooms, or services you offer. They can also <strong>make reservations and appointments</strong> with the ability to choose from multi-day, single day, or by the hour booking. Your clients can even view and register for upcoming events. With integrated <strong>Paypal</strong> support your clients can <strong>pay online</strong>!
 
+This plugin is extremely easy to use and very flexible, built with full Ajax and jQuery support.
+
+
+You can view a live demo of <strong>“Booking Calendar Premium”</strong> here (<a href="http://onlinebookingcalendar.com/demo/" title="Booking Calendar Professional Live Demo">Client side</a>. <a href="http://onlinebookingcalendar.com/wp-admin/" title="Booking Calendar Professional Live Demo - Admin Panel">Admin Panel</a> )
+
+You can also view a live demo of <strong>“Booking Calendar Hotel Edition”</strong> here (<a href="http://hotel.onlinebookingcalendar.com/" title="Booking Calendar Hotel Edition Live Demo">Client side</a> <a href="http://hotel.onlinebookingcalendar.com/wp-admin/" title="Booking Calendar Hotel Edition Live Demo - Admin Panel">Admin Panel</a> )
+
+
+<a href="http://wpdevelop.com/booking-calendar-professional/" title="Buy Booking Calendar Professional / Premium / Hotel Edition">Check <strong>feature list</strong> for each version and make <strong>Purchase now</strong></a> or try <strong>Booking Calendar Standard for free</strong>.
+
+<a href="http://wpdevelop.com/" title="Custom WordPress Plugins Development">Support and Developments of WordPress Pugins</a>
+
 Online Booking Calendar is great for:
 
 * Resource scheduling (Rental, Rooms, houses, apartments, Equipment Car pools, Hotel rooms)
@@ -19,15 +31,6 @@ Online Booking Calendar is great for:
 * Event scheduling (Conference, Course, Fitness center, Yoga class, Gym)
 * Patient scheduling (Doctor, Clinic, Medical)
 * Or any other service, where can be done reservation for some days or hours.
-
-Booking Calendar is extremely easy to use and very flexible, built with full Ajax and jQuery support.
-
-Related Links:
-
-* <a href="http://wpdevelop.com/booking-calendar-professional/" title="Buy Booking Calendar Professional / Premium / Hotel Edition">Buy "Booking Calendar Professional / Premium / Hotel Edition"</a>
-* <a href="http://onlinebookingcalendar.com/" title="Booking Calendar Professional LiveDemo">"Booking Calendar Professional / Premium" Live Demo</a>
-* <a href="http://hotel.onlinebookingcalendar.com/" title="Booking Calendar Hotel Edition Live Demo">"Booking Calendar Hotel Edition" Live Demo</a>
-* <a href="http://wpdevelop.com/" title="Custom WordPress Plugins Development">Support and Developments of WordPress Pugins</a>
 
 <strong>Features</strong>:
 
@@ -51,8 +54,6 @@ Related Links:
  * Week booking or any other day range selection booking
  * Support of Multi boooking at the same day at Hotel Edition
  * Adding remarks by administrator for each booking
-
-You can test <a href="http://onlinebookingcalendar.com/demo/" title="Booking Calendar online demo">online demo</a> of  “Booking Calendar Professional / Premium” and  <a href="http://hotel.onlinebookingcalendar.com/" title="Booking Calendar Hotel Edition online demo">online demo</a> of  “Booking Calendar Hotel Edition”.
 
 
 == Installation ==
