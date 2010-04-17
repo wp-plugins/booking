@@ -1,4 +1,4 @@
-﻿﻿=== Booking Calendar ===
+=== Booking Calendar ===
 Contributors: wpdevelop
 Donate link: http://wpdevelop.com/booking-calendar-professional/
 Tags: Reservation, Booking, Book, to book, Calendar, Booking calendar, reservation service, reservation dates, booking date, hotel rooms, ajax, paypal, online payment, rent, appointment, scheduling, scheduling, availability, availability calendar, event, events, event calendar, resource scheduling, Rental, Rooms, houses, apartments, Equipment, Car pools, Hotel rooms, boats, yachts, car, client scheduling, Beauty salon, Spa management, Hairdresser, Massage therapist, Acupuncture, Meeting scheduling, Coaching, Phone advice, Event scheduling, Conference, Course, Fitness center, Yoga class, Gym, Patient scheduling, Doctor, Clinic, Medical, time, hire, reservation plugin, Accommodation, accommodation deals, accommodations, Budget Accommodation, Budget Hotels, hotel accommodation, hotel accommodation deals, hotel accommodations, Hotel Accomodation, Hotel Booking, Hotel Deals, Hotel Prices, Hotel Rates, hotel reservation, hotel search, Hotels Accommodation, Hotels Reservation, Lodging, Luxury Hotels, dates
@@ -14,9 +14,9 @@ This Wordpress plugin will enable <strong>online booking services</strong> for y
 This plugin is extremely easy to use and very flexible, built with full Ajax and jQuery support.
 
 
-You can view a live demo of <strong>“Booking Calendar Premium”</strong> here (<a href="http://onlinebookingcalendar.com/demo/" title="Booking Calendar Professional Live Demo">Client side</a>. <a href="http://onlinebookingcalendar.com/wp-admin/" title="Booking Calendar Professional Live Demo - Admin Panel">Admin Panel</a> )
+You can view a live demo of <strong>Booking Calendar Premium</strong> here (<a href="http://onlinebookingcalendar.com/demo/" title="Booking Calendar Professional Live Demo">Client side</a>. <a href="http://onlinebookingcalendar.com/wp-admin/" title="Booking Calendar Professional Live Demo - Admin Panel">Admin Panel</a> )
 
-You can also view a live demo of <strong>“Booking Calendar Hotel Edition”</strong> here (<a href="http://hotel.onlinebookingcalendar.com/" title="Booking Calendar Hotel Edition Live Demo">Client side</a> <a href="http://hotel.onlinebookingcalendar.com/wp-admin/" title="Booking Calendar Hotel Edition Live Demo - Admin Panel">Admin Panel</a> )
+You can also view a live demo of <strong>Booking Calendar Hotel Edition</strong> here (<a href="http://hotel.onlinebookingcalendar.com/" title="Booking Calendar Hotel Edition Live Demo">Client side</a> <a href="http://hotel.onlinebookingcalendar.com/wp-admin/" title="Booking Calendar Hotel Edition Live Demo - Admin Panel">Admin Panel</a> )
 
 
 <a href="http://wpdevelop.com/booking-calendar-professional/" title="Buy Booking Calendar Professional / Premium / Hotel Edition">Check <strong>feature list</strong> for each version and make <strong>Purchase now</strong></a> or try <strong>Booking Calendar Standard for free</strong>.
