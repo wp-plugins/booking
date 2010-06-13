@@ -84,6 +84,8 @@ If you have any further questions, please send them to my <a href="mailto:info@w
 10. Customization rates of booking resource depends from season. (For example: the cost of day can be higher at weekend)
 11. Days avalaibility customization page (setting available and unavailable days for booking resources)
 12. Season filter page
+13. Customization rates of booking resource depends from number of selected days for reservation
+14. Booking widjets settings
 
 == Changelog ==
 See change logs at this <a href="http://onlinebookingcalendar.com/changelog/" title="changelog">page</a>.
