@@ -38,7 +38,7 @@ Online Booking Calendar is great for:
 
 * Make booking reservations by selecting dates at one or several calendar(s) 			
 * Email notifications for administrator and site visitors 			
-* Comfortable Admin panel for booking management 			
+* Comfortable Admin panel for management of reservations
 * Easy integration into posts/pages, using TinyMCE button. 			
 * Booking calendar widget 			
 * Validations of required form fields and email field 			
