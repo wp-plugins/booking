@@ -9,7 +9,9 @@ Stable tag: 2.3
 Booking Calendar - its plugin for online reservation and availability checking service for your site.
 == Description ==
 
-This Wordpress plugin will enable <strong>online booking services</strong> for your site. Visitors to your site will be able to <strong>check availability</strong> of apartments, houses, hotel rooms, or services you offer. They can also <strong>make reservations and appointments</strong> with the ability to choose from multi-day, single day, or by the hour booking. Your clients can even view and register for upcoming events. With integrated <strong>Paypal</strong> support your clients can <strong>pay online</strong>!
+This Wordpress plugin will enable <strong>online booking services</strong> for your site. Visitors to your site will be able to <strong>check availability</strong> or <strong>to book</strong> of apartments, houses, hotel rooms, or services you offer. They can also <strong>make reservations and appointments</strong> with the ability to choose from multi-day, single day, or by the hour booking. Your clients can even view and register for upcoming events. With integrated <strong>Paypal</strong>/<strong>Sage</strong> payment support your clients can <strong>pay online</strong>!
+
+No recurring payments, unlike other solutions. Only single time purchase of Professional versions or usage Booking Calendar Standard for free. Keep all your booking resource on your site, eliminating the risk of a third-party site from going offline, potentially losing all your client data.
 
 This plugin is extremely easy to use and very flexible, built with full Ajax and jQuery support.
 
@@ -45,19 +47,25 @@ Online Booking Calendar is great for:
 
 <strong>Advanced Professional / Premium / Hotel Edition Features</strong>:
 
- * Support of multiple booking resources (rooms, houses, cars…)
+ * Support of multiple booking resources (rooms, houses, cars, seats…)
  * Booking form fields customization, Extra fields on booking form
  * Editing exist bookings by administrator
+ * Editing booking by customer, posibility to cancel booking
  * Emails customization for new reservations, confirmation or declining  of booking 			
  * Booking for specific time in a day 			
- * Online payment (PayPal support) 			
+ * Online payment (PayPal, Sage payment support)
  * Week booking or any other day range selection booking
  * Support of Multi boooking at the same day at Hotel Edition
  * Adding remarks by administrator for each booking
+ * Several booking forms with different fields customization
+ * Season filter for settings available/unavailable dates
+ * Cost Rates system based on season filter. Cost, which depends from number of selected days for booking
+ * Advanced cost management, based on selection of fields from booking form
+ * Much more ...
 
 
 == Installation ==
-<strong style="color:#f50;">Because of update CSS files, please clear browser cache, after you made this update!!!</strong>
+<strong style="color:#f50;">Because of update CSS and JS files, please clear browser cache, after you made this update!!!</strong>
 
 1. Upload entire `booking` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -87,9 +95,6 @@ If you have any further questions, please send them to my <a href="mailto:info@w
 13. Customization rates of booking resource depends from number of selected days for reservation
 14. Booking widjets settings
 
-== Changelog ==
-See change logs at this <a href="http://onlinebookingcalendar.com/changelog/" title="changelog">page</a>.
-
 == Upgrade Notice ==
 
 = 2.3 =
@@ -110,14 +115,22 @@ Feasture for showing all new incoming bookings. Fixing several samll issues. Opt
 = 1.9.2 =
 New emails to visitor after new booking. Moderation link. More advanced costs management, which is depends from count of booking days.
 
-== Issue ==
+== Languages ==
 
-If you found some issue, please describe it <a href="http://onlinebookingcalendar.com/issues/" title="fixing issues">here</a>
+Right now plugin is support languages:
+<ul>
+ <li>English</li>
+ <li>Spanish</li>
+ <li>Danish</li>
+ <li>Belarusian</li>
+ <li>Russian</li>
+ <li>You can translate to any other language, using this <a href="http://wpdevelop.com/blog/tutorial-translation-wordpress-plugin/" title="Tutorial of translation wordpress plugin">instruction</a></li>
+</ul>
+
+== Tech support ==
+
+If you have some questions, which you do not found at <a href="http://onlinebookingcalendar.com/faq/" title="FAQ">FAQ</a> you can post them at <a href="http://onlinebookingcalendar.com/issues/" title="fixing issues">technical help board</a>
 
 == New ideas ==
 
 Please, fill free to propose new ideas or new features <a href="http://onlinebookingcalendar.com/ideas/" title="new feature">here</a>
-
-== Customization ==
-
-If you need customization or support this or any other WordPress plugin, please contact me here <a href="http://www.wpdevelop.com" title="WPDevelop - wordpress plugins development">www.wpdevelop.com</a>
