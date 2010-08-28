@@ -82,9 +82,9 @@ If you have any further questions, please send them to my <a href="mailto:info@w
 
 == Screenshots ==
 
-1. Booking administration panel. Here you can approve or decline new bookings
+1. Book ing administration panel. Here you can approve or decline new bookings
 2. Adding new reservation
-3. Adding booking form into post/page, using new booking button
+3. Adding book ing form into post/page, using new booking button
 4. Custom Booking form with captcha and legend
 5. Paypal page for online payment after booking process
 6. General booking settings page
