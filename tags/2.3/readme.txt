@@ -25,15 +25,6 @@ You can also view a <strong>live demo</strong> of <strong>Booking Calendar Hotel
 
 <a href="http://wpdevelop.com/" title="Custom WordPress Plugins Development">Support and Developments of WordPress Pugins</a>
 
-Online Booking Calendar is great for:
-
-* Resource scheduling (Rental, Rooms, houses, apartments, Equipment Car pools, Hotel rooms)
-* Client scheduling ( Beauty salon, Spa management, Hairdresser, Massage therapist, Acupuncture)
-* Meeting scheduling (Coaching, Phone advice)
-* Event scheduling (Conference, Course, Fitness center, Yoga class, Gym)
-* Patient scheduling (Doctor, Clinic, Medical)
-* Or any other service, where can be done reservation for some days or hours.
-
 <strong>Features</strong>:
 
 * Make booking reservations by selecting dates at one or several calendar(s) 			
@@ -63,6 +54,15 @@ Online Booking Calendar is great for:
  * Advanced cost management, based on selection of fields from booking form
  * Much more ...
 
+
+Online Booking Calendar is great for:
+
+* Resource scheduling (Rental, Rooms, houses, apartments, Equipment Car pools, Hotel rooms)
+* Client scheduling ( Beauty salon, Spa management, Hairdresser, Massage therapist, Acupuncture)
+* Meeting scheduling (Coaching, Phone advice)
+* Event scheduling (Conference, Course, Fitness center, Yoga class, Gym)
+* Patient scheduling (Doctor, Clinic, Medical)
+* Or any other service, where can be done reservation for some days or hours.
 
 == Installation ==
 <strong style="color:#f50;">Because of update CSS and JS files, please clear browser cache, after you made this update!!!</strong>
