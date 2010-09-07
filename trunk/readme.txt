@@ -44,7 +44,7 @@ You can also view a <strong>live demo</strong> of <strong>Booking Calendar Hotel
 * Validations of required form fields and email field 			
 * Multi language support ( Check  all available languages this <a href="http://wordpress.org/extend/plugins/booking/other_notes/">page</a> )
 
-
+<br />
 <strong>Advanced Professional / Premium / Hotel Edition Features</strong>:
 
  * Support of multiple booking resources (rooms, houses, cars, seats…)
