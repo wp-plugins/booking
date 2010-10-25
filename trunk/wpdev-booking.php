@@ -91,15 +91,6 @@ M i n o r   T O D O   List:
  * Multiuser functionality 2.6 :
  * ------------------------------------------
  *
- * correct translation files
- * correct readme.txt file
- *
- * make new release
- *
- * upload releases to .net site
- *
- * create and configure 2 new products at 2co
- *
  * update info at site inside of
  *   chnagelog,
  *   feature pages,
@@ -134,7 +125,6 @@ M i n o r   T O D O   List:
 * Features and issue fixings in All versions:
  * Refactoring of source code.
  * Showing legend of days also nearly calendar (when you are insert not booking form with calendar but only availability calendar)
- * Translation to Polish by Wlodek
  * Polish translation done by Wlodek from <a href="http://www.oddeski-dodeski.com">Wydarzenia z Polski</a>
  * French translation done by Anastase from <a href="http://www.predictions.name/fr/"> Horoscope hebdomadaire</a>
  * Optimize some text at descriptions.
@@ -775,10 +765,11 @@ function wpdev_bk_define_static() {
     if ($locale != 'en_US') {
         global  $l10n;
         //Recheck translation files according ' sign
-        foreach ($l10n['wpdev-booking']->entries as $key=>$tr_obj) {
-            $new_translation = str_replace("'","\\'",$tr_obj->translations);
-            $l10n['wpdev-booking']->entries[$key]->translations  = $new_translation;
-        }
+        if (isset($l10n['wpdev-booking']))
+            foreach ($l10n['wpdev-booking']->entries as $key=>$tr_obj) {
+                $new_translation = str_replace("'","\\'",$tr_obj->translations);
+                $l10n['wpdev-booking']->entries[$key]->translations  = $new_translation;
+            }
     }
 
 }
