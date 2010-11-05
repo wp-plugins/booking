@@ -4576,10 +4576,10 @@ text-shadow:-1px 1px 0 #FFFFFF;">
             // Create here tables which is needed for using plugin
             global $wpdb;
             $charset_collate = '';
-            if ( $wpdb->has_cap( 'collation' ) ) {
+            //if ( $wpdb->has_cap( 'collation' ) ) {
                 if ( ! empty($wpdb->charset) ) $charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
                 if ( ! empty($wpdb->collate) ) $charset_collate .= " COLLATE $wpdb->collate";
-            }
+            //}
 
             $wp_queries = array();
             if ( ! $this->is_table_exists('booking') ) { // Cehck if tables not exist yet
