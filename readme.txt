@@ -4,12 +4,12 @@ Donate link: http://onlinebookingcalendar.net/purchase/
 Tags: Book, to book, Booking, calendar, Booking calendar, Reservation, Calendar, hotel, rooms, rent, appointment, scheduling, availability, availability calendar, event, events, event calendar, resource scheduling, Rental, Meeting scheduling, reservation plugin, accommodations, bookable, bookable events
 Requires at least: 2.7
 Tested up to: 3.0.1
-Stable tag: 2.6
+Stable tag: 2.6.1
 
 Booking Calendar - its plugin for online reservation and availability checking service for your site.
 == Description ==
 
-This Wordpress plugin will enable <strong>online booking services</strong> for your site. Visitors to your site will be able to <strong>check availability</strong> of apartments, houses, hotel rooms, or services you offer. They can also <strong>make reservations and appointments</strong> with the ability to choose from multi-day, single day, or by the hour booking. Your clients can even view and register for upcoming events. With integrated <strong>Paypal</strong> support your clients can <strong>pay online</strong>!
+Booking Calendar plugin will enable <strong>online booking services</strong> for your site. Visitors to your site will be able to <strong>check availability</strong> of apartments, houses, hotel rooms, or services you offer. They can also <strong>make reservations and appointments</strong> with the ability to choose from multi-day, single day, or by the hour booking. Your clients can even view and register for upcoming events. With integrated <strong>Paypal</strong> support your clients can <strong>pay online</strong>!
 
 No recurring payments, unlike other solutions. Only single time purchase of Professional versions or usage Booking Calendar Standard for free. Keep all your booking resource on your site, eliminating the risk of a third-party site from going offline, potentially losing all your client data.
 
@@ -112,6 +112,9 @@ If you have any further questions, please send them to my <a href="mailto:info@w
 
 == Changelog ==
 
+= 2.6.1 =
+* Fixing showing message "Notice: has_cap was called with an argument that is deprecated since version 2.0!" during activation. 
+ 
 = 2.6 =
 * Professional / Premium / Premium Plus / Hotel version features:
  * New version - Booking Calendar MultiUser . Creation of sites, where can be several property owners (users) at the same time. Each owner will see only his booking resources and bookings. Posibility to make independent customization of forms fields, emails, payments and so on for each owner. (Multi User)
