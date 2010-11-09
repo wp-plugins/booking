@@ -21,7 +21,6 @@ You can view a <strong>live demo</strong> of each versions of <strong>Booking Ca
 
 <a href="http://onlinebookingcalendar.net/purchase/" title="Buy Booking Calendar Professional / Premium / Hotel Edition">Check <strong>feature list</strong> for each version and make <strong>Purchase now</strong></a> or try <strong>Booking Calendar Standard</strong> for <strong>free</strong>.
 
-<a href="http://wpdevelop.com/" title="Custom WordPress Plugins Development">Support and Developments of WordPress Pugins</a>
 
 <strong>Online Booking Calendar is great for:</strong>
 
@@ -78,7 +77,7 @@ You can view a <strong>live demo</strong> of each versions of <strong>Booking Ca
 
 Please see <a href="http://onlinebookingcalendar.com/faq/" title="faq">FAQ</a>.
 
-If you have any further questions, please send them to my <a href="mailto:info@wpdevelop.com" title="faq">emeil</a>.
+If you have any further questions, please send them to <a href="mailto:info@onlinebookingcalendar.com" title="faq">emeil</a>.
 
 == Screenshots ==
 
