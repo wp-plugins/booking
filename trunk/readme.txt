@@ -142,7 +142,7 @@ See all other updates (changelog) at this <a href="http://onlinebookingcalendar.
 
 == Upgrade Notice ==
 
-= 2.6 =
+= 2.7 =
 Coupon discount system (Hotel Edition). Auto expiration pending nt paid bookings. Several booking Calendars at one booking form (Premium Plus, Hotel Edition). Required checkbox field, default selection of country (Paid versions)... Huge code refatoring.
 
 = 2.6 =
