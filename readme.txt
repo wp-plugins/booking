@@ -143,7 +143,7 @@ See all other updates (changelog) at this <a href="http://onlinebookingcalendar.
 == Upgrade Notice ==
 
 = 2.7 =
-Coupon discount system (Hotel Edition). Auto expiration pending nt paid bookings. Several booking Calendars at one booking form (Premium Plus, Hotel Edition). Required checkbox field, default selection of country (Paid versions)... Huge code refatoring.
+!!! Instalation note! If you make update from Dashboard (maintan mode) you will need after it make deactivation of plugin and then again activattion it at plugin menu (Delete booking data option at settings page have to be UNCHECKED for saving previos data.)!!! New features: Coupon discount system (Hotel Edition). Auto expiration pending not paid bookings. Several booking Calendars at one booking form (Premium Plus, Hotel Edition). Required checkbox field, default selection of country (Paid versions)... Huge code refatoring. 
 
 = 2.6 =
 New version - Booking Calendar MultiUser . Creation of sites, where can be several property owners (users) at the same time. Each owner will see only his booking resources and bookings. Posibility to make independent customization of forms fields, emails, payments and so on for each owner. (Multi User)
