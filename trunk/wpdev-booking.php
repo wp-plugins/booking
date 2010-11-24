@@ -4421,11 +4421,13 @@ text-shadow:-1px 1px 0 #FFFFFF;">
 
 
             if (isset($hook_extra))
-                if (isset($hook_extra['plugin']))
-                    if ($hook_extra['plugin'] == 'booking/wpdev-booking.php') {
+                if (isset($hook_extra['plugin'])) {
+                    $file_name = basename( __FILE__ );
+                    $pos = strpos( $hook_extra['plugin']  ,  trim($file_name)  );
+                    if ($pos !== false) {
                             $this->wpdev_booking_activate();
                     }
-
+                }
             return $return;
         }
 
