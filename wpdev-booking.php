@@ -118,7 +118,35 @@ if (!function_exists ('bk_error')) {
     function bk_error( $msg , $file_name='', $line_num=''){
         if (!defined('WPDEV_BK_VERSION'))  $ver_num = 'Undefined yet';
         else                               $ver_num = WPDEV_BK_VERSION ;
-        echo $msg . ' [F:' .  str_replace( dirname( $file_name ) , '' , $file_name ). "|L:" .  $line_num  . "|V:" .  $ver_num  ."]" ;
+
+        
+        $last_db_error = '';
+        global $EZSQL_ERROR;
+        if (isset($EZSQL_ERROR[ (count($EZSQL_ERROR)-1)])) {
+
+            $last_db_error2 = $EZSQL_ERROR[ (count($EZSQL_ERROR)-1)];
+
+            if  ( (isset($last_db_error2['query'])) && (isset($last_db_error2['error_str'])) ) {
+                
+                $query = $last_db_error2['query'];
+                $str   = str_replace('','',$last_db_error2['error_str']);
+                $str   = str_replace('"','', $str );     $str   = str_replace("'",'', $str );
+                $query   = str_replace('"','', $query ); $query   = str_replace("'",'', $query );
+
+                $str   = htmlspecialchars( $str, ENT_QUOTES );
+                $query = htmlspecialchars( $query , ENT_QUOTES );
+
+
+                //$last_db_error = '<p class="wpdberror"><strong>Last error:</strong> ['.$str.']<br /><code>'.$query.'</code></p>';
+                $last_db_error =  $str ;
+                if ( WP_BK_DEBUG_MODE )
+                    $last_db_error .= '::<span style="color:#300;">'.$query.'</span>';
+            } 
+        }
+        echo $msg . '<br /><span style="font-size:11px;"> [F:' .  str_replace( dirname( $file_name ) , '' , $file_name ). "|L:" .  $line_num  . "|V:" .  $ver_num  . "|DB:" .  $last_db_error  ."] </span>" ;
+
+
+
     }
 }
 // </editor-fold>
@@ -345,6 +373,8 @@ function get_file_data_wpdev( $file, $default_headers, $context = '' ) {
 }
 
 //   D e f i n e     S T A T I C      //////////////////////////////////////////////////////////////////////////////////////////////////
+if (!defined('WP_BK_DEBUG_MODE'))   define('WP_BK_DEBUG_MODE',  false );
+
 if (!function_exists ('wpdev_bk_define_static')) {
 function wpdev_bk_define_static() {
 
@@ -528,7 +558,9 @@ if (!class_exists('wpdev_booking')) {
             // Install / Uninstall
             register_activation_hook( __FILE__, array(&$this,'wpdev_booking_activate' ));
             register_deactivation_hook( __FILE__, array(&$this,'wpdev_booking_deactivate' ));
+            add_filter('upgrader_post_install', array(&$this, 'install_in_bulk_upgrade'), 10, 2); // Upgrade during bulk upgrade of plugins
 
+            
             add_bk_action('wpdev_booking_activate_user', array(&$this, 'wpdev_booking_activate'));
 
 
@@ -4377,6 +4409,26 @@ text-shadow:-1px 1px 0 #FFFFFF;">
                 $wpdb->query($wp_queries_sub);
             }
         }
+
+
+
+
+        // Upgrade during bulk upgrade of plugins
+        function install_in_bulk_upgrade( $return, $hook_extra ){
+
+            if ( is_wp_error($return) )
+			return $return;
+
+
+            if (isset($hook_extra))
+                if (isset($hook_extra['plugin']))
+                    if ($hook_extra['plugin'] == 'booking/wpdev-booking.php') {
+                            $this->wpdev_booking_activate();
+                    }
+
+            return $return;
+        }
+
 
 // </editor-fold>
   }
