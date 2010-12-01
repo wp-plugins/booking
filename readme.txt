@@ -3,7 +3,7 @@ Contributors: wpdevelop
 Donate link: http://onlinebookingcalendar.net/purchase/
 Tags:  Booking calendar, Booking, Book, to book, calendar, Reservation, Calendar, hotel, rooms, rent, appointment, scheduling, availability, availability calendar, event, events, event calendar, resource scheduling, Rental, Meeting scheduling, reservation plugin, accommodations, bookable, bookable events
 Requires at least: 2.7
-Tested up to: 3.0.1
+Tested up to: 3.0.2
 Stable tag: 2.7
 
 Booking Calendar - its plugin for online reservation and availability checking service for your site.
