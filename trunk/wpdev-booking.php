@@ -6,7 +6,7 @@ Description: Online reservation and availability checking service for your site.
 Version: 2.7
 Author: wpdevelop
 Author URI: http://onlinebookingcalendar.com/
-Tested WordPress Versions: 2.8.3 - 3.0.1
+Tested WordPress Versions: 2.8.3 - 3.1
 */
 
 /*  Copyright 2009, 2010  www.onlinebookingcalendar.com  (email: info@onlinebookingcalendar.com),
