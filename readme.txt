@@ -116,15 +116,11 @@ If you have any further questions, please send them to my <a href="mailto:info@w
 = 2.8 =
 * Professional / Premium / Premium Plus / Hotel / MultiUser versions features:
  * Search functionality of available dates at all booking resources. [bookingsearch] - shortcode for usage inside of posts or pages. User can click on the dates of interest, select number of visitors, hit 'Search'.  Search results would be a listed output each linking to a individual Page / Post where clients would have the opportunity to book available dates. (Hotel Edition, MultiUser)
- *
  * Posibility to assign to each of booking resources, maximum support of visitors (Hotel Edition)
  * Set posibility to show availability based on number of available items (free booking resources /resources, which have some capacity/) or on number of visitors inside of available booking resources.(Hotel Edition)
- *
  * Setting Maximum and Minimum number of days selections in a days range selection using 2 mouse buttons.  (Premium, Premium Plus, Hotel Edition )
  * Setting specific (discreet) numbers of days selections in a days range selection using 2 mouse buttons. For example: possible to selection only 3, 7 and 14 days and so on. Its usefull, when need to select weeks (or may be other number of days). Its mean that can be selected only 7+7+7+... days. (Premium, Premium Plus, Hotel Edition )
- *
  * Automatically set aproriate month, during editing of some booking, if month is grater then current month. (Professional, Premium, Premium Plus, Hotel Edition, MultiUser)
- *
  * Fixing of updating booking form information during upgrade from previos version.
  * Fixing of not showing correct cost (including advanced cost management sections) at cost hint, when booking form is use custom booking form (Premium Plus, Hotel Edition)
  * Fixing of showing cost at tooltip, when mouse over the day of calendar.  (Premium, Premium Plus, Hotel Edition)
@@ -145,7 +141,7 @@ See change logs at this <a href="http://onlinebookingcalendar.com/changelog/" ti
 
 == Upgrade Notice ==
 
-= 2.7 =
+= 2.8 =
 Search functionality. Set for resources, max. num. of visitors. (Hotel Edition). Specific numbers of days selections in a days range (Premium, Premium Plus, Hotel Edition). Set start month/year for calendar. Auto fill fields for logged in users. Translation to Croatian. Code refatoring, issues fixing.
 
 = 2.7 =
