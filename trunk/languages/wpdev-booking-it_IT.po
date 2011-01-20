@@ -1,0 +1,4182 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpdev-booking\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-18 17:25+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: wpdevelop <info@wpdevelop.com>\n"
+"Language-Team: wpdevelop <wpdevelop.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SearchPath-0: w:\\www\\home\\w\\www\\wp-content\\plugins\\booking\\.\n"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:95
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:184
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2958
+#, fuzzy
+msgid "The cost for payment"
+msgstr "%s - inserimento prezzo di questa prenotazione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:98
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:189
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:86
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2664
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2687
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2713
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3452
+msgid "First Name (required)"
+msgstr "Nome (richiesto)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:100
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:191
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:88
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2666
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2689
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2715
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3453
+msgid "Last Name (required)"
+msgstr "Cognome (richiesto)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:102
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:193
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:90
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2668
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2691
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2717
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3454
+msgid "Email (required)"
+msgstr "Email (richiesto)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:104
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:195
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:92
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2719
+msgid "Address (required)"
+msgstr "Indirizzo (richiesto)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:106
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:197
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:94
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2721
+msgid "City(required)"
+msgstr "Città (richiesto)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:108
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:199
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:96
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2723
+msgid "Post code(required)"
+msgstr "Codice Postale (richiesto)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:110
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:201
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:98
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2725
+msgid "Country(required)"
+msgstr "Paese (richiesto)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:112
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:203
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:100
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2670
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2693
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2727
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2746
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2758
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2778
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3455
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:19
+msgid "Phone"
+msgstr "Telefono"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:114
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:205
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:102
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2672
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2695
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2729
+msgid "Visitors"
+msgstr "Ospiti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:114
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:205
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:102
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2672
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2695
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2729
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2748
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2760
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2780
+msgid "Children"
+msgstr "Bambini"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:116
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:207
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:104
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2674
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2697
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2731
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2749
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2761
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2781
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3456
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:20
+msgid "Details"
+msgstr "Dettagli"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:118
+#, fuzzy
+msgid "Coupon"
+msgstr "Paese"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:122
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:211
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:108
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:510
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1652
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2678
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2701
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2735
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3458
+msgid "Send"
+msgstr "Invia"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:131
+msgid "Probably number of selected visitors more, then available at selected day(s)!"
+msgstr "Probabilmente il numero degli ospiti selezionati è maggiore della disponibilità del/i giorno/i selezionato/i!"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:320
+msgid "coupon"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:322
+msgid "discount"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:517
+msgid "Search results"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:550
+#, fuzzy
+msgid "Book now"
+msgstr "Prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:697
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:115
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1709
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2743
+#, fuzzy
+msgid "Search"
+msgstr "Marzo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1789
+#, fuzzy
+msgid "Child booking resources"
+msgstr "Risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1797
+msgid "Max available items inside of booking resource"
+msgstr "Limite massimo di camere disponibili per ogni tipologia"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1835
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1818
+msgid "Previos Month"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1847
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1835
+#, fuzzy
+msgid "Show all booking tables"
+msgstr "al calendario di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1855
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1843
+#, fuzzy
+msgid "Hide all booking tables"
+msgstr "%sprenotazione ora di partenza%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1864
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1858
+#, fuzzy
+msgid "Next Month"
+msgstr "Mesi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1872
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:455
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1872
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1467
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3440
+msgid "Pending"
+msgstr "In sospeso"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1908
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1891
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:65
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1532
+msgid "Approved"
+msgstr "Approvato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1925
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1911
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1470
+msgid "Approve"
+msgstr "Approva"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1926
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1660
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1912
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1943
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:388
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1472
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1535
+msgid "Cancel"
+msgstr "Cancella"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1929
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1915
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:79
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1475
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1538
+msgid "Reason of cancellation here"
+msgstr "Inserire qui il motivo della cancellazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1934
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1920
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1480
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1543
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1614
+msgid "Send email notification to customer about this operation"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1941
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1927
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1556
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1562
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1764
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1770
+msgid "FAQ"
+msgstr "FAQ"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:1942
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1928
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1557
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1563
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1765
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1771
+msgid "Contact"
+msgstr "Contatti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2085
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2258
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2430
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2645
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2681
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2760
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2720
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:730
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1423
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1506
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1791
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2032
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2184
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2591
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2202
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2260
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2311
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2362
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2413
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2539
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2629
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1836
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2107
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2144
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2259
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2382
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2476
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2530
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2551
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2620
+msgid "Click to toggle"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2086
+#, fuzzy
+msgid "Booking resources managment"
+msgstr "Risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2091
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2442
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:962
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2508
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1028
+msgid "ID"
+msgstr "ID"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2093
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1979
+msgid "Resource name"
+msgstr "Nome della tipologia"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2095
+#, fuzzy
+msgid "Number of resource items inside of parent resource"
+msgstr "Nomi degli articoli dalla risorsa"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2095
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1982
+msgid "Capacity"
+msgstr "Capienza"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2096
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2201
+#, fuzzy
+msgid "Parent"
+msgstr "Pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2097
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2208
+msgid "Priority"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2099
+#, fuzzy
+msgid "Maximum number of visitors for resource"
+msgstr "Numero di ospiti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2099
+#, fuzzy
+msgid "Max"
+msgstr "Mar"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2099
+#, fuzzy
+msgid "visitors"
+msgstr "Ospiti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2101
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1985
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2511
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1081
+msgid "Actions"
+msgstr "Azioni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2180
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:501
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:851
+msgid "Add"
+msgstr "Aggiungi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2189
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2448
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:489
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2531
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:736
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1471
+msgid "Delete"
+msgstr "Cancella"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2199
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2993
+msgid "Title"
+msgstr "Titolo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2216
+#, fuzzy
+msgid "Add new resource"
+msgstr "Aggiungi una nuova risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2223
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2341
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2672
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2712
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2837
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1055
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1456
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1606
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1867
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2050
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2874
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1715
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1998
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2154
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2252
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1944
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2469
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2621
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2648
+msgid "Save"
+msgstr "Salva"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2259
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2592
+msgid "Advanced Settings"
+msgstr "Parametri avanzati"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2274
+msgid "Visitors number apply to capacity"
+msgstr "Numero di ospiti applicato alla capacità"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2280
+#, fuzzy, php-format
+msgid " Check this checkbox if you want that availability of the day (capacity) depends from number of selected visitors %s"
+msgstr "Seleziona questa casella se si desidera che la disponibilità del giorno (capacità) dipende dal numero di ospiti selezionati %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2293
+#, php-format
+msgid "Show at tooltip on calendar availability based on free booking resource items. %sCheck maximum support of visitors at %sone booking resource%s with selected number of visitors from booking form"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2301
+#, php-format
+msgid "Show at tooltip on calendar availability based on summ number of visitors, which can be at free booking resource items. %sCheck maximum support of visitors at %sall booking resources%s with selected number of visitors from booking form"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2316
+#, fuzzy
+msgid "Show availability"
+msgstr "Disponibilità"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2322
+#, fuzzy
+msgid " Check this checkbox if you want to show availability number of booking resource at the tooltip, when mouse over the day of calendar."
+msgstr "Seleziona questa casella se si desidera visualizzare la disponibilità della camera con il tooltip, al passaggio del mouse sul calendario."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2329
+msgid "Availability description"
+msgstr "Descrizione disponibilità"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2331
+#, php-format
+msgid "Type your %savailability%s description"
+msgstr "Immetti la tua descrizione per la %sdisponibilità%s "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2370
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:573
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:3026
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:102
+msgid "Deleted"
+msgstr "Cancellato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2422
+msgid "Coupon saved"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2431
+#, fuzzy
+msgid "Booking coupons managment"
+msgstr "Risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2443
+msgid "The code your customers will be using to receive the discount."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2443
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2536
+#, fuzzy
+msgid "Coupon Code"
+msgstr "Codice postale"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2444
+#, fuzzy
+msgid "The amount, which be saved. Enter only digits."
+msgstr "di ogni camera da prenotare. Inserire solo numeri."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2444
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2564
+#, fuzzy
+msgid "Savings"
+msgstr "Salvataggio..."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2445
+msgid "The minimum total cost required to use the coupon"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2445
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2586
+#, fuzzy
+msgid "Minimum Purchase"
+msgstr "Acquista"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2446
+msgid "The date your coupon will expire"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2446
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2575
+msgid "Expiration Date"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2447
+msgid "Resource list, which support this coupon"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2447
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2542
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1703
+msgid "Resources"
+msgstr "Risorse"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2448
+#, fuzzy
+msgid "Delete this coupon"
+msgstr "Cancella i  dati di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2488
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2545
+msgid "All"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2524
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2595
+#, fuzzy
+msgid "Add new coupon"
+msgstr "Aggiungi nuovo prezzo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2568
+msgid "Fixed Amount"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2569
+msgid "Percentage Off"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2613
+#, fuzzy, php-format
+msgid "%s - coupon field, "
+msgstr "%s - campo casella di controllo,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2614
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2589
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2592
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2595
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2603
+#, php-format
+msgid "Example: %s "
+msgstr "Esempio: %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2646
+#, fuzzy
+msgid "Search form customization"
+msgstr "personalizzazione email"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2654
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2690
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2637
+msgid "Use these shortcodes for customization: "
+msgstr "Utilizza questi codici per la personalizzazione:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2655
+#, fuzzy, php-format
+msgid "%s - check in date, "
+msgstr "%s - campo casella di controllo,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2656
+#, fuzzy, php-format
+msgid "%s - check out date, "
+msgstr "%s - campo casella di controllo,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2657
+#, fuzzy, php-format
+msgid "%s - selection number of visitors, "
+msgstr "Numero di ospiti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2658
+#, fuzzy, php-format
+msgid "%s - search button, "
+msgstr "%s - pulsante invio,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2659
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2699
+#, fuzzy, php-format
+msgid "%s - new line, "
+msgstr "%s - inserimento nuova linea,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2660
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2700
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2613
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2640
+msgid "use any other HTML tags (carefully)."
+msgstr "utilizza altri tags HTML (attenzione)."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2666
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2706
+msgid "Additional customization style of this element you can make at this file"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2671
+#, fuzzy
+msgid "Reset to default search form content"
+msgstr "Azzera al contenuto del modulo di default"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2682
+#, fuzzy
+msgid "Customization of found booking resource items"
+msgstr "Costo prenotazione di ogni camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2691
+#, fuzzy, php-format
+msgid "%s - resource title, "
+msgstr "%s - campo lista paesi,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2692
+#, fuzzy, php-format
+msgid "%s - link to the page with booking form, "
+msgstr "%s - inserimento risorsa per la tipologia di camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2693
+#, fuzzy, php-format
+msgid "%s - availability of booking resource, "
+msgstr "%s - inserimento risorsa per la tipologia di camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2694
+#, fuzzy, php-format
+msgid "%s - maximum support visitors for booking resource, "
+msgstr "%s - inserimento risorsa per la tipologia di camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2695
+#, fuzzy, php-format
+msgid "%s - cost of booking resource, "
+msgstr "%s - inserimento risorsa per la tipologia di camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2696
+#, php-format
+msgid "%s - featured image, getted as a featured image from post, "
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2697
+#, php-format
+msgid "%s - booking info, getted as a excerpt from post, "
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2711
+#, fuzzy
+msgid "Reset to default value"
+msgstr "Azzera al modulo di default"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2723
+#, fuzzy
+msgid "Search form"
+msgstr "Diversi moduli"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2724
+msgid "Check in"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2725
+msgid "Check out"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2726
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2747
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2759
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2779
+msgid "Number of visitors"
+msgstr "Numero di ospiti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2761
+#, fuzzy
+msgid "Search Cache Settings"
+msgstr "Parametri avanzati"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2767
+msgid "Cache expiration"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2773
+#, fuzzy
+msgid "hour(s)"
+msgstr "Giovedì"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2778
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1919
+msgid "day(s)"
+msgstr "giorno/i"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2782
+msgid "Select time of cache expiration"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2791
+msgid "Cache is expire: "
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2829
+#, php-format
+msgid "Found: %s booking forms inside of posts or pages "
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2836
+msgid "Reset cache"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2864
+msgid "Available: "
+msgstr "Disponibile:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2931
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:479
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:623
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1427
+msgid "Standard"
+msgstr "Standard"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2931
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:455
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2824
+msgid "Default"
+msgstr "Predefinito"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2932
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2974
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2975
+msgid "Superior"
+msgstr "Superior"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2932
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2938
+#, fuzzy
+msgid "Resource #1"
+msgstr "Risorse"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2933
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2936
+msgid "Presidential Suite"
+msgstr "Suite Presidenziale"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2933
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2939
+#, fuzzy
+msgid "Resource #2"
+msgstr "Risorse"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2934
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2937
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1120
+msgid "Royal Villa"
+msgstr "Royal Villa"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-hotel.php:2934
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2940
+#, fuzzy
+msgid "Resource #3"
+msgstr "Risorse"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:462
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2927
+msgid "Weekend"
+msgstr "Fine settimana"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:463
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2928
+msgid "Work days"
+msgstr "Giorni lavorativi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:464
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2929
+msgid "High season"
+msgstr "Alta stagione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:480
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:538
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:266
+msgid "Updating..."
+msgstr "Aggiornamento..."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:485
+msgid "User  is Activated"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:543
+#, fuzzy
+msgid "User  is Deactivated"
+msgstr "quando il plugin è disattivato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:653
+#, php-format
+msgid "%sYou do not have permissions for this page.%s Your account is not active, please contact administrator.%s"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:679
+#, php-format
+msgid "%sYou do not have permissions for this booking resources.%s"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:685
+#, fuzzy, php-format
+msgid "%sNo this booking resources.%s"
+msgstr "Tariffe di stagione delle camere da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:801
+#, fuzzy
+msgid "Show resources of user:"
+msgstr "Risorse"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:813
+#, fuzzy
+msgid "My"
+msgstr "Mag"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:835
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:868
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1718
+msgid "Users"
+msgstr "Utenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:870
+msgid "Management of"
+msgstr "Gestione di"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:957
+msgid "Users managment"
+msgstr "Gestione utenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:961
+msgid "Status"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:963
+msgid "User name"
+msgstr "Nome utente"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:964
+msgid "User role"
+msgstr "Ruolo utente"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:966
+#, fuzzy
+msgid "Max number of resources"
+msgstr "Numero di ospiti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:967
+msgid "Actions for specific user"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:968
+msgid "Set user as"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1004
+#, fuzzy
+msgid "Activate"
+msgstr "Attivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1005
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1014
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1017
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1020
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1033
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1037
+#, fuzzy
+msgid "Do you really want"
+msgstr "Vuoi realmente cancellare?"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1005
+#, fuzzy
+msgid "make user active"
+msgstr "Saggio di pagamento attivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1009
+#, fuzzy
+msgid "Deactivate"
+msgstr "Attivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1013
+#, fuzzy
+msgid "Set as inactive"
+msgstr "Saggio di pagamento attivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1014
+msgid "make user inactive"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1016
+#, fuzzy
+msgid "Delete configuration"
+msgstr "Cancella i  dati di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1017
+msgid "delete configuration"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1019
+#, fuzzy
+msgid "Delete all booking data"
+msgstr "Cancella i  dati di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1020
+#, fuzzy
+msgid "delete all booking data"
+msgstr "Cancella i  dati di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1025
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1032
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1033
+#, fuzzy
+msgid "Super Admin"
+msgstr "Superior"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1033
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1037
+msgid "set user as"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1036
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1037
+msgid "Regular user"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1043
+#, fuzzy
+msgid "Login"
+msgstr "Links"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1121
+#, fuzzy
+msgid "Suite"
+msgstr "Titolo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1122
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2938
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2825
+msgid "Appartment #1"
+msgstr "Appartamento #1"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-multiuser.php:1123
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2939
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2826
+msgid "Appartment #2"
+msgstr "Appartamento #2"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:187
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2484
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:84
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2515
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2726
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2685
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2711
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2753
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2769
+msgid "Start time"
+msgstr "Ora di arrivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:187
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2490
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:84
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2522
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2733
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2685
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2711
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2754
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2770
+msgid "End time"
+msgstr "Ora di partenza"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:220
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1791
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1830
+msgid "per 1 day"
+msgstr "per 1 giorno"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:221
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1792
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1831
+#, fuzzy
+msgid "from the cost of 1 day "
+msgstr "Costo di 1 giorno"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:222
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1793
+#, fuzzy, php-format
+msgid "Additional cost in %s per 1 day"
+msgstr "Costo aggiuntivo per"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:224
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:225
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1797
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1798
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1838
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1839
+#, fuzzy
+msgid " for all days!"
+msgstr "per tutti i giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:497
+msgid "Add new booking form"
+msgstr "Aggiungi nuovo modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:580
+msgid "There are no extended booking forms"
+msgstr "Non ci sono moduli di prenotazione estesa"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:620
+#, fuzzy
+msgid "Booking form type:"
+msgstr "Modulo di prenotazione:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:629
+msgid "Please, select your type of booking form"
+msgstr "Perfavore, seleziona il modulo per la tua tipologia di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:699
+#, fuzzy
+msgid "Standard booking resource cost"
+msgstr "Aggiungi una nuova risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:700
+#, fuzzy
+msgid "Total booking resource cost"
+msgstr "Risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:815
+#, php-format
+msgid "%s - show cost hint for full booking in real time, depends from slection of days and form elements."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:816
+#, php-format
+msgid "Example: %sThe cost for payment: %s "
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:817
+#, php-format
+msgid "%s - enter direct cost at admin panel at page: "
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:817
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:197
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:219
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2582
+msgid "Add booking"
+msgstr "Aggiungi prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:818
+#, fuzzy, php-format
+msgid "Example: %s"
+msgstr "Esempio: %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1400
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1411
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1412
+msgid "unavailable"
+msgstr "non disponibile"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1401
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1411
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1412
+msgid "available"
+msgstr "disponibile"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1403
+msgid "Avalaibility booking type"
+msgstr "Disponibilità tipologia di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1409
+#, php-format
+msgid "All days for %s are"
+msgstr "Tutti i giorni per %s sono"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1418
+#, php-format
+msgid "Select %s days below or %sadd new season filter%s"
+msgstr "Seleziona %s i giorni sotto o %saggiungi un nuovo filtro di stagione%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1425
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1540
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2509
+msgid "Name"
+msgstr "Nome"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1426
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1541
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2510
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1697
+msgid "Filters"
+msgstr "Filtri"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1522
+msgid "Seson rates of booking resource"
+msgstr "Tariffe di stagione delle camere da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1528
+#, php-format
+msgid "Enter season rate(s) (costs diference in %s from standard cost %s or fixed cost) of booking resource %s or %sadd new season filter%s"
+msgstr "Inserisci la/e tariffa/e di stagione (differenza di prezzi in %s dal costo standard %s o il costo fisso) della camera da prenotare %s o %saggiungi un nuovo filtro di stagione%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1538
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2022
+msgid "Rates"
+msgstr "Tariffe"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1539
+msgid "Final cost"
+msgstr "Costo finale"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1572
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1590
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2010
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2038
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1447
+msgid "for 1 day"
+msgstr "per 1 giorno"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1573
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1591
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2011
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2039
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1448
+msgid "for 1 night"
+msgstr "per una notte"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1574
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1592
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2012
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2040
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1449
+msgid "fixed deposit"
+msgstr "deposito fisso"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1575
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1593
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2013
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2042
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1451
+msgid "for 1 hour"
+msgstr "per 1 ora"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1744
+msgid "Set cost of booking resource depends from number of selected booking days"
+msgstr "Fissa il costo della tipologia di camera in base al numero di giorni selezionati per la prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1745
+#, php-format
+msgid "If you add costs here, so %srates%s for this booking resource will not take effect !!!"
+msgstr "Se aggiungi i prezzi qui, allora %sle tariffe%s per questa tipologia di camera non avranno effetto !!!"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1746
+#, fuzzy, php-format
+msgid "%sFor and together%s have higher priority then range %sfrom - to%s days. Items at the bottom have higher priority then items at the top."
+msgstr "%sPer e insieme%s ha priorità maggiore della tariffa %sda - a%s giorni. Loggetto in basso ha priorità maggiore delloggetto in alto."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1754
+msgid "Number of days"
+msgstr "Numero di giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1755
+msgid "Cost of 1 day"
+msgstr "Costo di 1 giorno"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1802
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1904
+msgid "For"
+msgstr "Per"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1803
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1905
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2073
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:742
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2220
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2272
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2323
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2375
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2426
+msgid "From"
+msgstr "Da"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1804
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1906
+#, fuzzy
+msgid "Together"
+msgstr "Insieme"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1812
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1914
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2073
+msgid "to"
+msgstr "a"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1818
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2217
+msgid "day"
+msgstr "giorno"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1819
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2292
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2220
+msgid "days"
+msgstr "giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1832
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1840
+#, fuzzy
+msgid "Additional cost in USD per 1 day"
+msgstr "Costo aggiuntivo per"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1850
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1935
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1866
+msgid "Add new cost"
+msgstr "Aggiungi nuovo prezzo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1902
+msgid "for all days"
+msgstr "per tutti i giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1974
+msgid "Cost of each booking type"
+msgstr "Costo di ogni tipologia di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1980
+msgid "Resource Cost"
+msgstr "Costo della tipologia di camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:1983
+msgid "Names of items from resource"
+msgstr "Nomi degli articoli dalla risorsa"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2022
+#, fuzzy
+msgid "Settings rates for days, depends from filter settings."
+msgstr "Configurazione delle tariffe dei giorni, in base ai parametri di filtro."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2024
+msgid "Setting cost, which depends from number of selected days for reservation"
+msgstr "Configurazione dei costi in base al numero di giorni selezionati per la prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2024
+msgid "Cost for selected days"
+msgstr "Costo dei giorni selezionati"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2027
+#, fuzzy
+msgid "Setting availability for days, depends from filter settings."
+msgstr "Configurazione della disponibilità dei giorni, in base ai parametri di filtro."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2027
+msgid "Availability"
+msgstr "Disponibilità"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2035
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1444
+msgid "Please, enter cost"
+msgstr "Perfavore, inserire il prezzo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2046
+msgid "of each booking resources. Enter only digits."
+msgstr "di ogni risorsa da prenotare. Inserisci solo numeri."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2048
+#, fuzzy, php-format
+msgid "You can Add or Delete booking resources at the top of this %spage%s"
+msgstr "Il calendario di prenotazione per questa risorsa(alloggio) è già presente nella pagina"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2068
+msgid "Su"
+msgstr "Dom"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2068
+msgid "Mo"
+msgstr "Lun"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2068
+msgid "Tu"
+msgstr "Mar"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2068
+msgid "We"
+msgstr "Mer"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2068
+msgid "Th"
+msgstr "Gio"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2068
+msgid "Fr"
+msgstr "Ven"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2068
+msgid "Sa"
+msgstr "Sab"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Jan"
+msgstr "Gen"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Feb"
+msgstr "Feb"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Mar"
+msgstr "Mar"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Apr"
+msgstr "Apr"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2418
+msgid "May"
+msgstr "Mag"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Jun"
+msgstr "Giu"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Jul"
+msgstr "Lug"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Aug"
+msgstr "Ago"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Sep"
+msgstr "Set"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Oct"
+msgstr "Ott"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Nov"
+msgstr "Nov"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2069
+msgid "Dec"
+msgstr "Dic"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2073
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2293
+msgid "time"
+msgstr "durata"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2089
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2109
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2130
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2147
+msgid "No days"
+msgstr "Nessun giorno"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2091
+msgid "Every"
+msgstr "Ogni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2132
+msgid "of"
+msgstr "di"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2176
+msgid "Filter deleted successfully"
+msgstr "Filtro cancellato con successo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2245
+msgid "Filter saved"
+msgstr "Filtro salvato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2271
+msgid "Date filter"
+msgstr "Date filtro"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2280
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2499
+msgid "Add new filter"
+msgstr "Aggiungi nuovo filtro"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2285
+msgid "Name of filter"
+msgstr "Nome del filtro"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2287
+#, php-format
+msgid "Type your %sfilter name%s "
+msgstr "Immetti il tuo %snome per il filtro%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2291
+msgid "Time or days filter"
+msgstr "Durata o giorni del filtro"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2303
+msgid "Days of week"
+msgstr "Giorni della settimana"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2307
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2403
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2458
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2664
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2689
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2192
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2232
+msgid "Sunday"
+msgstr "Domenica"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2309
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2404
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2459
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2665
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2690
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2193
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2234
+msgid "Monday"
+msgstr "Lunedì"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2311
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2405
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2460
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2666
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2691
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2194
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2236
+msgid "Tuesday"
+msgstr "Martedì"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2313
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2406
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2461
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2667
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2692
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2195
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2238
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2315
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2407
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2462
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2668
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2693
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2196
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2240
+msgid "Thursday"
+msgstr "Giovedì"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2317
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2408
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2463
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2669
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2694
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2197
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2242
+msgid "Friday"
+msgstr "Venerdì"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2319
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2409
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2464
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2670
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2695
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2198
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2244
+msgid "Saturday"
+msgstr "Sabato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2327
+msgid "Days of month"
+msgstr "Giorni del mese"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2405
+#, fuzzy
+msgid "Months"
+msgstr "Mesi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2410
+msgid "January"
+msgstr "Gennaio"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2412
+msgid "February"
+msgstr "Febbraio"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2414
+msgid "March"
+msgstr "Marzo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2416
+msgid "April"
+msgstr "Aprile"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2420
+msgid "June"
+msgstr "Giugno"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2424
+msgid "July"
+msgstr "Luglio"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2426
+msgid "August"
+msgstr "Agosto"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2428
+msgid "September"
+msgstr "Settembre"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2430
+msgid "October"
+msgstr "Ottobre"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2432
+msgid "November"
+msgstr "Novembre"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2434
+msgid "December"
+msgstr "Dicembre"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2443
+msgid "Years"
+msgstr "Anni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2486
+#, php-format
+msgid "Type your %sstart time%s "
+msgstr "Immetti la tua %sora di arrivo%s "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2492
+#, php-format
+msgid "Type your %send time%s "
+msgstr "Immetti la tua %sora di partenza%s "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2499
+msgid "Save changes"
+msgstr "Salva modifiche"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2530
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:735
+msgid "Edit"
+msgstr "Modifica"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2532
+msgid "Do you really want to delete?"
+msgstr "Vuoi realmente cancellare?"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2566
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2609
+msgid "Showing cost at tooltip"
+msgstr "Mostra il prezzo nel tooltip"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2572
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2615
+#, fuzzy
+msgid " Check this checkbox if you want to show daily cost at the tooltip, when mouse over it."
+msgstr "Selezionare questa casella se si desidera mostrare il costo del giorno nel tooltip, quando il mouse passa sopra."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2579
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2622
+msgid "Cost description"
+msgstr "Descrizione costo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2581
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2624
+#, php-format
+msgid "Type your %scost%s description"
+msgstr "Immetti la tua descrizione del %scosto%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2721
+msgid "Advanced cost management"
+msgstr "Gestione avanzata costo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2764
+#, fuzzy, php-format
+msgid "Advanced cost customization is requre select boxes from %sform fields customization page%s (%s - shortcode). Fields are show automatically here, if exist at the form."
+msgstr "Personalizzazione avanzata del costo è richiesta con una lista di caselle a discesa da %spagina di personalizzazione dei campi modulo%s (%s - codicebreve). Se esistono nel modulo, i campi vengono mostrati automaticamente qui."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2776
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2683
+msgid "Form"
+msgstr "Modulo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2822
+msgid "Aditional cost for"
+msgstr "Costo aggiuntivo per"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2863
+#, fuzzy, php-format
+msgid "Enter cost (%s) directly in format %s or %s for the whole booking in format %s For example: %s or %s"
+msgstr "Puoi inserire il costo diretto in %s in format %s o %s dallintera prenotazione in format %s Per esempio: %s o %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium-plus.php:2894
+msgid "Cost: "
+msgstr "Costo:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:289
+msgid "Start Time is invalid, probably by requesting time(s) already booked, or already in the past!"
+msgstr "Orario di arrivo non valido, probabilmente lorario richiesto è già prenotato, oppure è già trascorso!"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:290
+msgid "End Time is invalid, probably by requesting time(s) already booked, or already in the past, or less then start time if only 1 day selected.!"
+msgstr "Orario di partenza non valido, probabilmente lorario richiesto è già prenotato, oppure è già trascorso, oppure è inferiore allorario di arrivo nel caso si fosse selezionato un solo giorno di prenotazione!"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:291
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:292
+msgid "Probably by requesting time(s) already booked, or already in the past!"
+msgstr "Probabilmente lorario richiesto è già prenotato, oppure è già trascorso!"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:420
+msgid "Costs"
+msgstr "Costi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:442
+#, fuzzy
+msgid "Send payment request to visitor"
+msgstr "Saggio per personalizzare il pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:446
+#, fuzzy
+msgid "Save cost"
+msgstr "Salva costi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:483
+#, fuzzy
+msgid "Cost saved successfuly"
+msgstr "Aggiornato con successo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:490
+msgid "Cost is not correct. It have to be more then 0"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:507
+msgid "Send payment request to customer"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:508
+#, fuzzy, php-format
+msgid "Type your %sreason of payment%s request"
+msgstr "Immetti la tua %sora di partenza%s "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:683
+msgid "Request is sent"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:689
+msgid "Request is failed"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:731
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:736
+msgid "Email to \"Person\" with payment request"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:737
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2209
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2268
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2318
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2370
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2421
+msgid "Active"
+msgstr "Attivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:738
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2319
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2371
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2422
+msgid "Send copy of this email to Admin"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:744
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2222
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2274
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2325
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2377
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2428
+#, fuzzy, php-format
+msgid "Type default %sadmin email%s from where this email is sending"
+msgstr "Immetti %sla mail di amministrazione%s dalla quale questa mail verrà inviata"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:749
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2227
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2279
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2330
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2382
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2433
+msgid "Subject"
+msgstr "Soggetto"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:751
+#, fuzzy, php-format
+msgid "Type email subject for %spayment request%s. You can use these %s shortcodes."
+msgstr "Immetti il soggetto della tua email per %sil rifiuto della prenotazione%s. Puoi utilizzare questi %s codici."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:757
+#, fuzzy, php-format
+msgid "Type your %semail message for payment request%s"
+msgstr "Immetti il tuo %smessaggio email per il rifiuto della prenotazione%s nel sito"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:760
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2238
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2290
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2341
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2393
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2444
+msgid "Use this shortcodes: "
+msgstr "Utilizza questo codice:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:761
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2239
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2291
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2342
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2394
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2445
+#, fuzzy, php-format
+msgid "%s - inserting ID of reservation "
+msgstr "%s[dates]%s - inserimento lista di dati riservati"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:762
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2240
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2292
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2343
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2395
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2446
+#, php-format
+msgid "%s - inserting name of person, who made booking (field %s requred at form for this bookmark), "
+msgstr "%s - inserimento nome della persona, che effettua la prenotazione (campo %s richiesto nel modulo per questa segnalibro),"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:763
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2241
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2293
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2344
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2396
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2447
+#, php-format
+msgid "%s - inserting dates of booking, "
+msgstr "%s - inserimento date di prenotazione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:764
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2242
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2294
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2345
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2397
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2448
+#, fuzzy, php-format
+msgid "%s - inserting check in date (first day of reservation), "
+msgstr "%s - inserimento date di prenotazione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:765
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2243
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2295
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2346
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2398
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2449
+#, fuzzy, php-format
+msgid "%s - inserting check out date (last day of reservation), "
+msgstr "%s - inserimento date di prenotazione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:766
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2244
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2296
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2347
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2399
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2450
+#, php-format
+msgid "%s - inserting type of booking resource, "
+msgstr "%s - inserimento risorsa per la tipologia di camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:767
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2400
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2451
+#, php-format
+msgid "%s - inserting detail person info"
+msgstr "%s - inserimento informazioni di dettaglio della persona"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:768
+#, fuzzy, php-format
+msgid "%s - inserting cost of payment"
+msgstr "%s - inserimento prezzo di questa prenotazione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:769
+#, fuzzy, php-format
+msgid "%s - inserting reason of payment, you can enter it before sending email"
+msgstr "%s - inserimento della motivazione di cancellazione della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:770
+#, php-format
+msgid "%s - inserting link to payment page for visitor at client side of site, "
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:771
+#, fuzzy, php-format
+msgid "%s - inserting link of booking editing by visitor at client side of site, "
+msgstr "%s - inserimento risorsa per la tipologia di camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:772
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2248
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2299
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2350
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2453
+#, php-format
+msgid "%s - inserting link for booking cancellation by visitor at client side of site, "
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:773
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2250
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2301
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2352
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2403
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2455
+#, php-format
+msgid "%s - inserting new line"
+msgstr "%s - inserimento nuova linea"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:774
+#, fuzzy, php-format
+msgid "You need to make payment %s for reservation %s at %s. %s You can make payment at this page: %s  Thank you, Reservation service."
+msgstr "Per esempio: \"la sua prenotazione %s in data: %s è stata cancellata. %s La ringraziamo, Servizio Prenotazione.\""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1049
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1050
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1272
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1273
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2755
+msgid "Cost"
+msgstr "Costo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1077
+msgid "Make payments with payPal - its fast, free and secure!"
+msgstr "Effettua il pagamento con Paypal - è veloce, gratis e sicuro!"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1278
+msgid "Pay now"
+msgstr "Paga adesso"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1279
+#, php-format
+msgid "Pay using %s payment service"
+msgstr "Paga utilizzando %s servizi di pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1333
+msgid "Auto fill form"
+msgstr "Modulo da auto compilare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1424
+msgid "Cost of each booking resource"
+msgstr "Costo prenotazione di ogni camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1455
+msgid "of each booking resource. Enter only digits."
+msgstr "di ogni camera da prenotare. Inserire solo numeri."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1458
+msgid "Save costs"
+msgstr "Salva costi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1507
+msgid "Sage payment customization"
+msgstr "Saggio per personalizzare il pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1509
+#, fuzzy, php-format
+msgid "If you have no account for this system, please visit %s to create one. Simulator account emulates the Sage Pay account as well as a  Test and Live account."
+msgstr "Se non avete account per questo sistema di pagamento, per favore visitate %s per la creazione di un Account Simulatore. Il simulatore emula il Saggio Test di Pagamento ed il sistema dal vivo."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1514
+msgid "Sage payment active"
+msgstr "Saggio di pagamento attivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1518
+#, fuzzy
+msgid " Check this checkbox for using Sage payment."
+msgstr "Seleziona questa casella per utilizzare il Saggio di pagamento."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1524
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1873
+msgid "Payment description"
+msgstr "Descrizione pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1525
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1874
+msgid "Enter the service name or the reason for the payment here."
+msgstr "Inserisci il nome del servizio o la motivazione per il pagamento qui."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1535
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1885
+msgid " Use these shortcodes for customization: "
+msgstr "Utilizza questo codice breve per la personalizzazione:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1536
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1886
+#, php-format
+msgid "%s[bookingname]%s - inserting name of booking resource, "
+msgstr "%s[nome prenotazione]%s - inserimento del nome della camera da prenotare, "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1537
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1887
+#, php-format
+msgid "%s[dates]%s - inserting list of reserved dates "
+msgstr "%s[dates]%s - inserimento lista di dati riservati"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1538
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1888
+#, php-format
+msgid "%s[datescount]%s - inserting number of reserved dates "
+msgstr "%s[datescount]%s - inserimento numero di dati riservati"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1549
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1899
+msgid "Show payment description"
+msgstr "Mostra la descrizione del pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1550
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1900
+msgid "at booking form nearly pay button"
+msgstr "al modulo di prenotazione in prossimità del pulsante di pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1554
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1904
+#, fuzzy
+msgid " Check this checkbox if you want to show payment description nearly pay button."
+msgstr "Selezionare questa casella se si desidera mostrare la descrizione del pagamento in prossimità del pulsante di pagamento."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1561
+msgid "Choose live or test environment"
+msgstr "Scegli lambiente di test o di produzione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1565
+msgid "SIMULATOR"
+msgstr "SIMULATORE"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1566
+msgid "TEST"
+msgstr "TEST"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1567
+msgid "LIVE"
+msgstr "LIVE"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1569
+msgid "Select SIMULATOR for the Simulator expert system, TEST for the Test Server and LIVE in the live environment"
+msgstr "Seleziona SIMULATORE per il sistema avanzato Simulatore, TEST per il Serve di Test e LIVE nellambiente di produzione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1575
+msgid "Return URL after Successful order"
+msgstr "URL di ritorno a seguito dellordine terminato con successo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1579
+msgid "Enter a return relative Successful URL. Sage will redirect visitors to this page after Successful Payment"
+msgstr "Inserisci un URL di ritorno relativo allordine avvenuto con Successo. il Saggio ricondurrà i visitatori a questa pagina dopo il Pagamento effettuato con successo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1580
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1591
+msgid "Please test this URL. Its have to be valid"
+msgstr "Perfavore prova questa URL. Deve essere convalidata"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1586
+msgid "Return URL after Failed order"
+msgstr "URL di ritorno dopo un ordine Fallito"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1590
+msgid "Enter a return relative Failed URL. Sage will redirect visitors to this page after Failed Payment"
+msgstr "Inserire un URL di ritorno relativo allordine fallito. Il Saggio ricondurrà i visitatori a questa pagina dopo il fallimento del Pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1598
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1960
+#, fuzzy
+msgid "Auto approve/cancel of booking"
+msgstr "Email alla \"Persona\" dopo lapprovazione della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1602
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1964
+msgid " Check this checkbox and booking will be automaticaly approve or cancel, when visitor make successfully payment or when visitor make a payment cancellation. Warning this wont work if visitor leave the payment page"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1611
+msgid "Vendor Name"
+msgstr "Nome Fornitore"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1615
+msgid "Set this value to the Vendor Name assigned to you by Sage Pay or chosen when you applied."
+msgstr "Imposta questo valore con il nome del Venditore assegnato dal Saggio di Pagamento o scelto quando è stato applicato."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1621
+msgid "XOR Encryption password"
+msgstr "Password XOR Encryption"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1625
+msgid "Set this value to the XOR Encryption password assigned to you by Sage Pay"
+msgstr "Imposta questo valore con la password XOR Encryption assegnata dal Saggio di Pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1631
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1837
+msgid "Choose Payment Currency"
+msgstr "Scegli valuta di pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1635
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1841
+msgid "U.S. Dollars"
+msgstr "Dollari Americani"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1636
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1842
+msgid "Euros"
+msgstr "Euro"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1637
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1843
+msgid "Pounds Sterling"
+msgstr "Sterline"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1638
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1844
+msgid "Yen"
+msgstr "Yen"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1639
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1845
+msgid "Australian Dollars"
+msgstr "Dollari Australiani"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1640
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1846
+msgid "Canadian Dollars"
+msgstr "Dollari Canadesi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1641
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1847
+msgid "New Zealand Dollar"
+msgstr "Dollari Neozelandesi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1642
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1848
+msgid "Swiss Franc"
+msgstr "Franco Svizzero"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1643
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1849
+msgid "Hong Kong Dollar"
+msgstr "Dollaro di Hong Kong"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1644
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1850
+msgid "Singapore Dollar"
+msgstr "Dollaro di Singapore"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1645
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1851
+msgid "Swedish Krona"
+msgstr "Corona Svedese"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1646
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1852
+msgid "Danish Krone"
+msgstr "Corona Danese"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1647
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1853
+msgid "Polish Zloty"
+msgstr "Zloty Polacco"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1648
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1854
+msgid "Norwegian Krone"
+msgstr "Corona Norvegese"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1649
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1855
+msgid "Hungarian Forint"
+msgstr "Fiorino Ungherese"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1650
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1856
+msgid "Czech Koruna"
+msgstr "Corona Ceca"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1651
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1857
+msgid "Israeli Shekel"
+msgstr "Shekel Israeliano"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1652
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1858
+msgid "Mexican Peso"
+msgstr "Pesos Messicano"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1653
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1859
+msgid "Brazilian Real (only for Brazilian users)"
+msgstr "Reali Brasiliani (solo per utenti brasiliani)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1654
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1860
+msgid "Malaysian Ringgits (only for Malaysian users)"
+msgstr "Ringgits Malese (solo per utenti Malesiani)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1655
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1861
+msgid "Philippine Pesos"
+msgstr "Pesos Filippini"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1656
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1862
+msgid "Taiwan New Dollars"
+msgstr "Dollari di Taiwan Nuovi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1657
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1863
+msgid "Thai Baht"
+msgstr "Thai Baht"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1659
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1865
+msgid "This is the currency for your visitors to make Payments"
+msgstr "Questa è la valuta per i tuoi visitatori per effettuare i Pagamenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1665
+msgid "Transaction type"
+msgstr "Tipologia di transazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1669
+msgid "PAYMENT"
+msgstr "PAGAMENTO"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1670
+msgid "DEFERRED"
+msgstr "RINVIATO"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1671
+msgid "AUTHENTICATE"
+msgstr "CONVALIDATO"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1673
+msgid "This can be DEFERRED or AUTHENTICATE if your Sage Pay account supports those payment types"
+msgstr "Questo può essere RINVIATO o CONVALIDATO se il tuo account del Saggio di Pagamento supporta queste tipologie di pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1679
+#, fuzzy, php-format
+msgid "Please %s configure all fields inside the billing form%s, this is necessary for Sage Payment System."
+msgstr "Perfavore, %sconfigura i campi di fatturazione nella personalizzazione dei campi del modulo di fatturazione%s, è necessario il sistema di pagamento Saggio!"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1792
+msgid "PayPal customization"
+msgstr "Configurazione Paypal"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1801
+msgid "PayPal active"
+msgstr "Attiva PayPal"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1805
+#, fuzzy
+msgid " Check this checkbox to use PayPal."
+msgstr "Seleziona questa casella per utilizzare il pagamento con Paypal"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1811
+msgid "Chose payment mode"
+msgstr "Scegli il metodo di pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1815
+msgid "Live"
+msgstr "Dal vivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1816
+#, fuzzy
+msgid "Sandbox"
+msgstr "SandBox"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1818
+#, fuzzy
+msgid " Select using test (Sandbox Test Environment) or live PayPal payment."
+msgstr "Seleziona modalità test (sandbox) o pagamento dal vivo PayPal."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1825
+msgid "Paypal Email address to receive payments"
+msgstr "Indirizzo Email PayPal per ricevere il pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1830
+msgid "This is the Paypal Email address where the payments will go"
+msgstr "Questo è lindirizzo email di PayPal al quale verranno accreditati i pagamenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1911
+msgid "Show Reference Text Box"
+msgstr "Mostra casella di testo di riferimento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1916
+#, fuzzy
+msgid " Check this to let the visitors enter more info like email or web url."
+msgstr "Selezionare questa casella se si desidera consentire agli utenti di inserire un riferimento come email o sito web."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1922
+msgid "Reference Text Box Title"
+msgstr "Titolo per la casella di testo dei riferimenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1926
+msgid "Enter a title for the Reference text box (i.e. Your emeil). The visitors will see this text"
+msgstr "Inserisci un titolo per la casella di testo Referenze (es. email). Gli utenti visualizzeranno questo testo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1932
+msgid "Return URL from PayPal"
+msgstr "URL di ritorno da PayPal"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1936
+#, fuzzy
+msgid "The URL to which the payer�s browser is redirected after completing the payment; for example, a URL on your site that displays a {Thank you for your payment page}."
+msgstr "URL al quale verrà ricondotto il browser dellacquirente dopo aver completato il pagamento; per esempio, un URL nel tuo sito che mostra un messaggio di ringraziamento {Thank you for your payment page}."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1937
+#, php-format
+msgid ""
+"For using this feature you %smust have activated auto return link%s at your Paypal account.\n"
+"Follow these steps to configure it:%s\n"
+"1. Log in to your PayPal account.%s\n"
+"2. Click the Profile subtab.%s\n"
+"3. Click Website Payment Preferences in the Seller Preferences column.%s\n"
+"4. Under Auto Return for Website Payments, click the On radio button.%s\n"
+"5. For the Return URL, enter the YOUR URL for your site for successfull payment. "
+msgstr ""
+"Per utilizzare questa funzionalità tu %sdevi aver attivato il link di ritorno%s nel tuo account di Paypal.\n"
+"Segui questi passi per configurarlo:%s\n"
+"1. Accedi al tuo account PayPal.%s\n"
+"2. Clicca sul tab Profilo.%s\n"
+"3. Clicca su Preferenze Pagamento Sito web nella colonna Preferenze Venditore.%s\n"
+"4. Sotto Auto Ritorno per Pagamenti Sito web, clicca il tasto di scelta On.%s\n"
+"5. Per lURL di Ritorno, inserire il proprio URL di ritorno dove ricondurre lutente dopo il pagamento effettuato con successo."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1949
+msgid "Cancel Return URL from PayPal"
+msgstr "Cancella lURL di Ritorno da PayPal"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1953
+#, fuzzy
+msgid "A URL to which the payers browser is redirected if payment is cancelled, for example, a URL on your website that displays a {Payment Canceled} page."
+msgstr "Un URL al quale verrà ricondotto il browser dellacquirente dopo aver cancellato il pagamento; per esempio, un URL nel tuo sito che mostra una {Payment Canceled} pagina."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1974
+msgid "Button types"
+msgstr "Tipologia di pulsante"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:1989
+#, fuzzy
+msgid "Select submit button type"
+msgstr "Seleziona tipologia di pulsante di invio"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2033
+msgid "Billing form fields customization"
+msgstr "Personalizzazione campi modulo di fatturazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2045
+#, fuzzy, php-format
+msgid "Please set required billing fields, they will automatically %sassign  to billing booking form%s"
+msgstr "Perfavore imposta i campi di fatturazione richiesti, che verranno %sassegnati automaticamente al modulo di fatturazione%s dal modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2050
+#, fuzzy
+msgid "Please, select field from your booking form. This field will be automatically assign to current field in biilling form."
+msgstr "Perfavore, seleziona i campi modulo dal tuo modulo di prenotazione. Questo campo verrà automaticamente assegnato al campo corrente dal modulo di fatturazione."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2056
+#, fuzzy
+msgid "Customer Email"
+msgstr "EMail cliente"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2069
+msgid "First Name(s)"
+msgstr "Nome"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2082
+#, fuzzy
+msgid "Last name"
+msgstr "Cognome"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2095
+msgid "Billing Address"
+msgstr "Indirizzo di fatturazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2108
+msgid "Billing City"
+msgstr "Città di fatturazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2121
+msgid "Post Code"
+msgstr "Codice postale"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2134
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2777
+msgid "Country"
+msgstr "Paese"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2147
+#, php-format
+msgid "These %sfields confuguration is obligatory, for Sage payment%s system!"
+msgstr "%sLa configurazione di questi scampi è obbligatoria, per il sistema di pagamento Saggio%s !"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2185
+#, fuzzy
+msgid "Auto cancel pending not paid bookings"
+msgstr "Email alla \"Persona\" dopo lapprovazione della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2192
+#, fuzzy
+msgid "Auto cancel bookings"
+msgstr "Email alla \"Persona\" dopo lapprovazione della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2200
+#, php-format
+msgid " Check this checkbox to %sactivate%s cancel pending not paid bookings."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2206
+#, fuzzy
+msgid "Cancel bookings older"
+msgstr "al modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2211
+#, fuzzy
+msgid "hour"
+msgstr "Autore"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2214
+#, fuzzy
+msgid "hours"
+msgstr "Giovedì"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2224
+msgid " Cancel only pending, not paid bookings, which is older then at this selection."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2232
+#, fuzzy
+msgid "Is send cancellation email"
+msgstr "Inserire qui il motivo della cancellazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2236
+#, php-format
+msgid " Check this checkbox to %ssend%s cancellation email for this process."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2241
+#, fuzzy
+msgid "Description of cancellation"
+msgstr "Inserire qui il motivo della cancellazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2243
+#, php-format
+msgid "Type description of %scancellation%s for email template."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2295
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2598
+msgid "Time Format"
+msgstr "Formato ora"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2310
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2613
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2427
+msgid "Custom"
+msgstr "Personalizza"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2318
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2621
+#, fuzzy, php-format
+msgid "Type your time format for showing in emails and booking table. %sDocumentation on time formatting.%s"
+msgstr "Immetti il tuo formato per visualizzare nelle email e nella tabella di prenotazione. %sDocumentazione sulla formattazione dellorario.%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2368
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2630
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2695
+msgid "Range selection"
+msgstr "Selezione intervallo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2375
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2636
+#, fuzzy
+msgid " Check this  if you want to use selection range in calendar. For example: select a week or only five days for booking."
+msgstr "Selezionare questa casella se si desidera utilizzare un intervallo di selezione nel calendario. Per esempio seleziona una settimana o solo 5 giorni per la prenotazione."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2386
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2647
+msgid "Selection of FIXED number of days by ONE mouse click"
+msgstr "Selezione di un numero FISSO di giorni con UN click del mouse"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2387
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2648
+msgid "Selection of DYNAMIC number of days by TWO mouse click"
+msgstr "Selezione di un numero DINAMICO di giorni con DUE click del mouse"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2393
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2654
+msgid "Count of days"
+msgstr "Conteggio di giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2393
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2446
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2654
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2679
+#, php-format
+msgid "in %srange to select%s"
+msgstr "in %sintervallo da selezionare%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2395
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2656
+#, php-format
+msgid "Type your %snumber of days for range selection%s"
+msgstr "Immetti il tuo %snumero di giorni per la selezione di intervallo%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2399
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2454
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2660
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2685
+msgid "Start day of range"
+msgstr "Giorno di inizio dellintervallo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2402
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2457
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2663
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2688
+msgid "Any day of week"
+msgstr "Ogni giorno della settimana"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2411
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2466
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2672
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2697
+msgid "Select your start day of range selection at week"
+msgstr "Seleziona il giorno iniziale dellintervallo selezione alla settimana"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2419
+#, fuzzy
+msgid "Days selection number"
+msgstr "Selezione intervallo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2422
+msgid "min"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2425
+msgid "max"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2428
+#, fuzzy, php-format
+msgid "Type your %sminimum and maximum number of days for range selection%s"
+msgstr "Immetti il tuo %snumero minimo di giorni per la selezione dellintervallo%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2434
+#, fuzzy
+msgid "Specific days selections"
+msgstr "Selezione multipla dei giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2438
+#, php-format
+msgid "Type your %sspecific%s days number, which can be selected by visitors or leave it empty. Its can be several days seperated by comma. Example: 5,7"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2444
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2679
+msgid "Minimum days count"
+msgstr "Conto minimo giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2450
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2681
+#, php-format
+msgid "Type your %sminimum number of days for range selection%s"
+msgstr "Immetti il tuo %snumero minimo di giorni per la selezione dellintervallo%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2502
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2713
+msgid "Use fixed time"
+msgstr "Utilizza orario fisso"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2502
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2713
+msgid "in range selections"
+msgstr "nelle selezioni di intervallo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2508
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2719
+#, fuzzy
+msgid " Check this  if you want to use a part of the day (not full day) at start and end day of selection range . It will overwrite start time and end time from from customization."
+msgstr "Selezionare questa casella se si desidera utilizzare per la prenotazione una parte del giorno (non lintero giorno) allinizio e alla fine dellintervallo giorni di selezione. Esso sovrascriverà lorario di arrivo e quello di partenza dalla personalizzazione modulo."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2515
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2726
+#, php-format
+msgid "%sstart booking time%s"
+msgstr "%sprenotazione ora di arrivo%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2517
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2728
+#, php-format
+msgid "Type your %sstart%s time of booking for range selection"
+msgstr "Immettere il tuo orario di %sarrivo%s della prenotazione per la selezione di intervallo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2522
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2733
+#, php-format
+msgid "%send booking time%s"
+msgstr "%sprenotazione ora di partenza%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2524
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2735
+#, php-format
+msgid "Type your %send%s time of booking for range selection"
+msgstr "Immettere il tuo orario di %spartenza%s della prenotazione per la selezione di intervallo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2745
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2639
+msgid "Save Changes"
+msgstr "Salva modifiche"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2772
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2786
+#, php-format
+msgid "Payment for booking of the %s for days: %s"
+msgstr "Pagamento per la prenotazione delle %s per i giorni: %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2775
+msgid "Enter your phone"
+msgstr "Inserisci il tuo telefono"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2815
+msgid "This reservation is cancelled, because we do not receive payment and administrator do not approve it."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2834
+msgid "You need to make payment for reservation"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2836
+#, php-format
+msgid "You need to make payment %s for reservation %s at %s. %s You can make payment at this page: %s  Thank you, %s"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-premium.php:2940
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2827
+msgid "Appartment #3"
+msgstr "Appartamento #3"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:86
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2885
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3879
+msgid "New reservation"
+msgstr "Nuova prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:88
+#, fuzzy
+msgid "Insertion of"
+msgstr "Informazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:88
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:102
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:117
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1665
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1674
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1679
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1686
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1695
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1700
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1706
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1712
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1721
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1759
+msgid "settings"
+msgstr "configurazioni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:100
+#, fuzzy
+msgid "Modification of exist reservation"
+msgstr "Modifica prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:102
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:117
+#, fuzzy
+msgid "Inserttion of"
+msgstr "Personalizzazione di"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:143
+#, fuzzy
+msgid "Agregate resources:"
+msgstr "Risorse"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:154
+msgid "Set inside of calendar as unavailable dates, which are reserved at these booking resources also"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:163
+#, php-format
+msgid "This shortcode %s is using for a page, where visitors can make %smodification%s of own booking(s), %scancel%s own booking or make %spayment%s after admin email payment request"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:164
+#, php-format
+msgid "The content of field %sURL for bookings edit%s at %sgeneral booking settings page%s have to link to this page"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:165
+#, php-format
+msgid "Emails templates, which are use shortcodes: %s will be link to this page"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:172
+#, php-format
+msgid "This shortcode %s is using for search form"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:333
+#, fuzzy
+msgid "This booking resources is not exist"
+msgstr "Risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:401
+#, fuzzy
+msgid "link"
+msgstr "Links"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:436
+msgid "The booking is cancel by visitor."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:450
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:461
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3493
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3536
+msgid "Wrong booking hash in URL. Probably its expired."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:533
+msgid "The booking is cancel successfully"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:557
+#, fuzzy
+msgid "Default booking resource"
+msgstr "Risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:562
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:796
+#, fuzzy
+msgid "All reservations"
+msgstr "Tutte le prenotazioni in arrivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:563
+#, fuzzy
+msgid "All incomining reservations"
+msgstr "Tutte le prenotazioni in arrivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:571
+msgid "Select your default booking resource. Opening from this resource."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:586
+msgid "URL for bookings edit"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:588
+#, php-format
+msgid "Type URL for bookings edit by %svisitors%s. You must use %s shortcode, at this page."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:606
+#, fuzzy
+msgid "Change hash after approvment of booking"
+msgstr "Email alla \"Persona\" dopo lapprovazione della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:610
+msgid " Check this, if you want to change hash of booking after approvemnt. This will disable posibility for visitor to edit or cancel booking."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:623
+msgid "Uncorrect date format"
+msgstr "Formato data non corretto"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:785
+msgid "Incoming"
+msgstr "In arrivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:794
+#, fuzzy
+msgid "all reservations"
+msgstr "tutte le prenotazioni in arrivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:796
+msgid "*"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:802
+msgid "all incoming reservations"
+msgstr "tutte le prenotazioni in arrivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:804
+msgid "All incoming reservations"
+msgstr "Tutte le prenotazioni in arrivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:847
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:853
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1430
+msgid "Add new booking resource"
+msgstr "Aggiungi una nuova risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:892
+msgid "Do you really want to delete this type?"
+msgstr "Vuoi veramente cancellare questa tipologia?"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:900
+msgid "Deleting..."
+msgstr "Cancellazione..."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:935
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:976
+msgid "Saving..."
+msgstr "Salvataggio..."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1013
+msgid "Bookings"
+msgstr "Prenotazioni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:1987
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:435
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:437
+msgid "Updated successfully"
+msgstr "Aggiornato con successo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2203
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2208
+msgid "Email to \"Admin\" after booking at site"
+msgstr "Email a \"Admin\" dopo la prenotazione nel sito"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2213
+msgid "To"
+msgstr "A"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2215
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2114
+#, php-format
+msgid "Type default %sadmin email%s for checking reservations"
+msgstr "Immettere %sla email amministratore%s per il controllo delle prenotazioni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2229
+#, php-format
+msgid "Type your email subject for %schecking booking%s. You can use these %s shortcodes."
+msgstr "Immetti il soggetto della tua email per %scontrollare la prenotazione%s. Puoi utilizzare questo %s codice."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2235
+#, fuzzy, php-format
+msgid "Type your %semail message for checking booking%s in. "
+msgstr "Immetti la tua %smessaggio email per il controllo della prenotazione%s al sito."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2245
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2297
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2348
+#, php-format
+msgid "%s - inserting detail person info, "
+msgstr "%s - inserimento informazioni di dettaglio della persona"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2246
+#, php-format
+msgid "%s - inserting moderate link of new booking, "
+msgstr "%s - inserimento link moderato della nuova prenotazione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2247
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2298
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2349
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2452
+#, fuzzy, php-format
+msgid "%s - inserting link to booking editable by vistor from his account, "
+msgstr "%s - inserimento risorsa per la tipologia di camera"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2249
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2300
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2351
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2402
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2454
+#, php-format
+msgid "%s - inserting cost of this booking, "
+msgstr "%s - inserimento prezzo di questa prenotazione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2251
+#, fuzzy, php-format
+msgid "For example: \"You need to approve a new reservation %s on the following dates: %s Person detailed information:%s You can edit this booking at: %s Thank you, Reservation service.\""
+msgstr "Per esempio: \"Devi approvare una nuova prenotazione %s per la data: %s Informazione di dettaglio della persona:%s Grazie, Servizio prenotazioni.\""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2261
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2267
+msgid "Email to \"Person\" after new reservation is done by this person"
+msgstr "Email alla \"Persona\"dopo che ha effettuato una prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2281
+#, fuzzy, php-format
+msgid "Type email subject for %svisitor after creation of a new reservation%s. Use these %s shortcodes."
+msgstr "Immetti il soggetto della tua email per %slospite dopo aver creato la nuova prenotazione%s. Puoi utilizzare questi %s codici."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2287
+#, php-format
+msgid "Type your %semail message for visitor after creation new reservation%s at site"
+msgstr "Immetti il tuo %smessaggio email per lospite dopo che ha effettuato una nuova prenotazione%s nel sito"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2302
+#, fuzzy, php-format
+msgid "For example: \"Your reservation %s at dates: %s is processing now! Please, wait for the confirmation email. %s  You can edit this booking at this page: %s Thank you, Reservation service.\""
+msgstr "Per esempio: \"La sua prenotazione %s in data: %s è in fase di elaborazione! Perfavore, attenda la mail conferma. %sGrazie, Servizio Prenotazione.\""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2312
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2317
+msgid "Email to \"Person\" after approval of booking"
+msgstr "Email alla \"Persona\" dopo lapprovazione della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2332
+#, php-format
+msgid "Type your email subject for %sapproval of booking%s. You can use these %s shortcodes."
+msgstr "Immetti il soggetto della tua mail per %slapprovazione della prenotazione%s.  Puoi utilizzare questi %s codici."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2338
+#, php-format
+msgid "Type your %semail message for approval booking%s at site"
+msgstr "Immetti il tuo %smessaggio email per lapprovazione della prenotazione%s nel sito"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2353
+#, fuzzy, php-format
+msgid "For example: \"Your reservation %s at dates: %s has been approved.%s  You can edit this booking at this page: %s Thank you, Reservation service.\""
+msgstr "Per esempio: \"La sua prenotazione %s in data: %s è stata approvata.%sLa ringraziamo, Servizio Prenotazione.\""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2363
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2369
+msgid "Email to \"Person\" after deny of booking"
+msgstr "Email alla \"Persona\" in seguito al rifiuto della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2384
+#, php-format
+msgid "Type your email subject for %sdeny of booking%s. You can use these %s shortcodes."
+msgstr "Immetti il soggetto della tua email per %sil rifiuto della prenotazione%s. Puoi utilizzare questi %s codici."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2390
+#, php-format
+msgid "Type your %semail message for deny booking%s at site"
+msgstr "Immetti il tuo %smessaggio email per il rifiuto della prenotazione%s nel sito"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2401
+#, php-format
+msgid "%s - inserting reason of cancel booking"
+msgstr "%s - inserimento della motivazione di cancellazione della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2404
+#, fuzzy, php-format
+msgid "For example: \"Your reservation %s at dates: %s has been  canceled. %s Thank you, Reservation service.\""
+msgstr "Per esempio: \"la sua prenotazione %s in data: %s è stata cancellata. %s La ringraziamo, Servizio Prenotazione.\""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2414
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2420
+msgid "Email to \"Person\" after modification of booking"
+msgstr "Email alla \"Persona\" dopo la modifica della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2435
+#, php-format
+msgid "Type your email subject for %smodification of booking%s. You can use these %s shortcodes."
+msgstr "Immetti il soggetto della tua mail per %sla modifica della prenotazione%s. Puoi utilizzare questi %s codici."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2441
+#, php-format
+msgid "Type your %semail message for modification booking%s at site"
+msgstr "Immetti il tuo %smessaggio email per la modifica della prenotazione%s nel sito"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2456
+#, fuzzy, php-format
+msgid "For example: \"The reservation %s at dates: %s has been  edited. %s  You can edit this booking at this page: %s  Thank you, Reservation service.\""
+msgstr "Per esempio: \"La sua prenotazione %s in data: %s è stata modificata dal nostro staff. %s La ringraziamo, Servizio Prenotazione.\""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2540
+msgid "Form fields"
+msgstr "Campi modulo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2560
+#, fuzzy, php-format
+msgid "%sGeneral shortcode rule for fields insertion%s"
+msgstr "%sRegole generali codice campi per linserimento di un campo:%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2562
+msgid "Parameters: "
+msgstr "Parametri:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2563
+#, fuzzy, php-format
+msgid "%s - this symbol means that this field is Required (can not be skipped)"
+msgstr "%s - questo simbolo vuol dire che il campo è Richiesto (non può essere saltato)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2564
+#, fuzzy, php-format
+msgid "%s - field name, must be unique (can not be skipped)"
+msgstr "%s - campo nome, deve essere unico (non può essere saltato)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2565
+#, fuzzy, php-format
+msgid "%s - default value of field (can be skipped)"
+msgstr "%s - valore di campo predefinito (può essere saltato)"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2568
+#, php-format
+msgid "%sUse these shortcode types for inserting fields into form:%s"
+msgstr "%sUtilizza questi shortcode types per inserire campi nel modulo:%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2569
+#, php-format
+msgid "%s - calendar"
+msgstr "%s - calendario"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2570
+#, php-format
+msgid "%s - CAPTCHA"
+msgstr "%s - CAPTCHA"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2572
+#, php-format
+msgid "%s - text field. "
+msgstr "%s - campo testo. "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2573
+#, php-format
+msgid "Example: %sJohn%s"
+msgstr "Esempio: %sGiovanni%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2575
+#, php-format
+msgid "%s - start time field. "
+msgstr "%s - campo ora di arrivo. "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2576
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2579
+#, php-format
+msgid "Example: %s. If you have already predefined times, you can also use this shortcode: %s"
+msgstr "Esempio: %s. Se hai già orari predefiniti, puoi anche utilizzare questo codice: %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2578
+#, php-format
+msgid "%s - end time field. "
+msgstr "%s - campo ora di arrivo. "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2581
+#, fuzzy, php-format
+msgid "%s - start and end time field in one dropdown list "
+msgstr "%s - campo ora di arrivo e partenza in ununica lista a discesa."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2582
+#, php-format
+msgid "If you have already predefined times (start and end time), use this code: %s "
+msgstr "Se hai già orari predefiniti (arrivo e partenza), utilizza questo codice: %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2584
+#, php-format
+msgid "%s - duration time field. "
+msgstr "%s - campo durata."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2585
+#, php-format
+msgid "If you set already start time, you can set duration of time using this shortcode: %s. You do not requre endtime."
+msgstr "Se hai già impostato lora di arrivo, puoi impostare la durata utilizzando questo codice: %s. Non hai bisogno dellora di partenza."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2588
+#, php-format
+msgid "%s - additional time field (as an additional property). Do not apply to the dividing day into sections. "
+msgstr "%s - campo tempo aggiuntivo (come proprietà aggiuntiva). Non applicare per dividere il giorno in sezioni."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2591
+#, fuzzy, php-format
+msgid "%s - email field, "
+msgstr "%s - campo email,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2594
+#, php-format
+msgid "%s - select field, "
+msgstr "%s - campo selezione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2597
+#, php-format
+msgid "%s - checkbox field, "
+msgstr "%s - campo casella di controllo,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2598
+#, php-format
+msgid "Example #1: %s "
+msgstr "Esempio #1: %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2599
+#, php-format
+msgid "Example #2: %s - checked by default"
+msgstr "Esempio #1: %s - controllato di default"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2600
+#, php-format
+msgid "Example #3: %s - several values"
+msgstr "Esempio #3: %s - diversi valori"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2602
+#, php-format
+msgid "%s - textarea field, "
+msgstr "%s - campo casella di testo,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2605
+#, php-format
+msgid "%s - countries list field, "
+msgstr "%s - campo lista paesi,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2606
+#, fuzzy, php-format
+msgid "Example #1: %s - default usage"
+msgstr "Esempio #3: %s - diversi valori"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2607
+#, fuzzy, php-format
+msgid "Example #2: %s - country selected by default"
+msgstr "Esempio #1: %s - controllato di default"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2609
+#, php-format
+msgid "%s - submit button, "
+msgstr "%s - pulsante invio,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2610
+#, php-format
+msgid "Example: %sSend%s "
+msgstr "Esempio: %sInvia%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2612
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2639
+#, php-format
+msgid "%s - inserting new line, "
+msgstr "%s - inserimento nuova linea,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2617
+msgid "Reset to default form"
+msgstr "Azzera al modulo di default"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2619
+msgid "Reset to default Payment form"
+msgstr "Azzera al modulo di pagamento di default"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2630
+#, fuzzy, php-format
+msgid "Form content data showing in emails (%s-shortcode) and inside approval and reservation tables in booking calendar page"
+msgstr "Contenuto dei dati modulo da mostrare nelle mail (%s-codice) e allinterno delle tabelle di approvazione e prenotazione nella pagina del calendario"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2638
+#, php-format
+msgid "%s - inserting data from fields of booking form, "
+msgstr "%s - inserimento dati dai campi del modulo di prenotazione,"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2644
+msgid "Reset to default form content"
+msgstr "Azzera al contenuto del modulo di default"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2646
+msgid "Reset to default Payment form content"
+msgstr "Azzera al contenuto del modulo Pagamento di default"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2743
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2755
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2771
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:16
+msgid "First Name"
+msgstr "Nome"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2744
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2756
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2772
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:17
+msgid "Last Name"
+msgstr "Cognome"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2745
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2757
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2773
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2689
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:18
+msgid "Email"
+msgstr "Email"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2774
+msgid "Address"
+msgstr "Indirizzo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2775
+msgid "City"
+msgstr "Città"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2776
+msgid "Post code"
+msgstr "Codice Postale"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2887
+#, fuzzy, php-format
+msgid "Your reservation %s for: %s is processing now! Please, wait for the confirmation email.  %sYou can edit this booking at this page: %s  Thank you, %s"
+msgstr "La sua prenotazione %s per: %s è in fase di elaborazione! La preghiamo di attendere la email di conferma. %sLa ringrazio, %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2891
+#, fuzzy
+msgid "The reservation has been modificated"
+msgstr "La sua prenotazione è stata modificata"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2893
+#, fuzzy, php-format
+msgid "The reservation %s for: %s has been  edited. %sYou can edit this booking at this page: %s  Thank you, %s"
+msgstr "La sua prenotazione %s per: %s è stata modificata dal nostro staff. %sLa ringraziamo, %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:2985
+#: w:\www\home\w\www\wp-content\plugins\booking\./include/wpdev-pro.php:3010
+msgid "Saved"
+msgstr "Salvato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:137
+#, fuzzy
+msgid "Done"
+msgstr "Telefono"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:230
+msgid "Your entered code is incorrect"
+msgstr "Il suo codice di accesso non è corretto"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-ajax.php:464
+msgid "here"
+msgstr "qui"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:150
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:203
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2597
+msgid "Settings"
+msgstr "Configurazioni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:151
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1558
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1766
+msgid "Buy"
+msgstr "Acquista"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:191
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:215
+#, fuzzy
+msgid "Reservation services"
+msgstr "Titolo nuova prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:191
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3046
+msgid "Booking"
+msgstr "Prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:203
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:223
+msgid "Booking settings customizations"
+msgstr "Impostazioni di configurazioni della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:270
+msgid "Insert booking calendar"
+msgstr "Inserisci calendario di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:271
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2567
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2950
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3000
+msgid "Booking calendar"
+msgstr "Calendario di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:387
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:426
+msgid "Ok"
+msgstr "Ok"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:541
+#, fuzzy
+msgid "Booking resource:"
+msgstr "Risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:550
+msgid "For booking select type of booking resource"
+msgstr "Per prenotare seleziona la tipologia di alloggio"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:558
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1514
+#, fuzzy
+msgid "Number of calendars:"
+msgstr "Numero di calendari:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:575
+msgid "Select number of month to show for calendar."
+msgstr "Seleziona il numero di mesi da visualizzare per calendario."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:580
+#, fuzzy
+msgid "Start month:"
+msgstr "Ora di arrivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:586
+#, fuzzy
+msgid "Select start month of calendar"
+msgstr "Seleziona il numero di mesi da visualizzare per calendario."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:591
+msgid "Show:"
+msgstr "Visualizza:"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:595
+#, fuzzy
+msgid "Booking form with calendar"
+msgstr "Calendario di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:596
+#, fuzzy
+msgid "Only availability calendar"
+msgstr "Solo calendario"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:597
+#, fuzzy
+msgid "Only booking form"
+msgstr "al modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:599
+#, fuzzy
+msgid "for"
+msgstr "Per"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:602
+#, fuzzy
+msgid "date"
+msgstr "Date"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:606
+msgid "Select what you want to show: booking form or only availability calendar."
+msgstr "Seleziona cosa vuoi visualizzare: modulo di prenotazione o solo calendario disponibilità."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1032
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2479
+msgid "Info"
+msgstr "Informazioni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1072
+msgid "Dates"
+msgstr "Date"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1076
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2447
+msgid "Wide days view"
+msgstr "Visualizzazione giorni estesa"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1077
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2446
+msgid "Short days view"
+msgstr "Visualizzazione giorni breve"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1173
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1175
+msgid "Edit reservation"
+msgstr "Modifica prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1180
+msgid "Edit notes"
+msgstr "Modifica note"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1183
+msgid "Edit Notes"
+msgstr "Modifica Note"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1377
+#, fuzzy, php-format
+msgid "This functionality exist at other version of Booking Calendar: %sProfessional%s, %sPremium%s , %sPremium Plus%s or %sHotel Edition%s."
+msgstr "Questa funzionalità è presente in %sBooking Calendar%s %sProfessional%s, %sPremium%s e %sHotel Edition%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1488
+#, php-format
+msgid "%sThere are no reservations.%s Please, press this %s button, when you edit %sposts%s or %spage%s. %sAfter entering booking you can wait for making  reservation by somebody or you can make reservation %shere%s."
+msgstr "%sNon sono presenti richieste di prenotazione.%s Perfavore, clicca questo %s pulsante, quando modifichi %sposts%s o %spagine%s. %sDopo linserimento della prenotazione puoi attendere perché venga effettuata una prenotazione da qualcuno oppure puoi effettuare una prenotazione tu stesso da %squi%s."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1494
+msgid "All incoming bookings"
+msgstr "Prenotazioni in sospeso"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1554
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1763
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2659
+msgid "Features"
+msgstr "Caratteristiche"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1555
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1764
+#, fuzzy
+msgid "Live Demos"
+msgstr "Demo dal vivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1662
+msgid "General"
+msgstr "Generali"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1665
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1674
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1679
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1686
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1695
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1700
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1706
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1712
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1721
+msgid "Customization of"
+msgstr "Personalizzazione di"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1671
+msgid "Fields"
+msgstr "Campi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1676
+msgid "Emails"
+msgstr "Emails"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1683
+msgid "Payments"
+msgstr "Pagamenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1692
+#, fuzzy
+msgid "Cost and availability"
+msgstr "Disponibilità"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1739
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2768
+msgid "Buy now"
+msgstr "Compra adesso"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1747
+msgid "Upgrade"
+msgstr "Aggiorna"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2108
+#, fuzzy
+msgid "Main settings"
+msgstr "configurazioni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2112
+msgid "Admin email"
+msgstr "Email Admin"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2121
+msgid "Show hints"
+msgstr "Mostra suggerimenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2121
+msgid "Show / hide hints"
+msgstr "Mostra / nascondi suggerimenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2123
+msgid " Check, if you want to show help hints at the admin panel."
+msgstr "Flaggare se si desidera mostrare suggerimenti nel pannello di controllo."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2132
+msgid "Copyright notice"
+msgstr "Avviso sul copyright"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2134
+#, php-format
+msgid " Turn On/Off copyright %s notice at footer of site view."
+msgstr "Attiva/Disattiva lavviso di copyright %s nel footer del sito."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2145
+#, fuzzy
+msgid "Calendar settings"
+msgstr "Tema calendario"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2149
+msgid "Calendar skin"
+msgstr "Tema calendario"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2164
+msgid "Select the skin of booking calendar"
+msgstr "Seleziona la grafica del calendario di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2169
+#, fuzzy
+msgid "Number of months"
+msgstr "Numero di mesi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2175
+msgid "month(s)"
+msgstr "mese/i"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2180
+msgid "year(s)"
+msgstr "anno/i"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2184
+#, fuzzy
+msgid "Select your maximum number of months at booking calendar"
+msgstr "Selezione il numero massimo di mesi del calendario di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2189
+msgid "Start Day of week"
+msgstr "Giorno con cui iniziare la settimana"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2200
+msgid "Select your start day of the week"
+msgstr "Seleziona il tuo giorno di inizio della settimana"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2205
+msgid "Multiple days selection"
+msgstr "Selezione multipla dei giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2205
+#, fuzzy
+msgid "in calendar"
+msgstr "Solo calendario"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2207
+msgid " Check, if you want have multiple days selection at calendar."
+msgstr "Flaggare se si desidera la selezione multipla dei giorni nel calendario"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2223
+msgid "Show settings of unavailable days of week"
+msgstr "Mostra le configuarazioni dei giorni della settimana non disponibili"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2229
+msgid "Unavailable days"
+msgstr "Giorni non disponibili"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2247
+msgid " Check unavailable days for your visitors."
+msgstr "Flagga i giorni non disponibili per i tuoi ospiti."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2260
+#, fuzzy
+msgid "Booking form settings"
+msgstr "Configurazioni prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2264
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2264
+msgid "at booking form"
+msgstr "al modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2266
+msgid " Check, if you want to activate CAPTCHA inside of booking form."
+msgstr "Flaggare se si desidera attivare CAPTCHA nel modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2271
+#, fuzzy
+msgid "Auto fill fields"
+msgstr "Modulo da auto compilare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2271
+msgid "for logged in users"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2273
+#, fuzzy
+msgid " Check, if you want activate auto fill fields of booking form for logged in users."
+msgstr "Flaggare se si desidera attivare CAPTCHA nel modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2281
+msgid "Show legend"
+msgstr "Mostra legenda"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2281
+msgid "at booking calendar"
+msgstr "al calendario di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2283
+msgid " Check, if you want to show legend of dates under booking calendar."
+msgstr "Flaggare se si desidera mostrare la legenda delle date sotto il calendario di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2296
+msgid "Settings of showing \"thank you\" message or page, after reservation is done"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2303
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2328
+msgid "New reservation title"
+msgstr "Titolo nuova prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2304
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2329
+#, php-format
+msgid "%sshowing after%s booking"
+msgstr "%sda mostrare dopo la%s prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2308
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2333
+#, php-format
+msgid "Type title of new reservation %safter booking has done by user%s"
+msgstr "Immettere il titolo della nuova prenotazione %sdopo che lutente ha effettuato la prenotazione%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2318
+#, fuzzy
+msgid "Show \"thank you\" message near calendar"
+msgstr "Mostra i parametri di configurazione del messaggio di ringraziamento al cliente"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2319
+msgid "Redirect visitor to a new \"thank you\" page"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2337
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2365
+msgid "Showing title time"
+msgstr "Mostrare il titolo della durata"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2338
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2366
+#, php-format
+msgid "%snew reservation%s"
+msgstr "%snuova prenotazione%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2342
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2370
+msgid "Type in miliseconds count of time for showing new reservation title"
+msgstr "Immettere lintervallo di tempo dopo il quale mostrare il titolo della nuova prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2349
+msgid "URL of \"thank you\" page"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2351
+#, php-format
+msgid "Type URL of %s\"thank you\" page%s"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2383
+#, fuzzy
+msgid "Booking table settings"
+msgstr "Configurazioni prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2389
+#, fuzzy
+msgid "Bookings default order"
+msgstr "Modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2400
+msgid "ASC"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2401
+msgid "DESC"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2404
+#, fuzzy
+msgid "Select your default order of booking resources"
+msgstr "Tariffe di stagione delle camere da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2409
+msgid "Date Format"
+msgstr "Formato data"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2413
+msgid "F j, Y"
+msgstr "F j, Y"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2435
+#, fuzzy, php-format
+msgid "Type your date format for showing in emails and booking table. %sDocumentation on date formatting.%s"
+msgstr "Immetti il tuo formato di data da visualizzare nelle email e nella tabella di prenotazione %sDocumentation on date formatting.%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2443
+msgid "Dates view"
+msgstr "Vista date"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2449
+msgid "Select default type of dates view at the booking tables"
+msgstr "Seleziona la tipologia predefinita per la vista delle date nelle tabelle di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2477
+msgid "Information"
+msgstr "Informazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2483
+msgid "Version"
+msgstr "Versione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2484
+msgid "release date"
+msgstr "data rilascio"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2489
+msgid "Links"
+msgstr "Links"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2494
+msgid "developer plugin page"
+msgstr "pagina dello sviluppatore del plugin"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2495
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2500
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2508
+msgid "visit"
+msgstr "visita"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2498
+msgid "Changelog"
+msgstr "Log modifiche"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2499
+msgid "new features"
+msgstr "nuove caratteristiche"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2503
+msgid "Online Demos of each versions"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2506
+msgid "WordPress Extend"
+msgstr "Estensione Wordpress"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2507
+msgid "wordpress plugin page"
+msgstr "pagina dei plugin di wordpress"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2512
+msgid "Author"
+msgstr "Autore"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2516
+msgid "Premium Support"
+msgstr "Supporto Premium"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2517
+msgid "special plugin customizations"
+msgstr "personalizzazioni avanzate del plugin"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2518
+msgid "email"
+msgstr "email"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2531
+msgid "Recomended WordPress Plugins"
+msgstr "Plugins wordpress consigliati"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2533
+msgid "Booking Manager - show all old bookings"
+msgstr "Gestione prenotazioni - mostra tutte le vecchie prenotazioni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2537
+#, php-format
+msgid "This wordpress plugin is  %sshow all approved and pending bookings from past%s. Show how many each customer is made bookings. Paid versions support %sexport to CSV, print loyout, advanced filter%s. "
+msgstr "Questo plugin di wordpress é %smostra tutte le prenotazioni approvate ed in sospeso trascorse%s. Mostra quante prenotazioni ha effettuato ogni cliente. Supporto della versione a pagamento %sesporta in CSV, stampa anteprima, filtro avanzato%s. "
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2552
+msgid "User permissions Settings"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2560
+msgid "Show settings of user access level to admin menu"
+msgstr "Mostra i parametri dei livelli di accesso utente al menù di amministrazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2567
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2582
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2597
+msgid "access level"
+msgstr "livello di accesso"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2576
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2591
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2606
+msgid "Select user access level for this administration page"
+msgstr "Seleziona il livello di accesso utente per questa pagina di amministrazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2621
+msgid "Uninstal / deactivation settings"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2626
+msgid "Delete booking data"
+msgstr "Cancella i  dati di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2626
+msgid "when plugin deactivated"
+msgstr "quando il plugin è disattivato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2628
+msgid " Check, if you want delete booking data during uninstalling plugin."
+msgstr "Flaggare se si desidera cancellare i dati durante la disinstallazione del plugin."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2655
+msgid "Main difference features"
+msgstr "Caratteristiche differenze principale"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2661
+msgid "Free"
+msgstr "Gratis"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2662
+msgid "Paid"
+msgstr "Pagato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2665
+msgid "Functionality"
+msgstr "Funzionalità"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2666
+msgid "all existing functionality"
+msgstr "tutte le funzionalità esistenti"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2671
+msgid "Multi booking"
+msgstr "Prenotazione multipla"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2672
+msgid "several booking for 1 day"
+msgstr "diverse prenotazioni in un giorno"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2677
+msgid "Time"
+msgstr "Durata"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2678
+#, fuzzy
+msgid "enter/select the booking time"
+msgstr "inserisci la durata della prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2684
+msgid "fields customization"
+msgstr "personalizzazione campi"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2690
+msgid "email customization"
+msgstr "personalizzazione email"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2696
+msgid "selection fixed several days"
+msgstr "selezione prestabilita di diversi giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2701
+msgid "Payment"
+msgstr "Pagamento"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2702
+#, fuzzy
+msgid "PayPal and Sage payment support"
+msgstr "Supporto PayPal"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2707
+msgid "Season"
+msgstr "Stagione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2708
+msgid "avalaibility filters"
+msgstr "filtri disponibilità"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2713
+msgid "Rates cost"
+msgstr "Prezzo tariffe"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2714
+msgid "depends from season"
+msgstr "dipende dalla stagione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2719
+msgid "Advanced cost"
+msgstr "Prezzo avanzato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2720
+#, fuzzy
+msgid "Depends from number of selected days"
+msgstr "Costo dei giorni selezionati"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2725
+#, fuzzy
+msgid "Additional cost"
+msgstr "Costo aggiuntivo per"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2726
+#, fuzzy
+msgid "Discounts / additional cost, depends from selection at form"
+msgstr "Sconti / Costo aggiuntivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2731
+msgid "Several forms"
+msgstr "Diversi moduli"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2732
+msgid "Several booking forms"
+msgstr "Diversi moduli di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2737
+msgid "Capacity of resources"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2738
+#, fuzzy
+msgid "can depends from numbrer of selected visitors"
+msgstr "Configurazione dei costi in base al numero di giorni selezionati per la prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2744
+msgid "search available resources at selected dates range"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2749
+msgid "MultiUser support"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2750
+msgid "each user can have own bookings and booking resources"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2757
+msgid "free"
+msgstr "gratis"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2758
+msgid "start"
+msgstr "inizia"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2761
+msgid "Live demo"
+msgstr "Demo dal vivo"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2767
+msgid "Purchase"
+msgstr "Acquista"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2796
+#, fuzzy, php-format
+msgid "This functionality exist at the %sBooking Calendar%s %sPremium%s, %sPremium Plus%s and %sHotel Edition%s"
+msgstr "Questa funzionalità è presente in %sBooking Calendar%s %sProfessional%s, %sPremium%s e %sHotel Edition%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2798
+#, fuzzy, php-format
+msgid "This functionality exist at the %sBooking Calendar%s %sPremium Plus%s and %sHotel Edition%s"
+msgstr "Questa funzionalità è presente in %sBooking Calendar%s %sPremium%s e %sHotel Edition%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2800
+#, php-format
+msgid "This functionality exist at the %sBooking Calendar%s %sHotel Edition%s"
+msgstr "Questa funzionalità è presente in %sBooking Calendar%s %sHotel Edition%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2802
+#, fuzzy, php-format
+msgid "This functionality exist at the %sBooking Calendar%s %sMultiUser%s version only"
+msgstr "Questa funzionalità è presente in %sBooking Calendar%s %sHotel Edition%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2804
+#, fuzzy, php-format
+msgid "This functionality exist at the %sBooking Calendar%s %sProfessional%s, %sPremium%s, %sPremium Plus%s and %sHotel Edition%s"
+msgstr "Questa funzionalità è presente in %sBooking Calendar%s %sProfessional%s, %sPremium%s e %sHotel Edition%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2806
+#, fuzzy, php-format
+msgid "Check %sfeatures%s of each versions, test %sonline demo%s and %sbuy%s."
+msgstr "Controlla %sfunzionalità%s, prova la %sdemo online%s e %sacquista%s."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2950
+msgid "More Information about this Plugin can be found at the"
+msgstr "Puoi trovare ulteriori informazioni su questo plugin al"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2951
+msgid " - custom wp-plugins and wp-themes development, WordPress solutions"
+msgstr " - personalizza wp-plugins e wp-themes development, soluzioni WordPress"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2998
+msgid "Show"
+msgstr "Visualizza"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3001
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3898
+msgid "Booking form"
+msgstr "Modulo di prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3012
+msgid "Booking resource"
+msgstr "Risorsa da prenotare"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3026
+#, fuzzy
+msgid "Number of calendars"
+msgstr "Numero di giorni"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3031
+msgid "Footer"
+msgstr "Piede di pagina"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3033
+#, php-format
+msgid "Example: %sMake booking here%s"
+msgstr "Esempio: %sEffettua qui la prenotazione%s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3037
+#, php-format
+msgid "%sImportant!!!%s Please note, if you show booking calendar (inserted into post/page) with widget at the same page, then the last will not be visible."
+msgstr "%sImportante!!!%s Nota bene, se mostri il calendario di prenotazione (inserito nel/nella post/pagina) con un widget nella stessa pagina, lultimo non verrà visualizzato."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3045
+msgid "Display Booking."
+msgstr "Mostra Prenotazione."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3047
+msgid "Booking settings"
+msgstr "Configurazioni prenotazione"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3078
+#, php-format
+msgid "%sPowered by wordpress plugins developed by %s"
+msgstr "%sRealizzato da wordpress plugins sviluppato da %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3278
+msgid "This field is required"
+msgstr "Questo campo è obbligatorio"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3279
+msgid "This checkbox must be checked"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3280
+msgid "Incorrect email field"
+msgstr "Il campo email non è valido"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3281
+msgid "Please, select reservation date(s) at Calendar."
+msgstr "Perfavore, seleziona la data della prenotazione/i nel calendario."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3438
+msgid "Available"
+msgstr "Disponibile"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3439
+msgid "Booked"
+msgstr "Prenotato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3443
+#, fuzzy
+msgid "Partially booked"
+msgstr "Parzialmente prenotato"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3501
+msgid "Booking resource type is not defined. Its can be, when at the URL is wrong booking hash."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3614
+msgid "Booking calendar for this booking resource are already at the page"
+msgstr "Il calendario di prenotazione per questa risorsa(alloggio) è già presente nella pagina"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3702
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:142
+msgid "You need to use special shortcode [bookingedit] for booking editing."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3785
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3787
+msgid "Wrong booking hash in URL. Probably hash is expired."
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3791
+msgid "You do not set any parameters for booking editing"
+msgstr ""
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3838
+#, php-format
+msgid "Thank you for your online reservation. %s We will send confirmation of your booking as soon as possible."
+msgstr "La ringraziamo per la sua prenotazione. %s Le invieremo al più presto una conferma della prenotazione."
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3880
+#, php-format
+msgid "You need to approve new reservation %s for: %s Person detail information:%s Currently new booking is waiting for approval. Please visit the moderation panel%sThank you, %s"
+msgstr "Cè una prenotazione in sospeso da approvare %s per: %s Informazioni di dettaglio della persona:%s Al momento una prenotazione è in attesa di approvazione. Perfavore visita il pannello di gestione%sLa ringraziamo, %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3883
+msgid "Your reservation has been approved"
+msgstr "La sua prenotazione è stata approvata"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3885
+#, fuzzy, php-format
+msgid "Your reservation %s for: %s has been approved.%sYou can edit this booking at this page: %s Thank you, %s"
+msgstr "La sua prenotazione %s per: %s è stata confermata.%sLa ringraziamo, %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3886
+#, php-format
+msgid "Your reservation %s for: %s has been approved.%sThank you, %s"
+msgstr "La sua prenotazione %s per: %s è stata confermata.%sLa ringraziamo, %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3889
+msgid "Your reservation has been declined"
+msgstr "La sua prenotazione è stata rifiutata"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:3890
+#, php-format
+msgid "Your reservation %s for: %s has been  canceled. %sThank you, %s"
+msgstr "La sua prenotazione %s per: %s è stata cancellata. %sLa ringraziamo, %s"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:72
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:82
+msgid "yes"
+msgstr "si"
+
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:75
+#: w:\www\home\w\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:78
+msgid "no"
+msgstr "no"
+
+#~ msgid "Type of booking:"
+#~ msgstr "Tipologia di prenotazione"
+
+#, fuzzy
+#~ msgid "Error during deleting user meta at DB"
+#~ msgstr "Errore durante la cancellazione della prenotazione al DB"
+#~ msgid "Error during updating exist booking in BD"
+#~ msgstr "Errore durante laggiornamento della prenotazione esistente in BD"
+#~ msgid "Error during updating exist booking for deleting dates in BD"
+#~ msgstr ""
+#~ "Errore durante laggiornamento della prenotazione esistente per le date da "
+#~ "cancellare in BD"
+#~ msgid "Error during inserting into BD"
+#~ msgstr "Errore durante inserimento in BD"
+#~ msgid "Error during inserting into BD - Dates"
+#~ msgstr "Errore durante inserimento in BD - Dati"
+#~ msgid "Error during updating to DB"
+#~ msgstr "Errore durante aggiornamento al DB"
+#~ msgid "Error during deleting dates at DB"
+#~ msgstr "Errore durante la cancellazione dei dati al DB"
+#~ msgid "Error during deleting reservation at DB"
+#~ msgstr "Errore durante la cancellazione della prenotazione al DB"
+
+#, fuzzy
+#~ msgid "Error during updating exist booking type in BD"
+#~ msgstr "Errore durante laggiornamento della prenotazione esistente in BD"
+
+#, fuzzy
+#~ msgid "Error during booking dates cleaning in BD"
+#~ msgstr "Errore durante inserimento in BD"
+
+#, fuzzy
+#~ msgid "Show booking table"
+#~ msgstr "al calendario di prenotazione"
+
+#, fuzzy
+#~ msgid "Hide booking table"
+#~ msgstr "%sprenotazione ora di partenza%s"
+
+#, fuzzy
+#~ msgid "Error during updating to DB booking resources"
+#~ msgstr ""
+#~ "Errore durante aggiornamento al DB delle sottotipologie di prenotazione"
+
+#, fuzzy
+#~ msgid "Error during deleting booking resources"
+#~ msgstr "Errore durante laggiornamento dal DB dei filtri di prenotazione"
+
+#, fuzzy
+#~ msgid "Error during creating default booking resource for user"
+#~ msgstr "Errore durante laggiornamento dal DB dei filtri di prenotazione"
+
+#, fuzzy
+#~ msgid "Error during deleting booking resources at DB"
+#~ msgstr "Errore durante laggiornamento dal DB dei filtri di prenotazione"
+
+#, fuzzy
+#~ msgid "Error during deleting season filters at DB"
+#~ msgstr "Errore durante la cancellazione dei dati al DB"
+
+#, fuzzy
+#~ msgid "Error during updating to DB season filter"
+#~ msgstr "Errore durante laggiornamento al DB dei filtri di prenotazione"
+
+#, fuzzy
+#~ msgid "Error during searching this booking resources"
+#~ msgstr "Errore durante laggiornamento dal DB dei filtri di prenotazione"
+#~ msgid "Error during updating to DB booking availability of booking resource"
+#~ msgstr ""
+#~ "Errore durante laggiornamento al DB della disponibilità della tipologia "
+#~ "di camera"
+#~ msgid "Error during updating to DB booking costs"
+#~ msgstr "Errore durante laggiornamento al DB dei prezzi di prenotazione"
+#~ msgid "Error during deleting from DB booking filters"
+#~ msgstr "Errore durante laggiornamento dal DB dei filtri di prenotazione"
+#~ msgid "Error during updating to DB booking filters"
+#~ msgstr "Errore durante laggiornamento al DB dei filtri di prenotazione"
+#~ msgid "Error during updating cost in BD"
+#~ msgstr "Errore durante laggiornamento del prezzo in BD"
+
+#, fuzzy
+#~ msgid "Error during cost saving"
+#~ msgstr "Errore durante la modifica da BD"
+#~ msgid "Error during updating wp_nonce status in BD"
+#~ msgstr "Errore durante laggiornamento dello stato di wp_nonce in BD"
+
+#, fuzzy
+#~ msgid "Error during updating wp_payment_request_count status in BD"
+#~ msgstr "Errore durante laggiornamento dello stato di wp_nonce in BD"
+
+#, fuzzy
+#~ msgid "Error during updating hash in BD"
+#~ msgstr "Errore durante laggiornamento del prezzo in BD"
+#~ msgid "Error during updating remarks in BD"
+#~ msgstr "Errore durante laggiornamento dei commenti in BD"
+#~ msgid "Error during editing BD"
+#~ msgstr "Errore durante la modifica da BD"
+#~ msgid "Error during deleting from BD"
+#~ msgstr "Errore durante la cancellazione da BD"
+#~ msgid "Booking services"
+#~ msgstr "Servizi di prenotazione"
+#~ msgid "Premium Live Demo"
+#~ msgstr "Demo della versione Premium"
+#~ msgid "Hotel Edition Live Demo"
+#~ msgstr "Demo della Hotel Edition"
+#~ msgid "at calendar"
+#~ msgstr "nel calendario"
+#~ msgid "Online Demo"
+#~ msgstr "Demo online"
+#~ msgid "Pro and Premium"
+#~ msgstr "Pro e Premium"
+#~ msgid "Admin panel"
+#~ msgstr "Pannello di amministrazione"
+#~ msgid "Hotel Edition"
+#~ msgstr "Edizione Hotel"
+
+#, fuzzy
+#~ msgid "Parent "
+#~ msgstr "Pagamento"
+#~ msgid "Filter"
+#~ msgstr "Filtro"
+#~ msgid "Error during updating to DB booking subtypes"
+#~ msgstr ""
+#~ "Errore durante aggiornamento al DB delle sottotipologie di prenotazione"
+#~ msgid "Availability at tooltip"
+#~ msgstr "Disponibilità nel tooltip"
+#~ msgid ""
+#~ " Tick this checkbox if you want to show availability of booking resource "
+#~ "at the tooltip, when mouse over it."
+#~ msgstr ""
+#~ "Seleziona questa casella se si desidera visualizzare la disponibilità "
+#~ "della camera con il tooltip, al passaggio del mouse sul calendario."
+#~ msgid "Booking access"
+#~ msgstr "Accesso alla prenotazione"
+#~ msgid "Surname"
+#~ msgstr "Cognome"
+#~ msgid "g:i a"
+#~ msgstr "g:i a"
+
+#, fuzzy
+#~ msgid "Professional / Premium / Premium + / Hotel Ed. versions"
+#~ msgstr "Versioni Professional / Premium / Hotel Edtion"
+#~ msgid "For all days!"
+#~ msgstr "Per tutti i giorni!"
+#~ msgid "Reserved"
+#~ msgstr "Riservato"
+#~ msgid "Count of calendars"
+#~ msgstr "Numero di calendari"
+#~ msgid ""
+#~ "This functionality exist at other version of Booking Calendar: %sBooking "
+#~ "Calendar Professional%s, %sBooking Calendar Premium%s or %sBooking "
+#~ "Calendar Hotel Edition%s."
+#~ msgstr ""
+#~ "Questa funzionalità la trovi in unaltra versione di Booking Calendar: %"
+#~ "sBooking Calendar Professional%s, %sBooking Calendar Premium%s or %"
+#~ "sBooking Calendar Hotel Edition%s."
+#~ msgid "Price"
+#~ msgstr "Prezzo"
+#~ msgid "at %sadmin%s booking page"
+#~ msgstr "alla pagina di prenotazione di %sadmin%s"
+#~ msgid "Type your number of calendars %sat admin booking page%s"
+#~ msgstr "Immetti il tuo numero di calendari %sat admin booking page%s"
+#~ msgid "at %sclient%s side view"
+#~ msgstr "alla visualizzazione lato %sPannello di amministrazione%s"
+#~ msgid ""
+#~ "Type your %sdefault count of calendars%s for inserting into post/page"
+#~ msgstr ""
+#~ "Immetti il tuo %snumero predefinito di calendari%s da inserire nel post/"
+#~ "pagina"
+#~ msgid "Diferent days color"
+#~ msgstr "Colori diversi dei giorni"
+#~ msgid "Aproved / pending days"
+#~ msgstr "Approvato / giorni sospesi"
+#~ msgid ""
+#~ " Check, if you want to show in diferent colors aproved days and pending "
+#~ "for aproval days at client side."
+#~ msgstr ""
+#~ "Flaggare se si desidera mostrare con colori diversi i giorni approvati e "
+#~ "in sospeso per lapprovazione dei giorni sul sito."
+
