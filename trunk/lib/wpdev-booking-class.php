@@ -1988,7 +1988,7 @@ if (!class_exists('wpdev_booking')) {
                         >
                                 <option value="1" style="font-weight: bold;"
                                 <?php  if ( (! isset($_GET['booking_type'])) || ($_GET['booking_type'] ==  1 ) )echo ' selected="SELECTED" ';  ?> >
-                                   <?php echo _('Standard resource', 'wpdev-booking'); ?></option>
+                                   <?php echo __('Standard resource', 'wpdev-booking'); ?></option>
                                 <option value="0" >-------------------------------------------</option>
 
                                 <option value="0"
