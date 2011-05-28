@@ -985,7 +985,8 @@ if (!class_exists('wpdev_booking')) {
                 // On page load...
                 jQuery(document).ready(function(){
                     // Add the buttons to the HTML view
-                    jQuery("#ed_toolbar").append('<?php echo esc_js( $buttonshtml ); ?>');
+                    jQuery("#ed_toolbar").append('<?php echo wp_specialchars_decode(esc_js( $buttonshtml ), ENT_COMPAT); ?>');
+
 
                     // If the Enter key is pressed inside an input in the dialog, do the "Okay" button event
                     jQuery("#wpdev_bk-dialog :input").keyup(function(event){
