@@ -78,11 +78,11 @@ If you have any further questions, please fill free to <a href="mailto:info@onli
  * Clean interface. No any branding anymore.
  * Setting number of unavailable days in calendar starting from today.
  * Hide the avilability calendar, after resrvation is done (after click on send button), so will be show thank you message only.
+ * Updated Dutch translation
  * Fix issue of loading correct language during first activation of plugin, if language of site not English. Previosly some sentences was in English saved to DB, now its fixed.
  * Fix conflict issue with plugin Tabber-Widget
- * Code refactoring.
- * Much more <a href="http://onlinebookingcalendar.com/changelog/" title="changelog">here</a>
-See change logs at this <a href="http://onlinebookingcalendar.com/changelog/" title="changelog">page</a>.
+ * Code refactoring 
+ * See all changes at this version update <a href="http://onlinebookingcalendar.com/changelog/" title="changelog">here</a>.
 
 == Upgrade Notice ==
 
@@ -98,7 +98,7 @@ Right now plugin is support languages:
  <li>Spanish</li>
  <li>French</li>
  <li>Danish</li>
- <li>Dutch (partly)</li>
+ <li>Dutch</li>
  <li>Belarusian</li>
  <li>Russian</li>
  <li>Polish</li>
