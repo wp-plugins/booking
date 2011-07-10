@@ -33,7 +33,9 @@ You can view a live demo of Booking Calendar in action <a href="http://onlineboo
 * Booking calendar widget 			
 * Validations of required form fields and email field 			
 * Multi language support ( Check  all available languages at this <a href="http://wordpress.org/extend/plugins/booking/other_notes/">page</a> )
-* Much more ... Check all other features <a href="http://onlinebookingcalendar.com/features/" title="Booking Calendar Live Demo">here</a>.
+* Much more ... 
+
+Check all other features <a href="http://onlinebookingcalendar.com/features/" title="Booking Calendar Live Demo">here</a>.
 
 
 == Installation ==
