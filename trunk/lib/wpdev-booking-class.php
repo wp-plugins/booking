@@ -4665,7 +4665,7 @@ if ($is_can_be_here) { //Reduction version 3.0 ?>
             add_bk_option( 'booking_widget_last_field','');
 
             add_bk_option( 'booking_wpdev_copyright','Off' );
-            add_bk_option( 'booking_is_show_powered_by_notice','Off' );
+            add_bk_option( 'booking_is_show_powered_by_notice','On' );
             add_bk_option( 'booking_is_use_captcha' , 'Off' );
             add_bk_option( 'booking_is_show_legend' , 'Off' );
 
