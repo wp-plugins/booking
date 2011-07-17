@@ -57,20 +57,19 @@ If you have any further questions, please fill free to <a href="mailto:info@onli
 1. Booking administration panel. Here you can approve or decline new bookings
 2. Agenda of resrvations, which was done during today.
 3. Adding new reservation, from admin panel.
-4. Showing 2 monthes in row at inline calendar
-5. Comfortable inserting booking form into post or page, using new Booking button at editor toolbar (TinyMCE toolbar).
-6. Booking Widget configuration.
-7. General booking settings page
-8. Example of email, which is sending to administrator after new booking
-9. Adding booking form into page(s) or post(s)
-10. Calendar skin - Traditional
-11. Calendar skin - Traditional Light
-12. Calendar skin - Standart
-13. Calendar skin - Black
-14. Calendar skin - Premium Marine (include to paid versions)
-15. Calendar skin - Premium Black (include to paid versions)
-16. Calendar skin - Premium Light (include to paid versions)
-17. Calendar skin - Premium Steel (include to paid versions)
+4. Comfortable inserting booking form into post or page, using new Booking button at editor toolbar (TinyMCE toolbar).
+5. Booking Widget configuration.
+6. General booking settings page
+7. Example of email, which is sending to administrator after new booking
+8. Adding booking form into page(s) or post(s)
+9. Calendar skin - Traditional
+10. Calendar skin - Traditional Light
+11. Calendar skin - Standart
+12. Calendar skin - Black
+13. Calendar skin - Premium Marine (include to paid versions)
+14. Calendar skin - Premium Black (include to paid versions)
+15. Calendar skin - Premium Light (include to paid versions)
+16. Calendar skin - Premium Steel (include to paid versions)
 
 == Changelog ==
 
