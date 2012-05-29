@@ -979,6 +979,11 @@
     // S Q L    B o o k i n g    L i s t i n g
     function wpdev_sql_get_booking_lising( $args ){
 	global $wpdb;
+$num_per_page_check = get_bk_option( 'bookings_num_per_page');
+if (empty( $num_per_page_check)) {
+    $num_per_page_check = '10';
+    update_bk_option( 'bookings_num_per_page', $num_per_page_check );
+}
 
         ////////////////////////////////////////////////////////////////////////
         // CONSTANTS
@@ -1063,7 +1068,6 @@
         $sql_where = $sql_boking_listing[3];
         $sql_order = $sql_boking_listing[4];
         $sql_limit = $sql_boking_listing[5];
-
 
 	$defaults = array(
 		'wh_booking_type' => '',    'wh_approved' => '',
