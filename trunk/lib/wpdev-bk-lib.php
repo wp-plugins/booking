@@ -953,6 +953,11 @@
 
     // Get Default params or from Request
     function wpdev_get_args_from_request_in_bk_listing(){
+$num_per_page_check = get_bk_option( 'bookings_num_per_page');
+if (empty( $num_per_page_check)) {
+    $num_per_page_check = '10';
+    update_bk_option( 'bookings_num_per_page', $num_per_page_check );
+}
 
         $args = array(
 		'wh_booking_type' =>    (isset($_REQUEST['wh_booking_type']))?$_REQUEST['wh_booking_type']:'',
@@ -969,7 +974,7 @@
                 'wh_cost2' =>           (isset($_REQUEST['wh_cost2']))?$_REQUEST['wh_cost2']:'',
 		'or_sort' =>            (isset($_REQUEST['or_sort']))?$_REQUEST['or_sort']:get_bk_option( 'booking_sort_order'),
 		'page_num' =>           (isset($_REQUEST['page_num']))?$_REQUEST['page_num']:'1',
-                'page_items_count' =>   (isset($_REQUEST['page_items_count']))?$_REQUEST['page_items_count']:get_bk_option( 'bookings_num_per_page'),
+                'page_items_count' =>   (isset($_REQUEST['page_items_count']))?$_REQUEST['page_items_count']:$num_per_page_check,
 	);
 
         return $args;
@@ -997,7 +1002,7 @@ if (empty( $num_per_page_check)) {
 		'wh_cost' => '',            'wh_cost2' => '',
 		'or_sort' => get_bk_option( 'booking_sort_order'),
 		'page_num' => '1',
-                'page_items_count' => get_bk_option( 'bookings_num_per_page')
+                'page_items_count' => $num_per_page_check
 	);
 
 	$r = wp_parse_args( $args, $defaults );
