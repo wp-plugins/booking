@@ -743,7 +743,7 @@
                         wpdevbk_selectbox_filter($wpdevbk_id, $wpdevbk_selectors, $wpdevbk_control_label, $wpdevbk_help_block, $wpdevbk_default_value);
                         ?>
 
-
+                        <?php if (!class_exists('wpdev_bk_personal')) { ?>
                         <span style="display:none;" class="advanced_booking_filter">
 
                             <div class="clear"></div>
@@ -753,7 +753,7 @@
                                 ><?php _e('Save as Default', 'wpdev-booking'); ?> <i class="icon-upload"></i></a>
 
                         </span>
-
+                        <?php } ?>
 
                       <div class="clear"></div>
                     </form>
@@ -1068,7 +1068,10 @@ if (empty( $num_per_page_check)) {
         $sql_where = $sql_boking_listing[3];
         $sql_order = $sql_boking_listing[4];
         $sql_limit = $sql_boking_listing[5];
-
+$num_per_page_check = get_bk_option( 'bookings_num_per_page') ;
+if (empty( $num_per_page_check)) {
+    $num_per_page_check = '10';
+}
 	$defaults = array(
 		'wh_booking_type' => '',    'wh_approved' => '',
 		'wh_booking_id' => '',      'wh_is_new' => '',
@@ -1078,7 +1081,7 @@ if (empty( $num_per_page_check)) {
 		'wh_cost' => '',            'wh_cost2' => '',
 		'or_sort' => get_bk_option( 'booking_sort_order'),
 		'page_num' => '1',
-                'page_items_count' => get_bk_option( 'bookings_num_per_page')
+                'page_items_count' => $num_per_page_check
 	);
 
 	$r = wp_parse_args( $args, $defaults );
