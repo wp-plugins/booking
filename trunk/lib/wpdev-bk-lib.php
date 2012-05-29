@@ -743,7 +743,7 @@
                         wpdevbk_selectbox_filter($wpdevbk_id, $wpdevbk_selectors, $wpdevbk_control_label, $wpdevbk_help_block, $wpdevbk_default_value);
                         ?>
 
-                        <?php if (!class_exists('wpdev_bk_personal')) { ?>
+                        <?php if (class_exists('wpdev_bk_personal')) { ?>
                         <span style="display:none;" class="advanced_booking_filter">
 
                             <div class="clear"></div>
