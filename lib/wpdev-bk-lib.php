@@ -1511,6 +1511,9 @@ if (empty( $num_per_page_check)) {
 
     //  P a g i n a t i o n     of    Booking Listing
     function wpdevbk_show_pagination($summ_number_of_items, $active_page_num, $num_items_per_page , $only_these_parameters = false ) {
+if (empty( $num_items_per_page)) {
+    $num_items_per_page = '10';
+}
 
         $pages_number = ceil ( $summ_number_of_items / $num_items_per_page );
         if ( $pages_number < 2 ) return;
