@@ -969,15 +969,22 @@ html[xmlns] .clearfix-height.hidden_items {
     font-size: 9px;
     font-style: italic;
     line-height: 12px;
-    margin: 10px 2px 2px;
+    margin: 0px 2px 2px;
     padding: 0;
     text-align: center;
     text-shadow: 0 -1px 0 #EEEEEE;
     white-space: nowrap;
+	float:left;
 }
 .booking-listing-collumn .field-time {
     font-size: 9px;
     white-space: nowrap;
+	float:right;
+	margin-top:-3px;
+	margin-right:-63px;
+}
+.booking-listing-row .booking-labels, .booking-listing-row .booking-dates {
+text-align: center !important;
 }
 .booking-listing-collumn .field-booking-date, .booking-listing-collumn .field-booking-date:hover {
     background: none repeat scroll 0 0 #FFBB45;
