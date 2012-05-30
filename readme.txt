@@ -109,10 +109,10 @@ Right now plugin is support languages:
  <li>Polish</li>
  <li>Croatian</li>
 </ul>
-<strong> Many languages are partially translated, so please recheck your language before use of plugin. We are open for your help in new translations or correcting exist ones.</strong><br /> You can translate to new language or fix exist one, using this <a href="http://wpdevelop.com/blog/tutorial-translation-wordpress-plugin/" title="Tutorial of translation wordpress plugin">instruction</a> 
+<strong> Many languages are partially translated, so please recheck your language before use of plugin. We are open for your help in new translations or correcting exist ones.</strong><br /> You can translate to new language or fix exist one, using this <a href="http://wpbookingcalendar.com/faq/make-translation-of-wp-plugin/" title="Tutorial of translation wordpress plugin">instruction</a> 
 == Tech support ==
 
-If you have some questions, which you do not found at <a href="http://wpbookingcalendar.com/faq/" title="FAQ">FAQ</a> you can post them at <a href="http://wpbookingcalendar.com/issues/" title="Help board">technical help board</a>
+If you have some questions, which you do not found at <a href="http://wpbookingcalendar.com/faq/" title="FAQ">FAQ</a> you can post them at <a href="http://wpbookingcalendar.com/support/" title="Help board">technical help board</a>
 
 == New ideas ==
 
