@@ -2,7 +2,7 @@
 Contributors: wpdevelop
 Donate link: http://wpbookingcalendar.com/buy/
 Tags:  Booking calendar, Booking, Book, to book, calendar, Reservation, Calendar, hotel, rooms, rent, appointment, scheduling, availability, availability calendar, event, events, event calendar, resource scheduling, Rental, Meeting scheduling, reservation plugin, accommodations, bookable, bookable events
-Requires at least: 3.5
+Requires at least: 3.4
 Tested up to: 3.5
 Stable tag: 4.0.2
 License: GPLv2 or later
