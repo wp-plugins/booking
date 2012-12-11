@@ -65,7 +65,7 @@ If you have any further questions, please fill free to <a href="mailto:info@wpbo
 9. General Booking Settings page. 
 
 == Changelog ==
-= 4.0.1 =
+= 4.0.2 =
  * WordPress 3.5 compatibility.
 = 4.0.1 =
  * Fix issue of not posbility to make the reservation, when using only the booking form, without calendar.
