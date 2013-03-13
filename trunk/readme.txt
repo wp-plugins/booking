@@ -67,6 +67,21 @@ If you have any further questions, please fill free to <a href="mailto:info@wpbo
 == Changelog ==
 
 = 4.1 =
+* Features and issue fixings in All versions:
+ * New Calendar Overview page (1 month/ 3 month / Year view mode) for the booking listing in the admin panel.
+ * Showing the full booking info in the popover tooltip, when mouse over specific booking in the Calendar Overview page in admin panel.
+ * Setting the default start page at the General Booking Settings page : Booking Listing or Booking Calendar Overview page.
+ * Possibility to Sort the bookings by booking Dates in the Booking Listing page
+ * Possibility  to  activate / deactivate and edit titles of specific items in the Legend under the calendar.
+ * Showing the current date instead of "#" symbol at the cells of legend.
+ * New technical section at the General Booking Settings page (for reindexing (possibility to sort by date field) the exist bookings)
+ * Slovak translation by (<a href="http://webhostinggeeks.com/blog/">Branco, Slovak</a>)
+ * Add possibility to send the "Approve" emails, if the "Auto-approve" feature is activated at the General Booking Settings page.
+ * Use the "visitor email" from the booking form as a default "reply" email in the email template about the new booking, which  is sending to the booking administrator.
+ * Set  the date and time of the booking(s) relative to the "Timezone", which  is set at the WordPress General Settings page.
+ * Support of migration to the jQuery 1.9 or 2.0 
+ * Fix issue of not sending emails at the "Add booking" admin page, if the "Not sending emails" checkbox is checked.
+ * Many other small issue fixing and improvements...
 * Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
  * Check-in and check-out days visible like in the other booking systems (mark half of day,  instead of the clock icon).  This feature is active if the "Use check in/out time" option is checked at the General Booking Settings page (Business Small/Medium/Large, MultiUser)
  * New type of season filter - just selecting the specific dates during a year(s). /Removing the time filter/ (Business Medium/Large, MultiUser)
@@ -107,21 +122,6 @@ If you have any further questions, please fill free to <a href="mailto:info@wpbo
  * Fix issue of selecting the dates in correct  format in calendar after redirection from the search results  (Business Large, MultiUser).
  * Fix issue of not applying to the all "regular users" the "Deposit activation" feature from the General Booking Settings page in MultiUser version. (MultiUser)
  * Fix issue when Regular Users can see the bookings from other user(s) in MultiUser version, after reconfiguration parameters in filter tab.  (MultiUser)
-* Features and issue fixings in All versions:
- * New Calendar Overview page (1 month/ 3 month / Year view mode) for the booking listing in the admin panel.
- * Showing the full booking info in the popover tooltip, when mouse over specific booking in the Calendar Overview page in admin panel.
- * Setting the default start page at the General Booking Settings page : Booking Listing or Booking Calendar Overview page.
- * Possibility to Sort the bookings by booking Dates in the Booking Listing page
- * Possibility  to  activate / deactivate and edit titles of specific items in the Legend under the calendar.
- * Showing the current date instead of "#" symbol at the cells of legend.
- * New technical section at the General Booking Settings page (for reindexing (possibility to sort by date field) the exist bookings)
- * Slovak translation by Branco, Slovak (<a href="http://webhostinggeeks.com/blog/">WebHostingGeeks.com</a>
- * Add possibility to send the "Approve" emails, if the "Auto-approve" feature is activated at the General Booking Settings page.
- * Use the "visitor email" from the booking form as a default "reply" email in the email template about the new booking, which  is sending to the booking administrator.
- * Set  the date and time of the booking(s) relative to the "Timezone", which  is set at the WordPress General Settings page.
- * Support of migration to the jQuery 1.9 or 2.0 
- * Fix issue of not sending emails at the "Add booking" admin page, if the "Not sending emails" checkbox is checked.
- * Many other small issue fixing and improvements...
 <br /><br />See full change logs at this <a href="http://wpbookingcalendar.com/changelog/" title="changelog">page</a>.
 
 == Upgrade Notice ==
