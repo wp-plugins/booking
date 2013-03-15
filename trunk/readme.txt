@@ -117,7 +117,7 @@ If you have any further questions, please fill free to <a href="mailto:info@wpbo
  * Possibility  to  activate / deactivate and edit titles of specific items in the Legend under the calendar.
  * Showing the current date instead of "#" symbol at the cells of legend.
  * New technical section at the General Booking Settings page (for reindexing (possibility to sort by date field) the exist bookings)
- * Slovak translation by Branco, Slovak (<a href="http://webhostinggeeks.com/blog/">WebHostingGeeks.com</a>
+ * Slovak translation by (<a href="http://webhostinggeeks.com/blog/">Branco, Slovak</a>)
  * Add possibility to send the "Approve" emails, if the "Auto-approve" feature is activated at the General Booking Settings page.
  * Use the "visitor email" from the booking form as a default "reply" email in the email template about the new booking, which  is sending to the booking administrator.
  * Set  the date and time of the booking(s) relative to the "Timezone", which  is set at the WordPress General Settings page.
