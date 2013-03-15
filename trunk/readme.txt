@@ -65,11 +65,9 @@ If you have any further questions, please fill free to <a href="mailto:info@wpbo
 9. General Booking Settings page. 
 10. Booking Listing (Filters tab) admin panel. Apply filter, for looking of your required bookings.
 == Changelog ==
-
 = 4.1.1 =
 * Fix issue of showing the warning message "mktime() expects parameter 1 to be long, string given in" if the time is not selected.
 * Fix issue of showing the "You do not have sufficient permissions to access this page." error.
-
 = 4.1 =
 * Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
  * Check-in and check-out days visible like in the other booking systems (mark half of day,  instead of the clock icon).  This feature is active if the "Use check in/out time" option is checked at the General Booking Settings page (Business Small/Medium/Large, MultiUser)
