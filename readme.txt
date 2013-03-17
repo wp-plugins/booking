@@ -67,7 +67,7 @@ If you have any further questions, please fill free to <a href="mailto:info@wpbo
 == Changelog ==
 = 4.1.1 =
 * Fix issue of showing the warning message "mktime() expects parameter 1 to be long, string given in" if the time is not selected.
-* Fix issue of showing the "You do not have sufficient permissions to access this page." error.
+* Fix issue of showing the "You do not have sufficient permissions to access this page" error.
 = 4.1 =
 * Features and issue fixings in All versions:
  * New Calendar Overview page (1 month/ 3 month / Year view mode) for the booking listing in the admin panel.
