@@ -38,6 +38,9 @@ class wpdev_booking {
         add_action( 'init', array(&$this,'add_custom_buttons') );
         add_action( 'admin_head', array(&$this,'insert_wpdev_button'));
 
+        // Remove the scripts, which generated conflicts
+        add_action('admin_init', array(&$this, 'wpdevbk_remove_conflict_scripts'), 999);
+
         // Set loading translation
         add_action('init', 'load_bk_Translation',1000);
 
@@ -370,7 +373,7 @@ class wpdev_booking {
                 <table class="bk_table">
                     <tr class="first">
                         <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_modification_date=1&wh_booking_date=3'; ?>"><span><?php echo $counter_m_today; ?></span></a> </td>
-                        <td class="new-bookings"><a href="<?php echo $bk_admin_url,'&wh_modification_date=1&wh_booking_date=3'; ?>" class=""><?php _e('Bookings, what done today','wpdev-booking');?></a> </td>
+                        <td class="new-bookings"><a href="<?php echo $bk_admin_url,'&wh_modification_date=1&wh_booking_date=3'; ?>" class=""><?php _e('New booking(s) made today','wpdev-booking');?></a> </td>
                     </tr>
                     <tr>
                         <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_booking_date=1'; ?>"><span><?php echo $counter_bk_today; ?></span></a> </td>
@@ -2928,6 +2931,13 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
     //    J S    &   C S S     F I L E S     &     V a r i a b l e s
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // Deregister scripts, which  is generate conflicts - only at the Booking Admin  menu pages
+    function wpdevbk_remove_conflict_scripts(){
+        if (strpos($_SERVER['REQUEST_URI'], 'wpdev-booking.phpwpdev-booking') !== false) {
+            wp_dequeue_script( 'cgmp-jquery-tools-tooltip' );                               // Remove this script jquery.tools.tooltip.min.js, which is load by the "Comprehensive Google Map Plugin"
+        }
+    }
+
     // add hook for printing scripts only at this plugin page
     function on_add_admin_js_files() {
         // Write inline scripts and CSS at HEAD
@@ -3079,7 +3089,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
     function bc_enqueue_scripts() {
         wp_enqueue_script('jquery');                                    
         // enqueue the jQuery by Default
-        if (class_exists('wpdev_bk_biz_s')) {                           
+        //if (class_exists('wpdev_bk_biz_s')) {
             // Load the jQuery 1.7.1 if the them load the older jQuery and version of booking Calendar is BS or higher
             global $wp_scripts;
             if (  is_a( $wp_scripts, 'WP_Scripts' ) ) {
@@ -3097,7 +3107,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                     }
                 }
             }
-        }
+        //}
     }
 
     function print_js_css($is_admin =1 ) {
@@ -3111,7 +3121,15 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         ?>
         <!-- Booking Calendar Scripts -->
         <script  type="text/javascript">
-            var wpdev_bk_plugin_url = '<?php echo get_home_url(null, '/wp-content/plugins/'.WPDEV_BK_PLUGIN_DIRNAME ); ?>';
+            var wpdev_bk_plugin_url     = '<?php
+            if (WP_BK_SSL) {   // Activate SSL
+                $bk_url_for_js = site_url( '/wp-content/plugins/'.WPDEV_BK_PLUGIN_DIRNAME, 'https' );
+                $my_parsed_url = parse_url($bk_url_for_js);
+                echo $my_parsed_url['scheme'] . '://'. $_SERVER['SERVER_NAME'] . $my_parsed_url['path'] ;
+            } else {
+                echo site_url( '/wp-content/plugins/'.WPDEV_BK_PLUGIN_DIRNAME );
+            }
+            ?>';
             var wpdev_bk_today = new Array( parseInt(<?php echo  intval(date_i18n('Y')) .'),  parseInt('. intval(date_i18n('m')).'),  parseInt('. intval(date_i18n('d')).'),  parseInt('. intval(date_i18n('H')).'),  parseInt('. intval(date_i18n('i')) ; ?>)  );
             var visible_booking_id_on_page = [];
             var booking_max_monthes_in_calendar = '<?php echo get_bk_option( 'booking_max_monthes_in_calendar'); ?>';
