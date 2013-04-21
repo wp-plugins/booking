@@ -155,6 +155,7 @@ Right now plugin is support languages:
  <li>Polish</li>
  <li>Croatian</li>
  <li>Slovak</li>
+ <li>Hebrew</li>
 </ul>
 <strong> Many languages are partially translated, so please recheck your language before use of plugin. We are open for your help in new translations or correcting exist ones.</strong><br /> You can translate to new language or fix exist one, using this <a href="http://wpbookingcalendar.com/faq/make-translation-of-wp-plugin/" title="Tutorial of translation wordpress plugin">instruction</a> 
 == Tech support ==
