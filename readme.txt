@@ -67,7 +67,7 @@ If you have any further questions, please fill free to <a href="mailto:info@wpbo
 == Changelog ==
 = 4.1.4 =
 * Fix several warning notices in the plugin, if the WP_DEBUG constant is set to  true at  the config.php file.
-* Showing one calendar and the "Warning" message if at the same visible page is showing booking forms or calendars of the same booking resource more than one time.
+* Showing one calendar and the warning message if at the same visible page is showing booking forms or calendars of the same booking resource more than one time.
 * Block loading of the unused JavaScript at the Booking Listing page.
 = 4.1.3 =
 * Translation of Booking Calendar Plugin, into Hebrew, by Eli Segev.
