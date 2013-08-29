@@ -1,8 +1,57 @@
-<?php if (  (! isset( $_GET['merchant_return_link'] ) ) && (! isset( $_GET['payed_booking'] ) ) && (!function_exists ('get_option')  )  ) { die('You do not have permission to direct access to this file !!!'); }
+<?php if ( (! isset( $_GET['merchant_return_link'] ) ) && (! isset( $_GET['payed_booking'] ) ) && ( (! isset($_GET['pay_sys']) ) || ($_GET['pay_sys'] != 'authorizenet') ) && (!function_exists ('get_option'))   ) { die('You do not have permission to direct access to this file !!!'); }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //  S u p p o r t    f u n c t i o n s       ///////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    // Get array of images - icons inside of this directory
+    function wpdev_bk_dir_list ($directories) {
+
+        // create an array to hold directory list
+        $results = array();
+
+        if (is_string($directories)) $directories = array($directories);
+        foreach ($directories as $dir) {
+            $directory = WPDEV_BK_PLUGIN_DIR . $dir ;
+            // create a handler for the directory
+            $handler = @opendir($directory);
+            if ($handler !== false) {
+                // keep going until all files in directory have been read
+                while ($file = readdir($handler)) {
+
+                    // if $file isn't this directory or its parent,
+                    // add it to the results array
+                    if ($file != '.' && $file != '..' && ( strpos($file, '.css' ) !== false ) )
+                        $results[] = array($file, WPDEV_BK_PLUGIN_URL . $dir . $file,  ucfirst(strtolower( str_replace('.css', '', $file))) );
+                }
+
+                // tidy up: close the handler
+                closedir($handler);
+            }
+        }
+        // done!
+        return $results;
+    }
+
+    function wpdev_bk_check_qtranslate($text, $locale=''){
+        if ($locale == '') {
+            $locale = getBookingLocale();
+        }
+        if (strlen($locale)>2) {
+            $locale = substr($locale, 0 ,2);
+        }
+
+        $is_tranlsation_exist = strpos($text, '<!--:'.$locale.'-->');
+
+        if ($is_tranlsation_exist !== false) {
+            $tranlsation_end = strpos($text, '<!--:-->', $is_tranlsation_exist);
+
+            $text = substr($text, $is_tranlsation_exist , ($tranlsation_end - $is_tranlsation_exist ) );
+        }
+
+        return $text;
+    }
 
     function wpdev_bk_arraytolower( $array ){
         return unserialize(strtolower(serialize($array)));
@@ -10,7 +59,9 @@
 
 
     function wpdev_bk_cost_number_format( $value ){
-        return number_format ( $value , 2 , '.' , ' ' );
+        $value_formated      =  apply_bk_filter('get_bk_currency_format', $value );
+        return  $value_formated;
+        //return number_format ( $value , 2 , '.' , ' ' );
     }
 
 
@@ -49,13 +100,37 @@
 
     // Get form content for table
     function get_booking_form_show() {
-        return '<div style="text-align:left">
-        <strong>'.__('First Name', 'wpdev-booking').'</strong>:<span class="fieldvalue">[name]</span><br/>
-        <strong>'.__('Last Name', 'wpdev-booking').'</strong>:<span class="fieldvalue">[secondname]</span><br/>
-        <strong>'.__('Email', 'wpdev-booking').'</strong>:<span class="fieldvalue">[email]</span><br/>
-        <strong>'.__('Phone', 'wpdev-booking').'</strong>:<span class="fieldvalue">[phone]</span><br/>
-        <strong>'.__('Details', 'wpdev-booking').'</strong>:<br /><span class="fieldvalue"> [details]</span>
-        </div>';
+        
+        $booking_form_field_active1     = get_bk_option( 'booking_form_field_active1');
+        $booking_form_field_label1      = get_bk_option( 'booking_form_field_label1');
+        
+        $booking_form_field_active2     = get_bk_option( 'booking_form_field_active2');
+        $booking_form_field_label2      = get_bk_option( 'booking_form_field_label2');
+        
+        $booking_form_field_active3     = get_bk_option( 'booking_form_field_active3');
+        $booking_form_field_label3      = get_bk_option( 'booking_form_field_label3');
+        
+        $booking_form_field_active4     = get_bk_option( 'booking_form_field_active4');
+        $booking_form_field_label4      = get_bk_option( 'booking_form_field_label4');
+        
+        $booking_form_field_active5     = get_bk_option( 'booking_form_field_active5');
+        $booking_form_field_label5      = get_bk_option( 'booking_form_field_label5');
+        
+        
+        $booking_form_show = '<div style="text-align:left;word-wrap: break-word;">';
+        if ($booking_form_field_active1 != 'Off')
+        $booking_form_show.='<strong>'.$booking_form_field_label1.'</strong>: <span class="fieldvalue">[name]</span><br/>';
+        if ($booking_form_field_active2 != 'Off')
+        $booking_form_show.='<strong>'.$booking_form_field_label2.'</strong>: <span class="fieldvalue">[secondname]</span><br/>';
+        if ($booking_form_field_active3 != 'Off')
+        $booking_form_show.='<strong>'.$booking_form_field_label3.'</strong>: <span class="fieldvalue">[email]</span><br/>';
+        if ($booking_form_field_active4 != 'Off')
+        $booking_form_show.='<strong>'.$booking_form_field_label4.'</strong>: <span class="fieldvalue">[phone]</span><br/>';
+        if ($booking_form_field_active5 != 'Off')
+        $booking_form_show.='<strong>'.$booking_form_field_label5.'</strong>: <br /><span class="fieldvalue">[details]</span>';
+        $booking_form_show.='</div>';
+            
+        return $booking_form_show;
     }
 
 
@@ -84,8 +159,12 @@
                           $user = wp_get_current_user();
 
                           if ( ($user_bk_id !== false) && ($user->ID != $user_bk_id) ){ // Only for the Super Booking Admin User, get  the booking form of the specific user
-                              $booking_form_show = get_user_option( 'booking_form_show', $user_bk_id );
-//debuge($booking_form_show);
+
+                              $is_user_super_admin = apply_bk_filter('is_user_super_admin',  $user_bk_id );
+ 
+                              if (! $is_user_super_admin )  
+                                    $booking_form_show = get_user_option( 'booking_form_show', $user_bk_id );
+
                               $my_booking_form_name = apply_bk_filter('wpdev_get_default_booking_form_for_resource', 'standard', $bktype);
 
                               if ( ($my_booking_form_name!='standard') && (!empty($my_booking_form_name)) ) {
@@ -111,6 +190,7 @@
                 $booking_form_show  = get_booking_form_show();
 
             $booking_form_show =  apply_bk_filter('wpdev_check_for_active_language', $booking_form_show );  // Translation  recehck
+            
         }
 
 //debuge($formdata, $bktype, $booking_form_show);
@@ -235,6 +315,53 @@
     }
 
 
+    function parse_calendar_options($bk_otions ){
+        
+            if (empty($bk_otions)) return false;
+
+            /* $matches    structure:
+             * Array
+                (
+                    [0] => Array
+                        (
+                            [0] => {calendar months="6" months_num_in_row="2" width="284px" cell_height="40px"}, 
+                            [1] => calendar
+                            [2] => months="6" months_num_in_row="2" width="284px" cell_height="40px"
+                        )
+
+                    [1] => Array
+                        (
+                            [0] => {select-day condition="weekday" for="5" value="3"}, 
+                            [1] => select-day
+                            [2] => condition="weekday" for="5" value="3"
+                        )
+                     .....
+                )
+             */
+//debuge($bk_otions);                        
+            $pattern_to_search='%\s*{([^\s]+)\s*([^}]+)\s*}\s*[,]?\s*%';
+            preg_match_all($pattern_to_search, $bk_otions, $matches, PREG_SET_ORDER);
+            foreach ($matches as $value) {
+                if ($value[1] == 'calendar') {
+                    $paramas = $value[2];
+                    $paramas = trim($paramas);
+                    $paramas = explode(' ',$paramas);
+                    $options = array();
+                    foreach ($paramas as $vv) {
+                        if (! empty($vv)) {
+                            $vv = trim($vv);
+                            $vv = explode('=',$vv);    
+                            $options[$vv[0]] = trim($vv[1]);
+                        }
+                    }
+                    if (count($options)==0) return false;
+                    else                    return $options;
+                }
+            }
+        // We are do  not have the "calendar" options in the shortcode    
+        return false;
+    }
+    
     // this function is fixing bug with PHP4 - "Fatal error: Nesting level too deep - recursive dependency"
     function show_booking_widget_php4($args) {
 
@@ -277,9 +404,9 @@
     function get_bk_version(){
         $version = 'free';
         if (class_exists('wpdev_bk_personal'))     $version = 'personal';
-        if (class_exists('wpdev_bk_biz_s')) $version = 'biz_s';
-        if (class_exists('wpdev_bk_biz_m'))   $version = 'biz_m';
-        if (class_exists('wpdev_bk_biz_l'))          $version = 'biz_l';
+        if (class_exists('wpdev_bk_biz_s'))        $version = 'biz_s';
+        if (class_exists('wpdev_bk_biz_m'))        $version = 'biz_m';
+        if (class_exists('wpdev_bk_biz_l'))        $version = 'biz_l';
         return $version;
     }
 
@@ -370,25 +497,43 @@
         if ( class_exists('wpdev_bk_biz_s')) {
 
         if ( strpos($sdform,'rangetime' . $bktype ) !== false ) {   // Get START TIME From form request
-            $pos1 = strpos($sdform,'rangetime' . $bktype );  // Find start time pos
-            $pos1 = strpos($sdform,'^',$pos1)+1;             // Find TIME pos
-            $pos2 = strpos($sdform,'~',$pos1);               // Find TIME length
-            if ($pos2 === false) $pos2 = strlen($sdform);
-            $pos2 = $pos2-$pos1;
-            $range_time = substr( $sdform, $pos1,$pos2)  ;
+            //  Example of $sdform content.
+            // ~checkbox^mymultiple4^~checkbox^rangetime4^ ~checkbox^rangetime4^12:00 - 13:00~ checkbox^rangetime4^~checkbox^rangetime4^~text^name4^Jonny~            
+//debuge($sdform);            
+            // Types of the conditions
+            $f_type =  '[^\^]*';    // Any Field types
+            $f_name =  'rangetime[\d]*[\[\]]{0,2}';    // Any Field types
+            $f_value =  '[\s]*([0-9:]*)[\s]*\-[\s]*([0-9:]*)[\s]*[^~]*';    // Any Field types
 
-            $range_time = explode('-',$range_time);
+            $pattern_to_search='%[~]?'.$f_type.'\^'.$f_name.'\^'.$f_value.'[~]?%';
 
+            preg_match_all($pattern_to_search, $sdform, $matches, PREG_SET_ORDER);
+            /* Exmaple of $matches:
+             * 
+             *
+             Array (  [0] => Array (
+                            [0] => ~checkbox^rangetime4^13:00 - 14:00~
+                            [1] => 13:00
+                            [2] => 14:00
+                                    ) )
+            */
+//debuge($matches);            
+            if (count($matches)>0){
 
-            $start_time  = get_time_array_checked_on_AMPM( trim($range_time[0]) );
-            $start_time[2]='01';
+                    $start_time = get_time_array_checked_on_AMPM( trim($matches[0][1]) );
+                    $start_time[2]='01';
 
-            $end_time  = get_time_array_checked_on_AMPM( trim($range_time[1]) );
-            $end_time[2]='02';
-
-            if ( count($my_dates) == 1 ) { // add end date if someone select only 1 day with time range
-                $my_dates[]=$my_dates[0];
+                    $end_time   = get_time_array_checked_on_AMPM( trim($matches[0][2]) );
+                    $end_time[2]='02';
+                    
+                    if ( count($my_dates) == 1 ) { // add end date if someone select only 1 day with time range
+                        $my_dates[]=$my_dates[0];
+                    }                    
+            } else {
+                $start_time=array('00','00','01');
+                $end_time=array('00','00','02');
             }
+
         } else {
 
             if ( strpos($sdform,'starttime' . $bktype ) !== false ) {   // Get START TIME From form request
@@ -436,8 +581,10 @@
                 $new_end_time = mktime(intval($start_time[0]), intval($start_time[1]));
                 $new_end_time = $new_end_time + $end_time[0]*60*60 + $end_time[1]*60;
                 $end_time = date('H:i',$new_end_time);
+                if ($end_time == '00:00') $end_time = '23:59';
                 $end_time = explode(':',$end_time);
                 $end_time[2]='02';
+
             }
         }
 
@@ -610,7 +757,7 @@
     // Emails
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Approve Email
-    function sendApproveEmails($approved_id_str, $is_send_emeils){
+    function sendApproveEmails($approved_id_str, $is_send_emeils, $denyreason = ''){
 
         global $wpdb;
         $sql = "SELECT * FROM ".$wpdb->prefix ."booking as bk WHERE bk.booking_id IN ($approved_id_str)";
@@ -652,7 +799,8 @@
                                                          'cost' => (isset($res->cost))?$res->cost:'',
                                                          'siteurl' => htmlspecialchars_decode( '<a href="'.home_url().'">' . home_url() . '</a>'),
                                                          'resource_title'=> $bk_title,
-                                                         'bookingtype' => $bk_title
+                                                         'bookingtype' => $bk_title,
+                                                         'denyreason' => $denyreason                                                       
                                                        )
                                                  );
 
@@ -663,7 +811,7 @@
 
             $mail_subject_to_send = replace_bk_shortcodes_in_form($mail_subject_to_send, $booking_form_show['_all_fields_'], true);
             $mail_body_to_send    = replace_bk_shortcodes_in_form($mail_body_to_send,    $booking_form_show['_all_fields_'], true);
-
+            $mail_body_to_send = str_replace('\n', '<br />', $mail_body_to_send);     // Fix issue of showing /n instead of the new line
 
             $mail_recipients =  $booking_form_show['email'];
 
@@ -750,7 +898,7 @@
 
             $mail_body_to_send = str_replace('[content]', $booking_form_show['content'], $mail_body_to_send);
             $mail_body_to_send = apply_bk_filter('wpdev_booking_set_booking_edit_link_at_email', $mail_body_to_send, $res->booking_id );
-
+            $mail_body_to_send = str_replace('\n', '<br />', $mail_body_to_send);     // Fix issue of showing /n instead of the new line
 
             $mail_subject_to_send = replace_bk_shortcodes_in_form($mail_subject_to_send, $booking_form_show['_all_fields_'], true);
             $mail_body_to_send    = replace_bk_shortcodes_in_form($mail_body_to_send,    $booking_form_show['_all_fields_'], true);
@@ -834,7 +982,7 @@
 
         $mail_subject_to_send = replace_bk_shortcodes_in_form($mail_subject_to_send, $booking_form_show['_all_fields_'], true);
         $mail_body_to_send    = replace_bk_shortcodes_in_form($mail_body_to_send,    $booking_form_show['_all_fields_'], true);
-
+        $mail_body_to_send = str_replace('\n', '<br />', $mail_body_to_send);     // Fix issue of showing /n instead of the new line
 
         $mail_recipients =  $booking_form_show['email'];
         $mail_headers = "From: $mail_sender\nContent-Type: text/html\n";
@@ -905,6 +1053,7 @@
                                                      'bookingtype' => $bk_title
                                                    )
                                              );
+        
         $mail_body_to_send = str_replace('[content]', $booking_form_show['content'], $mail_body_to_send);
         $mail_body_to_send = str_replace('[moderatelink]', htmlspecialchars_decode(
                 '<a href="'.site_url()  . '/wp-admin/admin.php?page='. WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME .'wpdev-booking&view_mode=vm_listing&tab=actions&wh_booking_id='. $booking_id .'">'
@@ -912,8 +1061,8 @@
         $mail_body_to_send = apply_bk_filter('wpdev_booking_set_booking_edit_link_at_email', $mail_body_to_send, $booking_id );
 
         $mail_subject_to_send = replace_bk_shortcodes_in_form($mail_subject_to_send, $booking_form_show['_all_fields_'], true);
-        $mail_body_to_send    = replace_bk_shortcodes_in_form($mail_body_to_send,    $booking_form_show['_all_fields_'], true);
-
+        $mail_body_to_send    = replace_bk_shortcodes_in_form($mail_body_to_send,    $booking_form_show['_all_fields_'], true);        
+        $mail_body_to_send = str_replace('\n', '<br />', $mail_body_to_send);     // Fix issue of showing /n instead of the new line
 
         if ( strpos($mail_recipients,'[visitoremail]') !== false ) {
             $mail_recipients = str_replace('[visitoremail]',$booking_form_show['email'],$mail_recipients);
@@ -1033,7 +1182,7 @@
 
         $mail_subject_to_send = replace_bk_shortcodes_in_form($mail_subject_to_send, $booking_form_show['_all_fields_'], true);
         $mail_body_to_send    = replace_bk_shortcodes_in_form($mail_body_to_send,    $booking_form_show['_all_fields_'], true);
-
+        $mail_body_to_send = str_replace('\n', '<br />', $mail_body_to_send);     // Fix issue of showing /n instead of the new line
 
 
         $mail_recipients =  $booking_form_show['email'];
@@ -1057,15 +1206,19 @@
                 if ( ( strpos($mail_recipient,'@blank.com') === false ) && ( strpos($mail_body_to_send,'admin@blank.com') === false ) )
                         @wp_mail($mail_recipient, $mail_subject_to_send, $mail_body_to_send, $mail_headers_for_admin);
         }
+        if ( ( strpos($mail_recipient,'@blank.com') === false ) && ( strpos($mail_body_to_send,'admin@blank.com') === false ) )
+            return true;
+        else 
+            return false;
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      
     }
 
 
+    
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //  D e b u g    f u n c t i o n s       ///////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
     if (!function_exists ('debuge')) {
         function debuge() {
@@ -1081,7 +1234,6 @@
             }
         }
     }
-
 
     if (!function_exists ('debugq')) {
         function debugq() {
@@ -1339,13 +1491,16 @@
     }
 
 
+    
     if (!function_exists ('getBookingLocale')) {
         function getBookingLocale() {
             if( defined('WPDEV_BK_LOCALE_RELOAD') ) return WPDEV_BK_LOCALE_RELOAD;
+            else define('WPDEV_BK_LOCALE_RELOAD', get_locale() );
             return get_locale();
         }
     }
 
+    
     add_filter('plugin_locale', 'plugin_locale_bk_recheck', 100, 2);  // When load_plugin_text_domain is work, its get def loacle and not that, we send to it so need to reupdate it
     function plugin_locale_bk_recheck($locale, $plugin_domain ) {
 
@@ -1399,7 +1554,7 @@
 
 
     // Security
-
+    
     function escape_any_xss($formdata){
 
 
@@ -1439,6 +1594,7 @@
 
 
 
+    
     function getNumOfNewBookings(){
 
           global $wpdb;
@@ -1478,7 +1634,8 @@
 
 
     function wpdev_bk_is_this_demo(){
-
+// TODO: Remove it        
+//return  false;
         if  (
                 ( strpos($_SERVER['SCRIPT_FILENAME'],'onlinebookingcalendar.com') !== FALSE ) ||
                 ( strpos($_SERVER['HTTP_HOST'],'onlinebookingcalendar.com') !== FALSE ) ||
@@ -1553,10 +1710,12 @@
     }
 
 
+//    if (  $_SERVER['HTTP_HOST'] === 'dev'  ) 
+//        define ('OBC_CHECK_URL', 'http://dev/');
+//    else
+        define ('OBC_CHECK_URL', 'http://wpbookingcalendar.com/');
 
-    define ('OBC_CHECK_URL', 'http://wpbookingcalendar.com/');
-
-    function wpdev_ajax_check_bk_news(){
+    function wpdev_ajax_check_bk_news( $sub_url = '' ){
 
         $v=array();
         if (class_exists('wpdev_bk_personal'))            $v[] = 'wpdev_bk_personal';
@@ -1580,7 +1739,8 @@
         );
 
         $request = new WP_Http();
-        $result  = $request->request( OBC_CHECK_URL . 'info/', array(
+        if (empty($sub_url)) $sub_url = 'info/';
+        $result  = $request->request( OBC_CHECK_URL . $sub_url, array(
             'method' => 'POST',
             'timeout' => 15,
             'body' => $params

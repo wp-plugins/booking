@@ -1,4 +1,4 @@
-<?php if (  (! isset( $_GET['merchant_return_link'] ) ) && (! isset( $_GET['payed_booking'] ) ) && (!function_exists ('get_option')  )  ) { die('You do not have permission to direct access to this file !!!'); }
+<?php if ( (! isset( $_GET['merchant_return_link'] ) ) && (! isset( $_GET['payed_booking'] ) ) && ( (! isset($_GET['pay_sys']) ) || ($_GET['pay_sys'] != 'authorizenet') ) && (!function_exists ('get_option'))   ) { die('You do not have permission to direct access to this file !!!'); }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //  C u s t o m      b u t t o n s ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -413,7 +413,7 @@
                                                         
                            
                             <div style="height:1px;clear:both;width:100%;"></div>
-                            <div style="width:100%;display:none;">
+                            <div style="width:100%;">
                                 <div style="color:#21759B;cursor: pointer;font-weight: bold;float:left;"
                                    onclick="javascript: jQuery('.bk_show_options_parameter').toggle(1);
                                                         jQuery('#togle_options_parameter').slideToggle('normal');

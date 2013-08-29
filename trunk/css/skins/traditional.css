@@ -1,300 +1,187 @@
-/* TODAY */
-.datepick-prev a, .datepick-next a, .datepick-current a{
-    font-size:1em;
-    font-weight:bold;
-    text-decoration:none;
-    color:#fff;
-    text-shadow:0px 0px 1px #555;
-}
-.datepick-prev {
-    width:33%;
-    float:left;
-    text-align:left;
-}
-.datepick-next {
-    width:33%;
-    float:left;
-    text-align:right;
-}
-.datepick-next a, .datepick-prev a{
-    font-size:0.8em !important;
-    padding:5px;
+/*******************************************************************************/
+/*  Traditionsl   -   C O L O R    S K I N          ****************************/
+/*******************************************************************************/
+/* For better compatibility, please change here only folowing properties:      */
+/* 
+*        background , background-color, background-repeat, background-image,  background-repeat, background-position
+*        border
+*        box-shadow, -moz-box-shadow, -webkit-box-shadow
+*        border-radius, -moz-border-radius, -webkit-border-radius
+*        color
+*        font-weight
+*        text-shadow
+*        text-transform
+*
+*/
 
+/* Full Calendar Frame */
+.datepick-inline {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #999999;
+  box-shadow: 0 0 2px #AAAAAA;
+  -moz-box-shadow: 0 0 2px #AAAAAA;
+  -webkit-box-shadow: 0 0 2px #AAAAAA;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
-.datepick-current{
-    width:34%;
-    float:left;
-    text-align:center;
+/* Background of one calendar month */
+.datepick-inline .datepick{
+  background:  transparent;
 }
-
-/**********************************************************************/
-
-.datepick-links {
-    clear:both;
-    float:left;
-    width:100%;
+/* Previous & Next links  and TITLE BACKGROUND */
+.datepick-inline .calendar-links {
+  background-color: #ccc; 
+  background-repeat: repeat-x; 
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#ddd));   /* Safari 4-5, Chrome 1-9 */ 
+  background: -webkit-linear-gradient(top, #ddd, #ccc);                         /* Safari 5.1, Chrome 10+ */ 
+  background: -moz-linear-gradient(top, #ddd, #ccc);                            /* Firefox 3.6+ */ 
+  background: -ms-linear-gradient(top, #ddd, #ccc);                             /* IE 10 */ 
+  background: -o-linear-gradient(top, #ddd, #ccc);                              /* Opera 11.10+ */ 
+  
+  border-bottom: 1px solid #aaa;
 }
-.datepick-one-month {
-    float:left;
+/* Prev - Next Text */
+.datepick-inline .calendar-links .datepick-prev a,
+.datepick-inline .calendar-links .datepick-next a,
+.datepick-inline .calendar-links .datepick-prev a:hover,
+.datepick-inline .calendar-links .datepick-next a:hover{
+    color: #888;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #ddd;
 }
-
-/** MONTHES *************************************************************/
-.datepick-header{
-    text-align:center;
-    font-weight:bold;
-    font-size:0.85em;
-    /*line-height:2em;*/
-	padding:5px 0px;
-	width:284px;
+/* Month Titles */
+.datepick-inline .datepick-header {
+  color: #555;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #DDDDDD;  
 }
-.datepick  .datepick-days-cell {
-    text-align:center;
+/* Week Titles */
+div.datepick-inline .datepick-title-row th{
+    border: 1px solid #ccc;     
+    color: #555;
+    font-weight: bold;    
+    text-transform: uppercase;    
 }
-
-.datepick{
-border:0 solid #DDDDDD !important;
-	padding:0px  !important;
-	margin:0px !important;
-}
-.datepick thead{
-    border-right:1px solid #ccc !important;
-}
-/*    I N    U S E   */
-
-#datepick-div, .datepick-inline { /* Main BackGround color */
-    	background: #ffffff;
-	color: #FF1b1c;
-        border:1px solid #ccc;
-}
-
-.datepick-control, .datepick-links { /* TOP Header color - TODAY */
-    background-color:#f3f3f3;
-}
-
-.datepick-header {                  /* Header - Monthes*/
-    background:none repeat scroll 0 0 #999C9A;
-    border-bottom:1px solid #C4C4C4;
-    color:#FFFFFF;
-}
-.datepick  .datepick-title-row th{
-    border:none;
-	border-bottom:#c5c5c5 1px solid;
-    color:#aaa;
-    text-align:center;
-	background:none;
-	margin:0px;
-	padding:5px 0px;
+/* Cell border*/
+.block_hints .block_free, .block_hints .block_time, .block_hints .block_booked, .block_hints .block_pending, .block_hints .block_check_in_out, 
+.datepick-inline .datepick-days-cell{
+    border: 1px solid #ccc;
+    color:#757575;
 }
 
+/*  Dates Cells       **********************************************************/
+/*******************************************************************************/
 
-.datepick  .datepick-days-cell a {             /* NORMAL CELL*/
-    background-color:#F9F7F7;
-    border:1px solid #ECEDE9;
-    color:#9D9595;
-    display:block;
-    font-weight:bold;
-    text-shadow:0 1px 0 #FFFFFF;
+/* A V A I L A B L E - BACKGROUND */
+.block_hints .block_free,
+.block_hints .block_time, 
+.block_hints .block_check_in_out div.check-in-div,                             /* Item  for the LEGEND */
+.block_hints .block_check_in_out div.check-out-div,                             /* Item  for the LEGEND */
+.datepick-inline .date_available,
+.datepick-inline .timespartly.check_in_time div.check-in-div,                   /* Define the COLOR fot the check  in / out times the same as available*/
+.datepick-inline .timespartly.check_out_time div.check-out-div {
+  background: none repeat scroll 0 0 #f5f5f5;
 }
-.datepick  .datepick-unselectable {          /* CELLS which have be UN SELECTED*/
-	color: #999999;
+/* A V A I L A B L E  and UNSELECTABLE - Text */
+.block_hints .block_free,
+.datepick-inline .date_available,
+.datepick-inline .date_available.datepick-unselectable{
+  color: #CCCCCC;                                                               /* This style for the uvailbale date, when we are select the dates */
+  text-shadow: 0 1px 0 #FFFFFF;                                                 /* This style for the uvailbale date, when we are select the dates */
 }
-.datepick  .datepick-today a {               /* TODAY DAY*/
-	/*background: #f5f5b5;
-	border: 1px solid #d9bb73;/**/
+/* A V A I L A B L E  - Text A */
+.block_hints .block_free a,
+.block_hints .block_time, 
+.datepick-inline .date_available a{
+    color:#89a;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #fff;
 }
+/*******************************************************************************/
 
-/*   S I Z E    */
-.datepick-inline table.datepick td{
-    width:40px;
-    height:40px;
-	padding:0px;
-	border:0px;
-    /* font-size:38px;/**/
+/* T I M E   S L O T S */
+.block_hints .block_time, 
+.datepick-inline .timespartly{
+  background-image: url("../../img/clock_fill.png");
+  background-repeat: no-repeat;
+  background-position:100% 100%; 
 }
-.datepick-inline table.datepick td a{
-    line-height:38px;
-    height:40px;
+/*******************************************************************************/
+
+/* A P P R O V E D  - BACKGROUND */
+.block_hints .date_approved.block_check_in_out, 
+.block_hints .block_booked, 
+.datepick-inline .date_approved  {
+    background-color: #C60B0B;
 }
-
-/* Show in diferent style reserved days in pending and aproval list */
-.datepick  .date2approve,  .datepick .date2approve a  { color:#ea5 !important;  background-color: #fff !important;}
-.datepick  .date_approved, .datepick .date_approved a { color:#79c !important;  background-color: #fff !important;}
-
-
-
-.datepick .datepick_mouse_over a{
-    background:#ff0000 !important;
+/* A P P R O V E D  -  T E X T /including partially booked - timeslots/ */
+.block_hints .date_approved.block_check_in_out,  
+.block_hints .block_booked, 
+.datepick-inline .date_approved,   
+.block_hints .block_booked a, 
+.datepick-inline .date_approved a{
+    color: #5F0000;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #DD0000;
 }
-
-
-                .tooltips {
-                    /*display:none;
-                    background:transparent url(../js/tooltip/img/black_arrow.png);
-                    font-size:12px;
-                    height:70px;
-                    width:160px;
-                    padding:25px;
-                    color:#fff;/**/
-
-                    /*
-                         background-color:#000;
-                        border:1px solid #fff;
-                        padding:10px 15px;
-                        width:200px;
-                        display:none;
-                        color:#fff;
-                        text-align:left;
-                        font-size:12px;
-                        -moz-box-shadow:0 0 10px #000;
-                        -webkit-box-shadow:0 0 10px #000; /**/
-
-                        background-color:#ececec;
-                        border:1px solid #aaa;
-                        padding:10px 15px;
-                        width:100px;
-                        display:none;
-                        color:#444;
-                        text-align:left;
-                        font-size:12px;
-                        font-weight:bold;
-                        -moz-box-shadow:0 0 10px #000;
-                        -webkit-box-shadow:0 0 10px #000;
-                        /**/
-                }
-
-.calendar-links  {
-float:left;
-height:15px;
-margin-bottom:-35px;
-padding:5px 0;
-position:relative;
-width:100%;
-z-index:0;
+/* CHECK IN and CHECK OUT  Borders for the approved cells - the COLOR have to be the SAME as BACKGROUND of this cell*/
+.block_hints .date_approved.block_check_in_out div.check-in-div,                /* Item  for the LEGEND */
+.datepick-inline .date_approved.timespartly.check_in_time div.check-in-div{
+    border-right: 1px dotted #C60B0B;
 }
-.calendar-links .datepick-next  {
-    float:right;
+.block_hints .date_approved.block_check_in_out div.check-out-div,               /* Item  for the LEGEND */
+.datepick-inline .date_approved.timespartly.check_out_time div.check-out-div{
+    border-left: 1px dotted #C60B0B;
 }
+/*******************************************************************************/
 
-#wpdev-booking-general #datepick-div, #wpdev-booking-general .datepick-inline {
-    background: transparent;
-    border: none;
+/* P E N D I N G  - BACKGROUND */
+.block_hints .date2approve.block_check_in_out, 
+.block_hints .block_pending, 
+.datepick-inline .date2approve  {
+  background-color: #DF9A00;
 }
-#wpdev-booking-general .datepick-one-month table.datepick{
-    background: #fff;
+/* P E N D I N G  -  T E X T /including partially booked - timeslots/ */
+.block_hints .date2approve.block_check_in_out, 
+.block_hints .block_pending, 
+.datepick-inline .date2approve, 
+.block_hints .block_pending a, 
+.datepick-inline .date2approve a {
+    color: #885500;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #FFAA00;
 }
-#wpdev-booking-general .datepick-one-month {
-    border-top:1px solid #ccc;
+/* CHECK IN and CHECK OUT  Borders for the approved cells - the COLOR have to be the SAME as BACKGROUND of this cell*/
+.block_hints .date2approve.block_check_in_out div.check-in-div,                 /* Item  for the LEGEND */
+.datepick-inline .date2approve.timespartly.check_in_time div.check-in-div{
+    border-right: 1px dotted #DF9A00;
 }
-
-#wpdev-booking-general .datepick-header{
-    width:auto !important;
-    border-left:1px solid #CCCCCC;
-    border-right:1px solid #CCCCCC;
+.block_hints .date2approve.block_check_in_out div.check-out-div,                /* Item  for the LEGEND */
+.datepick-inline .date2approve.timespartly.check_out_time div.check-out-div{
+    border-left: 1px dotted #DF9A00;
 }
+/*******************************************************************************/
 
-#wpdev-booking-general .datepick .date2approve, #wpdev-booking-general .datepick .date2approve.timespartly a {
-    background-color:#FFBB45 !important;
-    border:none;
-    font-size:14px;
-    font-weight:normal;
-    color:#FFFFFF !important;
+/* S E L E C T E D   Dates - Background */
+.datepick-inline .datepick-one-month .datepick .datepick-current-day {
+  background-color: #555;
 }
-#wpdev-booking-general .datepick .date_approved, #wpdev-booking-general .datepick .date_approved.timespartly a {
-background-color:#99BBEE !important;
-border:none;
-color:#FFFFFF !important;
-font-size:14px;
-font-weight:normal;
+/* S E L E C T E D   Dates - Text color */
+.datepick-inline .datepick-one-month .datepick .datepick-current-day a{
+    color: #EEEEEE;
+    text-shadow: 0 -1px 0 #000000;
 }
+/*******************************************************************************/
 
-
-
-.datepick  .date2approve, .block_hints .block_pending {
- color:#ea5 !important; background-color: #DF9A00 !important ;   color:#fff !important; }
-.datepick  .date_approved,.block_hints .block_booked {
- color:#79c !important; background-color: #C60B0B !important;   color:#fff !important; text-decoration:line-through; }
-.block_hints .block_pending {color:#a6d3ea !important; }
-.block_hints .block_booked  {color:#0080c1 !important; }
-
-.datepick .date2approve.timespartly a  { background-color: transparent !important; border:none !important; color:#FFFFFF !important;font-weight:normal; }
-.datepick .date_approved.timespartly a { background-color: transparent !important; border:none !important; color:#FFFFFF !important;font-weight:normal; }
-
-
- 
-.block_hints .block_free    { background-color: #f3f3f3 !important;   color:#99f !important; }
-.block_time.timespartly { background:#F2F2F2 url('../../img/clock_fill.png') no-repeat 100% 100% !important;   color:#99f !important; }
-
-
-.block_hints .block_free a {color:#f3f3f3 !important; }
-
-/*
-#wpdev-booking-general .datepick  .date_admin_blank, .datepick  .date_admin_blank{ 
-    color:#79c  !important;
-    background-color: #66cc00 !important;
-    color:#fff !important;
-}/**/
-
-.booking_form_div .datepick-inline .datepick-one-month .datepick  .datepick-current-day a {         /* SELECTED DAYs*/
-    background-color:#898C89 !important;
-    border:1px solid #F4F2F2 !important;
-    color:#FFFFFF !important;
-    cursor:pointer;
-    font-weight:normal;
+/* C e l l   O V E R   Dates - Background */
+.datepick-inline .datepick .datepick-days-cell-over{
+    background:#aaa;
 }
-.datepick .datepick-days-cell-over a {      /* OVER some DAY*/
-	background: #fff;
-	color: #e95;
-	border: 1px solid #e95;
+/* C e l l   O V E R   Dates - Text color */
+.datepick-inline .datepick .datepick-days-cell-over a:hover, 
+.datepick-inline .datepick .datepick-days-cell-over a{    
+    color: #eee;
+    text-shadow: 0 -1px 0 #888;
 }
-
-.widget_wpdev_booking .block_pending,
-.widget_wpdev_booking .block_time,
-.widget_wpdev_booking .block_booked,
-.widget_wpdev_booking .block_free { height:20px; line-height:20px; width:20px; }
-
-.widget_wpdev_booking .datepick-inline table.datepick td a {
-    height:28px;
-    line-height:26px;
-    width:23px;
-}
-
-.widget_wpdev_booking .block_text { height:20px; line-height:20px; }
-.wpdev_clear_hint{ height:1px; clear:both; }
-.datepick .datepick-days-cell a, .datepick .datepick-days-cell a:hover{ cursor:pointer;}
-
-
-/* Check In/Out Times styles */
-
-td.timespartly.check_in_time div{
-    border-top-color: #F9F7F7 !important;
-    border-right-width: 42px !important;
-    border-top-width: 42px !important;
-    margin: -1px !important;
-}
-td.timespartly.check_out_time div{
-    border-right-color: #F9F7F7 !important;
-    border-right-width: 42px !important;
-    border-top-width: 42px !important;
-    margin: -1px !important;
-}
-
-.datepick td.datepick-days-cell.timespartly.check_in_time a, .datepick td.datepick-days-cell.timespartly.check_out_time a  {
-    color: #9D9595 !important;
-    font-weight: bold !important;
-    text-shadow: 0 1px 0 #bbb !important;
-}
-
-.widget_wpdev_booking td.timespartly.check_in_time div, .widget_wpdev_booking td.timespartly.check_out_time div {
-    border-right-width: 27px !important;
-    border-top-width: 27px !important;
-    margin: -1px !important;
-}
-
-td.timespartly.check_in_time, td.timespartly.check_out_time{
-    text-decoration: none !important;
-}
-/* End Check In/Out Times styles */
-
-/*
-.datepick  .date_cleaning  { color:#79c  !important; background-color: #66cc00 !important;   color:#fff !important; }
-.block_time.date_cleaning  { color:#79c  !important; background-color: #66cc00 !important;   color:#fff !important; }/**/
+/*******************************************************************************/

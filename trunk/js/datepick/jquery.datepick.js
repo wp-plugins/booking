@@ -131,7 +131,7 @@ $.extend(Datepick.prototype, {
 	version: '3.7.0', // Current version
 	
 	/* Class name added to elements to indicate already configured with a date picker. */
-	markerClassName: 'hasDatepick',
+	markerClassName: 'hasDatepick', // Responsive Skin
 
 	// Class/id names for default and ThemeRoller stylings
 	_mainDivId: ['datepick-div', 'ui-datepicker-div'], // The main datepicker division
@@ -836,6 +836,7 @@ $.extend(Datepick.prototype, {
 		var numMonths = this._getNumberOfMonths(inst);
 		if (!inst.inline)
 			inst.dpDiv.attr('id', this._mainDivId[useTR]);
+		if (!inst.inline) inst.dpDiv.attr('class', 'datepick-inline');  // Added by wpdevelop for the correct  showing of calendar in the search form.
 		inst.dpDiv.removeClass(this._mainDivClass[1 - useTR]).
 			addClass(this._mainDivClass[useTR]).
 			removeClass(this._multiClass.join(' ')).
@@ -1639,240 +1640,10 @@ $.extend(Datepick.prototype, {
 	},
 
 
-        _generateHTML_MonthInLine: function(inst) {
-
-		var today = new Date();
-		today = this._daylightSavingAdjust(
-			new Date(today.getFullYear(), today.getMonth(), today.getDate())); // Clear time
-
-
-		var showStatus = this._get(inst, 'showStatus');
-		var initStatus = this._get(inst, 'initStatus') || '&#xa0;';
-		var isRTL = this._get(inst, 'isRTL');
-		var useTR = this._get(inst, 'useThemeRoller') ? 1 : 0;
-		// Build the date picker HTML
-		var clear = (this._get(inst, 'mandatory') ? '' :
-			'<div class="' + this._clearClass[useTR] + '"><a href="javascript:void(0)" ' +
-			'onclick="jQuery.datepick._clearDate(\'#' + inst.id + '\');"' +
-			this._addStatus(useTR, showStatus, inst.id, this._get(inst, 'clearStatus'), initStatus) +
-			'>' + this._get(inst, 'clearText') + '</a></div>');
-		var controls = '<div class="' + this._controlClass[useTR] + '">' + (isRTL ? '' : clear) +
-			'<div class="' + this._closeClass[useTR] + '"><a href="javascript:void(0)" ' +
-			'onclick="jQuery.datepick._hideDatepick();"' +
-			this._addStatus(useTR, showStatus, inst.id, this._get(inst, 'closeStatus'), initStatus) +
-			'>' + this._get(inst, 'closeText') + '</a></div>' + (isRTL ? clear : '')  + '</div>';
-		var prompt = this._get(inst, 'prompt');
-		var closeAtTop = this._get(inst, 'closeAtTop');
-		var hideIfNoPrevNext = this._get(inst, 'hideIfNoPrevNext');
-		var navigationAsDateFormat = this._get(inst, 'navigationAsDateFormat');
-		var showBigPrevNext = this._get(inst, 'showBigPrevNext');
-		var numMonths = [1, 1];//this._getNumberOfMonths(inst);
-		var showCurrentAtPos = this._get(inst, 'showCurrentAtPos');
-		var stepMonths = this._get(inst, 'stepMonths');
-		var stepBigMonths = this._get(inst, 'stepBigMonths');
-		var isMultiMonth = (numMonths[0] != 1 || numMonths[1] != 1);
-		var minDate = this._getMinMaxDate(inst, 'min', true);
-		var maxDate = this._getMinMaxDate(inst, 'max');
-		var drawMonth = inst.drawMonth - showCurrentAtPos;
-		var drawYear = inst.drawYear;
-		if (drawMonth < 0) {
-			drawMonth += 12;
-			drawYear--;
-		}
-		if (maxDate) { // Don't show past maximum unless also restricted by minimum
-			var maxDraw = this._daylightSavingAdjust(new Date(maxDate.getFullYear(),
-				maxDate.getMonth() - (numMonths[0] * numMonths[1]) + 1, maxDate.getDate()));
-			maxDraw = (minDate && maxDraw < minDate ? minDate : maxDraw);
-			while (this._daylightSavingAdjust(new Date(drawYear, drawMonth, 1)) > maxDraw) {
-				drawMonth--;
-				if (drawMonth < 0) {
-					drawMonth = 11;
-					drawYear--;
-				}
-			}
-		}
-		inst.drawMonth = drawMonth;
-		inst.drawYear = drawYear;
-		// Controls and links
-		var prevText = this._get(inst, 'prevText');
-		prevText = (!navigationAsDateFormat ? prevText : this.formatDate(prevText,
-			this._daylightSavingAdjust(new Date(drawYear, drawMonth - stepMonths, 1)),
-			this._getFormatConfig(inst)));
-		var prevBigText = (showBigPrevNext ? this._get(inst, 'prevBigText') : '');
-		prevBigText = (!navigationAsDateFormat ? prevBigText : this.formatDate(prevBigText,
-			this._daylightSavingAdjust(new Date(drawYear, drawMonth - stepBigMonths, 1)),
-			this._getFormatConfig(inst)));
-		var prev = '<div class="' + this._prevClass[useTR] + '">' +
-			(this._canAdjustMonth(inst, -1, drawYear, drawMonth) ?
-			(showBigPrevNext ? '<a href="javascript:void(0)" onclick="jQuery.datepick._adjustDate(\'#' +
-			inst.id + '\', -' + stepBigMonths + ', \'M\');"' +
-			this._addStatus(useTR, showStatus, inst.id, this._get(inst, 'prevBigStatus'), initStatus) +
-			'>' + prevBigText + '</a>' : '') +
-			'<a href="javascript:void(0)" onclick="jQuery.datepick._adjustDate(\'#' +
-			inst.id + '\', -' + stepMonths + ', \'M\');"' +
-			this._addStatus(useTR, showStatus, inst.id, this._get(inst, 'prevStatus'), initStatus) +
-			'>' + prevText + '</a>' :
-			(hideIfNoPrevNext ? '&#xa0;' : (showBigPrevNext ? '<label>' + prevBigText + '</label>' : '') +
-			'<label>' + prevText + '</label>')) + '</div>';
-		var nextText = this._get(inst, 'nextText');
-		nextText = (!navigationAsDateFormat ? nextText : this.formatDate(nextText,
-			this._daylightSavingAdjust(new Date(drawYear, drawMonth + stepMonths, 1)),
-			this._getFormatConfig(inst)));
-		var nextBigText = (showBigPrevNext ? this._get(inst, 'nextBigText') : '');
-		nextBigText = (!navigationAsDateFormat ? nextBigText : this.formatDate(nextBigText,
-			this._daylightSavingAdjust(new Date(drawYear, drawMonth + stepBigMonths, 1)),
-			this._getFormatConfig(inst)));
-		var next = '<div class="' + this._nextClass[useTR] + '">' +
-			(this._canAdjustMonth(inst, +1, drawYear, drawMonth) ?
-			'<a href="javascript:void(0)" onclick="jQuery.datepick._adjustDate(\'#' +
-			inst.id + '\', +' + stepMonths + ', \'M\');"' +
-			this._addStatus(useTR, showStatus, inst.id, this._get(inst, 'nextStatus'), initStatus) +
-			'>' + nextText + '</a>' +
-			(showBigPrevNext ? '<a href="javascript:void(0)" onclick="jQuery.datepick._adjustDate(\'#' +
-			inst.id + '\', +' + stepBigMonths + ', \'M\');"' +
-			this._addStatus(useTR, showStatus, inst.id, this._get(inst, 'nextBigStatus'), initStatus) +
-			'>' + nextBigText + '</a>' : '') :
-			(hideIfNoPrevNext ? '&#xa0;' : '<label>' + nextText + '</label>' +
-			(showBigPrevNext ? '<label>' + nextBigText + '</label>' : ''))) + '</div>';
-		var currentText = this._get(inst, 'currentText');
-		var gotoDate = (this._get(inst, 'gotoCurrent') && inst.dates[0] ? inst.dates[0] : today);
-		currentText = (!navigationAsDateFormat ? currentText :
-			this.formatDate(currentText, gotoDate, this._getFormatConfig(inst)));
-		var html = (closeAtTop && !inst.inline ? controls : '');/* +
-			'<div class="' + this._linksClass[useTR] + '">' + (isRTL ? next : prev) +
-			'<div class="' + this._currentClass[useTR] + '">' + (this._isInRange(inst, gotoDate) ?
-			'<a href="javascript:void(0)" onclick="jQuery.datepick._gotoToday(\'#' + inst.id + '\');"' +
-			this._addStatus(useTR, showStatus, inst.id, this._get(inst, 'currentStatus'), initStatus) + '>' +
-			currentText + '</a>' : (hideIfNoPrevNext ? '&#xa0;' : '<label>' + currentText + '</label>')) +
-			'</div>' + (isRTL ? prev : next) + '</div>' +
-			(prompt ? '<div class="' + this._promptClass[useTR] + '"><span>' +
-			prompt + '</span></div>' : '');/**/
-                    html +=  '<div class="calendar-links">' + (isRTL ? next : prev)   ;
-                    html +=    (isRTL ? prev : next) + '</div>' ;
-		var firstDay = parseInt(this._get(inst, 'firstDay'), 10);
-		firstDay = (isNaN(firstDay) ? 0 : firstDay);
-		var changeFirstDay = this._get(inst, 'changeFirstDay');
-		var dayNames = this._get(inst, 'dayNames');
-		var dayNamesShort = this._get(inst, 'dayNamesShort');
-		var dayNamesMin = this._get(inst, 'dayNamesMin');
-		var monthNames = this._get(inst, 'monthNames');
-		var beforeShowDay = this._get(inst, 'beforeShowDay');
-		var showOtherMonths = this._get(inst, 'showOtherMonths');
-		var selectOtherMonths = this._get(inst, 'selectOtherMonths');
-		var showWeeks = this._get(inst, 'showWeeks');
-		var calculateWeek = this._get(inst, 'calculateWeek') || this.iso8601Week;
-		var weekStatus = this._get(inst, 'weekStatus');
-		var status = (showStatus ? this._get(inst, 'dayStatus') || initStatus : '');
-		var dateStatus = this._get(inst, 'statusForDate') || this.dateStatus;
-		var defaultDate = this._getDefaultDate(inst);
-		for (var row = 0; row < numMonths[0]; row++) {
-			for (var col = 0; col < numMonths[1]; col++) {
-				var cursorDate = this._daylightSavingAdjust(
-					new Date(drawYear, drawMonth, inst.cursorDate.getDate()));
-				html += '<div class="' + this._oneMonthClass[useTR] +
-					(col == 0 && !useTR ? ' ' + this._newRowClass[useTR] : '') + '">' +
-					this._generateMonthYearHeader(inst, drawMonth, drawYear, minDate, maxDate,
-					cursorDate, row > 0 || col > 0, useTR, showStatus, initStatus, monthNames) + // Draw month headers
-					'<table class="' + this._tableClass[useTR] + '" cellpadding="0" cellspacing="0"><thead>' +
-					'<tr class="' + this._tableHeaderClass[useTR] + '">' + (showWeeks ? '<th' +
-					this._addStatus(useTR, showStatus, inst.id, weekStatus, initStatus) + '>' +
-					this._get(inst, 'weekHeader') + '</th>' : '');
-				for (var dow = 0; dow < 37; dow++) { // Days of the week
-					var day = (dow + firstDay) % 7;
-					var dayStatus = (!showStatus || !changeFirstDay ? '' :
-						status.replace(/DD/, dayNames[day]).replace(/D/, dayNamesShort[day]));
-					html += '<th' + ((dow + firstDay + 6) % 7 < 5 ? '' :
-						' class="' + this._weekendClass[useTR] + '"') + '>' +
-						(!changeFirstDay ? '<span' +
-						this._addStatus(useTR, showStatus, inst.id, dayNames[day], initStatus) :
-						'<a href="javascript:void(0)" onclick="jQuery.datepick._changeFirstDay(\'#' +
-						inst.id + '\', ' + day + ');"' +
-						this._addStatus(useTR, showStatus, inst.id, dayStatus, initStatus)) +
-						' title="' + dayNames[day] + '">' +
-						dayNamesMin[day] + (changeFirstDay ? '</a>' : '</span>') + '</th>';
-				}
-				html += '</tr></thead><tbody>';
-				var daysInMonth = this._getDaysInMonth(drawYear, drawMonth);
-				if (drawYear == inst.cursorDate.getFullYear() && drawMonth == inst.cursorDate.getMonth())
-					inst.cursorDate.setDate(Math.min(inst.cursorDate.getDate(), daysInMonth));
-				var leadDays = (this._getFirstDayOfMonth(drawYear, drawMonth) - firstDay + 7) % 7;
-				var numRows = 1;//(isMultiMonth ? 6 : Math.ceil((leadDays + daysInMonth) / 7));
-				var printDate = this._daylightSavingAdjust(new Date(drawYear, drawMonth, 1 - leadDays));
-				for (var dRow = 0; dRow < numRows; dRow++) { // Create datepicker rows
-					html += '<tr class="' + this._weekRowClass[useTR] + '">' +
-						(showWeeks ? '<td class="' + this._weekColClass[useTR] + '"' +
-						this._addStatus(useTR, showStatus, inst.id, weekStatus, initStatus) + '>' +
-						calculateWeek(printDate) + '</td>' : '');
-					for (var dow = 0; dow < 37; dow++) { // Create datepicker days
-						var daySettings = (beforeShowDay ?
-							beforeShowDay.apply((inst.input ? inst.input[0] : null), [printDate]) : [true, '']);
-						var otherMonth = (printDate.getMonth() != drawMonth);
-						var unselectable = (otherMonth && !selectOtherMonths) || !daySettings[0] ||
-							(minDate && printDate < minDate) || (maxDate && printDate > maxDate);
-						var selected = (this._get(inst, 'rangeSelect') && inst.dates[0] &&
-							printDate.getTime() >= inst.dates[0].getTime() &&
-							printDate.getTime() <= (inst.dates[1] || inst.dates[0]).getTime());
-						for (var i = 0; i < inst.dates.length; i++)
-							selected = selected || (inst.dates[i] &&
-								printDate.getTime() == inst.dates[i].getTime());
-						var empty = otherMonth && !showOtherMonths;
-						html += '<td class="' + this._dayClass[useTR] +
-							((dow + firstDay + 6) % 7 >= 5 ? ' ' + this._weekendClass[useTR] : '') + // Highlight weekends
-							(otherMonth ? ' ' + this._otherMonthClass[useTR] : '') + // Highlight days from other months
-							((printDate.getTime() == cursorDate.getTime() &&
-							drawMonth == inst.cursorDate.getMonth() && inst.keyEvent) || // User pressed key
-							(defaultDate.getTime() == printDate.getTime() &&
-							defaultDate.getTime() == cursorDate.getTime()) ?
-							// Or defaultDate is selected printedDate and defaultDate is cursorDate
-							' ' + $.datepick._dayOverClass[useTR] : '') + // Highlight selected day
-							(unselectable ? ' ' + this._unselectableClass[useTR] :
-							' ' + this._selectableClass[useTR]) +  // Highlight unselectable days
-							(empty ? '' : ' ' + daySettings[1] + // Highlight custom dates
-							(selected ? ' ' + this._selectedClass[useTR] : '') + // Currently selected
-							// Highlight today (if different)
-							(printDate.getTime() == today.getTime() ? ' ' + this._todayClass[useTR] : '')) + '"' +
-							(!empty && daySettings[2] ? ' title="' + daySettings[2] + '"' : '') + // Cell title
-							(unselectable ? '' : ' onmouseover="' + 'jQuery.datepick._doMouseOver(this,\'' +
-							inst.id + '\',' + printDate.getTime() + ')"' +
-							' onmouseout="jQuery.datepick._doMouseOut(this,\'' + inst.id + '\')"' +
-							' onclick="jQuery.datepick._selectDay(this,\'#' + // Select
-							inst.id + '\',' + printDate.getTime() + ')"') + '>' +
-							(empty ? '&#xa0;' : // Not showing other months
-							(unselectable ? printDate.getDate() : '<a>' + printDate.getDate() + '</a>')) + '</td>';
-						printDate.setDate(printDate.getDate() + 1);
-						printDate = this._daylightSavingAdjust(printDate);
-					}
-					html += '</tr>';
-				}
-				drawMonth++;
-				if (drawMonth > 11) {
-					drawMonth = 0;
-					drawYear++;
-				}
-				html += '</tbody></table></div>';
-			}
-			if (useTR)
-				html += '<div class="' + this._newRowClass[useTR] + '"></div>';
-		}
-		html += (showStatus ? '<div style="clear: both;"></div><div id="' + this._statusId[useTR] +
-			inst.id +'" class="' + this._statusClass[useTR] + '">' + initStatus + '</div>' : '') +
-			(!closeAtTop && !inst.inline ? controls : '') +
-			'<div style="clear: both;"></div>' +
-			($.browser.msie && parseInt($.browser.version, 10) < 7 && !inst.inline ?
-			'<iframe src="javascript:false;" class="' + this._coverClass[useTR] + '"></iframe>' : '');
-		inst.keyEvent = false;
-		return html;
-	},
-
 	/* Generate the HTML for the current state of the date picker.
 	   @param  inst  (object) the instance settings for this datepicker
 	   @return  (string) the new HTML for the datepicker */
 	_generateHTML: function(inst) {
-                var calendarMode = this._get(inst, 'calendarViewMode') ; //oneMonthInLine
-                if (calendarMode == 'oneMonthInLine') {
-                    return this._generateHTML_MonthInLine(inst);
-                }
-
 		var today = new Date();
 		today = this._daylightSavingAdjust(
 			new Date(today.getFullYear(), today.getMonth(), today.getDate())); // Clear time
@@ -2001,7 +1772,7 @@ $.extend(Datepick.prototype, {
 			for (var col = 0; col < numMonths[1]; col++) {
 				var cursorDate = this._daylightSavingAdjust(
 					new Date(drawYear, drawMonth, inst.cursorDate.getDate()));
-				html += '<div class="' + this._oneMonthClass[useTR] +
+				html += '<div class="' + this._oneMonthClass[useTR] +            // Responsive skin
 					(col == 0 && !useTR ? ' ' + this._newRowClass[useTR] : '') + '">' +
 					this._generateMonthYearHeader(inst, drawMonth, drawYear, minDate, maxDate,
 					cursorDate, row > 0 || col > 0, useTR, showStatus, initStatus, monthNames) + // Draw month headers
@@ -2068,9 +1839,15 @@ $.extend(Datepick.prototype, {
 							inst.id + '\',' + printDate.getTime() + ')"' +
 							' onmouseout="jQuery.datepick._doMouseOut(this,\'' + inst.id + '\')"' +
 							' onclick="jQuery.datepick._selectDay(this,\'#' + // Select
-							inst.id + '\',' + printDate.getTime() + ')"') + '><div></div>' +
+							inst.id + '\',' + printDate.getTime() + ')"') + '>'+
+                                                        '<div class="check-in-div"><div></div></div>' +
+                                                        '<div class="check-out-div"><div></div></div>' +
+                                                        '<div class="date-content-top"></div>' +
 							(empty ? '&#xa0;' : // Not showing other months
-							(unselectable ? printDate.getDate() : '<a>' + printDate.getDate() + '</a>')) + '</td>';
+							(unselectable ? printDate.getDate() : '<a>' + printDate.getDate() + '</a>')) +                                                                
+                                                        '<div class="date-content-bottom"></div>' +
+                                                        
+                                                        '</td>';
 						printDate.setDate(printDate.getDate() + 1);
 						printDate = this._daylightSavingAdjust(printDate);
 					}

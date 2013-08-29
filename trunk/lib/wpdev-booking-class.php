@@ -1,5 +1,5 @@
 <?php
-if (  (! isset( $_GET['merchant_return_link'] ) ) && (! isset( $_GET['payed_booking'] ) ) && (!function_exists ('get_option')  )  ) { die('You do not have permission to direct access to this file !!!'); }
+if ( (! isset( $_GET['merchant_return_link'] ) ) && (! isset( $_GET['payed_booking'] ) ) && ( (! isset($_GET['pay_sys']) ) || ($_GET['pay_sys'] != 'authorizenet') ) && (!function_exists ('get_option'))   ) { die('You do not have permission to direct access to this file !!!'); }
 
 if (!class_exists('wpdev_booking')) {
 class wpdev_booking {
@@ -35,12 +35,9 @@ class wpdev_booking {
         add_action('wp_head',array(&$this, 'client_side_print_booking_head'));
 
         // Add custom buttons
-//        add_action( 'init', array(&$this,'add_custom_buttons') );
-//        add_action( 'admin_head', array(&$this,'insert_wpdev_button'));
-        // Add custom buttons
         add_action( 'init',        'wpdev_bk_add_custom_buttons') ;
         add_action( 'admin_head',  'wpdev_bk_insert_wpdev_button');
-
+                                    
         // Remove the scripts, which generated conflicts
         add_action('admin_init', array(&$this, 'wpdevbk_remove_conflict_scripts'), 999);
 
@@ -49,7 +46,6 @@ class wpdev_booking {
 
         // Load footer data
         add_action( 'wp_footer', array(&$this,'wp_footer') );
-        //add_action( 'admin_footer', array(&$this,'print_js_at_footer') );
 
         // User defined - hooks
         add_action( 'wpdev_bk_add_calendar', array(&$this,'add_calendar_action') ,10 , 2);
@@ -65,8 +61,9 @@ class wpdev_booking {
 
 
         add_bk_filter( 'wpdev_booking_table', array(&$this, 'booking_table'));
-
-        add_bk_action( 'show_footer_at_booking_page', array(&$this, 'show_footer_at_booking_page'));
+        
+        // Show dashboard widget for the settings
+        add_bk_action( 'dashboard_bk_widget_show',    array(&$this, 'dashboard_bk_widget_show'));
         
         // Get script for calendar activation
         add_bk_filter( 'get_script_for_calendar', array(&$this, 'get_script_for_calendar'));  
@@ -95,7 +92,7 @@ class wpdev_booking {
         
 
         // Install / Uninstall
-        register_activation_hook( WPDEV_BK_FILE, array(&$this,'wpdev_booking_activate' ));
+        register_activation_hook( WPDEV_BK_FILE, array(&$this,'wpdev_booking_activate_initial' ));
         register_deactivation_hook( WPDEV_BK_FILE, array(&$this,'wpdev_booking_deactivate' ));
         add_filter('upgrader_post_install', array(&$this, 'install_in_bulk_upgrade'), 10, 2); //Todo: fix Upgrade during bulk upgrade of plugins
 
@@ -128,7 +125,8 @@ class wpdev_booking {
         // Load the jQuery in the client side
         if( !is_admin() ) add_action('wp_enqueue_scripts', array(&$this, 'bc_enqueue_scripts'),100000);        
     }
-
+    
+    
          
     function wpdevbk_scripts_enqueue() {
         wp_enqueue_script('jquery');
@@ -183,7 +181,9 @@ class wpdev_booking {
 
     // Show Booking Dashboard Widget content
     function dashboard_bk_widget_show() {
+        
         wp_nonce_field('wpbc_ajax_admin_nonce',  "wpbc_admin_panel_nonce_dashboard" ,  true , true );
+
         global $wpdb;
         $bk_admin_url = 'admin.php?page='. WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME. 'wpdev-booking&wh_approved=' ;
 
@@ -361,12 +361,12 @@ class wpdev_booking {
                 <span class="bk_header"><?php _e('Statistic','wpdev-booking');?>:</span>
                 <table class="bk_table">
                     <tr class="first">
-                        <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_is_new=1&wh_booking_date=3'; ?>"><span class=""><?php echo $counter_new; ?></span></a> </td>
-                        <td class=""> <a href="<?php echo $bk_admin_url,'&wh_is_new=1&wh_booking_date=3'; ?>"><?php _e('New (unverified) booking(s)','wpdev-booking');?></a></td>
+                        <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_is_new=1&wh_booking_date=3&view_mode=vm_listing'; ?>"><span class=""><?php echo $counter_new; ?></span></a> </td>
+                        <td class=""> <a href="<?php echo $bk_admin_url,'&wh_is_new=1&wh_booking_date=3&view_mode=vm_listing'; ?>"><?php _e('New (unverified) booking(s)','wpdev-booking');?></a></td>
                     </tr>
                     <tr>
-                        <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_approved=0&wh_booking_date=3'; ?>"><span class=""><?php echo $counter_pending; ?></span></a></td>
-                        <td class="pending"><a href="<?php echo $bk_admin_url,'&wh_approved=0&wh_booking_date=3'; ?>" class=""><?php _e('Pending booking(s)','wpdev-booking');?></a></td>
+                        <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_approved=0&wh_booking_date=3&view_mode=vm_listing'; ?>"><span class=""><?php echo $counter_pending; ?></span></a></td>
+                        <td class="pending"><a href="<?php echo $bk_admin_url,'&wh_approved=0&wh_booking_date=3&view_mode=vm_listing'; ?>" class=""><?php _e('Pending booking(s)','wpdev-booking');?></a></td>
                     </tr>
                 </table>
             </div>
@@ -375,19 +375,19 @@ class wpdev_booking {
                 <span class="bk_header"><?php _e('Agenda','wpdev-booking');?>:</span>
                 <table class="bk_table">
                     <tr class="first">
-                        <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_modification_date=1&wh_booking_date=3'; ?>"><span><?php echo $counter_m_today; ?></span></a> </td>
-                        <td class="new-bookings"><a href="<?php echo $bk_admin_url,'&wh_modification_date=1&wh_booking_date=3'; ?>" class=""><?php _e('New booking(s) made today','wpdev-booking');?></a> </td>
+                        <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_modification_date=1&wh_booking_date=3&view_mode=vm_listing'; ?>"><span><?php echo $counter_m_today; ?></span></a> </td>
+                        <td class="new-bookings"><a href="<?php echo $bk_admin_url,'&wh_modification_date=1&wh_booking_date=3&view_mode=vm_listing'; ?>" class=""><?php _e('New booking(s) made today','wpdev-booking');?></a> </td>
                     </tr>
                     <tr>
-                        <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_booking_date=1'; ?>"><span><?php echo $counter_bk_today; ?></span></a> </td>
-                        <td class="actual-bookings"> <a href="<?php echo $bk_admin_url,'&wh_booking_date=1'; ?>" class=""><?php _e('Bookings for today','wpdev-booking');?></a> </td>
+                        <td class="first"> <a href="<?php echo $bk_admin_url,'&wh_booking_date=1&view_mode=vm_listing'; ?>"><span><?php echo $counter_bk_today; ?></span></a> </td>
+                        <td class="actual-bookings"> <a href="<?php echo $bk_admin_url,'&wh_booking_date=1&view_mode=vm_listing'; ?>" class=""><?php _e('Bookings for today','wpdev-booking');?></a> </td>
                     </tr>
                 </table>
             </div>
             <div style="clear:both;margin-bottom:20px;"></div>
             <?php
             $version = 'free';
-            $version = $this->get_version();
+            $version = get_bk_version();
             if ( wpdev_bk_is_this_demo() ) $version = 'free';
 
             if( ( strpos( strtolower(WPDEV_BK_VERSION) , 'multisite') !== false  ) || ($version == 'free' ) )  $multiv = '-multi';
@@ -435,7 +435,7 @@ class wpdev_booking {
                     <?php if ($version != 'free') { ?>
                     <tr>
                         <td style="width:35%;text-align: right;" class="first b"><?php _e('Type','wpdev-booking');?>:</td>
-                        <td style="text-align: left;  font-weight: bold;" class="bk_spec_font"><?php $ver = $this->get_version();if (class_exists('wpdev_bk_multiuser')) $ver = 'multiUser';$ver = str_replace('_m', ' Medium',$ver);$ver = str_replace('_l', ' Large',$ver);$ver = str_replace('_s', ' Small',$ver);$ver = str_replace('biz', 'Business',$ver); echo ucwords($ver);  ?></td>
+                        <td style="text-align: left;  font-weight: bold;" class="bk_spec_font"><?php $ver = get_bk_version();if (class_exists('wpdev_bk_multiuser')) $ver = 'multiUser';$ver = str_replace('_m', ' Medium',$ver);$ver = str_replace('_l', ' Large',$ver);$ver = str_replace('_s', ' Small',$ver);$ver = str_replace('biz', 'Business',$ver); echo ucwords($ver);  ?></td>
                     </tr>
                     <tr>
                         <td style="width:35%;text-align: right;" class="first b"><?php _e('Used for','wpdev-booking');?>:</td>
@@ -465,7 +465,15 @@ class wpdev_booking {
                         <td style="text-align:center;" class="bk_spec_font"><a target="_blank" href="http://wordpress.org/extend/plugins/booking"><?php _e('Rate this plugin (thanks:)','wpdev-booking');?></a></td>
                     </tr>
                     <tr>
-                        <td style="text-align:center;" class="bk_spec_font"><a target="_blank" href="http://wpbookingcalendar.com/features/"><?php _e('Check other versions','wpdev-booking');?></a></td>
+                        <td style="text-align:center;" class="bk_spec_font wpdevbk"><?php 
+                            if ($version == 'free') { 
+                                ?><a class="btn-primary btn" target="_blank" href="http://wpbookingcalendar.com/features/"><?php _e('Explore Premium Features','wpdev-booking');?></a><?php                             
+                            } elseif  ($upgrade_lnk != '')  { 
+                                ?><a class="btn-primary btn"  href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=upgrade"><?php _e('Upgrade','wpdev-booking');?></a><?php                                                             
+                            } else {
+                                ?><a target="_blank" href="http://wpbookingcalendar.com/features/"><?php _e('Explore Premium Features','wpdev-booking');?></a><?php                                                             
+                            }
+                      ?></td>
                     </tr>
                 </table>
             </div>
@@ -492,7 +500,7 @@ class wpdev_booking {
                             // beforeSend: someFunction,
                             data:{
                                 ajax_action : 'CHECK_BK_NEWS',
-                                wpbc_nonce: document.getElementById('wpbc_admin_panel_nonce_dashboard').value  		
+                                wpbc_nonce: document.getElementById('wpbc_admin_panel_nonce_dashboard').value
                             }
                         });
 
@@ -688,7 +696,7 @@ class wpdev_booking {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // A D D     R E S O U R C E S     Management
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        $version = $this->get_version();
+        $version = get_bk_version();
         //$is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'not_low_level_user'); //Anxo customizarion
         if ($version != 'free') { //Anxo customizarion
 
@@ -765,495 +773,11 @@ class wpdev_booking {
     // </editor-fold>
 
 
-
-    // <editor-fold defaultstate="collapsed" desc="   C u s t o m      b u t t o n s    ">
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //  C u s t o m      b u t t o n s ///////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // C u s t o m   b u t t o n s  /////////////////////////////////////////////////////////////////////
-    function add_custom_buttons() {
-        // Don't bother doing this stuff if the current user lacks permissions
-        if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) return;
-
-        // Add only in Rich Editor mode
-        if (  ( in_array( basename($_SERVER['PHP_SELF']),  array('post-new.php', 'page-new.php', 'post.php', 'page.php') ) ) /*&& ( get_user_option('rich_editing') == 'true')*/  ) {
-            //content_wpdev_bk_booking_insert
-            // 'content_' . $this->$prefix . '_' . $type
-            $this->settings['custom_buttons'] = array(
-                    'booking_insert' => array(
-                            'hint' => __('Insert booking calendar', 'wpdev-booking'),
-                            'title'=> __('Booking calendar', 'wpdev-booking'),
-                            'img'=> $this->icon_button_url,
-                            'js_func_name_click' => 'booking_click',
-                            'bookmark' => 'booking',
-                            'class' => 'bookig_buttons',
-                            'is_close_bookmark' =>0
-                    )
-            );
-
-
-            add_filter("mce_external_plugins", array(&$this, "mce_external_plugins"));
-            // add_action( 'admin_head', array(&$this, 'add_custom_button_function') );
-            add_action( 'edit_form_advanced', array(&$this, 'add_custom_button_function') );
-            add_action( 'edit_page_form', array(&$this, 'add_custom_button_function') );
-
-            if ( 1 == $this->settings['custom_editor_button_row'] )
-                add_filter( 'mce_buttons', array(&$this, 'mce_buttons') );
-            else
-                add_filter( 'mce_buttons_' . $this->settings['custom_editor_button_row'] , array(&$this, 'mce_buttons') );
-
-            add_action( 'admin_head', array(&$this, 'custom_button_dialog_CSS') );
-            add_action( 'admin_footer', array(&$this, 'custom_button_dalog_structure_DIV') );
-
-            wp_enqueue_script( 'jquery-ui-dialog' );
-            wp_enqueue_style(  'wpdev-bk-jquery-ui', WPDEV_BK_PLUGIN_URL. '/css/jquery-ui.css', array(), 'wpdev-bk', 'screen' );
-            //wp_enqueue_style( $this->prefix . '-jquery-ui',WPDEV_BK_PLUGIN_URL. '/js/custom_buttons/jquery-ui.css', array(), $this->prefix, 'screen' );
-        }
-    }
-
-    // Add button code to the tiny editor
-    function insert_wpdev_button() {
-
-        if ( count($this->settings['custom_buttons']) > 0) {
-            ?>  <script type="text/javascript"> <?php
-
-            echo '      function '. $this->settings['custom_buttons_func_name_from_js_file'].'(ed, url) {';
-
-            foreach ( $this->settings['custom_buttons'] as $type => $props ) {
-                echo "if ( typeof ".$props['js_func_name_click']." == 'undefined' ) return;";
-
-                echo "  ed.addButton('".  $this->prefix . '_' . $type ."', {";
-                echo "		title : '". $props['hint'] ."',";
-                echo "		image : '". $props['img'] ."',";
-                echo "		onclick : function() {";
-                echo "			". $props['js_func_name_click'] ."('". $type ."');";
-                echo "		}";
-                echo "	});";
-            }
-            echo '}';
-
-            ?> </script> <?php
-        }
-    }
-
-    // Load the custom TinyMCE plugin
-    function mce_external_plugins( $plugins ) {
-        $plugins[$this->prefix . '_quicktags'] = WPDEV_BK_PLUGIN_URL.'/js/custom_buttons/editor_plugin.js';
-        return $plugins;
-    }
-
-    // Add the custom TinyMCE buttons
-    function mce_buttons( $buttons ) {
-        //array_push( $buttons, "separator", 'wpdev_booking_insert', "separator" );
-        array_push( $buttons, "separator");
-        foreach ( $this->settings['custom_buttons'] as $type => $strings ) {
-            array_push( $buttons, $this->prefix . '_' . $type );
-        }
-
-        return $buttons;
-    }
-
-    // Add the old style buttons to the non-TinyMCE editor views and output all of the JS for the button function + dialog box
-    function add_custom_button_function() {
-        $buttonshtml = '';
-        $datajs='';
-        foreach ( $this->settings['custom_buttons'] as $type => $props ) {
-
-            $buttonshtml .= '<input type="button" class="ed_button" onclick="'.$props['js_func_name_click'].'(\'' . $type . '\')" title="' . $props['hint'] . '" value="' . $props['title'] . '" />';
-
-            $datajs.= " wpdev_bk_Data['$type'] = {\n";
-            $datajs.= '		title: "' . esc_js( $props['title'] ) . '",' . "\n";
-            $datajs.= '		tag: "' . esc_js( $props['bookmark'] ) . '",' . "\n";
-            $datajs.= '		tag_close: "' . esc_js( $props['is_close_bookmark'] ) . '",' . "\n";
-            $datajs.= '		cal_count: "' . get_bk_option( 'booking_client_cal_count' )  . '"' . "\n";
-            $datajs.=  "\n	};\n";
-        }
-        ?><script type="text/javascript">
-            // <![CDATA[
-            var wpdev_bk_Data={};
-            <?php echo $datajs; ?>
-            var selected_booking_shortcode = 'bookingform';
-                // Set default heights (IE sucks)
-            <?php if( $this->wpdev_bk_personal !== false ) { ?>
-                var wpdev_bk_DialogDefaultHeight = 245;
-                <?php } else { ?>
-                    var wpdev_bk_DialogDefaultHeight = 185;
-                <?php }  ?>
-                    var wpdev_bk_DialogDefaultExtraHeight = 0;
-                    var wpdev_bk_DialogDefaultWidth = 580;
-                    if ( jQuery.browser.msie ) {
-                        var wpdev_bk_DialogDefaultHeight = wpdev_bk_DialogDefaultHeight + 8;
-                        var wpdev_bk_DialogDefaultExtraHeight = wpdev_bk_DialogDefaultExtraHeight +8;
-                    }
-
-
-                    // This function is run when a button is clicked. It creates a dialog box for the user to input the data.
-                    function booking_click( tag ) {
-                        // wpdev_bk_DialogClose(); // Close any existing copies of the dialog
-                        wpdev_bk_DialogMaxHeight = wpdev_bk_DialogDefaultHeight + wpdev_bk_DialogDefaultExtraHeight;
-
-
-                        // Open the dialog while setting the width, height, title, buttons, etc. of it
-                        var buttons = { "<?php echo esc_js(__('Ok', 'wpdev-booking')); ?>": wpdev_bk_ButtonOk,
-                            "<?php echo esc_js(__('Cancel', 'wpdev-booking')); ?>": wpdev_bk_DialogClose
-                        };
-                        var title = '<img src="<?php echo $this->icon_button_url; ?>" /> ' + wpdev_bk_Data[tag]["title"];
-                       
-                        jQuery("#wpdev_bk-dialog").dialog({
-                            autoOpen: false,
-                            width: 700,
-                            buttons:buttons,
-                            draggable:false,
-                            hide: 'slide',
-                            resizable: false,
-                            modal: true,
-                            title: title,
-                            <?php
-                                $verion_width = '330';
-                                if ( class_exists('wpdev_bk_personal'))            $verion_width = '455';
-                                if ( class_exists('wpdev_bk_biz_s'))        $verion_width = '455';
-                                if ( class_exists('wpdev_bk_biz_m') )  $verion_width = '525';
-                                echo " height: " . $verion_width . ' ';
-                            ?>
-                        });
-                    // Reset the dialog box incase it's been used before
-                    //jQuery("#wpdev_bk-dialog input").val("");
-                    jQuery("#calendar_tag_name").val(wpdev_bk_Data[tag]['tag']);
-                    jQuery("#calendar_tag_close").val(wpdev_bk_Data[tag]['tag_close']);
-                    jQuery("#calendar_count").val(wpdev_bk_Data[tag]['cal_count']);
-                    // Style the jQuery-generated buttons by adding CSS classes and add second CSS class to the "Okay" button
-                    jQuery(".ui-dialog button").addClass("button").each(function(){
-                        if ( "<?php echo esc_js(__('Ok', 'wpdev-booking')); ?>" == jQuery(this).html() ) jQuery(this).addClass("button-highlighted");
-                    });
-
-                    // Do some hackery on any links in the message -- jQuery(this).click() works weird with the dialogs, so we can't use it
-                    jQuery("#wpdev_bk-dialog-content a").each(function(){
-                        jQuery(this).attr("onclick", 'window.open( "' + jQuery(this).attr("href") + '", "_blank" );return false;' );
-                    });
-
-                    // Show the dialog now that it's done being manipulated
-                    jQuery("#wpdev_bk-dialog").dialog("open");
-
-                    // Focus the input field
-                    jQuery("#wpdev_bk-dialog-input").focus();
-                }
-
-                // Close + reset
-                function wpdev_bk_DialogClose() {
-                    jQuery(".ui-dialog").height(wpdev_bk_DialogDefaultHeight);
-                    jQuery(".ui-dialog").width(wpdev_bk_DialogDefaultWidth);
-                    jQuery("#wpdev_bk-dialog").dialog("close");
-                }
-
-                // Callback function for the "Okay" button
-                function wpdev_bk_ButtonOk() {
-
-                    var cal_tag = selected_booking_shortcode;
-                    if ( cal_tag == '' ) return wpdev_bk_DialogClose();
-                    var text = '';
-
-                    if (cal_tag == 'bookingform') {                             // Select  the specific shortcode, depence from selection in shortcode section.
-
-                        if (jQuery("#calendar_or_form").val() == 'form')     cal_tag = 'booking';
-                        if (jQuery("#calendar_or_form").val() == 'calendar') cal_tag = 'bookingcalendar';
-                        if (jQuery("#calendar_or_form").val() == 'onlyform') cal_tag = 'bookingform';
-
-                        text += '[' + cal_tag;
-
-                        // Parameters Start:
-                        if (jQuery("#calendar_type").length != 0 )      text += ' ' + 'type='        + jQuery("#calendar_type").val() ;
-
-                        if (jQuery("#booking_form_type").length != 0 )  text += ' ' + 'form_type=\'' + jQuery("#booking_form_type").val() + '\'';
-
-                        if (cal_tag != 'bookingform') {
-
-                            if ( jQuery("#calendar_count").length != 0 ) text += ' ' + 'nummonths=' + jQuery("#calendar_count").val();
-
-                            if ( jQuery("#start_month_active").attr('checked') ) text += ' ' + 'startmonth=\''+ jQuery("#year_start_month").val() +'-'+ jQuery("#month_start_month").val() + '\'';
-
-                        } else { // Booking Form
-                            text += ' ' + 'selected_dates=\''+ jQuery("#day_popup").val() +'.'+ jQuery("#month_popup").val()+'.'+ jQuery("#year_popup").val() +'\'';
-                        }
-                        // Parameters End !
-
-                    } else if (cal_tag == 'bookingsearch') {                           // Select search  form or search  results
-
-                        var selected_bookingsearch_type = jQuery("#bookingsearch_type:checked");
-                        if (selected_bookingsearch_type.val() == 'bookingsearch')         cal_tag = 'bookingsearch';
-                        if (selected_bookingsearch_type.val() == 'bookingsearchresults')  cal_tag = 'bookingsearchresults';
-
-                        text += '[' + cal_tag;
-
-                        if (cal_tag == 'bookingsearch' ) {
-                            // Parameters Start:
-                            if ( jQuery("#search_at_diff_page").attr('checked') ) {
-                                text += ' ' + 'searchresults=\''+ jQuery("#bookingsearch_searchresults").val() + '\'';
-                            }
-
-                            if (jQuery("#bookingsearch_noresultstitle").length != 0 )      text += ' ' + 'noresultstitle=\''     + jQuery("#bookingsearch_noresultstitle").val() + '\'';
-                            if (jQuery("#bookingsearch_searchresultstitle").length != 0 )  text += ' ' + 'searchresultstitle=\'' + jQuery("#bookingsearch_searchresultstitle").val() + '\'';
-
-                            <?php if ( class_exists('wpdev_bk_multiuser')) { ?>
-                                if ( ( jQuery("#bookingsearch_users").length != 0 ) && (jQuery("#bookingsearch_users").val()!='') ) text += ' ' + 'users=\'' + jQuery("#bookingsearch_users").val() + '\'';
-                            <?php } ?>
-                            // Parameters End !
-                        }
-
-                    } else if (cal_tag == 'bookingselect') {                           // Select search  form or search  results
-                        text += '[' + cal_tag;
-                        
-                        // Parameters Start:
-                        if ( jQuery("#bookingselect_title").length != 0 )       text += ' ' + 'label=\'' + jQuery("#bookingselect_title").val()+ '\'';
-                        if ( jQuery("#bookingselect_form_type").length != 0 )   text += ' ' + 'form_type=\'' + jQuery("#bookingselect_form_type").val()+ '\'';
-                        if ( jQuery("#bookingselect_calendar_count").length != 0 ) text += ' ' + 'nummonths=' + jQuery("#bookingselect_calendar_count").val();
-                        if ( jQuery("#bookingselect_resources").length != 0 ) {
-                            var selectedOptions = jQuery('#bookingselect_resources option:selected');
-                            var selectedValues = jQuery.map(selectedOptions ,function(option) { if (option.value != '') {return option.value;} }).join(',');
-                            text += ' ' + 'type=\'' + selectedValues+ '\'';
-                        }
-                        // Parameters End !
-
-                    } else {
-                        text += '[' + cal_tag;
-                    }
-                    text += ']';
-
-                    if ( jQuery("#calendar_tag_close").length != 0 )
-                        if ( jQuery("#calendar_tag_close").val() != 0)
-                            text += '[/' + cal_tag + ']';
-
-                    if ( typeof tinyMCE != 'undefined' && ( ed = tinyMCE.activeEditor ) && !ed.isHidden() ) {
-                        ed.focus();
-                        if (tinymce.isIE)
-                            ed.selection.moveToBookmark(tinymce.EditorManager.activeEditor.windowManager.bookmark);
-
-                        ed.execCommand('mceInsertContent', false, text);
-                    } else
-                        edInsertContent(edCanvas, text);
-
-                    wpdev_bk_DialogClose();
-                }               
-
-                function add_booking_html_button(){ // Add the buttons to the HTML view
-                    if (jQuery("#ed_toolbar").length == 0) setTimeout("add_booking_html_button()",100);
-                    else jQuery("#ed_toolbar").append('<?php echo wp_specialchars_decode(esc_js( $buttonshtml ), ENT_COMPAT); ?>');
-                }
-
-                // On page load...
-                jQuery(document).ready(function(){
-                    
-                    setTimeout("add_booking_html_button()",100);
-
-                    // If the Enter key is pressed inside an input in the dialog, do the "Okay" button event
-                    jQuery("#wpdev_bk-dialog :input").keyup(function(event){
-                        if ( 13 == event.keyCode ) // 13 == Enter
-                            wpdev_bk_ButtonOkay();
-                    });
-
-                    // Make help links open in a new window to avoid loosing the post contents
-                    jQuery("#wpdev_bk-dialog-slide a").each(function(){
-                        jQuery(this).click(function(){
-                            window.open( jQuery(this).attr("href"), "_blank" );
-                            return false;
-                        });
-                    });
-                });
-                // ]]>
-        </script><?php
-    }
-
-        // Output the <div> used to display the dialog box
-    function custom_button_dalog_structure_DIV() { ?>
-        <div class="hidden">
-            <div id="wpdev_bk-dialog">
-                <div class="wpdev_bk-dialog-content">
-                    <div class="wpdev_bk-dialog-inputs">
-
-                        <?php make_bk_action('show_tabs_inside_insertion_popup_window'); ?>
-
-                        <div id="popup_new_reservation"  style="display:block;width:650px;" class="booking_configuration_dialog">
-
-                            <?php if( $this->wpdev_bk_personal !== false ) {
-                                    $types_list = $this->wpdev_bk_personal->get_booking_types(false, false); ?>
-                                    <div class="field">
-                                        <div style="float:left;">
-                                        <label for="calendar_type"><?php _e('Booking resource:', 'wpdev-booking'); ?></label>
-                                        <select id="calendar_type" name="calendar_type">
-                                            <?php foreach ($types_list as $tl) { ?>
-                                            <option value="<?php echo $tl->id; ?>"
-                                                        style="<?php if  (isset($tl->parent)) if ($tl->parent == 0 ) { echo 'font-weight:bold;'; } else { echo 'font-size:11px;padding-left:20px;'; } ?>"
-                                                    ><?php echo $tl->title; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                        </div>
-                                        <div class="description"><?php _e('For booking, select type of booking resource', 'wpdev-booking'); ?></div>
-                                    </div>
-                            <?php } ?>
-
-                            <?php make_bk_action('wpdev_show_bk_form_selection') ?>
-
-                            <div class="field">
-                                <div style="float:left;">
-                                <label for="calendar_count"><?php _e('Visible months:', 'wpdev-booking'); ?></label>
-                                <!--input id="calendar_count"  name="calendar_count" class="input" type="text" value="<?php echo get_bk_option( 'booking_client_cal_count' ); ?>" -->
-                                <select  id="calendar_count"  name="calendar_count" >
-                                    <option value="1" <?php if (get_bk_option( 'booking_client_cal_count' )== '1') echo ' selected="SELECTED" ' ?> >1</option>
-                                    <option value="2" <?php if (get_bk_option( 'booking_client_cal_count' )== '2') echo ' selected="SELECTED" ' ?> >2</option>
-                                    <option value="3" <?php if (get_bk_option( 'booking_client_cal_count' )== '3') echo ' selected="SELECTED" ' ?> >3</option>
-                                    <option value="4" <?php if (get_bk_option( 'booking_client_cal_count' )== '4') echo ' selected="SELECTED" ' ?> >4</option>
-                                    <option value="5" <?php if (get_bk_option( 'booking_client_cal_count' )== '5') echo ' selected="SELECTED" ' ?> >5</option>
-                                    <option value="6" <?php if (get_bk_option( 'booking_client_cal_count' )== '6') echo ' selected="SELECTED" ' ?> >6</option>
-                                    <option value="7" <?php if (get_bk_option( 'booking_client_cal_count' )== '7') echo ' selected="SELECTED" ' ?> >7</option>
-                                    <option value="8" <?php if (get_bk_option( 'booking_client_cal_count' )== '8') echo ' selected="SELECTED" ' ?> >8</option>
-                                    <option value="9" <?php if (get_bk_option( 'booking_client_cal_count' )== '9') echo ' selected="SELECTED" ' ?> >9</option>
-                                    <option value="10" <?php if (get_bk_option( 'booking_client_cal_count' )== '10') echo ' selected="SELECTED" ' ?> >10</option>
-                                    <option value="11" <?php if (get_bk_option( 'booking_client_cal_count' )== '11') echo ' selected="SELECTED" ' ?> >11</option>
-                                    <option value="12" <?php if (get_bk_option( 'booking_client_cal_count' )== '12') echo ' selected="SELECTED" ' ?> >12</option>
-                                </select>
-                                </div>
-                                <div class="description"><?php _e('Select number of month to show for calendar.', 'wpdev-booking'); ?></div>
-                            </div>
-
-                            <div class="field">
-                                <div style="float:left;">
-                                    <label for="calendar_count"><?php _e('Start month:', 'wpdev-booking'); ?></label>
-                                    <input id="start_month_active"  name="start_month_active" onchange="javascript:if(! this.checked){ jQuery('select.start_month').attr('disabled', 'disabled'); } else {jQuery('select.start_month').removeAttr('disabled');}"  type="checkbox"  style="pading:0px;margin:0px;width:auto;"  />
-                                    <select class="start_month" id="year_start_month" disabled="DISABLED" name="year_start_month" style="width:65px;" > <?php for ($mi = 2011; $mi < 2030; $mi++) {   echo '<option value="'.$mi.'" >'.$mi.'</option>';   } ?> </select> /
-                                    <select class="start_month"  id="month_start_month" disabled="DISABLED"  name="month_start_month" style="width:50px;" > <?php for ($mi = 1; $mi < 13; $mi++) { if ($mi<10) {$mi ='0'.$mi;}  echo '<option value="'.$mi.'" >'.$mi.'</option>';   } ?> </select>
-                                </div>
-
-                                <div class="description" style="float:left;width:300px;"><?php _e('Select start month of calendar', 'wpdev-booking'); ?></div>
-                            </div>
-
-                            <div class="field">
-                                <div style="float:left;">
-                                <label for="calendar_count"><?php _e('Show:', 'wpdev-booking'); ?></label>
-                                <select id="calendar_or_form"  name="calendar_or_form" style="width:210px;" onchange="
-                                javascript: if(this.value=='onlyform') document.getElementById('dates_for_form').style.display='block'; else  document.getElementById('dates_for_form').style.display='none';
-                                ">
-                                    <option value="form"><?php _e('Booking form with calendar', 'wpdev-booking'); ?></option>
-                                    <option value="calendar"><?php _e('Only availability calendar', 'wpdev-booking'); ?></option>
-                                    <?php if (class_exists('wpdev_bk_biz_l')) { ?><option value="onlyform"><?php _e('Only booking form', 'wpdev-booking'); ?></option><?php } ?>
-                                </select>
-                                            <?php if (class_exists('wpdev_bk_biz_l')) { ?><div style="float:right;margin-left:5px;display:none;" id="dates_for_form"> <?php _e('for','wpdev-booking'); ?>
-                                                <select  id="year_popup"  name="year_popup" style="width:65px;" > <?php for ($mi = 2010; $mi < 2030; $mi++) {   echo '<option value="'.$mi.'" >'.$mi.'</option>';   } ?> </select> /
-                                                <select  id="month_popup"  name="month_popup" style="width:50px;" > <?php for ($mi = 1; $mi < 13; $mi++) { if ($mi<10) {$mi ='0'.$mi;}  echo '<option value="'.$mi.'" >'.$mi.'</option>';   } ?> </select> /
-                                                <select  id="day_popup"  name="day_popup" style="width:50px;" > <?php for ($mi = 1; $mi < 32; $mi++) { if ($mi<10) {$mi ='0'.$mi;}   echo '<option value="'.$mi.'" >'.$mi.'</option>';   } ?> </select> <?php _e('date','wpdev-booking'); ?>.
-                                            </div><?php } ?>
-                                </div>
-                                <div style="height:1px;clear:both;"></div>
-                                <div class="description"  style="float:left;margin-left:160px;width:650px;"><?php _e('Select what you want to show: the entire booking form, or the availability calendar only.', 'wpdev-booking'); ?></div>
-                            </div>
-
-                            <?php make_bk_action('show_additional_arguments_for_shortcode'); ?>
-
-                        </div>
-
-                        <?php make_bk_action('show_insertion_popup_shortcode_for_bookingedit'); ?>
-
-                        <input id="calendar_tag_name"  name="calendar_tag_name" class="input" type="hidden" >
-                        <input id="calendar_tag_close"  name="calendar_tag_close" class="input" type="hidden" >
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="wpdev_bk-precacher">
-            <img src="<?php echo WPDEV_BK_PLUGIN_URL.'/js/custom_buttons//img_dialog_ui/333333_7x7_arrow_right.gif'; ?>" alt="" />
-            <img src="<?php echo WPDEV_BK_PLUGIN_URL.'/js/custom_buttons/img_dialog_ui/333333_7x7_arrow_down.gif'; ?>" alt="" />
-        </div><?php
-    }
-
-    // Hide TinyMCE buttons the user doesn't want to see + some misc editor CSS
-    function custom_button_dialog_CSS() {
-        global $user_ID;
-        // Attempt to match the dialog box to the admin colors
-        if ( 'classic' == get_user_option('admin_color', $user_ID) ) {
-            $color = '#fff';
-            $background = '#777';
-        } else {
-            $color = '#fff';
-            $background = '#777';
-        }?>
-        <style type='text/css'>
-            #wpdev_bk-precacher { 
-                display: none; 
-            }
-            .ui-dialog-titlebar {
-                color: <?php  echo $color; ?>;
-                background: <?php  echo $background; ?>;
-            }
-            <?php foreach ($this->settings['custom_buttons'] as $type => $props) {
-                echo  '#content_' . $this->prefix  . '_' . $type  . ' img.mceIcon{
-                                                        width:16px;
-                                                        height:16px;
-                                                        margin:2px auto;0
-                                                   }';
-            }
-            ?>
-            .ui-dialog-title img{
-                margin:3px auto;
-                width:16px;
-                height:16px;
-            }
-            #wpdev_bk-dialog .field {
-                height:30px;
-                line-height:25px;
-                margin:0px 0px 5px;}
-            #wpdev_bk-dialog .field label {float:left; padding-right:10px;width:155px;text-align:left; font-weight:bold;}
-            #wpdev_bk-dialog .wpdev_bk-dialog-inputs {float:left;}
-            #wpdev_bk-dialog input ,#wpdev_bk-dialog select {  width:120px;  }
-            #wpdev_bk-dialog .input_check {width:10px; margin:5px 10px;text-align:center;}
-            #wpdev_bk-dialog .dialog-wraper {float:left;width:100%;}
-            #wpdev_bk-dialog .description {
-                color:#666666;
-                float:right;
-                padding:0 5px;
-                text-align:left;
-                width:350px;
-            }
-            .ui-dialog-buttonset button { margin:0 5px !important}
-            <?php make_bk_action('show_insertion_popup_css_for_tabs'); ?>
-        </style>
-        <?php
-    }
-    // </editor-fold>
-
-
-
+    
     // <editor-fold defaultstate="collapsed" desc="   S U P P O R T     F U N C T I O N S     ">
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //  S U P P O R T     F U N C T I O N S        ///////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // Get array of images - icons inside of this directory
-    function dirList ($directories) {
-
-        // create an array to hold directory list
-        $results = array();
-
-        if (is_string($directories)) $directories = array($directories);
-        foreach ($directories as $dir) {
-            $directory = WPDEV_BK_PLUGIN_DIR . $dir ;
-            // create a handler for the directory
-            $handler = @opendir($directory);
-            if ($handler !== false) {
-                // keep going until all files in directory have been read
-                while ($file = readdir($handler)) {
-
-                    // if $file isn't this directory or its parent,
-                    // add it to the results array
-                    if ($file != '.' && $file != '..' && ( strpos($file, '.css' ) !== false ) )
-                        $results[] = array($file, WPDEV_BK_PLUGIN_URL . $dir . $file,  ucfirst(strtolower( str_replace('.css', '', $file))) );
-                }
-
-                // tidy up: close the handler
-                closedir($handler);
-            }
-        }
-        // done!
-        return $results;
-    }
 
     // Check if table exist
     function is_table_exists( $tablename ) {
@@ -1294,16 +818,6 @@ class wpdev_booking {
         else               return 0;
     }
 
-
-    // Get version
-    function get_version(){
-        $version = 'free';
-        if (class_exists('wpdev_bk_personal'))     $version = 'personal';
-        if (class_exists('wpdev_bk_biz_s')) $version = 'biz_s';
-        if (class_exists('wpdev_bk_biz_m'))   $version = 'biz_m';
-        if (class_exists('wpdev_bk_biz_l'))          $version = 'biz_l';
-        return $version;
-    }
 
     // Check if nowday is tommorow from previosday
     function is_next_day($nowday, $previosday) {
@@ -1350,7 +864,19 @@ class wpdev_booking {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Get dates
-    function get_dates ($approved = 'all', $bk_type = 1, $additional_bk_types= array() ) {
+    function get_dates ($approved = 'all', $bk_type = 1, $additional_bk_types= array(),  $skip_booking_id = ''  ) {
+/*        $bk_type_1 = explode(',', $bk_type); $bk_type = '';
+        foreach ($bk_type_1 as $bkt) {
+            if (!empty($bkt)) { $bk_type .= $bkt . ','; }
+        }
+        $bk_type = substr($bk_type, 0, -1);
+
+        $additional_bk_types_1= array();
+        foreach ($additional_bk_types as $bkt) {
+            if (!empty($bkt)) { $additional_bk_types_1[] = $bkt; }
+        }
+        $additional_bk_types =$additional_bk_types_1;*/
+
         // if ( ! defined('WP_ADMIN') ) if ($approved == 0)  return array(array(),array());
 
         make_bk_action('check_pending_not_paid_auto_cancell_bookings', $bk_type );
@@ -1384,8 +910,10 @@ class wpdev_booking {
                      ON    bk.booking_id = dt.booking_id
 
                      WHERE  dt.booking_date >= CURDATE()  AND bk.booking_type IN ($bk_type_additional)
-
-                     ORDER BY dt.booking_date", $bk_type_additional, 'all' );
+                         
+                     ". (($skip_booking_id != '') ? " AND dt.booking_id NOT IN ( ".$skip_booking_id." ) ":"") ."
+                         
+                     ORDER BY dt.booking_date", $bk_type_additional, 'all' , $skip_booking_id);
 
             else
                 $sql_req = apply_bk_filter('get_bk_dates_sql', "SELECT DISTINCT dt.booking_date
@@ -1397,9 +925,11 @@ class wpdev_booking {
                      ON    bk.booking_id = dt.booking_id
 
                      WHERE  dt.approved = $approved AND dt.booking_date >= CURDATE() AND bk.booking_type IN ($bk_type_additional)
+                         
+                     ". (($skip_booking_id != '') ? " AND dt.booking_id NOT IN ( ".$skip_booking_id." ) ":"") ."
 
-                     ORDER BY dt.booking_date", $bk_type_additional, $approved );
-
+                     ORDER BY dt.booking_date", $bk_type_additional, $approved, $skip_booking_id );
+//if ($approved=='0') debuge($sql_req);
             $dates_approve = apply_bk_filter('get_bk_dates', $wpdb->get_results(wpdevbk_db_prepare( $sql_req )), $approved, 0,$bk_type );
         }
 
@@ -1415,6 +945,7 @@ class wpdev_booking {
                 array_push( $dates_array , $my_dt );
                 array_push( $time_array , $my_tm );
             }
+//debuge(array($dates_array,$time_array));            
         return    array($dates_array,$time_array);  // $dates_array;
     }
 
@@ -1430,12 +961,12 @@ class wpdev_booking {
 
             $filename = $prefix . '.png';
             $captcha_url = WPDEV_BK_PLUGIN_URL . '/js/captcha/tmp/' .$filename;
-            $html  = '<input type="text" class="captachinput" value="" name="captcha_input'.$bk_tp.'" id="captcha_input'.$bk_tp.'" />';
+            $html  = '<input  autocomplete="off" type="text" class="captachinput" value="" name="captcha_input'.$bk_tp.'" id="captcha_input'.$bk_tp.'" />';
             $html .= '<img class="captcha_img"  id="captcha_img' . $bk_tp . '" alt="captcha" src="' . $captcha_url . '" />';
             $ref = substr($filename, 0, strrpos($filename, '.'));
-            $html = '<input type="hidden" name="wpdev_captcha_challenge_' . $bk_tp . '"  id="wpdev_captcha_challenge_' . $bk_tp . '" value="' . $ref . '" />'
+            $html = '<input  autocomplete="off" type="hidden" name="wpdev_captcha_challenge_' . $bk_tp . '"  id="wpdev_captcha_challenge_' . $bk_tp . '" value="' . $ref . '" />'
                     . $html
-                    . '<div id="captcha_msg'.$bk_tp.'" class="wpdev-help-message" ></div>';
+                    . '<span id="captcha_msg'.$bk_tp.'" class="wpdev-help-message" ></span>';
             return $html;
         }
     }
@@ -1457,9 +988,8 @@ class wpdev_booking {
     //  A D M I N    M E N U    P A G E S
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function content_of_booking_page() {
-
-        wp_nonce_field('wpbc_ajax_admin_nonce',  "wpbc_admin_panel_nonce" ,  true , true );
         
+        wp_nonce_field('wpbc_ajax_admin_nonce',  "wpbc_admin_panel_nonce" ,  true , true );
         
         // Check if this user ACTIVE and can be at this page in MultiUser version
         $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'check_for_active_users');
@@ -1493,15 +1023,17 @@ class wpdev_booking {
             <?php
                 make_bk_action('write_content_for_popups' );
                 //debugq();
-                wpdevbk_show_booking_listings();
+                wpdevbk_show_booking_page();
                 //debugq(); ?>
            </div><?php
-//debugq();//TODO: comment this time showing.
+//debugq();
     }
 
     //Content of the Add reservation page
     function content_of_reservation_page() {
+
         wp_nonce_field('wpbc_ajax_admin_nonce',  "wpbc_admin_panel_nonce" ,  true , true );
+        
         $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'check_for_active_users');
 
         if (! $is_can) return false;
@@ -1509,7 +1041,7 @@ class wpdev_booking {
         if ( ! isset($_GET['booking_type']) ) {
 
             $default_booking_resource = get_bk_option( 'booking_default_booking_resource');
-            if ((isset($default_booking_resource)) && ($default_booking_resource !== false)) {
+            if ((isset($default_booking_resource)) && (! empty($default_booking_resource) )) {
             } else {
                 if( $this->wpdev_bk_personal !== false ) {
                     $default_booking_resource = $this->wpdev_bk_personal->get_default_booking_resource_id();
@@ -1560,7 +1092,9 @@ class wpdev_booking {
 
     //content of    S E T T I N G S     page  - actions runs
     function content_of_settings_page () {
+
         wp_nonce_field('wpbc_ajax_admin_nonce',  "wpbc_admin_panel_nonce" ,  true , true );
+        
         $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'check_for_active_users');
         if (! $is_can) return false;
 
@@ -1578,7 +1112,9 @@ class wpdev_booking {
 
     //content of resources management page
     function content_of_resource_page(){
+
         wp_nonce_field('wpbc_ajax_admin_nonce',  "wpbc_admin_panel_nonce" ,  true , true );
+        
         $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'check_for_active_users');
         if (! $is_can) return false;
 
@@ -1603,11 +1139,10 @@ class wpdev_booking {
 
     // Show top line menu
     function settings_menu_top_line() {
+        
         $selected_icon = 'General-setting-64x64.png';
-        $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'not_low_level_user'); //Anxo customizarion
-        if (! $is_can) if  (! isset($_GET['tab'])) $_GET['tab'] = 'filter'; //Anxo customizarion
-
-        $version = $this->get_version();
+        $version = get_bk_version();
+        
         if (! isset($_GET['tab'])) $_GET['tab'] = '';
         $selected_title = $_GET['tab'];
         $is_only_icons = ! true;
@@ -1617,7 +1152,7 @@ class wpdev_booking {
         <div style="height:1px;clear:both;margin-top:20px;"></div>
         <div id="menu-wpdevplugin">
             <div class="nav-tabs-wrapper">
-            <div class="nav-tabs">
+            <div class="nav-tabs" style="width:100%;">
                 <?php $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'only_super_admin');
                 if ($is_can) { ?>
 
@@ -1630,21 +1165,24 @@ class wpdev_booking {
                          if ( (! isset($_GET['tab'])) || ($_GET['tab']=='') ) $_GET['tab'] = 'form'; // For multiuser - common user set firt selected tab -> Form
                 } ?>
 
-                <?php $is_can_be_here = true; //Reduction version 3.0
-                if ($version == 'free') $is_can_be_here = false;
-                if ($is_can_be_here) { //Reduction version 3.0 ?>
 
                     <?php $title = __('Fields', 'wpdev-booking');
                     $my_icon = 'Form-fields-64x64.png'; $my_tab = 'form';  ?>
                     <?php if ($_GET['tab'] == 'form') {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
                     <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of booking form fields','wpdev-booking');  ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span><?php } else { ?></a><?php } ?>
 
+                <?php $is_can_be_here = true; //Reduction version 3.0
+                if ($version == 'free') $is_can_be_here = false;
+                if ($is_can_be_here) { //Reduction version 3.0 ?>
+                        
                     <?php $title = __('Emails', 'wpdev-booking');
                     $my_icon = 'E-mail-64x64.png'; $my_tab = 'email';  ?>
                     <?php if ($_GET['tab'] == 'email') {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
                     <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of email templates','wpdev-booking');  ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span><?php } else { ?></a><?php } ?>
 
-                    <?php if ( ($version == 'free') || ($version == 'biz_s') || ($version == 'biz_l') || ($version == 'biz_m') ) { ?>
+                    <?php $is_can = true;
+                            //$is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'only_super_admin'); ?>    
+                    <?php if ( ( ($version == 'free') || ($version == 'biz_s') || ($version == 'biz_l') || ($version == 'biz_m') ) && ($is_can) ){ ?>
 
                         <?php $title = __('Payments', 'wpdev-booking');
                         $my_icon = 'Paypal-cost-64x64.png'; $my_tab = 'payment';  ?>
@@ -1653,25 +1191,9 @@ class wpdev_booking {
                     <?php } ?>
 
                     <?php if ( ($version == 'free') || ($version == 'biz_l') || ($version == 'biz_m') ) { ?>
-                        <?php /*if ($is_can) { //Anxo customizarion ?>
-                        <?php $title = __('Cost and availability', 'wpdev-booking');
-                        $my_icon = 'Booking-costs-64x64.png'; $my_tab = 'cost';  ?>
-                        <?php if ($_GET['tab'] == 'cost') {  $slct_a = 'selected'; } else { $slct_a = ''; } ?>
-                        <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of','wpdev-booking') .' '.strtolower($title). ' '.__('settings','wpdev-booking'); ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span><?php } else { ?></a><?php } ?>
-                        <?php } //Anxo customizarion ?>
-
-                        <?php $title = __('Filters', 'wpdev-booking');
-                        $my_icon = 'Season-64x64.png'; $my_tab = 'filter';  ?>
-                        <?php if ($_GET['tab'] == 'filter') {  $slct_a = 'selected'; } else { $slct_a = ''; } ?>
-                        <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of','wpdev-booking') .' '.strtolower($title). ' '.__('settings','wpdev-booking'); ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span><?php } else { ?></a><?php } ?>
-                        <?php /**/ if ($is_can) { //Anxo customizarion ?>
+                        
                         <?php if ( ($version == 'free') || ($version == 'biz_l') ) { ?>
-                            <?php /*
-                            <?php $title = __('Resources', 'wpdev-booking');
-                            $my_icon = 'Booking-resources-64x64.png'; $my_tab = 'resources';  ?>
-                            <?php if ($_GET['tab'] == 'resources') {  $slct_a = 'selected'; } else { $slct_a = ''; } ?>
-                            <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of','wpdev-booking') .' '.strtolower($title). ' '.__('settings','wpdev-booking'); ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span><?php } else { ?></a><?php } ?>
-                            <?php /**/ ?>
+                            
 
                             <?php $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'only_super_admin'); ?>
                             <?php if ($is_can) { ?>
@@ -1681,7 +1203,7 @@ class wpdev_booking {
                                 <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of search form','wpdev-booking') ; ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span><?php } else { ?></a><?php } ?>
                             <?php } ?>
                         <?php } ?>
-                    <?php } //Anxo customizarion ?>
+                    
 
                     <?php if ( ($version == 'free')   ) { ?>
                         <?php $title = __('Users', 'wpdev-booking');
@@ -1713,7 +1235,7 @@ class wpdev_booking {
                         <?php $title = __('Upgrade', 'wpdev-booking');
                         $my_icon = 'shopping_trolley.png'; $my_tab = 'upgrade';  ?>
                         <?php if ( ($_GET['tab'] == $my_tab)  ) {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
-                        <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a class="nav-tab" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span><?php } else { ?></a><?php } ?>
+                        <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active" style="float:right;"><?php } else { ?><a class="nav-tab tooltip_bottom" style="float:right;" title="<?php echo __('Upgrade to higher versions.','wpdev-booking'); ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span><?php } else { ?></a><?php } ?>
                     <?php }  ?>
                 <?php } //Reduction version 3.0 ?>
             </div>
@@ -1749,1186 +1271,40 @@ class wpdev_booking {
                         
     }
 
-    // Show content of settings page . At free version just promo information
+    // Show content of settings page 
     function settings_menu_content() {
 
-        $version = $this->get_version();
-        if ( wpdev_bk_is_this_demo() ) $version = 'free';
+        $version = get_bk_version();
+        if ( wpdev_bk_is_this_demo() ) 
+            $version = 'free';
 
         if   ( ! isset($_GET['tab']) )  {
-
              $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'only_super_admin');
              if ($is_can) {
-                $this->settings_general_content();
-                return;
-             } else { // Multiuser first page for common user page
-                 $_GET['tab'] = 'form';
-                 $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'not_low_level_user'); //Anxo customizarion
-                 if (! $is_can) $_GET['tab'] = 'filter'; //Anxo customizarion
-
-                 return;
+                $_GET['tab'] = 'main';
+             } else {                           // Multiuser first page for common user page
+                $_GET['tab'] = 'form';
              }
         }
 
         switch ($_GET['tab']) {
-
-            case 'main':                
-                $this->settings_general_content();
-                return;
-                break;
-
-            case '':
-                $this->settings_general_content();
-                return;
-                break;
-
-            case 'upgrade':
-                if ( ( ($version !== 'free') && ($version !== 'biz_l') ) || (($version === 'biz_l') && (class_exists('wpdev_bk_biz_l') === false) ) )
-                     $this->showUpgradeWindow($version);
-                break ;
+        case 'main':                
+            wpdev_bk_settings_general();
+            break;
+        case '':
+            wpdev_bk_settings_general();
+            break;
+        case 'form':
+            if (! class_exists('wpdev_bk_personal')) 
+                wpdev_bk_settings_form_labels();
+            break;
+        case 'upgrade':
+            if ( ( ($version !== 'free') && ($version !== 'biz_l') ) || (($version === 'biz_l') && (class_exists('wpdev_bk_biz_l') === false) ) )
+                 wpdev_bk_upgrade_window($version);
+            break;
         }
     }
 
-    // Show window for upgrading
-    function showUpgradeWindow($version) {
-        if ( ! wpdev_bk_is_this_demo() ) {
-        ?>
-            <div class='meta-box'>
-                    <div <?php $my_close_open_win_id = 'bk_general_settings_upgrade'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="gdrgrid postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                    <h3 class='hndle'><span><span>Upgrade to <?php if ( ($version == 'personal') ) { ?>Business Small /<?php } ?><?php if (in_array($version, array('personal','biz_s') )) { ?> Business Medium /<?php } ?> Business Large</span></span></h3>
-                    <div class="inside">
-
-                                <p>You can make <strong>upgrade</strong> to the
-                                <?php if (in_array($version, array('personal') )) { ?><span class="color_premium" style="font-weight:bold;">Booking Calendar Business Small</span> or<?php } ?>
-                                <?php if (in_array($version, array('personal','biz_s') )) { ?><span class="color_premium_plus" style="font-weight:bold;">Business Medium</span> or<?php } ?>
-                                <span  class="color_hotel" style="font-weight:bold;">Business Large</span>: </p>
-
-            <?php if (in_array($version, array('personal') )) { ?>
-                                <p><span class="color_premium" style="font-weight:bold;">Booking Calendar Business Small</span> features:</p>
-                                <p style="padding:0px 10px;">
-                                    &bull; Bookings for <strong>specific time</strong>  in a day<br/>
-                                    &bull; <strong>Week booking</strong> or any other day range selection bookings<br/>
-                                    &bull; <strong>Online payment</strong> (PayPal, Sage, iPay88 payment support)<br/>
-                                    &bull; <strong>Payment requests</strong> Posibility to send payment requests to visitors<br/>
-                                    &bull; <strong>Cost editing</strong> Posibility to direct cost editing by administrator<br/>
-                                </p>
-            <?php } ?>
-            <?php if (in_array($version, array('personal','biz_s') )) { ?>
-                                <p><span class="color_premium_plus" style="font-weight:bold;">Booking Calendar Business Medium</span> features:</p>
-                                <p style="padding:0px 10px;">
-                                        &bull; <strong>Several booking forms</strong> Customization of fields for several forms<br/>
-                                        &bull; <strong>Season filter</strong> flexible definition of days<br/>
-                                        &bull; <strong>Availability</strong>. Set for each booking resource (un)avalaible days.<br/>
-                                        &bull; <strong>Rates</strong>. Set higher costs for peak season or discounts for specific days.<br/>
-                                        &bull; <strong>Additional costs</strong>. Set additional costs, which will depends from selection in dropdown lists or checkboxes.<br/>
-                                        &bull; <strong>Advanced costs</strong>. Set costs, which will depends from number of selected days for booking.<br/>
-                                        &bull; <strong>Setting deposit amount</strong> - for showing part of final cost, for payment by visitor after booking is made. <br/>
-
-                                </p>
-            <?php } ?>
-                                <p><span class="color_hotel"  style="font-weight:bold;">Booking Calendar Business Large</span> features:</p>
-                                <p style="padding:0px 10px;">
-                                        &bull; <strong>Multiple booking at the same day.</strong> Day will be availbale untill all items (rooms) are not reserved.<br/>
-                                        &bull; <strong>"Capacity" of day depends from number of visitors</strong> Selection of visitor number will apply to the capacity of selected day(s).<br/>
-                                </p>
-                                <p>Please read more detail info about versions <a href="http://wpbookingcalendar.com/help/versions-overview/" target="_blank" class="btn">here</a></p>
-        <?php if( strpos( strtolower(WPDEV_BK_VERSION) , 'multisite') !== false  ) {
-            $multiv = '-multi';
-        } else {
-            $multiv = '';
-        }  ?>
-
-            <?php if ( ($version == 'personal') ) { ?>
-                                    <p style="line-height:25px;text-align:center;padding-top:15px;" class="wpdevbk"><a href="http://wpbookingcalendar.com/upgrade-pro<?php echo $multiv ?>/" target="_blank" class="btn">Upgrade</a></p>
-            <?php } elseif ( ($version == 'biz_s') ) { ?>
-                                    <p style="line-height:25px;text-align:center;padding-top:15px;" class="wpdevbk"><a href="http://wpbookingcalendar.com/upgrade-premium<?php echo $multiv ?>/" target="_blank" class="btn">Upgrade</a></p>
-            <?php } elseif ( ($version == 'biz_m') ) { ?>
-                                    <p style="line-height:25px;text-align:center;padding-top:15px;" class="wpdevbk"><a href="http://wpbookingcalendar.com/upgrade-premium-plus<?php echo $multiv ?>/" target="_blank" class="btn">Upgrade</a></p>
-            <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-
-
-        <?php
-        }
-    }
-
-    // Show Settings content of main page
-    function settings_general_content() {
-
-        $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'only_super_admin');
-        if ($is_can===false) return;
-
-
-        if ( isset( $_POST['start_day_weeek'] ) ) {
-            $booking_skin  = $_POST['booking_skin'];
-
-            $email_reservation_adress      = htmlspecialchars( str_replace('\"','"',$_POST['email_reservation_adress']));
-            $email_reservation_adress      = str_replace("\'","'",$email_reservation_adress);
-
-            $bookings_num_per_page = $_POST['bookings_num_per_page'];
-            $booking_sort_order = $_POST['booking_sort_order'];
-            $booking_default_toolbar_tab = $_POST['booking_default_toolbar_tab'];
-            $bookings_listing_default_view_mode = $_POST['bookings_listing_default_view_mode'];
-            $booking_view_days_num = $_POST['booking_view_days_num'];
-
-            //$booking_sort_order_direction = $_POST['booking_sort_order_direction'];
-
-            $max_monthes_in_calendar =  $_POST['max_monthes_in_calendar'];
-            if (isset($_POST['admin_cal_count'])) $admin_cal_count  = $_POST['admin_cal_count'];
-            if (isset($_POST['client_cal_count'])) $client_cal_count = $_POST['client_cal_count'];
-            $start_day_weeek  = $_POST['start_day_weeek'];
-            $new_booking_title= $_POST['new_booking_title'];
-            $new_booking_title_time= $_POST['new_booking_title_time'];
-            $type_of_thank_you_message = $_POST['type_of_thank_you_message'];//get_bk_option( 'booking_type_of_thank_you_message' ); //= 'message'; = 'page';
-            $thank_you_page_URL = $_POST['thank_you_page_URL'];//get_bk_option( 'booking_thank_you_page_URL' ); //= 'message'; = 'page';
-
-
-            $booking_date_format = $_POST['booking_date_format'];
-            $booking_date_view_type = $_POST['booking_date_view_type'];
-            //$is_dif_colors_approval_pending = $_POST['is_dif_colors_approval_pending'];
-            if (isset($_POST['is_use_hints_at_admin_panel']))
-                $is_use_hints_at_admin_panel = $_POST['is_use_hints_at_admin_panel'];
-
-            $type_of_day_selections = $_POST[ 'type_of_day_selections' ];
-            // if (isset($_POST['multiple_day_selections'])) $multiple_day_selections =  $_POST[ 'multiple_day_selections' ];
-            
-
-            if (isset($_POST['is_delete_if_deactive'])) $is_delete_if_deactive =  $_POST['is_delete_if_deactive']; // check
-            if (isset($_POST['wpdev_copyright'])) $wpdev_copyright  = $_POST['wpdev_copyright'];             // check
-            if (isset($_POST['booking_is_show_powered_by_notice'])) $booking_is_show_powered_by_notice  = $_POST['booking_is_show_powered_by_notice'];             // check
-
-            if (isset($_POST['is_use_captcha'])) $is_use_captcha  = $_POST['is_use_captcha'];             // check
-            if (isset($_POST['is_use_autofill_4_logged_user'])) $is_use_autofill_4_logged_user  = $_POST['is_use_autofill_4_logged_user'];             // check
-            //if (isset($_POST['is_show_legend'])) $is_show_legend  = $_POST['is_show_legend'];             // check
-
-            if (isset($_POST['unavailable_day0']))  $unavailable_day0  = $_POST['unavailable_day0'];
-            if (isset($_POST['unavailable_day1']))  $unavailable_day1  = $_POST['unavailable_day1'];
-            if (isset($_POST['unavailable_day2']))  $unavailable_day2  = $_POST['unavailable_day2'];
-            if (isset($_POST['unavailable_day3']))  $unavailable_day3  = $_POST['unavailable_day3'];
-            if (isset($_POST['unavailable_day4']))  $unavailable_day4  = $_POST['unavailable_day4'];
-            if (isset($_POST['unavailable_day5']))  $unavailable_day5  = $_POST['unavailable_day5'];
-            if (isset($_POST['unavailable_day6']))  $unavailable_day6  = $_POST['unavailable_day6'];
-
-            $user_role_booking      = $_POST['user_role_booking'];
-            $user_role_addbooking   = $_POST['user_role_addbooking'];
-            $user_role_settings     = $_POST['user_role_settings'];
-            if (isset($_POST['user_role_resources']))
-                $user_role_resources     = $_POST['user_role_resources'];
-            if ( wpdev_bk_is_this_demo() ) {
-                $user_role_booking      = 'subscriber';
-                $user_role_addbooking   = 'subscriber';
-                $user_role_settings     = 'subscriber';
-                $user_role_resources    = 'subscriber';
-            }
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-            update_bk_option( 'booking_user_role_booking', $user_role_booking );
-            update_bk_option( 'booking_user_role_addbooking', $user_role_addbooking );
-            if (isset($user_role_resources))
-                update_bk_option( 'booking_user_role_resources', $user_role_resources );
-            update_bk_option( 'booking_user_role_settings', $user_role_settings );
-
-
-            update_bk_option( 'bookings_num_per_page',$bookings_num_per_page);
-            update_bk_option( 'booking_sort_order',$booking_sort_order);
-            update_bk_option( 'booking_default_toolbar_tab',$booking_default_toolbar_tab);
-            update_bk_option( 'bookings_listing_default_view_mode',$bookings_listing_default_view_mode);
-            update_bk_option( 'booking_view_days_num',$booking_view_days_num);
-
-
-            //update_bk_option( 'booking_sort_order_direction',$booking_sort_order_direction);
-
-            update_bk_option( 'booking_skin',$booking_skin);
-            update_bk_option( 'booking_email_reservation_adress' , $email_reservation_adress );
-
-            if ( $this->get_version() == 'free' ) { // Update admin from adresses at free version
-                //update_bk_option( 'booking_email_reservation_from_adress', $email_reservation_adress );
-                update_bk_option( 'booking_email_approval_adress', $email_reservation_adress );
-                update_bk_option( 'booking_email_deny_adress', $email_reservation_adress );
-            }
-
-            update_bk_option( 'booking_max_monthes_in_calendar' , $max_monthes_in_calendar );
-
-            if (! isset($admin_cal_count)) $admin_cal_count = 2;
-            if (! isset($client_cal_count)) $client_cal_count = 1;
-
-            if (1*$admin_cal_count>12) $admin_cal_count = 12;
-            if (1*$admin_cal_count< 1) $admin_cal_count = 1;
-            update_bk_option( 'booking_admin_cal_count' , $admin_cal_count );
-            if (1*$client_cal_count>12) $client_cal_count = 12;
-            if (1*$client_cal_count< 1) $client_cal_count = 1;
-            update_bk_option( 'booking_client_cal_count' , $client_cal_count );
-            update_bk_option( 'booking_start_day_weeek' , $start_day_weeek );
-            update_bk_option( 'booking_title_after_reservation' , $new_booking_title );
-            update_bk_option( 'booking_title_after_reservation_time' , $new_booking_title_time );
-            update_bk_option( 'booking_type_of_thank_you_message' , $type_of_thank_you_message );
-            update_bk_option( 'booking_thank_you_page_URL' , $thank_you_page_URL );
-
-
-
-            update_bk_option( 'booking_date_format' , $booking_date_format );
-            update_bk_option( 'booking_date_view_type' , $booking_date_view_type);
-            // if (isset( $is_dif_colors_approval_pending ))   $is_dif_colors_approval_pending = 'On';
-            // else                                            $is_dif_colors_approval_pending = 'Off';
-            // update_bk_option( 'booking_dif_colors_approval_pending' , $is_dif_colors_approval_pending );
-
-            if (isset( $is_use_hints_at_admin_panel ))   $is_use_hints_at_admin_panel = 'On';
-            else                                            $is_use_hints_at_admin_panel = 'Off';
-            update_bk_option( 'booking_is_use_hints_at_admin_panel' , $is_use_hints_at_admin_panel );
-
-            if (! wpdev_bk_is_this_demo() ) { // Do not allow to chnage it in  the demo
-                if (isset( $_POST['is_not_load_bs_script_in_client'] ))   $is_not_load_bs_script_in_client = 'On';
-                else                                                      $is_not_load_bs_script_in_client = 'Off';
-                update_bk_option( 'booking_is_not_load_bs_script_in_client' , $is_not_load_bs_script_in_client );
-                if (isset( $_POST['is_not_load_bs_script_in_admin'] ))   $is_not_load_bs_script_in_admin = 'On';
-                else                                                      $is_not_load_bs_script_in_admin = 'Off';
-                update_bk_option( 'booking_is_not_load_bs_script_in_admin' , $is_not_load_bs_script_in_admin );
-            }
-
-
-            update_bk_option( 'booking_type_of_day_selections' , $type_of_day_selections );
-            //if ($type_of_day_selections == 'single') { $multiple_day_selections = 'Off'; }
-            //else                                     { $multiple_day_selections = 'On';  }
-
-            //if (isset( $multiple_day_selections ))   $multiple_day_selections = 'On';
-            //else                                     $multiple_day_selections = 'Off';
-            //update_bk_option( 'booking_multiple_day_selections' , $multiple_day_selections );
-            
-
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            $unavailable_days_num_from_today     = $_POST['unavailable_days_num_from_today'];
-            update_bk_option( 'booking_unavailable_days_num_from_today' , $unavailable_days_num_from_today );
-
-
-
-
-            if (isset( $unavailable_day0 ))            $unavailable_day0 = 'On';
-            else                                       $unavailable_day0 = 'Off';
-            update_bk_option( 'booking_unavailable_day0' , $unavailable_day0 );
-            if (isset( $unavailable_day1 ))            $unavailable_day1 = 'On';
-            else                                       $unavailable_day1 = 'Off';
-            update_bk_option( 'booking_unavailable_day1' , $unavailable_day1 );
-            if (isset( $unavailable_day2 ))            $unavailable_day2 = 'On';
-            else                                       $unavailable_day2 = 'Off';
-            update_bk_option( 'booking_unavailable_day2' , $unavailable_day2 );
-            if (isset( $unavailable_day3 ))            $unavailable_day3 = 'On';
-            else                                       $unavailable_day3 = 'Off';
-            update_bk_option( 'booking_unavailable_day3' , $unavailable_day3 );
-            if (isset( $unavailable_day4 ))            $unavailable_day4 = 'On';
-            else                                       $unavailable_day4 = 'Off';
-            update_bk_option( 'booking_unavailable_day4' , $unavailable_day4 );
-            if (isset( $unavailable_day5 ))            $unavailable_day5 = 'On';
-            else                                       $unavailable_day5 = 'Off';
-            update_bk_option( 'booking_unavailable_day5' , $unavailable_day5 );
-            if (isset( $unavailable_day6 ))            $unavailable_day6 = 'On';
-            else                                       $unavailable_day6 = 'Off';
-            update_bk_option( 'booking_unavailable_day6' , $unavailable_day6 );
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if (isset( $is_delete_if_deactive ))            $is_delete_if_deactive = 'On';
-            else                                            $is_delete_if_deactive = 'Off';
-            update_bk_option( 'booking_is_delete_if_deactive' , $is_delete_if_deactive );
-
-            if (isset( $booking_is_show_powered_by_notice ))                  $booking_is_show_powered_by_notice = 'On';
-            else                                            $booking_is_show_powered_by_notice = 'Off';
-            update_bk_option( 'booking_is_show_powered_by_notice' , $booking_is_show_powered_by_notice );
-            if (isset( $wpdev_copyright ))                  $wpdev_copyright = 'On';
-            else                                            $wpdev_copyright = 'Off';
-            update_bk_option( 'booking_wpdev_copyright' , $wpdev_copyright );
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if (isset( $is_use_captcha ))                  $is_use_captcha = 'On';
-            else                                           $is_use_captcha = 'Off';
-            update_bk_option( 'booking_is_use_captcha' , $is_use_captcha );
-
-            if (isset( $is_use_autofill_4_logged_user ))                    $is_use_autofill_4_logged_user = 'On';
-            else                                                            $is_use_autofill_4_logged_user = 'Off';
-            update_bk_option( 'booking_is_use_autofill_4_logged_user' , $is_use_autofill_4_logged_user );
-
-
-
-            //if (isset( $is_show_legend ))                  $is_show_legend = 'On';
-            //else                                           $is_show_legend = 'Off';
-            //update_bk_option( 'booking_is_show_legend' , $is_show_legend );
-
-        } else {
-            $booking_skin = get_bk_option( 'booking_skin');
-            $email_reservation_adress      = get_bk_option( 'booking_email_reservation_adress') ;
-            $max_monthes_in_calendar =  get_bk_option( 'booking_max_monthes_in_calendar' );
-
-            $bookings_num_per_page =  get_bk_option( 'bookings_num_per_page');
-            $booking_sort_order = get_bk_option( 'booking_sort_order');
-            $booking_default_toolbar_tab = get_bk_option( 'booking_default_toolbar_tab');
-            $bookings_listing_default_view_mode = get_bk_option( 'bookings_listing_default_view_mode');
-            $booking_view_days_num = get_bk_option( 'booking_view_days_num');
-            //$booking_sort_order_direction = get_bk_option( 'booking_sort_order_direction');
-
-
-            $admin_cal_count  = get_bk_option( 'booking_admin_cal_count' );
-            $new_booking_title= get_bk_option( 'booking_title_after_reservation' );
-            $new_booking_title_time= get_bk_option( 'booking_title_after_reservation_time' );
-
-            $type_of_thank_you_message = get_bk_option( 'booking_type_of_thank_you_message' ); //= 'message'; = 'page';
-            $thank_you_page_URL = get_bk_option( 'booking_thank_you_page_URL' ); //= 'message'; = 'page';
-
-
-            $booking_date_format = get_bk_option( 'booking_date_format');
-            $booking_date_view_type = get_bk_option( 'booking_date_view_type');
-            $client_cal_count = get_bk_option( 'booking_client_cal_count' );
-            $start_day_weeek  = get_bk_option( 'booking_start_day_weeek' );
-            // $is_dif_colors_approval_pending = get_bk_option( 'booking_dif_colors_approval_pending' );
-            $is_use_hints_at_admin_panel    = get_bk_option( 'booking_is_use_hints_at_admin_panel' );
-            $is_not_load_bs_script_in_client = get_bk_option( 'booking_is_not_load_bs_script_in_client'  );
-            $is_not_load_bs_script_in_admin = get_bk_option( 'booking_is_not_load_bs_script_in_admin'  );
-
-            
-            $type_of_day_selections =  get_bk_option( 'booking_type_of_day_selections');
-            //if ($type_of_day_selections == 'single') { $multiple_day_selections = 'Off'; }
-            //else                                     { $multiple_day_selections = 'On';  }
-            //$multiple_day_selections =  get_bk_option( 'booking_multiple_day_selections' );
-
-
-
-            $is_delete_if_deactive =  get_bk_option( 'booking_is_delete_if_deactive' ); // check
-            $wpdev_copyright  = get_bk_option( 'booking_wpdev_copyright' );             // check
-            $booking_is_show_powered_by_notice = get_bk_option( 'booking_is_show_powered_by_notice' );             // check
-            $is_use_captcha  = get_bk_option( 'booking_is_use_captcha' );             // check
-            $is_use_autofill_4_logged_user  = get_bk_option( 'booking_is_use_autofill_4_logged_user' );             // check
-            //$is_show_legend  = get_bk_option( 'booking_is_show_legend' );             // check
-
-            $unavailable_days_num_from_today = get_bk_option( 'booking_unavailable_days_num_from_today'  );
-            $unavailable_day0 = get_bk_option( 'booking_unavailable_day0' );
-            $unavailable_day1 = get_bk_option( 'booking_unavailable_day1' );
-            $unavailable_day2 = get_bk_option( 'booking_unavailable_day2' );
-            $unavailable_day3 = get_bk_option( 'booking_unavailable_day3' );
-            $unavailable_day4 = get_bk_option( 'booking_unavailable_day4' );
-            $unavailable_day5 = get_bk_option( 'booking_unavailable_day5' );
-            $unavailable_day6 = get_bk_option( 'booking_unavailable_day6' );
-
-            $user_role_booking      = get_bk_option( 'booking_user_role_booking' );
-            $user_role_addbooking   = get_bk_option( 'booking_user_role_addbooking' );
-            $user_role_resources   = get_bk_option( 'booking_user_role_resources');
-            $user_role_settings     = get_bk_option( 'booking_user_role_settings' );
-        }
-
-        if (empty($type_of_thank_you_message)) $type_of_thank_you_message = 'message';
-        ?>
-        <div  class="clear" style="height:10px;"></div>
-        <form  name="post_option" action="" method="post" id="post_option" >
-
-            <div  style="width:64%; float:left;margin-right:1%;">
-
-                <div class='meta-box'>
-                    <div <?php $my_close_open_win_id = 'bk_general_settings_main'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                        <h3 class='hndle'><span><?php _e('Main', 'wpdev-booking'); ?></span></h3> <div class="inside">
-                            <table class="form-table"><tbody>
-
-                    <?php  // make_bk_action('wpdev_bk_general_settings_a'); ?>
-
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="admin_cal_count" ><?php _e('Admin email', 'wpdev-booking'); ?>:</label></th>
-                                            <td><input id="email_reservation_adress"  name="email_reservation_adress" class="regular-text code" type="text" style="width:350px;" size="145" value="<?php echo $email_reservation_adress; ?>" /><br/>
-                                                <span class="description"><?php printf(__('Type default %sadmin email%s for booking confirmation', 'wpdev-booking'),'<b>','</b>');?></span>
-                                            </td>
-                                        </tr>
-
-                                        <?php make_bk_action('wpdev_bk_general_settings_edit_booking_url'); ?>
-
-                                        <?php do_action('settings_advanced_set_update_hash_after_approve'); ?>
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="is_use_hints_at_admin_panel" ><?php _e('Show hints', 'wpdev-booking'); ?>:</label><br><?php _e('Show / hide hints', 'wpdev-booking'); ?></th>
-                                            <td><input id="is_use_hints_at_admin_panel" type="checkbox" <?php if ($is_use_hints_at_admin_panel == 'On') echo "checked"; ?>  value="<?php echo $is_use_hints_at_admin_panel; ?>" name="is_use_hints_at_admin_panel"/>
-                                                <span class="description"> <?php _e('Check this box if you want to show help hints on the admin panel.', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                                        <tr valign="top"><td colspan="2"><div style="border-bottom:1px solid #cccccc;"></div></td></tr>
-
-
-
-                                        <tr valign="top"> <td colspan="2">
-                                            <div style="width:100%;">
-                                                <span style="color:#21759B;cursor: pointer;font-weight: bold;"
-                                                   onclick="javascript: jQuery('#togle_settings_javascriptloading').slideToggle('normal');jQuery('.bk_show_advanced_settings_js').toggle('normal');"
-                                                   style="text-decoration: none;font-weight: bold;font-size: 11px;">
-                                                     <span class="bk_show_advanced_settings_js">+ <span style="border-bottom:1px dashed #21759B;"><?php _e('Show advanced settings of JavaScript loading', 'wpdev-booking'); ?></span></span>
-                                                     <span class="bk_show_advanced_settings_js" style="display:none;">- <span style="border-bottom:1px dashed #21759B;"><?php _e('Hide advanced settings of JavaScript loading', 'wpdev-booking'); ?></span></span>
-
-                                                </span>
-                                            </div>
-
-
-                                            <table id="togle_settings_javascriptloading" style="display:none;" class="hided_settings_table">
-
-                                            <tr valign="top">
-                                                <th scope="row"><label for="is_not_load_bs_script_in_client" ><?php _e('Disable Bootstrap loading', 'wpdev-booking'); ?>:</label><br><?php _e('Client side', 'wpdev-booking'); ?></th>
-                                                <td><input id="is_not_load_bs_script_in_client" type="checkbox" <?php if ($is_not_load_bs_script_in_client == 'On') echo "checked"; ?>  value="<?php echo $is_not_load_bs_script_in_client; ?>" name="is_not_load_bs_script_in_client"
-                                                                                                        onclick="javascript: if (this.checked) { var answer = confirm('<?php  _e('Warning','wpdev-booking'); echo '! '; _e("You are need to be sure what you are doing. You are disable of loading some JavaScripts Do you really want to do this?", 'wpdev-booking'); ?>'); if ( answer){ this.checked = true; } else {this.checked = false;} }"
-                                                           />
-                                                    <span class="description"><?php _e(' If your theme or some other plugin is load the BootStrap JavaScripts, you can disable  loading of this script by this plugin.', 'wpdev-booking');?></span>
-                                                </td>
-                                            </tr>
-                                            <tr valign="top">
-                                                <th scope="row"><label for="is_not_load_bs_script_in_admin" ><?php _e('Disable Bootstrap loading', 'wpdev-booking'); ?>:</label><br><?php _e('Admin  side', 'wpdev-booking'); ?></th>
-                                                <td><input id="is_not_load_bs_script_in_admin" type="checkbox" <?php if ($is_not_load_bs_script_in_admin == 'On') echo "checked"; ?>  value="<?php echo $is_not_load_bs_script_in_admin; ?>" name="is_not_load_bs_script_in_admin"
-                                                     onclick="javascript: if (this.checked) { var answer = confirm('<?php  _e('Warning','wpdev-booking'); echo '! '; _e("You are need to be sure what you are doing. You are disable of loading some JavaScripts Do you really want to do this?", 'wpdev-booking'); ?>'); if ( answer){ this.checked = true; } else {this.checked = false;} }"
-                                                           />
-                                                    <span class="description"><?php _e(' If your theme or some other plugin is load the BootStrap JavaScripts, you can disable  loading of this script by this plugin.', 'wpdev-booking');?></span>
-                                                </td>
-                                            </tr>
-
-                                            </table>
-                                            </td>
-                                        </tr>
-
-                                       
-
-
-                                        <tr valign="top"> <td colspan="2">
-                                            <div style="width:100%;">
-                                                <span style="color:#21759B;cursor: pointer;font-weight: bold;"
-                                                   onclick="javascript: jQuery('.bk_show_advanced_settings_powered').toggle('normal'); jQuery('#togle_settings_powered').slideToggle('normal');"
-                                                   style="text-decoration: none;font-weight: bold;font-size: 11px;">
-                                                     <span class="bk_show_advanced_settings_powered">+ <span style="border-bottom:1px dashed #21759B;"><?php _e('Show settings of powered by notice', 'wpdev-booking'); ?></span></span>
-                                                     <span class="bk_show_advanced_settings_powered" style="display:none;">- <span style="border-bottom:1px dashed #21759B;"><?php _e('Hide settings of powered by notice', 'wpdev-booking'); ?></span></span>
-                                                </span>
-                                            </div>
-
-                                            <table id="togle_settings_powered" style="display:none;" class="hided_settings_table">
-
-                                                    <tr valign="top">
-                                                        <th scope="row"><label for="booking_is_show_powered_by_notice" ><?php _e('Powered by notice', 'wpdev-booking'); ?>:</label></th>
-                                                        <td><input id="booking_is_show_powered_by_notice" type="checkbox" <?php if ($booking_is_show_powered_by_notice == 'On') echo "checked"; ?>  value="<?php echo $booking_is_show_powered_by_notice; ?>" name="booking_is_show_powered_by_notice"/>
-                                                            <span class="description"><?php printf(__(' Turn On/Off powered by "Booking Calendar" notice under the calendar.', 'wpdev-booking'),'wpbookingcalendar.com');?></span>
-                                                        </td>
-                                                    </tr>
-
-
-                                                    <tr valign="top">
-                                                        <th scope="row"><label for="wpdev_copyright" ><?php _e('Copyright notice', 'wpdev-booking'); ?>:</label></th>
-                                                        <td><input id="wpdev_copyright" type="checkbox" <?php if ($wpdev_copyright == 'On') echo "checked"; ?>  value="<?php echo $wpdev_copyright; ?>" name="wpdev_copyright"/>
-                                                            <span class="description"><?php printf(__(' Turn On/Off copyright %s notice at footer of site view.', 'wpdev-booking'),'wpdevelop.com');?></span>
-                                                        </td>
-                                                    </tr>
-
-                                            </table>
-                                        </td></tr>
-
-
-
-                            </tbody></table>
-                </div></div></div>
-
-                <div class='meta-box'>
-                    <div <?php $my_close_open_win_id = 'bk_general_settings_calendar'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                        <h3 class='hndle'><span><?php _e('Calendar', 'wpdev-booking'); ?></span></h3> <div class="inside">
-                            <table class="form-table"><tbody>
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="booking_skin" ><?php _e('Calendar skin', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-                    <?php
-                    //TODO: Read the conatct from 2 folders and show results at this select box, aqrray with values and names
-                    // Create 2 more skins: one black for freee versions
-                    // One modern light/white for paid versions
-                    $dir_list = $this->dirList( array(  '/css/skins/', '/inc/skins/' ) );
-                    ?>
-                                                <select id="booking_skin" name="booking_skin" style="text-transform:capitalize;">
-                    <?php foreach ($dir_list as $value) {
-                        if($booking_skin == $value[1]) $selected_item =  'selected="SELECTED"';
-                        else $selected_item='';
-                        echo '<option '.$selected_item.' value="'.$value[1].'" >' .  $value[2] . '</option>';
-                    } ?>
-                                                </select>
-                                                <span class="description"><?php _e('Select the skin of the booking calendar', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="start_day_weeek" ><?php _e('Number of months', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-                                                <select id="max_monthes_in_calendar" name="max_monthes_in_calendar">
-
-                    <?php for ($mm = 1; $mm < 13; $mm++) { ?>
-                                                    <option <?php if($max_monthes_in_calendar == $mm .'m') echo "selected"; ?> value="<?php echo $mm; ?>m"><?php echo $mm ,' ';
-                        _e('month(s)', 'wpdev-booking'); ?></option>
-                        <?php } ?>
-
-                    <?php for ($mm = 1; $mm < 11; $mm++) { ?>
-                                                    <option <?php if($max_monthes_in_calendar == $mm .'y') echo "selected"; ?> value="<?php echo $mm; ?>y"><?php echo $mm ,' ';
-                        _e('year(s)', 'wpdev-booking'); ?></option>
-                        <?php } ?>
-
-                                                </select>
-                                                <span class="description"><?php _e('Select the maximum number of months to show on the booking calendar', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="start_day_weeek" ><?php _e('Start Day of the week', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-                                                <select id="start_day_weeek" name="start_day_weeek">
-                                                    <option <?php if($start_day_weeek == '0') echo "selected"; ?> value="0"><?php _e('Sunday', 'wpdev-booking'); ?></option>
-                                                    <option <?php if($start_day_weeek == '1') echo "selected"; ?> value="1"><?php _e('Monday', 'wpdev-booking'); ?></option>
-                                                    <option <?php if($start_day_weeek == '2') echo "selected"; ?> value="2"><?php _e('Tuesday', 'wpdev-booking'); ?></option>
-                                                    <option <?php if($start_day_weeek == '3') echo "selected"; ?> value="3"><?php _e('Wednesday', 'wpdev-booking'); ?></option>
-                                                    <option <?php if($start_day_weeek == '4') echo "selected"; ?> value="4"><?php _e('Thursday', 'wpdev-booking'); ?></option>
-                                                    <option <?php if($start_day_weeek == '5') echo "selected"; ?> value="5"><?php _e('Friday', 'wpdev-booking'); ?></option>
-                                                    <option <?php if($start_day_weeek == '6') echo "selected"; ?> value="6"><?php _e('Saturday', 'wpdev-booking'); ?></option>
-                                                </select>
-                                                <span class="description"><?php _e('Select your start day of the week', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                                        <tr valign="top"><td colspan="2" style="padding:10px 0px; "><div style="border-bottom:1px solid #cccccc;"></div></td></tr>
-
-                                        <tr valign="top">
-                                            <?php /* ?>
-                                            <th scope="row"><label for="multiple_day_selections" ><?php _e('Multiple days selection', 'wpdev-booking'); ?>:</label><br><?php _e('in calendar', 'wpdev-booking'); ?></th>
-                                            <td><input id="multiple_day_selections" type="checkbox" <?php if ($multiple_day_selections == 'On') echo "checked"; ?>  value="<?php echo $multiple_day_selections; ?>" name="multiple_day_selections"/>
-                                                <span class="description"><?php _e(' Check this box to enable multi-day selection on the calendar.', 'wpdev-booking');?></span>
-                                            </td>
-                                            <?php /**/ ?>
-                                            <th scope="row"><label for="type_of_day_selections" ><?php _e('Type of days selection', 'wpdev-booking'); ?>:</label><br><?php _e('in calendar', 'wpdev-booking'); ?></th>
-                                            <td><div style="height:30px;">
-                                                    <input  value="single" <?php if ( ($type_of_day_selections == 'single') || (empty($type_of_day_selections)) ) echo 'checked="CHECKED"'; ?>
-                                                            onclick="javascript: jQuery('#togle_settings_range_type_selection').slideUp('normal');
-                                                                jQuery('.booking_time_advanced_config').slideUp('normal');
-if ( jQuery('#range_selection_time_is_active').length > 0 ) { jQuery('#range_selection_time_is_active').attr('checked', false); }
-if ( jQuery('#booking_recurrent_time').length > 0 )         { jQuery('#booking_recurrent_time').attr('checked', false); }
-if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_settings_range_times').slideUp('normal'); }
-                                                                    "
-                                                            name="type_of_day_selections" type="radio" style="height: 22px;margin: 0 3px;vertical-align: sub;" /><span class="description"><?php _e('Single day', 'wpdev-booking');?></span>&nbsp;&nbsp;
-                                                    <input  value="multiple" <?php if ($type_of_day_selections == 'multiple')  echo 'checked="CHECKED"'; ?> 
-                                                            onclick="javascript: jQuery('#togle_settings_range_type_selection').slideUp('normal');
-                                                                jQuery('.booking_time_advanced_config').slideDown('normal');
-                                                                "
-                                                            name="type_of_day_selections" type="radio" style="height: 22px;margin: 0 3px;vertical-align: sub;" /><span class="description"><?php _e('Multiple days', 'wpdev-booking');?></span>&nbsp;&nbsp;
-                                                    <?php if (class_exists('wpdev_bk_biz_s')) { ?>
-                                                    <input  value="range" <?php if ($type_of_day_selections == 'range')  echo 'checked="CHECKED"'; ?>
-                                                            onclick="javascript: jQuery('#togle_settings_range_type_selection').slideDown('normal');
-                                                                jQuery('.booking_time_advanced_config').slideDown('normal'); 
-                                                                "
-                                                            name="type_of_day_selections" type="radio" style="height: 22px;margin: 0 3px;vertical-align: sub;" /><span class="description"><?php _e('Range days', 'wpdev-booking');?></span>
-                                                    <?php } ?>
-                                                </div>
-                                                <span class="description"><?php _e(' Select type of days selection at calendar.', 'wpdev-booking');?></span>
-                                            </td>
-
-
-                                        </tr>
-                                        
-                                        <?php do_action('settings_advanced_set_range_selections'); ?>
-                                        <?php do_action('settings_advanced_set_fixed_time'); ?>
-
-                                        
-                                        <?php do_action('settings_set_show_cost_in_tooltips'); ?>
-                                        <?php do_action('settings_set_show_availability_in_tooltips');  ?>
-                                        
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="unavailable_days_num_from_today" ><?php _e('Unavailable days from today', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-                                                <select id="unavailable_days_num_from_today" name="unavailable_days_num_from_today">
-                                                    <?php  for ($i = 0; $i < 32; $i++) { ?>
-                                                    <option <?php if($unavailable_days_num_from_today == $i) echo "selected"; ?> value="<?php echo $i; ?>"><?php echo $i; ?></option>
-                                                    <?php      } ?>
-                                                </select>
-                                                <span class="description"><?php _e('Select number of unavailable days in calendar start from today.', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="is_dif_colors_approval_pending" ><?php _e('Unavailable days', 'wpdev-booking'); ?>:</label></th>
-                                            <td>    <div style="float:left;width:500px;border:0px solid red;">
-                                                    <input id="unavailable_day0" name="unavailable_day0" <?php if ($unavailable_day0 == 'On') echo "checked"; ?>  value="<?php echo $unavailable_day0; ?>"  type="checkbox" />
-                                                    <span class="description"><?php _e('Sunday', 'wpdev-booking'); ?></span>&nbsp;
-                                                    <input id="unavailable_day1" name="unavailable_day1" <?php if ($unavailable_day1 == 'On') echo "checked"; ?>  value="<?php echo $unavailable_day1; ?>"  type="checkbox" />
-                                                    <span class="description"><?php _e('Monday', 'wpdev-booking'); ?></span>&nbsp;
-                                                    <input id="unavailable_day2" name="unavailable_day2" <?php if ($unavailable_day2 == 'On') echo "checked"; ?>  value="<?php echo $unavailable_day2; ?>"  type="checkbox" />
-                                                    <span class="description"><?php _e('Tuesday', 'wpdev-booking'); ?></span>&nbsp;
-                                                    <input id="unavailable_day3" name="unavailable_day3" <?php if ($unavailable_day3 == 'On') echo "checked"; ?>  value="<?php echo $unavailable_day3; ?>"  type="checkbox" />
-                                                    <span class="description"><?php _e('Wednesday', 'wpdev-booking'); ?></span>&nbsp;
-                                                    <input id="unavailable_day4" name="unavailable_day4" <?php if ($unavailable_day4 == 'On') echo "checked"; ?>  value="<?php echo $unavailable_day4; ?>"  type="checkbox" />
-                                                    <span class="description"><?php _e('Thursday', 'wpdev-booking'); ?></span>&nbsp;
-                                                    <input id="unavailable_day5" name="unavailable_day5" <?php if ($unavailable_day5 == 'On') echo "checked"; ?>  value="<?php echo $unavailable_day5; ?>"  type="checkbox" />
-                                                    <span class="description"><?php _e('Friday', 'wpdev-booking'); ?></span>&nbsp;
-                                                    <input id="unavailable_day6" name="unavailable_day6" <?php if ($unavailable_day6 == 'On') echo "checked"; ?>  value="<?php echo $unavailable_day6; ?>"  type="checkbox" />
-                                                    <span class="description"><?php _e('Saturday', 'wpdev-booking'); ?></span>
-                                                </div>
-                                                <div style="width:auto;margin-top:25px;">
-                                                   <span class="description"><?php _e('Check unavailable days in calendars. This option is overwrite all other settings.', 'wpdev-booking');?></span></div>
-                                            </td>
-                                        </tr>
-
-
-                            </tbody></table>
-                </div></div></div>
-
-                <div class='meta-box'>
-                    <div <?php $my_close_open_win_id = 'bk_general_settings_form'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                        <h3 class='hndle'><span><?php _e('Form', 'wpdev-booking'); ?></span></h3> <div class="inside">
-                            <table class="form-table"><tbody>
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="is_use_captcha" ><?php _e('CAPTCHA', 'wpdev-booking'); ?>:</label><br><?php _e('at booking form', 'wpdev-booking'); ?></th>
-                                            <td><input id="is_use_captcha" type="checkbox" <?php if ($is_use_captcha == 'On') echo "checked"; ?>  value="<?php echo $is_use_captcha; ?>" name="is_use_captcha"/>
-                                                <span class="description"><?php _e('Check the box to activate CAPTCHA inside the booking form.', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="is_use_autofill_4_logged_user" ><?php _e('Auto-fill fields', 'wpdev-booking'); ?>:</label><br><?php _e('for logged in users', 'wpdev-booking'); ?></th>
-                                            <td><input id="is_use_autofill_4_logged_user" type="checkbox" <?php if ($is_use_autofill_4_logged_user == 'On') echo "checked"; ?>  value="<?php echo $is_use_autofill_4_logged_user; ?>" name="is_use_autofill_4_logged_user"/>
-                                                <span class="description"><?php _e('Check the box to activate auto-fill fields of booking form for logged in users.', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-
-                                        <?php
-                                        $this->settings_legend_section();
-                                        /** ?>
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="is_show_legend" ><?php _e('Show legend', 'wpdev-booking'); ?>:</label><br><?php _e('at booking calendar', 'wpdev-booking'); ?></th>
-                                            <td><input id="is_show_legend" type="checkbox" <?php if ($is_show_legend == 'On') echo "checked"; ?>  value="<?php echo $is_show_legend; ?>" name="is_show_legend"/>
-                                                <span class="description"> <?php _e('Check this box to display a legend of dates below the booking calendar.', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr><?php /**/ ?>
-
-                                <tr valign="top" style="padding: 0px;">
-
-
-                                        <td style="width:50%;font-weight: bold;"><input  <?php if ($type_of_thank_you_message == 'message') echo 'checked="checked"';/**/ ?> value="message" type="radio" id="type_of_thank_you_message"  name="type_of_thank_you_message"  onclick="javascript: jQuery('#togle_settings_thank-you_page').slideUp('normal');jQuery('#togle_settings_thank-you_message').slideDown('normal');"  /> <label for="type_of_thank_you_message" ><?php _e('Show "thank you" message after booking is done', 'wpdev-booking'); ?></label></td>
-                                        <td style="width:50%;font-weight: bold;"><input  <?php if ($type_of_thank_you_message == 'page') echo 'checked="checked"';/**/ ?> value="page" type="radio" id="type_of_thank_you_message"  name="type_of_thank_you_message"  onclick="javascript: jQuery('#togle_settings_thank-you_page').slideDown('normal');jQuery('#togle_settings_thank-you_message').slideUp('normal');"  /> <label for="type_of_thank_you_message" ><?php _e('Redirect visitor to a new "thank you" page', 'wpdev-booking'); ?> </label></td>
-
-
-
-                                </tr>
-                                <tr valign="top" style="padding: 0px;"><td colspan="2">
-                                    <table id="togle_settings_thank-you_message" style="width:100%;<?php if ($type_of_thank_you_message != 'message') echo 'display:none;';/**/ ?>" class="hided_settings_table">
-                                        <tr valign="top">
-                                                    <th>
-                                                    <label for="new_booking_title" style="font-size:12px;" ><?php _e('New booking title', 'wpdev-booking'); ?>:</label><br/>
-                    <?php printf(__('%sshowing after%s booking', 'wpdev-booking'),'<span style="color:#888;font-weight:bold;">','</span>'); ?>
-                                                    </th>
-                                                    <td>
-                                                        <input id="new_booking_title" class="regular-text code" type="text" size="45" value="<?php echo $new_booking_title; ?>" name="new_booking_title" style="width:99%;"/>
-                                                        <span class="description"><?php printf(__('Type title of new booking %safter booking has done by user%s', 'wpdev-booking'),'<b>','</b>');?></span>
-                                                        <?php make_bk_action('show_additional_translation_shortcode_help'); ?>
-                                                    </td>
-                                        </tr>
-                                        <tr><th>
-                                                    <label for="new_booking_title" style=" font-weight: bold;font-size: 12px;" ><?php _e('Showing title time', 'wpdev-booking'); ?>:</label><br/>
-                    <?php printf(__('%snew booking%s', 'wpdev-booking'),'<span style="color:#888;font-weight:bold;">','</span>'); ?>
-                                                    </th>
-                                                <td>
-                                                    <input id="new_booking_title_time" class="regular-text code" type="text" size="45" value="<?php echo $new_booking_title_time; ?>" name="new_booking_title_time" />
-                                                    <span class="description"><?php printf(__('Duration of time (milliseconds) to show the new reservation title', 'wpdev-booking'),'<b>','</b>');?></span>
-                                                </td>
-                                                </tr>
-                                    </table>
-
-                                    <table id="togle_settings_thank-you_page" style="width:100%;<?php if ($type_of_thank_you_message != 'page') echo 'display:none;';/**/ ?>" class="hided_settings_table">
-                                        <tr valign="top">
-                                        <th scope="row" style="width:170px;"><label for="thank_you_page_URL" ><?php _e('URL of "thank you" page', 'wpdev-booking'); ?>:</label></th>
-                                            <td><input value="<?php echo $thank_you_page_URL; ?>" name="thank_you_page_URL" id="thank_you_page_URL" class="regular-text code" type="text" size="45"  style="width:99%;" />
-                                                <span class="description"><?php printf(__('Type URL of %s"thank you" page%s', 'wpdev-booking'),'<b>','</b>');?></span>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-
-                            </td></tr>
-
-                            </tbody></table>
-
-                </div></div></div>
-
-                <div class='meta-box'>
-                    <div <?php $my_close_open_win_id = 'bk_general_settings_bktable'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                        <h3 class='hndle'><span><?php _e('Listing of bookings', 'wpdev-booking'); ?></span></h3> <div class="inside">
-                            <table class="form-table"><tbody>
-
-
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="bookings_listing_default_view_mode" ><?php _e('Default booking admin page', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-
-                                                <?php   $wpdevbk_selectors = array(__('Bookings Listing', 'wpdev-booking') =>'vm_listing',
-                                                                                   __('Calendar Overview', 'wpdev-booking') =>'vm_calendar'
-                                                                                  ); ?>
-                                                <select id="bookings_listing_default_view_mode" name="bookings_listing_default_view_mode">
-                                                <?php foreach ($wpdevbk_selectors as $kk=>$mm) { ?>
-                                                    <option <?php if($bookings_listing_default_view_mode == strtolower($mm) ) echo "selected"; ?> value="<?php echo strtolower($mm); ?>"><?php echo ($kk) ; ?></option>
-                                                <?php } ?>
-                                                </select>
-
-                                                <span class="description"><?php _e('Select your default view mode of bookings at the booking listing page', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-
-                                        <tr valign="top"><td colspan="2"><div style="border-bottom:1px solid #cccccc;"></div></td></tr>
-
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="booking_view_days_num" ><?php _e('Default calendar view mode', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-
-                                                <?php   $wpdevbk_selectors = array(__('Month', 'wpdev-booking') =>'30',
-                                                                                   __('3 Months', 'wpdev-booking') =>'90',
-                                                                                   __('Year', 'wpdev-booking') =>'365'
-                                                                                  ); ?>
-                                                <select id="booking_view_days_num" name="booking_view_days_num">
-                                                <?php foreach ($wpdevbk_selectors as $kk=>$mm) { ?>
-                                                    <option <?php if($booking_view_days_num == strtolower($mm) ) echo "selected"; ?> value="<?php echo strtolower($mm); ?>"><?php echo ($kk) ; ?></option>
-                                                <?php } ?>
-                                                </select>
-
-                                                <span class="description"><?php _e('Select your default calendar view mode at booking calendar overview page', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                                        <?php make_bk_action('wpdev_bk_general_settings_set_default_title_in_day'); ?>
-
-                                        <tr valign="top"><td colspan="2"><div style="border-bottom:1px solid #cccccc;"></div></td></tr>
-
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="booking_default_toolbar_tab" ><?php _e('Default toolbar tab', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-
-                                                <?php   $wpdevbk_selectors = array(__('Filter tab', 'wpdev-booking') =>'filter',
-                                                                                   __('Actions tab', 'wpdev-booking') =>'actions'
-                                                                                  ); ?>
-                                                <select id="booking_default_toolbar_tab" name="booking_default_toolbar_tab">
-                                                <?php foreach ($wpdevbk_selectors as $kk=>$mm) { ?>
-                                                    <option <?php if($booking_default_toolbar_tab == strtolower($mm) ) echo "selected"; ?> value="<?php echo strtolower($mm); ?>"><?php echo ($kk) ; ?></option>
-                                                <?php } ?>
-                                                </select>
-
-                                                <span class="description"><?php _e('Select your default opened tab in toolbar at booking listing page', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                                        
-                                        <tr valign="top">
-                                            <th scope="row"><label for="bookings_num_per_page" ><?php _e('Bookings number per page', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-
-                                                <?php  $order_array = array( 5, 10, 20, 25, 50, 75, 100 ); ?>
-                                                <select id="bookings_num_per_page" name="bookings_num_per_page">
-                                                <?php foreach ($order_array as $mm) { ?>
-                                                    <option <?php if($bookings_num_per_page == strtolower($mm) ) echo "selected"; ?> value="<?php echo strtolower($mm); ?>"><?php echo ($mm) ; ?></option>
-                                                <?php } ?>
-                                                </select>
-                                                <span class="description"><?php _e('Select number of bookings per page in booking listing', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="booking_sort_order" ><?php _e('Bookings default order', 'wpdev-booking'); ?>:</label></th>
-                                            <td><?php
-                                                $order_array = array('ID');
-                                                $wpdevbk_selectors = array(__('ID', 'wpdev-booking').'&nbsp;'.__('ASC', 'wpdev-booking') =>'',
-                                                                           __('ID', 'wpdev-booking').'&nbsp;'.__('DESC', 'wpdev-booking') =>'booking_id_asc',
-                                                   __('Dates', 'wpdev-booking').'&nbsp;'.__('ASC', 'wpdev-booking') =>'sort_date',
-                                                   __('Dates', 'wpdev-booking').'&nbsp;'.__('DESC', 'wpdev-booking') =>'sort_date_asc',
-                                                  /* __('Cost', 'wpdev-booking').'&nbsp;'.__('ASC', 'wpdev-booking') =>'cost',
-                                                   __('Cost', 'wpdev-booking').'&nbsp;'.__('DESC', 'wpdev-booking') =>'cost_asc',
-
-                                                    */
-                                                  );
-                                                if (class_exists('wpdev_bk_personal')) {
-                                                    $order_array[]= 'Resource';
-
-                                                    $wpdevbk_selectors[__('Resource', 'wpdev-booking').'&nbsp;'.__('ASC', 'wpdev-booking') ] = 'booking_type';
-                                                    $wpdevbk_selectors[__('Resource', 'wpdev-booking').'&nbsp;'.__('DESC', 'wpdev-booking')] = 'booking_type_asc';
-                                                }
-                                                if (class_exists('wpdev_bk_biz_s')) {
-                                                    $order_array[]= 'Cost';
-                                                   $wpdevbk_selectors[__('Cost', 'wpdev-booking').'&nbsp;'.__('ASC', 'wpdev-booking')  ] ='cost';
-                                                   $wpdevbk_selectors[__('Cost', 'wpdev-booking').'&nbsp;'.__('DESC', 'wpdev-booking') ] ='cost_asc';
-                                                }
-                                                ?>
-                                                <select id="booking_sort_order" name="booking_sort_order">
-                                                <?php foreach ($wpdevbk_selectors as $kk=>$mm) { ?>
-                                                    <option <?php if($booking_sort_order == strtolower($mm) ) echo "selected"; ?> value="<?php echo strtolower($mm); ?>"><?php echo ($kk) ; ?></option>
-                                                <?php } ?>
-                                                </select>
-
-                                                <span class="description"><?php _e('Select your default order of bookings in the booking listing', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-
-
-                                        <?php make_bk_action('wpdev_bk_general_settings_set_default_booking_resource'); ?>
-
-                                        <tr valign="top"><td colspan="2"><div style="border-bottom:1px solid #cccccc;"></div></td></tr>
-                                        
-                                        <tr valign="top">
-                                            <th scope="row"><label for="booking_date_format" ><?php _e('Date Format', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-                                            <fieldset>
-                                                <?php
-                                                $date_formats =   array( __('F j, Y'), 'Y/m/d', 'm/d/Y', 'd/m/Y' ) ;
-                                                $custom = TRUE;
-                                                foreach ( $date_formats as $format ) {
-                                                    echo "\t<label title='" . esc_attr($format) . "'>";
-                                                    echo "<input type='radio' name='booking_date_format' value='" . esc_attr($format) . "'";
-                                                    if ( get_bk_option( 'booking_date_format') === $format ) {
-                                                        echo " checked='checked'";
-                                                        $custom = FALSE;
-                                                    }
-                                                    echo ' /> ' . date_i18n( $format ) . "</label> &nbsp;&nbsp;&nbsp;\n";
-                                                }
-                                                echo '<div style="height:7px;"></div>';
-                                                echo '<label><input type="radio" name="booking_date_format" id="date_format_custom_radio" value="'. $booking_date_format .'"';
-                                                if ( $custom )  echo ' checked="checked"';
-                                                echo '/> ' . __('Custom', 'wpdev-booking') . ': </label>';?>
-                                                                                <input id="booking_date_format_custom" class="regular-text code" type="text" size="45" value="<?php echo $booking_date_format; ?>" name="booking_date_format_custom" style="line-height:35px;"
-                                                                                       onchange="javascript:document.getElementById('date_format_custom_radio').value = this.value;document.getElementById('date_format_custom_radio').checked=true;"
-                                                                                       />
-                                                <?php
-                                                echo ' '. date_i18n( $booking_date_format ) . "\n";
-                                                echo '&nbsp;&nbsp;';
-                                                ?>
-                                                <?php printf(__('Type your date format for emails and the booking table. %sDocumentation on date formatting.%s', 'wpdev-booking'),'<br/><a href="http://codex.wordpress.org/Formatting_Date_and_Time" target="_blank">','</a>');?>
-                                            </fieldset>
-                                            </td>
-                                        </tr>
-
-                                        <?php do_action('settings_advanced_set_time_format'); ?>
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="booking_date_view_type" ><?php _e('Dates view', 'wpdev-booking'); ?>:</label></th>
-                                            <td>
-                                                <select id="booking_date_view_type" name="booking_date_view_type">
-                                                    <option <?php if($booking_date_view_type == 'short') echo "selected"; ?> value="short"><?php _e('Short days view', 'wpdev-booking'); ?></option>
-                                                    <option <?php if($booking_date_view_type == 'wide') echo "selected"; ?> value="wide"><?php _e('Wide days view', 'wpdev-booking'); ?></option>
-                                                </select>
-                                                <span class="description"><?php _e('Select the default view for dates on the booking tables', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                            </tbody></table>
-
-                </div></div></div>
-
-                <?php make_bk_action('wpdev_bk_general_settings_cost_section') ?>
-
-                <?php make_bk_action('wpdev_bk_general_settings_pending_auto_cancelation') ?>
-
-                <?php do_action('wpdev_bk_general_settings_advanced_section') ?>
-
-            </div>
-            <div style="width:35%; float:left;">
-
-                <?php  $version = $this->get_version();
-                if ( wpdev_bk_is_this_demo() ) $version = 'free';
-
-
-                if ( ($version !== 'free') && ($version!== 'biz_l') ) { $this->showUpgradeWindow($version); } ?>
-
-                <div class='meta-box'>
-                        <div <?php $my_close_open_win_id = 'bk_general_settings_info'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="gdrgrid postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                        <h3 class='hndle'><span><?php _e('Information', 'wpdev-booking'); ?></span></h3>
-                        <div class="inside">
-                            <?php $this->dashboard_bk_widget_show(); ?>
-                        </div>
-                        </div>
-                </div>
-
-                <?php if ( (false) && (!class_exists('wpdev_crm')) &&  ($version != 'free') ){ ?>
-                    <div class='meta-box'>
-                        <div <?php $my_close_open_win_id = 'bk_general_settings_recomended_plugins'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="gdrgrid postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                            <h3 class='hndle'><span><?php _e('Recommended WordPress Plugins','wpdev-booking'); ?></span></h3>
-                            <div class="inside">
-                                <h2 style="margin:10px;"><?php _e('Booking Manager - show all old bookings'); ?> </h2>
-                                <img src="<?php echo WPDEV_BK_PLUGIN_URL . '/img/users-48x48.png'; ?>" style="float:left; padding:0px 10px 10px 0px;">
-
-                                <p style="margin:0px;">
-                            <?php printf(__('This wordpress plugin is  %sshow all approved and pending bookings from past%s. Show how many each customer is made bookings. Paid versions support %sexport to CSV, print layout, advanced filter%s. ','wpdev-booking'),'<strong>','</strong>','<strong>','</strong>'); ?> <br/>
-                                </p>
-                                <p style="text-align:center;padding:10px 0px;">
-                                    <a href="http://wordpress.org/extend/plugins/booking-manager" class="button-primary" target="_blank">Download from wordpress</a>
-                                    <a href="http://wpbookingmanager.com" class="button-primary" target="_blank">Demo site</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
-
-
-                <div class='meta-box'>
-                    <div <?php $my_close_open_win_id = 'bk_general_settings_users_permissions'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                        <h3 class='hndle'><span><?php _e('User permissions for plugin menu pages', 'wpdev-booking'); ?></span></h3> <div class="inside">
-                        <table class="form-table"><tbody>
-
-                            <tr valign="top">
-                                <td colspan="2">
-                                    <span class="description"><?php _e('Select user access level for the menu pages of plugin', 'wpdev-booking');?></span>
-                                </td>
-                            </tr>
-
-                            <tr valign="top">
-                                <th scope="row"><label for="start_day_weeek" ><?php _e('Bookings', 'wpdev-booking'); ?>:</label><br><?php _e('menu page', 'wpdev-booking'); ?></th>
-                                <td>
-                                    <select id="user_role_booking" name="user_role_booking">
-                                        <option <?php if($user_role_booking == 'subscriber') echo "selected"; ?> value="subscriber" ><?php echo translate_user_role('Subscriber'); ?></option>
-                                        <option <?php if($user_role_booking == 'administrator') echo "selected"; ?> value="administrator" ><?php echo translate_user_role('Administrator'); ?></option>
-                                        <option <?php if($user_role_booking == 'editor') echo "selected"; ?> value="editor" ><?php echo translate_user_role('Editor'); ?></option>
-                                        <option <?php if($user_role_booking == 'author') echo "selected"; ?> value="author" ><?php echo translate_user_role('Author'); ?></option>
-                                        <option <?php if($user_role_booking == 'contributor') echo "selected"; ?> value="contributor" ><?php echo translate_user_role('Contributor'); ?></option>
-                                    </select>                                                
-                                </td>
-                            </tr>
-
-
-                            <tr valign="top">
-                                <th scope="row"><label for="start_day_weeek" ><?php _e('Add booking', 'wpdev-booking'); ?>:</label><br><?php _e('access level', 'wpdev-booking'); ?></th>
-                                <td>
-                                    <select id="user_role_addbooking" name="user_role_addbooking">
-                                        <option <?php if($user_role_addbooking == 'subscriber') echo "selected"; ?> value="subscriber" ><?php echo translate_user_role('Subscriber'); ?></option>
-                                        <option <?php if($user_role_addbooking == 'administrator') echo "selected"; ?> value="administrator" ><?php echo translate_user_role('Administrator'); ?></option>
-                                        <option <?php if($user_role_addbooking == 'editor') echo "selected"; ?> value="editor" ><?php echo translate_user_role('Editor'); ?></option>
-                                        <option <?php if($user_role_addbooking == 'author') echo "selected"; ?> value="author" ><?php echo translate_user_role('Author'); ?></option>
-                                        <option <?php if($user_role_addbooking == 'contributor') echo "selected"; ?> value="contributor" ><?php echo translate_user_role('Contributor'); ?></option>
-                                    </select>
-                                </td>
-                            </tr>
-
-                            <?php if  ($version !== 'free') { ?>
-                                <tr valign="top">
-                                    <th scope="row"><label for="user_role_resources" ><?php _e('Resources', 'wpdev-booking'); ?>:</label><br><?php _e('access level', 'wpdev-booking'); ?></th>
-                                    <td>
-                                        <select id="user_role_resources" name="user_role_resources">
-                                            <option <?php if($user_role_resources == 'subscriber') echo "selected"; ?> value="subscriber" ><?php echo translate_user_role('Subscriber'); ?></option>
-                                            <option <?php if($user_role_resources == 'administrator') echo "selected"; ?> value="administrator" ><?php echo translate_user_role('Administrator'); ?></option>
-                                            <option <?php if($user_role_resources == 'editor') echo "selected"; ?> value="editor" ><?php echo translate_user_role('Editor'); ?></option>
-                                            <option <?php if($user_role_resources == 'author') echo "selected"; ?> value="author" ><?php echo translate_user_role('Author'); ?></option>
-                                            <option <?php if($user_role_resources == 'contributor') echo "selected"; ?> value="contributor" ><?php echo translate_user_role('Contributor'); ?></option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-
-                            <tr valign="top">
-                                <th scope="row"><label for="start_day_weeek" ><?php _e('Settings', 'wpdev-booking'); ?>:</label><br><?php _e('access level', 'wpdev-booking'); ?></th>
-                                <td>
-                                    <select id="user_role_settings" name="user_role_settings">
-                                        <option <?php if($user_role_settings == 'subscriber') echo "selected"; ?> value="subscriber" ><?php echo translate_user_role('Subscriber'); ?></option>
-                                        <option <?php if($user_role_settings == 'administrator') echo "selected"; ?> value="administrator" ><?php echo translate_user_role('Administrator'); ?></option>
-                                        <option <?php if($user_role_settings == 'editor') echo "selected"; ?> value="editor" ><?php echo translate_user_role('Editor'); ?></option>
-                                        <option <?php if($user_role_settings == 'author') echo "selected"; ?> value="author" ><?php echo translate_user_role('Author'); ?></option>
-                                        <option <?php if($user_role_settings == 'contributor') echo "selected"; ?> value="contributor" ><?php echo translate_user_role('Contributor'); ?></option>
-                                    </select>
-                                    <?php if ( wpdev_bk_is_this_demo() ) { ?> <br/><span class="description" style="font-weight: bold;">You do not allow to change this items because right now you test DEMO</span> <?php } ?>
-                                </td>
-                            </tr>
-                        </tbody></table>
-                </div></div></div>
-
-
-                <div class='meta-box'>
-                    <div <?php $my_close_open_win_id = 'bk_general_settings_uninstall'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
-                        <h3 class='hndle'><span><?php _e('Uninstall / deactivation', 'wpdev-booking'); ?></span></h3> <div class="inside">
-                            <table class="form-table"><tbody>
-
-
-                                        <tr valign="top">
-                                            <th scope="row"><label for="is_delete_if_deactive" ><?php _e('Delete booking data', 'wpdev-booking'); ?>:</label><br><?php _e('when plugin deactivated', 'wpdev-booking'); ?></th>
-                                            <td><input id="is_delete_if_deactive" type="checkbox" <?php if ($is_delete_if_deactive == 'On') echo "checked"; ?>  value="<?php echo $is_delete_if_deactive; ?>" name="is_delete_if_deactive"
-                                                    onclick="javascript: if (this.checked) { var answer = confirm('<?php  _e('Warning','wpdev-booking'); echo '! '; _e("If you check this option, all booking data will be deleted when you uninstall this plugin. Do you really want to do this?", 'wpdev-booking'); ?>'); if ( answer){ this.checked = true; } else {this.checked = false;} }"
-                                                       />
-                                                <span class="description"> <?php _e('Check this box to delete all booking data when you uninstal this plugin.', 'wpdev-booking');?></span>
-                                            </td>
-                                        </tr>
-
-                            </tbody></table>
-                </div></div></div>
-
-                <?php make_bk_action('wpdev_booking_technical_booking_section'); ?>
-                
-            </div>
-
-            <div class="clear" style="height:10px;"></div>
-            <input class="button-primary" style="float:right;" type="submit" value="<?php _e('Save Changes', 'wpdev-booking'); ?>" name="Submit"/>
-            <div class="clear" style="height:10px;"></div>
-        </form>
-        <?php
-    }
-
-
-
-        // S e t t i n g s /////////////////////////////////////////////////////
-        //
-        // Settings for selecting default booking resource
-        function settings_legend_section(){
-                if (isset($_POST['booking_legend_text_for_item_available'])) {
-                     
-                    if (isset( $_POST['booking_is_show_legend'] ))      $booking_is_show_legend = 'On';
-                    else                                                $booking_is_show_legend = 'Off';
-                    update_bk_option( 'booking_is_show_legend' ,        $booking_is_show_legend );
-
-                    if (isset( $_POST['booking_legend_is_show_item_available'] ))   $booking_legend_is_show_item_available = 'On';
-                    else                                                            $booking_legend_is_show_item_available = 'Off';
-                    update_bk_option( 'booking_legend_is_show_item_available' ,     $booking_legend_is_show_item_available );
-                    update_bk_option( 'booking_legend_text_for_item_available' ,  $_POST['booking_legend_text_for_item_available'] );
-
-                    if (isset( $_POST['booking_legend_is_show_item_pending'] ))   $booking_legend_is_show_item_pending = 'On';
-                    else                                                            $booking_legend_is_show_item_pending = 'Off';
-                    update_bk_option( 'booking_legend_is_show_item_pending' ,     $booking_legend_is_show_item_pending );
-                    update_bk_option( 'booking_legend_text_for_item_pending' ,  $_POST['booking_legend_text_for_item_pending'] );
-
-                    if (isset( $_POST['booking_legend_is_show_item_approved'] ))   $booking_legend_is_show_item_approved = 'On';
-                    else                                                            $booking_legend_is_show_item_approved = 'Off';
-                    update_bk_option( 'booking_legend_is_show_item_approved' ,     $booking_legend_is_show_item_approved );
-                    update_bk_option( 'booking_legend_text_for_item_approved' ,  $_POST['booking_legend_text_for_item_approved'] );
-                    
-                    if ( class_exists('wpdev_bk_biz_s') ) {
-                        if (isset( $_POST['booking_legend_is_show_item_partially'] ))   $booking_legend_is_show_item_partially = 'On';
-                        else                                                            $booking_legend_is_show_item_partially = 'Off';
-                        update_bk_option( 'booking_legend_is_show_item_partially' ,     $booking_legend_is_show_item_partially );
-                        update_bk_option( 'booking_legend_text_for_item_partially' ,  $_POST['booking_legend_text_for_item_partially'] );
-                    }
-                }
-                $booking_is_show_legend   = get_bk_option( 'booking_is_show_legend');
-
-                $booking_legend_is_show_item_available    = get_bk_option( 'booking_legend_is_show_item_available');
-                $booking_legend_text_for_item_available   = get_bk_option( 'booking_legend_text_for_item_available');
-
-                $booking_legend_is_show_item_pending    = get_bk_option( 'booking_legend_is_show_item_pending');
-                $booking_legend_text_for_item_pending   = get_bk_option( 'booking_legend_text_for_item_pending');
-
-                $booking_legend_is_show_item_approved    = get_bk_option( 'booking_legend_is_show_item_approved');
-                $booking_legend_text_for_item_approved   = get_bk_option( 'booking_legend_text_for_item_approved');
-                
-                if ( class_exists('wpdev_bk_biz_s') ) {                
-                    $booking_legend_is_show_item_partially    = get_bk_option( 'booking_legend_is_show_item_partially');
-                    $booking_legend_text_for_item_partially   = get_bk_option( 'booking_legend_text_for_item_partially');
-                }
-             ?>
-                   <tr valign="top" class="ver_premium_plus">
-                        <th scope="row">
-                            <label for="booking_is_show_legend" ><?php _e('Display legend below calendar', 'wpdev-booking'); ?>:</label>
-                        </th>
-                        <td>
-                            <input <?php if ($booking_is_show_legend == 'On') echo "checked";/**/ ?>  value="<?php echo $booking_is_show_legend; ?>" name="booking_is_show_legend" id="booking_is_show_legend" type="checkbox"
-                                 onclick="javascript: if (this.checked) jQuery('#togle_settings_show_legend').slideDown('normal'); else  jQuery('#togle_settings_show_legend').slideUp('normal');"
-                                                                                                              />
-                            <span class="description"> <?php _e('Check this box to display a legend of dates below the booking calendar.', 'wpdev-booking');?></span>
-                        </td>
-                    </tr>
-
-                    <tr valign="top" class="ver_premium_plus"><td colspan="2">
-                        <table id="togle_settings_show_legend" style="<?php if ($booking_is_show_legend != 'On') echo "display:none;";/**/ ?>" class="hided_settings_table">
-
-                            <tr>
-                                <th scope="row"><label for="booking_legend_is_show_item_available" ><?php _e('Available item', 'wpdev-booking'); ?>:</label></th>
-                                <td>
-                                    <input <?php if ($booking_legend_is_show_item_available == 'On') echo "checked"; ?>  type="checkbox"
-                                        value="<?php echo $booking_legend_is_show_item_available; ?>"
-                                        name="booking_legend_is_show_item_available"  id="booking_legend_is_show_item_available"  />&nbsp;
-                                    <input value="<?php echo $booking_legend_text_for_item_available; ?>" name="booking_legend_text_for_item_available" id="booking_legend_text_for_item_available"  type="text"    />
-                                    <span class="description"><?php printf(__('Activate and type your %stitle of available%s item in legend', 'wpdev-booking'),'<b>','</b>');?></span>
-                                    <?php //make_bk_action('show_additional_translation_shortcode_help'); ?>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row"><label for="booking_legend_is_show_item_pending" ><?php _e('Pending item', 'wpdev-booking'); ?>:</label></th>
-                                <td>
-                                    <input <?php if ($booking_legend_is_show_item_pending == 'On') echo "checked"; ?>  type="checkbox"
-                                        value="<?php echo $booking_legend_is_show_item_pending; ?>"
-                                        name="booking_legend_is_show_item_pending"  id="booking_legend_is_show_item_pending"  />&nbsp;
-                                    <input value="<?php echo $booking_legend_text_for_item_pending; ?>" name="booking_legend_text_for_item_pending" id="booking_legend_text_for_item_pending"  type="text"    />
-                                    <span class="description"><?php printf(__('Activate and type your %stitle of pending%s item in legend', 'wpdev-booking'),'<b>','</b>');?></span>
-                                    <?php //make_bk_action('show_additional_translation_shortcode_help'); ?>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row"><label for="booking_legend_is_show_item_approved" ><?php _e('Approved item', 'wpdev-booking'); ?>:</label></th>
-                                <td>
-                                    <input <?php if ($booking_legend_is_show_item_approved == 'On') echo "checked"; ?>  type="checkbox"
-                                        value="<?php echo $booking_legend_is_show_item_approved; ?>"
-                                        name="booking_legend_is_show_item_approved"  id="booking_legend_is_show_item_approved"  />&nbsp;
-                                    <input value="<?php echo $booking_legend_text_for_item_approved; ?>" name="booking_legend_text_for_item_approved" id="booking_legend_text_for_item_approved"  type="text"    />
-                                    <span class="description"><?php printf(__('Activate and type your %stitle of approved%s item in legend', 'wpdev-booking'),'<b>','</b>');?></span>
-                                    <?php //make_bk_action('show_additional_translation_shortcode_help'); ?>
-                                </td>
-                            </tr>
-                            <?php if ( class_exists('wpdev_bk_biz_s') ) { ?>
-                                <tr>
-                                    <th scope="row"><label for="booking_legend_is_show_item_partially" ><?php _e('Partially booked item', 'wpdev-booking'); ?>:</label></th>
-                                    <td>
-                                        <input <?php if ($booking_legend_is_show_item_partially == 'On') echo "checked"; ?>  type="checkbox"
-                                            value="<?php echo $booking_legend_is_show_item_partially; ?>"
-                                            name="booking_legend_is_show_item_partially"  id="booking_legend_is_show_item_partially"  />&nbsp;
-                                        <input value="<?php echo $booking_legend_text_for_item_partially; ?>" name="booking_legend_text_for_item_partially" id="booking_legend_text_for_item_partially"  type="text"    />
-                                        <span class="description"><?php printf(__('Activate and type your %stitle of partially booked%s item in legend', 'wpdev-booking'),'<b>','</b>');?></span>
-                                        <?php //make_bk_action('show_additional_translation_shortcode_help'); ?>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                            <tr>
-                                <th scope="row"></th>
-                                <td>
-                                    <?php make_bk_action('show_additional_translation_shortcode_help'); ?>
-                                </td>
-                            </tr>
-
-
-                        </table>
-                    </td></tr>
-                    <tr valign="top"><td colspan="2" style="padding:0px 0px 10px;"><div style="border-bottom:1px solid #cccccc;"></div></td></tr>
-            <?php
-        }
-
-
-
-    /// Show footer info
-    function show_footer_at_booking_page(){
-        ?>
-        <div  class="copyright_info" style="">
-            <div style="width:100%;height:10px;margin:auto;">
-                <div style="color:#999999;  font-size:8px; margin:2px; line-height:14px; text-align:center; text-shadow:0 1px 0 #FFFFFF;   text-transform:uppercase;">
-                    <?php printf(__('%sCheck more info about the plugin%s', 'wpdev-booking'), '<a href="http://wpbookingcalendar.com/" target="_blank" style="text-decoration:none;color:#7F7DE4;">','</a>');?>
-                    <!--a href="http://www.wpdevelop.com" target="_blank" style="text-decoration:underline;color:#7F7DE4;"  valign="middle">www.wpdevelop.com</a> <?php _e(' - custom wp-plugins and wp-themes development, WordPress solutions', 'wpdev-booking');?>.<br /-->
-                </div>
-            </div>
-        </div>
-        <?php
-
-        // Insert Support links into the Top Right side
-        if( $this->wpdev_bk_personal  == false )
-            $support_links = '<div id="support_links">\n\
-                    <a href="http://wpbookingcalendar.com/support/" target="_blank">'.__('Support','wpdev-booking').'</a> |\n\
-                    <a href="http://wpbookingcalendar.com/faq/" target="_blank">'.__('FAQ','wpdev-booking').'</a> |\n\
-                    <a href="http://wpbookingcalendar.com/features/" target="_blank">'.__('Features','wpdev-booking').'</a> |\n\
-                    <a href="mailto:info@wpbookingcalendar.com" target="_blank">'.__('Contact','wpdev-booking').'</a> \n\
-                                  </div>';
-        //                        <a href="http://wpbookingcalendar.com/demo/" target="_blank">'.__('Live Demos','wpdev-booking').'</a> |\n\
-        //                        <a href="http://wpbookingcalendar.com/purchase/" class="button" target="_blank">'.__('Buy','wpdev-booking').'</a>\n\
-        //                                      </div>';
-        else
-            $support_links = '<div id="support_links">\n\
-                    <a href="http://wpbookingcalendar.com/faq/" target="_blank">'.__('FAQ','wpdev-booking').'</a> |\n\
-                    <a href="mailto:info@wpbookingcalendar.com" target="_blank">'.__('Contact','wpdev-booking').'</a>\n\
-                                  </div>';
-        ?> <script type="text/javascript"> if (jQuery('#ajax_working').length) { jQuery('#ajax_working').before('<?php echo $support_links; ?>'); } </script> <?php
-    }
     // </editor-fold>
 
 
@@ -2941,9 +1317,11 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
     // Deregister scripts, which  is generate conflicts - only at the Booking Admin  menu pages
     function wpdevbk_remove_conflict_scripts(){
         if (strpos($_SERVER['REQUEST_URI'], 'wpdev-booking.phpwpdev-booking') !== false) {
-            wp_dequeue_script( 'cgmp-jquery-tools-tooltip' );                               // Remove this script jquery.tools.tooltip.min.js, which is load by the "Comprehensive Google Map Plugin"
+            if (function_exists('wp_dequeue_script'))
+               wp_dequeue_script( 'cgmp-jquery-tools-tooltip' );                               // Remove this script jquery.tools.tooltip.min.js, which is load by the "Comprehensive Google Map Plugin"
         }
     }
+
 
     // add hook for printing scripts only at this plugin page
     function on_add_admin_js_files() {
@@ -2973,130 +1351,11 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         }
     }
 
-    //JS at footer  in Admin Panel - Booking page
-    function print_js_at_footer() {
-
-        if ( ( strpos($_SERVER['REQUEST_URI'],'wpdev-booking.phpwpdev-booking')!==false) &&
-                ( strpos($_SERVER['REQUEST_URI'],'wpdev-booking.phpwpdev-booking-reservation')===false )
-        ) {
-
-            $additional_bk_types = array();
-
-            $bk_resources = array(array('id'=>$this->get_default_type()));
-
-            if (isset($_GET['booking_type']))
-                if ($_GET['booking_type']=='-1')
-                    if( $this->wpdev_bk_personal !== false )
-                        $bk_resources = $this->wpdev_bk_personal->get_booking_types(false, false);
-
-            if (isset($_GET['parent_res']))
-                if (($_GET['parent_res']=='1') && ( $this->get_version() == 'biz_l' )) {
-                    $bk_resources = apply_bk_filter('get_bk_resources_in_hotel' );
-                }
-
-            foreach ($bk_resources as $value) {
-
-                if (gettype($value) == 'array') $bk_type = $value['id'];
-                else $bk_type = $value->id;
-
-
-                if ( strpos($bk_type,';') !== false ) {
-                    $additional_bk_types = explode(';',$bk_type);
-                    $bk_type = $additional_bk_types[0];
-                }
-
-                //  $bk_type = $this->get_default_type();  // Previos value
-
-                $my_boook_type = $bk_type ;
-
-                $start_script_code = "<script type='text/javascript'>";
-                $start_script_code .= "  jQuery(document).ready( function(){";
-
-                $start_script_code .= apply_filters('wpdev_booking_availability_filter', '', $bk_type);
-
-                // Blank days //////////////////////////////////////////////////////////////////
-                $start_script_code .= "  date_admin_blank[". $bk_type. "] = [];";
-                $dates_and_time_for_admin_blank = $this->get_dates('admin_blank', $bk_type, $additional_bk_types);
-                $dates_blank = $dates_and_time_for_admin_blank[0];
-                $times_blank = $dates_and_time_for_admin_blank[1];
-                $i=-1;
-                foreach ($dates_blank as $date_blank) {
-                    $i++;
-
-                    $td_class =   ($date_blank[1]+0). "-" . ($date_blank[2]+0). "-". $date_blank[0];
-
-                    $start_script_code .= " if (typeof( date_admin_blank[". $bk_type. "][ '". $td_class . "' ] ) == 'undefined'){ ";
-                    $start_script_code .= " date_admin_blank[". $bk_type. "][ '". $td_class . "' ] = [];} ";
-
-                    $start_script_code .= "  date_admin_blank[". $bk_type. "][ '". $td_class . "' ][  date_admin_blank[".$bk_type."]['".$td_class."'].length  ] = [".
-                            ($date_blank[1]+0).", ". ($date_blank[2]+0).", ". ($date_blank[0]+0).", ".
-                            ($times_blank[$i][0]+0).", ". ($times_blank[$i][1]+0).", ". ($times_blank[$i][2]+0).
-                            "];";
-                }
-                ////////////////////////////////////////////////////////////////////////////////
-
-
-                $start_script_code .= "  date2approve[". $bk_type. "] = [];";
-                $dates_and_time_to_approve = $this->get_dates('0', $bk_type, $additional_bk_types);
-                $dates_to_approve = $dates_and_time_to_approve[0];
-                $times_to_approve = $dates_and_time_to_approve[1];
-                $i=-1;
-                foreach ($dates_to_approve as $date_to_approve) {
-                    $i++;
-
-                    $td_class =   ($date_to_approve[1]+0). "-" . ($date_to_approve[2]+0). "-". $date_to_approve[0];
-
-                    $start_script_code .= " if (typeof( date2approve[". $bk_type. "][ '". $td_class . "' ] ) == 'undefined'){ ";
-                    $start_script_code .= " date2approve[". $bk_type. "][ '". $td_class . "' ] = [];} ";
-
-                    $start_script_code .= "  date2approve[". $bk_type. "][ '". $td_class . "' ][  date2approve[".$bk_type."]['".$td_class."'].length  ] = [".
-                            ($date_to_approve[1]+0).", ". ($date_to_approve[2]+0).", ". ($date_to_approve[0]+0).", ".
-                            ($times_to_approve[$i][0]+0).", ". ($times_to_approve[$i][1]+0).", ". ($times_to_approve[$i][2]+0).
-                            "];";
-                }
-
-                $start_script_code .= "  var date_approved_par = [];";
-                //$dates_approved = $this->get_dates('1',$my_boook_type);// [ Year, Month,Day ]...
-                $dates_and_time_to_approve = $this->get_dates('1', $my_boook_type, $additional_bk_types);
-                $dates_approved =   $dates_and_time_to_approve[0];
-                $times_to_approve = $dates_and_time_to_approve[1];
-                $i=-1;
-                foreach ($dates_approved as $date_to_approve) {
-                    $i++;
-
-                    $td_class =   ($date_to_approve[1]+0)."-".($date_to_approve[2]+0)."-".($date_to_approve[0]);
-
-                    $start_script_code .= " if (typeof( date_approved_par[ '". $td_class . "' ] ) == 'undefined'){ ";
-                    $start_script_code .= " date_approved_par[ '". $td_class . "' ] = [];} ";
-
-                    $start_script_code.=" date_approved_par[ '".$td_class."' ][  date_approved_par['".$td_class."'].length  ] = [".
-                            ($date_to_approve[1]+0).",".($date_to_approve[2]+0).",".($date_to_approve[0]+0).", ".
-                            ($times_to_approve[$i][0]+0).", ". ($times_to_approve[$i][1]+0).", ". ($times_to_approve[$i][2]+0).
-                            "];";
-                }
-
-                $cal_count = get_user_option( 'booking_admin_calendar_count');
-                if ($cal_count === false) $cal_count = 2;
-                $start_script_code .= "     init_datepick_cal('". $bk_type ."',   date_approved_par, ".
-                        //get_bk_option( 'booking_admin_cal_count' ).
-                        $cal_count .
-                        ", ".
-                        get_bk_option( 'booking_start_day_weeek' ) . ", false );";
-                $start_script_code .= "});";
-                $start_script_code .= "</script>";
-                $start_script_code = apply_filters('wpdev_booking_calendar', $start_script_code , $my_boook_type);
-                echo $start_script_code;
-
-            } //TODO: HERE_EDITED
-
-        }
-    }
-
     // Print     J a v a S cr i p t   &    C S S    scripts for admin and client side.
     function bc_enqueue_scripts() {
         wp_enqueue_script('jquery');                                    
         // enqueue the jQuery by Default
-        //if (class_exists('wpdev_bk_biz_s')) {
+        // if (class_exists('wpdev_bk_biz_s')) {
             // Load the jQuery 1.7.1 if the them load the older jQuery and version of booking Calendar is BS or higher
             global $wp_scripts;
             if (  is_a( $wp_scripts, 'WP_Scripts' ) ) {
@@ -3109,12 +1368,12 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                         wp_enqueue_script('jquery');
                     }
                     if ( version_compare( $version, '1.9', '>=' ) ) {
-                        wp_register_script('jquerymigrate', ("http://code.jquery.com/jquery-migrate-1.0.0.js"), false, '1.0.0');
-                        wp_enqueue_script('jquerymigrate');
+                        wp_register_script('jquery-migrate', ("http://code.jquery.com/jquery-migrate-1.0.0.js"), false, '1.0.0');
+                        wp_enqueue_script('jquery-migrate');
                     }
                 }
             }
-        //}
+        // }
     }
 
     function print_js_css($is_admin =1 ) {
@@ -3137,82 +1396,57 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                 echo site_url( '/wp-content/plugins/'.WPDEV_BK_PLUGIN_DIRNAME );
             }
             ?>';
-            var wpdev_bk_today = new Array( parseInt(<?php echo  intval(date_i18n('Y')) .'),  parseInt('. intval(date_i18n('m')).'),  parseInt('. intval(date_i18n('d')).'),  parseInt('. intval(date_i18n('H')).'),  parseInt('. intval(date_i18n('i')) ; ?>)  );
-            var visible_booking_id_on_page = [];
+            var wpdev_bk_today          = new Array( parseInt(<?php echo  intval(date_i18n('Y')) .'),  parseInt('. intval(date_i18n('m')).'),  parseInt('. intval(date_i18n('d')).'),  parseInt('. intval(date_i18n('H')).'),  parseInt('. intval(date_i18n('i')) ; ?>)  );
+            var visible_booking_id_on_page      = [];
             var booking_max_monthes_in_calendar = '<?php echo get_bk_option( 'booking_max_monthes_in_calendar'); ?>';
-            var user_unavilable_days = [];
-            <?php 
-            if ( isset( $_GET['booking_hash']  ) ) { ?>
-            var wpdev_bk_edit_id_hash = '<?php echo $_GET['booking_hash']; ?>';
-                        <?php } else { ?>
-            var wpdev_bk_edit_id_hash = '';
-                        <?php }  ?>
-                <?php
-                if ( get_bk_option( 'booking_unavailable_day0') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 0; ';
-                if ( get_bk_option( 'booking_unavailable_day1') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 1; ';
-                if ( get_bk_option( 'booking_unavailable_day2') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 2; ';
-                if ( get_bk_option( 'booking_unavailable_day3') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 3; ';
-                if ( get_bk_option( 'booking_unavailable_day4') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 4; ';
-                if ( get_bk_option( 'booking_unavailable_day5') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 5; ';
-                if ( get_bk_option( 'booking_unavailable_day6') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 6; ';
-                ?>
-<?php /*                // Check for correct URL based on Location.href URL, its need for correct aJax request
-                var real_domain = window.location.href;
-                var start_url = '';
-                var pos1 = real_domain.indexOf('//'); //get http
-                if (pos1 > -1 ) { start_url= real_domain.substr(0, pos1+2); real_domain = real_domain.substr(pos1+2);   }  //set without http
-                real_domain = real_domain.substr(0, real_domain.indexOf('/') );    //setdomain
-                var pos2 = wpdev_bk_plugin_url.indexOf('//');  //get http
-                if (pos2 > -1 ) wpdev_bk_plugin_url = wpdev_bk_plugin_url.substr(pos2+2);    //set without http
-                wpdev_bk_plugin_url = wpdev_bk_plugin_url.substr( wpdev_bk_plugin_url.indexOf('/') );    //setdomain
-                wpdev_bk_plugin_url = start_url + real_domain + wpdev_bk_plugin_url;
-
-                ///////////////////////////////////////////////////////////////////////////////////////
-<?php /**/ ?>
-            var wpdev_bk_plugin_filename = '<?php echo WPDEV_BK_PLUGIN_FILENAME; ?>';
-                <?php // if (
-                    //        ( get_bk_option( 'booking_multiple_day_selections' ) == 'Off') &&
-                    //        ( get_bk_option( 'booking_range_selection_is_active') !== 'On' )
-                    //     ) { ?>
-                <?php if ( get_bk_option( 'booking_type_of_day_selections') == 'single' ) { ?>
-            var multiple_day_selections = 0;
-                <?php } else { ?>
-            var multiple_day_selections = 90;
-                <?php } ?>
-                        
-            var wpdev_bk_personal =<?php if(  $this->wpdev_bk_personal !== false  ) { echo '1'; } else { echo '0'; } ?>;
-            var wpdev_bk_is_dynamic_range_selection = false;
-                <?php $booking_unavailable_days_num_from_today = get_bk_option( 'booking_unavailable_days_num_from_today' );
-                if (! empty($booking_unavailable_days_num_from_today)) { ?>
-            var block_some_dates_from_today = <?php echo $booking_unavailable_days_num_from_today; ?>; <?php
-                } else { ?>
-            var block_some_dates_from_today = 0; <?php
-                } ?>
+            var user_unavilable_days    = [];
+<?php       if ( get_bk_option( 'booking_unavailable_day0') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 0; ';
+            if ( get_bk_option( 'booking_unavailable_day1') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 1; ';
+            if ( get_bk_option( 'booking_unavailable_day2') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 2; ';
+            if ( get_bk_option( 'booking_unavailable_day3') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 3; ';
+            if ( get_bk_option( 'booking_unavailable_day4') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 4; ';
+            if ( get_bk_option( 'booking_unavailable_day5') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 5; ';
+            if ( get_bk_option( 'booking_unavailable_day6') == 'On' ) echo ' user_unavilable_days[user_unavilable_days.length] = 6; '; ?>
+            var wpdev_bk_edit_id_hash   = '<?php if ( isset( $_GET['booking_hash']  ) ) { echo $_GET['booking_hash']; } ?>';
+            var wpdev_bk_plugin_filename= '<?php echo WPDEV_BK_PLUGIN_FILENAME; ?>';
+            var bk_days_selection_mode     = '<?php
+                $booking_type_of_day_selections = get_bk_option( 'booking_type_of_day_selections');
+                if ($booking_type_of_day_selections == 'range') {
+                    $booking_type_of_day_selections = get_bk_option('booking_range_selection_type');
+                }
+                echo $booking_type_of_day_selections;
+            ?>';  // {'single', 'multiple', 'fixed', 'dynamic'}
+            var wpdev_bk_personal       = <?php if(  $this->wpdev_bk_personal !== false  ) { echo '1'; } else { echo '0'; } ?>;
+            var block_some_dates_from_today = <?php
+            $booking_unavailable_days_num_from_today = get_bk_option( 'booking_unavailable_days_num_from_today' );
+            if (! empty($booking_unavailable_days_num_from_today))  echo $booking_unavailable_days_num_from_today;
+            else                                                    echo '0';
+            ?>;
             var message_verif_requred = '<?php echo esc_js(__('This field is required', 'wpdev-booking')); ?>';
             var message_verif_requred_for_check_box = '<?php echo esc_js(__('This checkbox must be checked', 'wpdev-booking')); ?>';
             var message_verif_emeil = '<?php echo esc_js(__('Incorrect email field', 'wpdev-booking')); ?>';
             var message_verif_selectdts = '<?php echo esc_js(__('Please, select booking date(s) at Calendar.', 'wpdev-booking')); ?>';
             var parent_booking_resources = [];
-                <?php
+            var new_booking_title= '<?php
                     $thank_you_mess =  get_bk_option( 'booking_title_after_reservation' ) ;
                     $thank_you_mess =  apply_bk_filter('wpdev_check_for_active_language', $thank_you_mess );
-                ?>
-            var new_booking_title= '<?php echo esc_js(__(  $thank_you_mess , 'wpdev-booking') ); ?>';
+                    echo esc_js(__(  $thank_you_mess , 'wpdev-booking') ); ?>';
             var new_booking_title_time= <?php echo esc_js(__(get_bk_option( 'booking_title_after_reservation_time' ))); ?>;
             var type_of_thank_you_message = '<?php echo esc_js(__(get_bk_option( 'booking_type_of_thank_you_message' ))); ?>';
-                <?php
+            var thank_you_page_URL = '<?php
                     $thank_you_URL =  get_bk_option( 'booking_thank_you_page_URL' ) ;
                     $thank_you_URL =  apply_bk_filter('wpdev_check_for_active_language', $thank_you_URL );
-                ?>
-            var thank_you_page_URL = '<?php echo esc_js(__( $thank_you_URL )); ?>';
-            var is_am_pm_inside_time = false;
-                <?php $my_booking_time_format = get_bk_option( 'booking_time_format'   );
-                if (  (strpos($my_booking_time_format, 'a')!== false) || (strpos($my_booking_time_format, 'A')!== false) )  echo ' is_am_pm_inside_time = true; '; ?>
+                    echo esc_js(__( $thank_you_URL )); ?>';
+            var is_am_pm_inside_time = <?php
+                $my_booking_time_format = get_bk_option( 'booking_time_format'   );
+                if (  (strpos($my_booking_time_format, 'a')!== false) || (strpos($my_booking_time_format, 'A')!== false) )
+                     echo 'true';
+                else
+                    echo 'false'
+                ?>;
             var is_booking_used_check_in_out_time = false;
-        </script>
-
-        <?php do_action('wpdev_bk_js_define_variables');
-        ?> <script type="text/javascript" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/js/datepick/jquery.datepick.js"></script>  <?php
+            <?php do_action('wpdev_bk_js_define_variables'); ?>
+        </script><script type="text/javascript" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/js/datepick/jquery.datepick.js"></script>  <?php
         $locale = getBookingLocale();  //$locale = 'fr_FR'; // Load translation for calendar
         if ( ( !empty( $locale ) ) && ( substr($locale,0,2) !== 'en')  )
             if (file_exists(WPDEV_BK_PLUGIN_DIR. '/js/datepick/jquery.datepick-'. substr($locale,0,2) .'.js')) {
@@ -3224,8 +1458,6 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                 ?> <!-- End Booking Calendar Scripts --> <?php
 
         //    C S S
-        ?> <link href="<?php echo get_bk_option( 'booking_skin'); ?>" rel="stylesheet" type="text/css" /> <?php
-
         //   Admin and Client
         if($is_admin) {
                 $is_not_load_bs_script_in_admin = get_bk_option( 'booking_is_not_load_bs_script_in_admin'  );
@@ -3244,12 +1476,16 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
             }
             ?> <link href="<?php echo WPDEV_BK_PLUGIN_URL; ?>/interface/bs/css/bs.min.css" rel="stylesheet" type="text/css" />  <?php
             ?> <link href="<?php echo WPDEV_BK_PLUGIN_URL; ?>/css/client.css" rel="stylesheet" type="text/css" /> <?php
+            
+            /*?> <link href="<?php echo WPDEV_BK_PLUGIN_URL; ?>/js/datepick/jquery.datepick.css" rel="stylesheet" type="text/css" /> <?php /**/
             if ($is_not_load_bs_script_in_client !== 'On') 
             if (class_exists('wpdev_bk_biz_s'))
             {
                 ?> <script type="text/javascript" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/interface/bs/js/bs.min.js"></script>  <?php
             }
         }
+        ?> <link href="<?php echo WPDEV_BK_PLUGIN_URL; ?>/css/calendar.css" rel="stylesheet" type="text/css" /> <?php /**/
+        ?> <link href="<?php echo get_bk_option( 'booking_skin'); ?>" rel="stylesheet" type="text/css" /> <?php
     }
     // </editor-fold>
 
@@ -3267,6 +1503,16 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         $start_script_code = "<script type='text/javascript'>";
         $start_script_code .= "  jQuery(document).ready( function(){";
 
+        
+        $skip_booking_id = '';  // Id of booking to skip in calendar
+        if (isset($_GET['booking_hash'])) {
+            $my_booking_id_type = apply_bk_filter('wpdev_booking_get_hash_to_id',false, $_GET['booking_hash'] );
+            if ($my_booking_id_type !== false) {
+                $skip_booking_id = $my_booking_id_type[0];  
+            }
+        }
+        
+        
         // Blank days //////////////////////////////////////////////////////////////////
         $start_script_code .= "  date_admin_blank[". $bk_type. "] = [];";
         $dates_and_time_for_admin_blank = $this->get_dates('admin_blank', $bk_type, $additional_bk_types);
@@ -3289,13 +1535,14 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         ////////////////////////////////////////////////////////////////////////////////
 
         $start_script_code .= "  date2approve[". $bk_type. "] = [];";
-        $dates_and_time_to_approve = $this->get_dates('0', $bk_type, $additional_bk_types);
-
-
-        $dates_to_approve = $dates_and_time_to_approve[0];
-        $times_to_approve = $dates_and_time_to_approve[1];
-        //$dates_to_approve = array();
-        //$times_to_approve = array();
+        if ( (class_exists('wpdev_bk_biz_l')) && (get_bk_option( 'booking_is_show_pending_days_as_available') == 'On') ){
+            $dates_to_approve = array();
+            $times_to_approve = array();            
+        } else {
+            $dates_and_time_to_approve = $this->get_dates('0', $bk_type, $additional_bk_types, $skip_booking_id);
+            $dates_to_approve = $dates_and_time_to_approve[0];
+            $times_to_approve = $dates_and_time_to_approve[1];
+        }
         $i=-1;
         foreach ($dates_to_approve as $date_to_approve) {
             $i++;
@@ -3314,11 +1561,12 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         $start_script_code .= "  var date_approved_par = [];";
         $start_script_code .= apply_filters('wpdev_booking_availability_filter', '', $bk_type);
         //$dates_approved = $this->get_dates('1',$my_boook_type);// [ Year, Month,Day ]...
-        $dates_and_time_to_approve = $this->get_dates('1', $my_boook_type, $additional_bk_types);
+        $dates_and_time_to_approve = $this->get_dates('1', $my_boook_type, $additional_bk_types, $skip_booking_id);
         //$dates_and_time_to_approve =  array(array(),array());
         $dates_approved =   $dates_and_time_to_approve[0];
         $times_to_approve = $dates_and_time_to_approve[1];
         $i=-1;
+//debuge($dates_to_approve);        
         foreach ($dates_approved as $date_to_approve) {
             $i++;
 
@@ -3332,10 +1580,13 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                     ($times_to_approve[$i][0]+0).", ". ($times_to_approve[$i][1]+0).", ". ($times_to_approve[$i][2]+0).
                     "];";
         }
-
+        
+        // TODO: This code section have the impact to the performace in  BM / BL / MU versions ////////////////
         if ($my_selected_dates_without_calendar == '')
             $start_script_code .= apply_filters('wpdev_booking_show_rates_at_calendar', '', $bk_type);
         $start_script_code .= apply_filters('wpdev_booking_show_availability_at_calendar', '', $bk_type);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        
         if ($my_selected_dates_without_calendar == '') {
             $start_script_code .= apply_filters('wpdev_booking_get_additional_info_to_dates', '', $bk_type);
             $start_script_code .= "  init_datepick_cal('". $my_boook_type ."', date_approved_par, ".
@@ -3355,7 +1606,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
     // Get code of the legend here
     function get_legend(){
         $my_result = '';
-        if (get_bk_option( 'booking_is_show_legend' ) == 'On') { //TODO: check here according legend
+        if (get_bk_option( 'booking_is_show_legend' ) == 'On') {  
 
             $booking_legend_is_show_item_available    = get_bk_option( 'booking_legend_is_show_item_available');
             $booking_legend_text_for_item_available   = get_bk_option( 'booking_legend_text_for_item_available');
@@ -3366,6 +1617,11 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
             $booking_legend_is_show_item_approved    = get_bk_option( 'booking_legend_is_show_item_approved');
             $booking_legend_text_for_item_approved   = get_bk_option( 'booking_legend_text_for_item_approved');
 
+            $booking_legend_text_for_item_available = apply_bk_filter('wpdev_check_for_active_language',  $booking_legend_text_for_item_available );
+            $booking_legend_text_for_item_pending   = apply_bk_filter('wpdev_check_for_active_language',  $booking_legend_text_for_item_pending );
+            $booking_legend_text_for_item_approved  =  apply_bk_filter('wpdev_check_for_active_language', $booking_legend_text_for_item_approved );
+
+
             $my_result .= '<div class="block_hints datepick">';
             if ($booking_legend_is_show_item_available  == 'On') // __('Available','wpdev-booking')
                 $my_result .= '<div class="wpdev_hint_with_text"><div class="block_free datepick-days-cell"><a>'.date('d').'</a></div><div class="block_text">- '. $booking_legend_text_for_item_available.'</div></div>';
@@ -3375,27 +1631,175 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                 $my_result .= '<div class="wpdev_hint_with_text"><div class="block_pending date2approve">'.date('d').'</div><div class="block_text">- '.$booking_legend_text_for_item_pending.'</div></div>';
 
             if ( class_exists('wpdev_bk_biz_s') ) {
-                    $booking_legend_is_show_item_partially    = get_bk_option( 'booking_legend_is_show_item_partially');
-                    $booking_legend_text_for_item_partially   = get_bk_option( 'booking_legend_text_for_item_partially');
-                    if ($booking_legend_is_show_item_partially  == 'On') // __('Partially booked','wpdev-booking')
+
+                $booking_legend_is_show_item_partially    = get_bk_option( 'booking_legend_is_show_item_partially');
+                $booking_legend_text_for_item_partially   = get_bk_option( 'booking_legend_text_for_item_partially');
+                $booking_legend_text_for_item_partially  =  apply_bk_filter('wpdev_check_for_active_language', $booking_legend_text_for_item_partially );
+                
+                if ($booking_legend_is_show_item_partially  == 'On') { // __('Partially booked','wpdev-booking')                    
+                    if ( get_bk_option( 'booking_range_selection_time_is_active' ) === 'On') {                        
+                        $my_result .=  '<div class="wpdev_hint_with_text">' . 
+                                                '<div class="block_check_in_out date_available date_approved check_in_time"  >
+                                                    <div class="check-in-div"><div></div></div>
+                                                    <div class="check-out-div"><div></div></div>
+                                                    '.date('d').'
+                                                </div>'.
+                                                '<div class="block_text">- '. $booking_legend_text_for_item_partially .'</div>'.
+                                        '</div>';                        
+                    } else {
                         $my_result .= '<div class="wpdev_hint_with_text"><div class="block_time timespartly">'.date('d').'</div><div class="block_text">- '. $booking_legend_text_for_item_partially .'</div></div>';
+                    }                        
+                }
+                
             }
             $my_result .= '</div><div class="wpdev_clear_hint"></div>';
         }
         return $my_result;
     }
 
+    
+    // Get HTML for the initilizing inline calendars
+    function pre_get_calendar_html( $bk_type=1, $cal_count=1, $bk_otions=array() ){
+        //SHORTCODE:
+        /*
+         * [booking type=56 form_type='standard' nummonths=4 
+         *          options='{calendar months_num_in_row=2 width=568px cell_height=30px}']
+         */
+        
+        $bk_otions = parse_calendar_options($bk_otions);
+        /*  options:
+            [months_num_in_row] => 2
+            [width] => 284px
+            [cell_height] => 40px
+         */
+        $width = $months_num_in_row = $cell_height = '';
+        
+        if (!empty($bk_otions)){
+            
+             if (isset($bk_otions['months_num_in_row'])) 
+                 $months_num_in_row = $bk_otions['months_num_in_row'];
+             
+             if (isset($bk_otions['width'])) 
+                 $width = 'width:'.$bk_otions['width'].';';
+             
+             if (isset($bk_otions['cell_height'])) 
+                 $cell_height = $bk_otions['cell_height'];             
+        }
+        
+        if (empty($width)){
+            if (!empty($months_num_in_row))
+                $width = 'width:'.($months_num_in_row*284).'px;';
+            else
+                $width = 'width:'.($cal_count*284).'px;';
+        }
+        
+        if (!empty($cell_height))
+             $style= '<style type="text/css" rel="stylesheet" >'.
+                        '.hasDatepick .datepick-inline .datepick-title-row th,'.
+                        '.hasDatepick .datepick-inline .datepick-days-cell{'.
+                            ' height: '.$cell_height.' !important; '.
+                        '}'.
+                     '</style>';
+        else $style= '';
+        
+        $calendar  = $style. 
+                     '<div class="bk_calendar_frame months_num_in_row_'.$months_num_in_row.' cal_month_num_'.$cal_count.'" style="'.$width.'">'.
+                        '<div id="calendar_booking'.$bk_type.'">'.
+                            __('Calendar is loading...','wpdev-booking').
+                        '</div>'.
+                     '</div>'.
+                     '';
+        
+        $booking_is_show_powered_by_notice = get_bk_option( 'booking_is_show_powered_by_notice' );          
+        if ( (!class_exists('wpdev_bk_personal')) && ($booking_is_show_powered_by_notice == 'On') )
+            $calendar .= '<div style="font-size:9px;text-align:left;margin-top:3px;">Powered by <a style="font-size:9px;" href="http://wpbookingcalendar.com" target="_blank">WP Booking Calendar</a></div>';
+                
+        $calendar .= '<textarea id="date_booking'.$bk_type.'" name="date_booking'.$bk_type.'" autocomplete="off" style="display:none;"></textarea>';   // Calendar code
+        
+        return $calendar;
+    }
+    
+    
     // Get form
     function get_booking_form($my_boook_type) {
-        $my_form =  '<div style="text-align:left;">
-                <p>'.__('First Name (required)', 'wpdev-booking').':<br />  <span class="wpdev-form-control-wrap name'.$my_boook_type.'"><input type="text" name="name'.$my_boook_type.'" value="" class="wpdev-validates-as-required" size="40" /></span> </p>
-                <p>'.__('Last Name (required)', 'wpdev-booking').':<br />  <span class="wpdev-form-control-wrap secondname'.$my_boook_type.'"><input type="text" name="secondname'.$my_boook_type.'" value="" class="wpdev-validates-as-required" size="40" /></span> </p>
-                <p>'.__('Email (required)', 'wpdev-booking').':<br /> <span class="wpdev-form-control-wrap email'.$my_boook_type.'"><input type="text" name="email'.$my_boook_type.'" value="" class="wpdev-validates-as-email wpdev-validates-as-required" size="40" /></span> </p>
-                <p>'.__('Phone', 'wpdev-booking').':<br />            <span class="wpdev-form-control-wrap phone'.$my_boook_type.'"><input type="text" name="phone'.$my_boook_type.'" value="" size="40" /></span> </p>
-                <p>'.__('Details', 'wpdev-booking').':<br />          <span class="wpdev-form-control-wrap details'.$my_boook_type.'"><textarea name="details'.$my_boook_type.'" cols="40" rows="10"></textarea></span> </p>';
-        $my_form .=  '<p>[captcha]</p>';
-        $my_form .=  '<p><input type="button" value="'.__('Send', 'wpdev-booking').'" onclick="mybooking_submit(this.form,'.$my_boook_type.',\''.getBookingLocale().'\');" /></p>
-                </div>';
+        
+        $booking_form_field_active1     = get_bk_option( 'booking_form_field_active1');
+        $booking_form_field_required1   = get_bk_option( 'booking_form_field_required1');
+        $booking_form_field_label1      = get_bk_option( 'booking_form_field_label1');
+        
+        $booking_form_field_active2     = get_bk_option( 'booking_form_field_active2');
+        $booking_form_field_required2   = get_bk_option( 'booking_form_field_required2');
+        $booking_form_field_label2      = get_bk_option( 'booking_form_field_label2');
+        
+        $booking_form_field_active3     = get_bk_option( 'booking_form_field_active3');
+        $booking_form_field_required3   = get_bk_option( 'booking_form_field_required3');
+        $booking_form_field_label3      = get_bk_option( 'booking_form_field_label3');
+        
+        $booking_form_field_active4     = get_bk_option( 'booking_form_field_active4');
+        $booking_form_field_required4   = get_bk_option( 'booking_form_field_required4');
+        $booking_form_field_label4      = get_bk_option( 'booking_form_field_label4');
+        
+        $booking_form_field_active5     = get_bk_option( 'booking_form_field_active5');
+        $booking_form_field_required5   = get_bk_option( 'booking_form_field_required5');
+        $booking_form_field_label5      = get_bk_option( 'booking_form_field_label5');
+        
+        $my_form =  '[calendar]';
+                //'<div style="text-align:left;">'.
+                //'<p>'.__('First Name (required)', 'wpdev-booking').':<br />  <span class="wpdev-form-control-wrap name'.$my_boook_type.'"><input type="text" name="name'.$my_boook_type.'" value="" class="wpdev-validates-as-required" size="40" /></span> </p>'.
+                    
+        if ($booking_form_field_active1  != 'Off')
+        $my_form.='  <div class="control-group">
+                      <label for="name'.$my_boook_type.'" class="control-label">'.$booking_form_field_label1.(($booking_form_field_required1=='On')?'*':'').':</label>
+                      <div class="controls">
+                        <input type="text" name="name'.$my_boook_type.'" id="name'.$my_boook_type.'" class="input-xlarge'.(($booking_form_field_required1=='On')?' wpdev-validates-as-required ':'').'">
+                      </div>
+                    </div>';
+        
+        if ($booking_form_field_active2  != 'Off')
+        $my_form.='  <div class="control-group">
+                      <label for="secondname'.$my_boook_type.'" class="control-label">'.$booking_form_field_label2.(($booking_form_field_required2=='On')?'*':'').':</label>
+                      <div class="controls">
+                        <input type="text" name="secondname'.$my_boook_type.'" id="secondname'.$my_boook_type.'" class="input-xlarge'.(($booking_form_field_required2=='On')?' wpdev-validates-as-required ':'').'">
+                      </div>
+                    </div>';                    
+                  
+        if ($booking_form_field_active3  != 'Off')
+        $my_form.='  <div class="control-group">
+                      <label for="email'.$my_boook_type.'" class="control-label">'.$booking_form_field_label3.(($booking_form_field_required3=='On')?'*':'').':</label>
+                      <div class="controls">
+                        <input type="text" name="email'.$my_boook_type.'" id="email'.$my_boook_type.'" class="input-xlarge wpdev-validates-as-email'.(($booking_form_field_required3=='On')?' wpdev-validates-as-required ':'').'">
+                      </div>
+                    </div>';
+             
+        if ($booking_form_field_active4  != 'Off')
+        $my_form.='  <div class="control-group">
+                      <label for="phone'.$my_boook_type.'" class="control-label">'.$booking_form_field_label4.(($booking_form_field_required4=='On')?'*':'').':</label>
+                      <div class="controls">
+                        <input type="text" name="phone'.$my_boook_type.'" id="phone'.$my_boook_type.'" class="input-xlarge'.(($booking_form_field_required4=='On')?' wpdev-validates-as-required ':'').'">
+                        <p class="help-block"></p>
+                      </div>
+                    </div>';                    
+        
+        if ($booking_form_field_active5  != 'Off')
+        $my_form.='  <div class="control-group">
+                      <label for="details" class="control-label">'.$booking_form_field_label5.(($booking_form_field_required5=='On')?'*':'').':</label>
+                      <div class="controls">
+                        <textarea rows="3" name="details'.$my_boook_type.'" id="details'.$my_boook_type.'" class="input-xlarge'.(($booking_form_field_required5=='On')?' wpdev-validates-as-required ':'').'"></textarea>
+                      </div>
+                    </div>';
+        
+        $my_form.='  <div class="control-group">[captcha]</div>';
+                    
+        $my_form.='  <button class="btn btn-primary" type="button" onclick="mybooking_submit(this.form,'.$my_boook_type.',\''.getBookingLocale().'\');" >'.__('Send', 'wpdev-booking').'</button> ';
+                  
+                //.'<p>'.__('Last Name (required)', 'wpdev-booking').':<br />  <span class="wpdev-form-control-wrap secondname'.$my_boook_type.'"><input type="text" name="secondname'.$my_boook_type.'" value="" class="wpdev-validates-as-required" size="40" /></span> </p>'.
+                //'<p>'.__('Email (required)', 'wpdev-booking').':<br /> <span class="wpdev-form-control-wrap email'.$my_boook_type.'"><input type="text" name="email'.$my_boook_type.'" value="" class="wpdev-validates-as-email wpdev-validates-as-required" size="40" /></span> </p>'.
+                //'<p>'.__('Phone', 'wpdev-booking').':<br />            <span class="wpdev-form-control-wrap phone'.$my_boook_type.'"><input type="text" name="phone'.$my_boook_type.'" value="" size="40" /></span> </p>'.
+                //'<p>'.__('Details', 'wpdev-booking').':<br />          <span class="wpdev-form-control-wrap details'.$my_boook_type.'"><textarea name="details'.$my_boook_type.'" cols="40" rows="10"></textarea></span> </p>';
+                
+                //$my_form .=  '<p>[captcha]</p>';
+                //$my_form .=  '<p><input type="button" value="'.__('Send', 'wpdev-booking').'" onclick="mybooking_submit(this.form,'.$my_boook_type.',\''.getBookingLocale().'\');" /></p>
+                //        </div>';
 
         return $my_form;
     }
@@ -3408,7 +1812,13 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
     }
 
     //Show booking form from action call - wpdev_bk_add_form
-    function add_booking_form_action($bk_type =1, $cal_count =1, $is_echo = 1, $my_booking_form = 'standard', $my_selected_dates_without_calendar = '', $start_month_calendar = false) {
+    function add_booking_form_action($bk_type =1, $cal_count =1, $is_echo = 1, $my_booking_form = 'standard', $my_selected_dates_without_calendar = '', $start_month_calendar = false, $bk_otions=array() ) {
+        
+        $additional_bk_types = array();
+        if ( strpos($bk_type,';') !== false ) {
+            $additional_bk_types = explode(';',$bk_type);
+            $bk_type = $additional_bk_types[0];
+        }
 
         $is_booking_resource_exist = apply_bk_filter('wpdev_is_booking_resource_exist',true, $bk_type, $is_echo );
         if (! $is_booking_resource_exist) {
@@ -3418,11 +1828,6 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
         make_bk_action('check_multiuser_params_for_client_side', $bk_type );
 
-        $additional_bk_types = array();
-        if ( strpos($bk_type,';') !== false ) {
-            $additional_bk_types = explode(';',$bk_type);
-            $bk_type = $additional_bk_types[0];
-        }
 
         if (isset($_GET['booking_hash'])) {
             $my_booking_id_type = apply_bk_filter('wpdev_booking_get_hash_to_id',false, $_GET['booking_hash'] );
@@ -3442,9 +1847,15 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
             return;
         }
 
+        
+        
+              
         $start_script_code = $this->get_script_for_calendar($bk_type, $additional_bk_types, $my_selected_dates_without_calendar, $cal_count, $start_month_calendar );
-
-        $my_result =  ' ' . $this->get__client_side_booking_content($bk_type, $my_booking_form, $my_selected_dates_without_calendar ) . ' ' . $start_script_code ;
+        
+        // Apply scripts for the conditions in the rnage days selections
+        $start_script_code = apply_bk_filter('wpdev_bk_define_additional_js_options_for_bk_shortcode', $start_script_code, $bk_type, $bk_otions);  
+        
+        $my_result =  ' ' . $this->get__client_side_booking_content($bk_type, $my_booking_form, $my_selected_dates_without_calendar, $cal_count, $bk_otions ) . ' ' . $start_script_code ;
 
         $my_result = apply_filters('wpdev_booking_form', $my_result , $bk_type);
 
@@ -3455,15 +1866,15 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
     }
 
     //Show only calendar from action call - wpdev_bk_add_calendar
-    function add_calendar_action($bk_type =1, $cal_count =1, $is_echo = 1, $start_month_calendar = false) {
-
-        make_bk_action('check_multiuser_params_for_client_side', $bk_type );
+    function add_calendar_action($bk_type =1, $cal_count =1, $is_echo = 1, $start_month_calendar = false, $bk_otions=array()) {
 
         $additional_bk_types = array();
         if ( strpos($bk_type,';') !== false ) {
             $additional_bk_types = explode(';',$bk_type);
             $bk_type = $additional_bk_types[0];
         }
+
+        make_bk_action('check_multiuser_params_for_client_side', $bk_type );
 
         if (isset($_GET['booking_hash'])) {
             $my_booking_id_type = apply_bk_filter('wpdev_booking_get_hash_to_id',false, $_GET['booking_hash'] );
@@ -3478,8 +1889,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
         $start_script_code = $this->get_script_for_calendar($bk_type, $additional_bk_types, '' , $cal_count, $start_month_calendar );
 
-        $my_result = ' <div style="clear:both;height:10px;"></div>' .
-                     '<div id="calendar_booking'.$bk_type.'">'.__('Calendar is loading...','wpdev-booking').'</div><textarea rows="3" cols="50" id="date_booking'.$bk_type.'" name="date_booking'.$bk_type.'" style="display:none;"></textarea>' ;
+        $my_result = '<div style="clear:both;height:10px;"></div>' . $this->pre_get_calendar_html( $bk_type, $cal_count, $bk_otions );
 
         $my_result .= $this->get_legend();                                  // Get Legend code here
 
@@ -3494,21 +1904,14 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
     }
 
     // Get content at client side of  C A L E N D A R
-    function get__client_side_booking_content($my_boook_type = 1 , $my_booking_form = 'standard', $my_selected_dates_without_calendar = '') {
+    function get__client_side_booking_content($my_boook_type = 1 , $my_booking_form = 'standard', $my_selected_dates_without_calendar = '', $cal_count = 1, $bk_otions = array() ) {
 
         $nl = '<div style="clear:both;height:10px;"></div>';                                                            // New line
         if ($my_selected_dates_without_calendar=='') {
-            $calendar  = '<div id="calendar_booking'.$my_boook_type.'">'.__('Calendar is loading...','wpdev-booking').'</div>';
-            $booking_is_show_powered_by_notice = get_bk_option( 'booking_is_show_powered_by_notice' );             // check
-            if(  $this->wpdev_bk_personal == false  )   
-                    if ($booking_is_show_powered_by_notice == 'On')
-                        $calendar .= '<div style="font-size:9px;text-align:left;">Powered by <a style="font-size:9px;" href="http://wpbookingcalendar.com" target="_blank">WP Booking Calendar</a></div>';
-            $calendar .= '<textarea rows="3" cols="50" id="date_booking'.$my_boook_type.'" name="date_booking'.$my_boook_type.'" style="display:none;"></textarea>';   // Calendar code
+            $calendar = $this->pre_get_calendar_html( $my_boook_type, $cal_count, $bk_otions );
         } else {
-            $calendar = '';
-            $calendar .= '<textarea rows="3" cols="50" id="date_booking'.$my_boook_type.'" name="date_booking'.$my_boook_type.'" style="display:none;">'.$my_selected_dates_without_calendar.'</textarea>';   // Calendar code
+            $calendar = '<textarea rows="3" cols="50" id="date_booking'.$my_boook_type.'" name="date_booking'.$my_boook_type.'"  autocomplete="off" style="display:none;">'.$my_selected_dates_without_calendar.'</textarea>';   // Calendar code
         }
-
         $calendar  .= $this->get_legend();                                  // Get Legend code here
 
 
@@ -3530,7 +1933,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
         $form = apply_filters('wpdev_booking_form_content', $form , $my_boook_type);
         // Add booking type field
-        $form      .= '<input id="bk_type'.$my_boook_type.'" name="bk_type'.$my_boook_type.'" class="" type="hidden" value="'.$my_boook_type.'" /></div>';
+        $form      .= '<input id="bk_type'.$my_boook_type.'" name="bk_type'.$my_boook_type.'" class="" type="hidden" value="'.$my_boook_type.'" /></div>';        
         $submitting = '<div id="submiting'.$my_boook_type.'"></div><div class="form_bk_messages" id="form_bk_messages'.$my_boook_type.'" ></div>';
         
         //Params: $action = -1, $name = "_wpnonce", $referer = true , $echo = true
@@ -3540,10 +1943,19 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         $res = $form . $submitting . $wpbc_nonce;
 
         $my_random_id = time() * rand(0,1000);
-        $my_random_id = 'form_id'. $my_random_id;
-        //name="booking_form'.$my_boook_type.'"
-        $return_form = '<div id="'.$my_random_id.'"><form  id="booking_form'.$my_boook_type.'"   class="booking_form" method="post" action=""><div id="ajax_respond_insert'.$my_boook_type.'"></div>' .
-                $res . '</form></div>';
+        $my_random_id = 'form_id'. $my_random_id;        
+        
+        $booking_form_is_using_bs_css = get_bk_option( 'booking_form_is_using_bs_css');
+        $booking_form_format_type     = get_bk_option( 'booking_form_format_type');
+        
+        $return_form = '<div id="'.$my_random_id.'" '.(($booking_form_is_using_bs_css=='On')?'class="wpdevbk"':'').'>'.
+                         '<form  id="booking_form'.$my_boook_type.'"   class="booking_form '.$booking_form_format_type.'" method="post" action="">'.
+                           '<div id="ajax_respond_insert'.$my_boook_type.'"></div>'.
+                           $res.
+                         '</form></div>';
+        
+        $return_form .= '<div id="booking_form_garbage'.$my_boook_type.'" class="booking_form_garbage"></div>';
+        
         if ($my_selected_dates_without_calendar == '' ) {
             // Check according already shown Booking Calendar  and set do not visible of it
             $return_form .= '<script type="text/javascript">
@@ -3572,67 +1984,47 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
                 $curr_user = wp_get_current_user();
                 if ( $curr_user->ID > 0 ) {
-        // Insertion for string for also checking and textarea
-        //                                                 ( (bk_af_element.type == "text") ||
-        //                                                  (bk_af_element.type == "textarea") ) &&
-        // Insertion for checking detail section
-        //                                                    // Description
-        //                                                    bk_af_reg = /^([A-Za-z0-9_\-\.])*(description|details|info){1}([A-Za-z0-9_\-\.])*$/;
-        //                                                    if(bk_af_reg.test(bk_af_element.name) != false)
-        //                                                        if (bk_af_element.value == "" )
-        //                                                            bk_af_element.value  = "'.str_replace("'",'',$curr_user->description).'";
-
 
                     $return_form .= '<script type="text/javascript">
                                 jQuery(document).ready( function(){
-
                                     var bk_af_submit_form = document.getElementById( "booking_form'.$my_boook_type.'" );
                                     var bk_af_count = bk_af_submit_form.elements.length;
                                     var bk_af_element;
                                     var bk_af_reg;
-
                                     for (var bk_af_i=0; bk_af_i<bk_af_count; bk_af_i++)   {
                                         bk_af_element = bk_af_submit_form.elements[bk_af_i];
-
                                         if (
                                             (bk_af_element.type == "text") &&
                                             (bk_af_element.type !=="button") &&
                                             (bk_af_element.type !=="hidden") &&
                                             (bk_af_element.name !== ("date_booking'.$my_boook_type.'" ) )
                                            ) {
-
                                                 // Second Name
                                                 bk_af_reg = /^([A-Za-z0-9_\-\.])*(last|second){1}([_\-\.])?name([A-Za-z0-9_\-\.])*$/;
                                                 if(bk_af_reg.test(bk_af_element.name) != false)
                                                     if (bk_af_element.value == "" )
                                                         bk_af_element.value  = "'.str_replace("'",'',$curr_user->last_name).'";
-
                                                 // First Name
                                                 bk_af_reg = /^name([0-9_\-\.])*$/;
                                                 if(bk_af_reg.test(bk_af_element.name) != false)
                                                     if (bk_af_element.value == "" )
                                                         bk_af_element.value  = "'.str_replace("'",'',$curr_user->first_name).'";
-
                                                 bk_af_reg = /^([A-Za-z0-9_\-\.])*(first|my){1}([_\-\.])?name([A-Za-z0-9_\-\.])*$/;
                                                 if(bk_af_reg.test(bk_af_element.name) != false)
                                                     if (bk_af_element.value == "" )
                                                         bk_af_element.value  = "'.str_replace("'",'',$curr_user->first_name).'";
-
                                                 // Email
                                                 bk_af_reg = /^(e)?([_\-\.])?mail([0-9_\-\.])*$/;
                                                 if(bk_af_reg.test(bk_af_element.name) != false)
                                                     if (bk_af_element.value == "" )
                                                         bk_af_element.value  = "'.str_replace("'",'',$curr_user->user_email).'";
-
                                                 // URL
                                                 bk_af_reg = /^([A-Za-z0-9_\-\.])*(URL|site|web|WEB){1}([A-Za-z0-9_\-\.])*$/;
                                                 if(bk_af_reg.test(bk_af_element.name) != false)
                                                     if (bk_af_element.value == "" )
                                                         bk_af_element.value  = "'.str_replace("'",'',$curr_user->user_url).'";
-
                                            }
                                     }
-
                                 });
                                 </script>';
                 }
@@ -3651,6 +2043,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
     // Replace MARK at post with content at client side   -----    [booking nummonths='1' type='1']
     function booking_shortcode($attr) {
+//debuge($attr);
 
         if (isset($_GET['booking_hash'])) return __('You need to use special shortcode [bookingedit] for booking editing.','wpdev-booking');
 
@@ -3658,7 +2051,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         $my_boook_type = 1;
         $my_booking_form = 'standard';
         $start_month_calendar = false;
-
+        $bk_otions = array();
 
         if ( isset( $attr['nummonths'] ) ) { $my_boook_count = $attr['nummonths'];  }
         if ( isset( $attr['type'] ) )      { $my_boook_type = $attr['type'];        }
@@ -3678,7 +2071,9 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
         }
 
-        $res = $this->add_booking_form_action($my_boook_type,$my_boook_count, 0 , $my_booking_form , '', $start_month_calendar );
+        if ( isset( $attr['options'] ) ) { $bk_otions = $attr['options']; }
+        
+        $res = $this->add_booking_form_action($my_boook_type,$my_boook_count, 0 , $my_booking_form , '', $start_month_calendar, $bk_otions );
 
         return $res;
     }
@@ -3688,6 +2083,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         $my_boook_count = get_bk_option( 'booking_client_cal_count' );
         $my_boook_type = 1;
         $start_month_calendar = false;
+        $bk_otions = array();
         if ( isset( $attr['nummonths'] ) ) { $my_boook_count = $attr['nummonths']; }
         if ( isset( $attr['type'] ) )      { $my_boook_type = $attr['type'];       }
         if ( isset( $attr['agregate'] ) ) {
@@ -3700,8 +2096,9 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
             if ( (is_array($start_month_calendar))  && ( count($start_month_calendar) > 1) ) { }
             else $start_month_calendar = false;
         }
-
-        $res = $this->add_calendar_action($my_boook_type,$my_boook_count, 0, $start_month_calendar  );
+        
+        if ( isset( $attr['options'] ) ) { $bk_otions = $attr['options']; }
+        $res = $this->add_calendar_action($my_boook_type,$my_boook_count, 0, $start_month_calendar, $bk_otions  );
 
 
         $start_script_code = "<div id='calendar_booking_unselectable".$my_boook_type."'></div>";
@@ -3729,6 +2126,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         $my_boook_count = get_bk_option( 'booking_client_cal_count' );
         $my_boook_type = 1;
         $my_booking_form = 'standard';
+        $bk_otions = array();
         if ( isset( $attr['nummonths'] ) )   { $my_boook_count = $attr['nummonths'];  }
         if ( isset( $attr['type'] ) )        { $my_boook_type = $attr['type'];        }
         if ( isset( $attr['form_type'] ) )   { $my_booking_form = $attr['form_type']; }
@@ -3746,8 +2144,9 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         } else {
             return __('You do not set any parameters for booking editing','wpdev-booking');
         }
+        if ( isset( $attr['options'] ) ) { $bk_otions = $attr['options']; }
 
-        $res = $this->add_booking_form_action($my_boook_type,$my_boook_count, 0 , $my_booking_form, '', false );
+        $res = $this->add_booking_form_action($my_boook_type,$my_boook_count, 0 , $my_booking_form, '', false, $bk_otions );
 
         if (isset($_GET['booking_pay'])) {
             // Payment form
@@ -3791,23 +2190,42 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///   A C T I V A T I O N   A N D   D E A C T I V A T I O N    O F   T H I S   P L U G I N  ////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    // Activation  of the plugin, when the use is clicked on the "Active" link at  the Plugins WordPress menu.
+    function wpdev_booking_activate_initial(){
+        
+        // Activate the plugin
+        $this->wpdev_booking_activate();
+        
+        // Bail if this demo or activating from network, or bulk
+	if ( is_network_admin() || isset( $_GET['activate-multi'] ) || wpdev_bk_is_this_demo() )
+		return;
+        
+        // Add the transient to redirect - Showing Welcome screen
+	set_transient( '_wpbc_activation_redirect', true, 30 );        
+    }
+    
     // Activate
     function wpdev_booking_activate() {
+        $version = get_bk_version();
+        $is_demo = wpdev_bk_is_this_demo();
         
         load_bk_Translation();
         // set execution time to 15 minutes, its not worked if we have SAFE MODE ON at PHP
         if (function_exists('set_time_limit')) 		if( !in_array(ini_get('safe_mode'),array('1', 'On')) ) set_time_limit(900);
 
-        if ( wpdev_bk_is_this_demo() ) add_bk_option( 'booking_admin_cal_count' ,'3');
-        else                                                                       add_bk_option( 'booking_admin_cal_count' ,'2');
+        add_bk_option( 'booking_admin_cal_count' , ($is_demo)?'3':'2');
+        
         add_bk_option( 'booking_skin', WPDEV_BK_PLUGIN_URL . '/css/skins/traditional.css');
 
         add_bk_option( 'bookings_num_per_page','10');
         add_bk_option( 'booking_sort_order','');
         add_bk_option( 'booking_default_toolbar_tab','filter');
-        add_bk_option( 'bookings_listing_default_view_mode','vm_calendar');
-        add_bk_option( 'booking_view_days_num','90');
-
+        add_bk_option( 'bookings_listing_default_view_mode','vm_calendar');//,'vm_listing');
+        
+        
+        if ($version=='free')   add_bk_option( 'booking_view_days_num','90');   // 3 Month - for one resource
+        else                    add_bk_option( 'booking_view_days_num','30');   // Month view for several resources
         //add_bk_option( 'booking_sort_order_direction', 'ASC');
 
         add_bk_option( 'booking_max_monthes_in_calendar', '1y');
@@ -3817,33 +2235,45 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         add_bk_option( 'booking_title_after_reservation_time' , '7000' );
         add_bk_option( 'booking_type_of_thank_you_message' , 'message' );
         add_bk_option( 'booking_thank_you_page_URL' , site_url() );
-        add_bk_option( 'booking_is_use_autofill_4_logged_user' , 'On' );
+        add_bk_option( 'booking_is_use_autofill_4_logged_user' , ($is_demo)?'On':'Off' );
 
 
         add_bk_option( 'booking_date_format' , get_option('date_format') );
         add_bk_option( 'booking_date_view_type', 'short');    // short / wide
-        if ( wpdev_bk_is_this_demo() )   add_bk_option( 'booking_is_delete_if_deactive' ,'On'); // check
-        else                             add_bk_option( 'booking_is_delete_if_deactive' ,'Off'); // check
+        add_bk_option( 'booking_is_delete_if_deactive' , ($is_demo)?'On':'Off' ); // check
+        
         add_bk_option( 'booking_dif_colors_approval_pending' , 'On' );
         add_bk_option( 'booking_is_use_hints_at_admin_panel' , 'On' );
         add_bk_option( 'booking_is_not_load_bs_script_in_client' , 'Off' );
-        //if (class_exists('wpdev_bk_biz_s')) add_bk_option( 'booking_is_not_load_bs_script_in_client' , 'Off' );
-        //else                                add_bk_option( 'booking_is_not_load_bs_script_in_client' , 'On' ); // we are do  not need the Bootstrap if its lower then BS version, at client side.
         add_bk_option( 'booking_is_not_load_bs_script_in_admin' , 'Off' );
 
-
-        //add_bk_option( 'booking_multiple_day_selections' , 'On');
-        if ( get_bk_option( 'booking_multiple_day_selections' ) == 'On') {
-            $booking_type_of_day_selections = 'multiple';
-        } else {
-            $booking_type_of_day_selections = 'single';
-        }
-        if ( get_bk_option( 'booking_range_selection_is_active') == 'On' ) {
-            $booking_type_of_day_selections = 'range';
-        }
-        if ( wpdev_bk_is_this_demo() )  $booking_type_of_day_selections = 'multiple';
+        // Set the type of days selections based on the previous saved data ....
+        $booking_type_of_day_selections = 'multiple'; //'single';
+        
+        if ( get_bk_option( 'booking_multiple_day_selections' ) == 'On')    $booking_type_of_day_selections = 'multiple';                     
+        if ( get_bk_option( 'booking_range_selection_is_active') == 'On' )  $booking_type_of_day_selections = 'range';
+        if ( $is_demo )                                                     $booking_type_of_day_selections = 'multiple';
+        
         add_bk_option( 'booking_type_of_day_selections' , $booking_type_of_day_selections );
 
+        add_bk_option( 'booking_form_is_using_bs_css' ,'On');
+        add_bk_option( 'booking_form_format_type' ,'vertical');
+
+        add_bk_option( 'booking_form_field_active1' ,'On');
+        add_bk_option( 'booking_form_field_required1' ,'On');
+        add_bk_option( 'booking_form_field_label1' ,'First Name');
+        add_bk_option( 'booking_form_field_active2' ,'On');
+        add_bk_option( 'booking_form_field_required2' ,'On');
+        add_bk_option( 'booking_form_field_label2' ,'Last Name');
+        add_bk_option( 'booking_form_field_active3' ,'On');
+        add_bk_option( 'booking_form_field_required3' ,'On');
+        add_bk_option( 'booking_form_field_label3' ,'Email');
+        add_bk_option( 'booking_form_field_active4' ,'On');
+        add_bk_option( 'booking_form_field_required4' ,'Off');
+        add_bk_option( 'booking_form_field_label4' ,'Phone');
+        add_bk_option( 'booking_form_field_active5' ,'On');
+        add_bk_option( 'booking_form_field_required5' ,'Off');
+        add_bk_option( 'booking_form_field_label5' ,'Details');
 
         add_bk_option( 'booking_unavailable_days_num_from_today' , '0' );
         add_bk_option( 'booking_unavailable_day0' ,'Off');
@@ -3854,7 +2284,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         add_bk_option( 'booking_unavailable_day5' ,'Off');
         add_bk_option( 'booking_unavailable_day6' ,'Off');
 
-        if ( wpdev_bk_is_this_demo() ) {
+        if ( $is_demo ) {
             add_bk_option( 'booking_user_role_booking', 'subscriber' );
             add_bk_option( 'booking_user_role_addbooking', 'subscriber' );
             add_bk_option( 'booking_user_role_resources', 'subscriber' );
@@ -3872,7 +2302,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
         add_bk_option( 'booking_email_reservation_adress', htmlspecialchars('"Booking system" <' .get_option('admin_email').'>'));
         add_bk_option( 'booking_email_reservation_from_adress', '[visitoremail]'); //htmlspecialchars('"Booking system" <' .get_option('admin_email').'>'));
         add_bk_option( 'booking_email_reservation_subject',__('New booking', 'wpdev-booking'));
-        add_bk_option( 'booking_email_reservation_content',htmlspecialchars(sprintf(__('You need to approve new booking %s for: %s Person detail information:%s Currently new booking is waiting for approval. Please visit the moderation panel%sThank you, %s', 'wpdev-booking'),'[bookingtype]','[dates]<br/><br/>','<br/> [content]<br/><br/>',' [moderatelink]<br/><br/>',$blg_title.'<br/>[siteurl]')));
+        add_bk_option( 'booking_email_reservation_content',htmlspecialchars(sprintf(__('You need to approve a new booking %s for: %s Person detail information:%s Currently a new booking is waiting for approval. Please visit the moderation panel%sThank you, %s', 'wpdev-booking'),'[bookingtype]','[dates]<br/><br/>','<br/> [content]<br/><br/>',' [moderatelink]<br/><br/>',$blg_title.'<br/>[siteurl]')));
 
         add_bk_option( 'booking_email_approval_adress',htmlspecialchars('"Booking system" <' .get_option('admin_email').'>'));
         add_bk_option( 'booking_email_approval_subject',__('Your booking has been approved', 'wpdev-booking'));
@@ -4007,11 +2437,19 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
 
         // Examples in demos
-        if ( wpdev_bk_is_this_demo() ) {  $this->createExamples4Demo(); }
+        if ( $is_demo ) {  $this->createExamples4Demo(); }
         
+        // Fill Development server by initial bookings
+        //if (  $_SERVER['HTTP_HOST'] === 'dev'  ) {  
+        //    for ($i = 0; $i < 5; $i++) {
+        //        //if (!class_exists('wpdev_bk_personal')) 
+        //        $this->createExamples4Demo( array(1,2,3,4,5,6,7,8,9,10,11,12) ); 
+        //    }
+        //}
         //$this->setDefaultInitialValues();
 
         $this->reindex_booking_db();
+
         
     }
 
@@ -4044,7 +2482,27 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
             delete_bk_option( 'booking_type_of_thank_you_message' , 'message' );
             delete_bk_option( 'booking_thank_you_page_URL' , site_url() );
             delete_bk_option( 'booking_is_use_autofill_4_logged_user' ) ;
-
+            
+            delete_bk_option( 'booking_form_is_using_bs_css');
+            delete_bk_option( 'booking_form_format_type');
+            
+            delete_bk_option( 'booking_form_field_active1');
+            delete_bk_option( 'booking_form_field_required1');
+            delete_bk_option( 'booking_form_field_label1');
+            delete_bk_option( 'booking_form_field_active2');
+            delete_bk_option( 'booking_form_field_required2');
+            delete_bk_option( 'booking_form_field_label2');
+            delete_bk_option( 'booking_form_field_active3');
+            delete_bk_option( 'booking_form_field_required3');
+            delete_bk_option( 'booking_form_field_label3');
+            delete_bk_option( 'booking_form_field_active4');
+            delete_bk_option( 'booking_form_field_required4');
+            delete_bk_option( 'booking_form_field_label4');
+            delete_bk_option( 'booking_form_field_active5');
+            delete_bk_option( 'booking_form_field_required5');
+            delete_bk_option( 'booking_form_field_label5');
+            
+            
             delete_bk_option( 'booking_date_format');
             delete_bk_option( 'booking_date_view_type');
             delete_bk_option( 'booking_is_delete_if_deactive' ); // check
@@ -4134,25 +2592,38 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
 
 
-    function  createExamples4Demo(){ global $wpdb;
-            $version = $this->get_version();
+    function  createExamples4Demo($my_bk_types=array()){ global $wpdb;
+            $version = get_bk_version();
 
             if (class_exists('wpdev_bk_multiuser')) {
 
+              if (empty($my_bk_types))   $my_bk_types=array(13,14,15,16,17);                // The booking resources with these IDs are exist in the Demo sites
+              else                       shuffle($my_bk_types);
 
-              $my_bk_types=array(13,14,15,16,17);
-              if (get_user_option( 'booking_user_role', 2 ) != 'super_admin')
-                for ($i = 0; $i < count($my_bk_types); $i++) {
-
-                    $bk_type  = $my_bk_types[$i];
-                    $is_appr  = rand(0,1);
-                    $evry_one = 2;//rand(1,7);
+              // Get NUMBER of Bookings
+              $bookings_count = $wpdb->get_results(wpdevbk_db_prepare( "SELECT COUNT(*) as count FROM ".$wpdb->prefix ."booking as bk" ));                      
+              if (count($bookings_count)>0)   $bookings_count = $bookings_count[0]->count ;
+              if ($bookings_count>=20) return;      
+              
+              
+             $max_num_bookings = 4;                                                        // How many bookings exist  per resource   
+              foreach ($my_bk_types as $resource_id) {                                     // Loop all resources                                        
+                    $bk_type  = $resource_id;                                              // Booking Resource
+                    $min_days = 2;
+                    $max_days = 7;                    
+                    $evry_one = $max_days+3;                                                  // Multiplier of interval between 2 dates of different bookings
+                    $days_start_shift =  rand($max_days,(3*$max_days));//(ceil($max_num_bookings/2)) * $max_days;           // How long far ago we are start bookings    
+                    
+                for ($i = 0; $i < $max_num_bookings; $i++) {               
+                    
+                    $is_appr  = rand(0,1);                                                  // Pending | Approved
+                    $num_days = rand($min_days,$max_days);                                  // Max Number of Dates for specific booking
 
                     $second_name = $this->getInitialValues4Demo('second_name');
                     $city =  $this->getInitialValues4Demo('city');
                     $start_time = '14:00';
                     $end_time   = '12:00';
-
+                    
                     $form  = '';
                     $form .= 'text^name'.$bk_type.'^'.$this->getInitialValues4Demo('name').'~';
                     $form .= 'text^secondname'.$bk_type.'^'.$second_name.'~';
@@ -4163,32 +2634,47 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                     $form .= 'text^country'.$bk_type.'^'.$city[1].'~';
                     $form .= 'text^phone'.$bk_type.'^'.$this->getInitialValues4Demo('phone').'~';
                     $form .= 'select-one^visitors'.$bk_type.'^1~';
-                    $form .= 'checkbox^children'.$bk_type.'[]^false~';
+                    //$form .= 'checkbox^children'.$bk_type.'[]^0~';
                     $form .= 'textarea^details'.$bk_type.'^'.$this->getInitialValues4Demo('info').'~';
                     $form .= 'coupon^coupon'.$bk_type.'^ ';
 
+                    
                     $wp_bk_querie = "INSERT INTO ".$wpdb->prefix ."booking ( form, booking_type, cost, hash, modification_date ) VALUES
                                                        ( '".$form."', ".$bk_type .", ".rand(0,1000).", MD5('". time() . '_' . rand(1000,1000000)."'), NOW() ) ;";
                     $wpdb->query(wpdevbk_db_prepare($wp_bk_querie));
                     $temp_id = $wpdb->insert_id;
+                    
                     $wp_queries_sub = "INSERT INTO ".$wpdb->prefix ."bookingdates (
                                          booking_id,
                                          booking_date,
                                          approved
-                                        ) VALUES
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+2)." day  ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+3)." day  ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+4)." day  ,". $is_appr." );";
-                    $wpdb->query(wpdevbk_db_prepare($wp_queries_sub));
+                                        ) VALUES ";
+                    for ($d_num = 0; $d_num < $num_days; $d_num++) {
+                        $my_interval = ( $i*$evry_one + $d_num);
+                        
+                        $wp_queries_sub .= "( ". $temp_id .", DATE_ADD(CURDATE(), INTERVAL  -".$days_start_shift." day) + INTERVAL ".$my_interval." day  ,". $is_appr." ),";                                                
+                    }
+                    $wp_queries_sub = substr($wp_queries_sub,0,-1) . ";";
+                    
+                    $wpdb->query(wpdevbk_db_prepare($wp_queries_sub));                                        
                  }
-
+              }
             } else if ( $version == 'free' ) {
-                 for ($i = 0; $i < 2; $i++) {
+                 if (empty($my_bk_types))   $my_bk_types=array(1,1);
+                 else                       shuffle($my_bk_types);
+                
+                 for ($i = 0; $i < count($my_bk_types); $i++) {
                      
                     $bk_type = 1;//rand(1,4);
                     $is_appr = rand(0,1);
                     $evry_one = 2;//rand(1,7);
-
+                    if (  $_SERVER['HTTP_HOST'] === 'dev'  ) {  
+                        $evry_one = rand(1,14);//2;//rand(1,7);
+                        $num_days = rand(1,7);//2;//rand(1,7);
+                        $days_start_shift = rand(-28,0);
+                    }
+                    
+                    
                     $second_name = $this->getInitialValues4Demo('second_name');
                     $form  = '';
                     $form .= 'text^name'.$bk_type.'^'.$this->getInitialValues4Demo('name').'~';
@@ -4204,18 +2690,32 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                                          booking_id,
                                          booking_date,
                                          approved
-                                        ) VALUES
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+2)." day ,". $is_appr." ),
+                                        ) VALUES ";
+                    
+                    if (  $_SERVER['HTTP_HOST'] === 'dev'  ) {  
+                        for ($d_num = 0; $d_num < $num_days; $d_num++) {
+                                $wp_queries_sub .= "( ". $temp_id .", CURDATE()+ INTERVAL ".($days_start_shift + 2*($i+1)*$evry_one + $d_num)." day  ,". $is_appr." ),";
+                        }
+                        $wp_queries_sub = substr($wp_queries_sub,0,-1) . ";";
+                    } else {
+                        $wp_queries_sub .= "( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+2)." day ,". $is_appr." ),
                                         ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+3)." day  ,". $is_appr." ),
                                         ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+4)." day ,". $is_appr." );";
+                    }
+                    
                     $wpdb->query(wpdevbk_db_prepare($wp_queries_sub));
                  }
             } else if ( $version == 'personal' ) {
-                 for ($i = 0; $i < 4; $i++) {
+                    $max_num_bookings = 8;                                                  // How many bookings exist     
+                for ($i = 0; $i < $max_num_bookings; $i++) {               
 
-                    $bk_type  = rand(1,4);
-                    $is_appr  = rand(0,1);
-                    $evry_one = 2;//rand(1,7);
+                    $bk_type  = rand(1,4);                                                  // Booking Resource
+                    $min_days = 1;
+                    $max_days = 7;                    
+                    $is_appr  = rand(0,1);                                                  // Pending | Approved
+                    $evry_one = $max_days;                                                  // Multiplier of interval between 2 dates of different bookings
+                    $num_days = rand($min_days,$max_days);                                  // Max Number of Dates for specific booking
+                    $days_start_shift = -1 * (ceil($max_num_bookings/2)) * $max_days;       // How long far ago we are start bookings    
 
                     $second_name = $this->getInitialValues4Demo('second_name');
                     $form  = '';
@@ -4224,29 +2724,37 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                     $form .= 'text^email'.$bk_type.'^'.$second_name.'.example@wpbookingcalendar.com~';
                     $form .= 'text^phone'.$bk_type.'^'.$this->getInitialValues4Demo('phone').'~';
                     $form .= 'select-one^visitors'.$bk_type.'^'.rand(1,4).'~';
-                    $form .= 'checkbox^children'.$bk_type.'[]^false~';
+                    $form .= 'select-one^children'.$bk_type.'^'.rand(0,3).'~';
                     $form .= 'textarea^details'.$bk_type.'^'.$this->getInitialValues4Demo('info');
 
                     $wp_bk_querie = "INSERT INTO ".$wpdb->prefix ."booking ( form, booking_type, hash,  modification_date ) VALUES
                                                        ( '".$form."', ".$bk_type .", MD5('". time() . '_' . rand(1000,1000000)."'), NOW() ) ;";
                     $wpdb->query(wpdevbk_db_prepare($wp_bk_querie));
                     $temp_id = $wpdb->insert_id;
+                    
                     $wp_queries_sub = "INSERT INTO ".$wpdb->prefix ."bookingdates (
                                          booking_id,
                                          booking_date,
                                          approved
-                                        ) VALUES
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+2)." day ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+3)." day  ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+4)." day ,". $is_appr." );";
+                                        ) VALUES ";
+                    for ($d_num = 0; $d_num < $num_days; $d_num++) {
+                        $wp_queries_sub .= "( ". $temp_id .", CURDATE()+ INTERVAL ".($days_start_shift + $i*$evry_one + $d_num)." day  ,". $is_appr." ),";
+                    }
+                    $wp_queries_sub = substr($wp_queries_sub,0,-1) . ";";
+                    
                     $wpdb->query(wpdevbk_db_prepare($wp_queries_sub));
                  }
             } else if ( $version == 'biz_s' ) {
-                 for ($i = 0; $i < 4; $i++) {
+                    $max_num_bookings = 8;                                                  // How many bookings exist     
+                for ($i = 0; $i < $max_num_bookings; $i++) {               
 
-                    $bk_type  = rand(1,4);
-                    $is_appr  = rand(0,1);
-                    $evry_one = 2;//rand(1,7);
+                    $bk_type  = rand(1,4);                                                  // Booking Resource
+                    $min_days = 1;
+                    $max_days = 1;                    
+                    $is_appr  = rand(0,1);                                                  // Pending | Approved
+                    $evry_one = $max_days;                                                  // Multiplier of interval between 2 dates of different bookings
+                    $num_days = rand($min_days,$max_days);                                  // Max Number of Dates for specific booking
+                    $days_start_shift = (ceil($max_num_bookings/4)) * $max_days;       // How long far ago we are start bookings    
 
                     $second_name = $this->getInitialValues4Demo('second_name');
                     $city =  $this->getInitialValues4Demo('city');
@@ -4265,34 +2773,47 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                     $form .= 'text^country'.$bk_type.'^'.$city[1].'~';
                     $form .= 'text^phone'.$bk_type.'^'.$this->getInitialValues4Demo('phone').'~';
                     $form .= 'select-one^visitors'.$bk_type.'^'.rand(1,4).'~';
-                    $form .= 'checkbox^children'.$bk_type.'[]^false~';
+                    $form .= 'checkbox^children'.$bk_type.'[]^'.rand(0,3).'~';
                     $form .= 'textarea^details'.$bk_type.'^'.$this->getInitialValues4Demo('info');
 
                     $wp_bk_querie = "INSERT INTO ".$wpdb->prefix ."booking ( form, booking_type, cost, hash, modification_date ) VALUES
                                                        ( '".$form."', ".$bk_type .", ".rand(0,1000).", MD5('". time() . '_' . rand(1000,1000000)."'), NOW() ) ;";
                     $wpdb->query(wpdevbk_db_prepare($wp_bk_querie));
                     $temp_id = $wpdb->insert_id;
+                    
                     $wp_queries_sub = "INSERT INTO ".$wpdb->prefix ."bookingdates (
                                          booking_id,
                                          booking_date,
                                          approved
-                                        ) VALUES
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL \"".(2*($i+1)*$evry_one+2)." ".$start_time.":01"."\" DAY_SECOND ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL \"".(2*($i+1)*$evry_one+2)." ".$end_time.":02"."\" DAY_SECOND ,". $is_appr." );";
+                                        ) VALUES ";
+                    for ($d_num = 0; $d_num < $num_days; $d_num++) {
+                        $my_interval = ( $i*$evry_one + $d_num);
+//                        $wp_queries_sub .= "( ". $temp_id .", CURDATE()+ INTERVAL \"".($days_start_shift + $i*$evry_one + $d_num)." ".$start_time.":01\" DAY_SECOND  ,". $is_appr." ),";
+//                        $wp_queries_sub .= "( ". $temp_id .", CURDATE()+ INTERVAL \"".($days_start_shift + $i*$evry_one + $d_num)." ".$end_time  .":02\" DAY_SECOND  ,". $is_appr." ),";                        
+                        $wp_queries_sub .= "( ". $temp_id .", DATE_ADD(CURDATE(), INTERVAL -".$days_start_shift." DAY) + INTERVAL \"".$my_interval." ".$start_time.":01\" DAY_SECOND  ,". $is_appr." ),";                        
+                        $wp_queries_sub .= "( ". $temp_id .", DATE_ADD(CURDATE(), INTERVAL -".$days_start_shift." DAY) + INTERVAL \"".$my_interval." ".$end_time.":02\" DAY_SECOND  ,". $is_appr." ),";
+                    }
+                    $wp_queries_sub = substr($wp_queries_sub,0,-1) . ";";
+                    
                     $wpdb->query(wpdevbk_db_prepare($wp_queries_sub));
                  }
             } else if ( $version == 'biz_m' ) {
-                 for ($i = 0; $i < 4; $i++) {
+                    $max_num_bookings = 8;                                                  // How many bookings exist     
+                for ($i = 0; $i < $max_num_bookings; $i++) {               
 
-                    $bk_type  = rand(1,4);
-                    $is_appr  = rand(0,1);
-                    $evry_one = 2;//rand(1,7);
+                    $bk_type  = rand(1,4);                                                  // Booking Resource
+                    $min_days = 3;
+                    $max_days = 7;                    
+                    $is_appr  = rand(0,1);                                                  // Pending | Approved
+                    $evry_one = $max_days;                                                  // Multiplier of interval between 2 dates of different bookings
+                    $num_days = rand($min_days,$max_days);                                  // Max Number of Dates for specific booking
+                    $days_start_shift =  (ceil($max_num_bookings/2)) * $max_days;       // How long far ago we are start bookings    
 
                     $second_name = $this->getInitialValues4Demo('second_name');
                     $city =  $this->getInitialValues4Demo('city');
                     $start_time = '14:00';
                     $end_time   = '12:00';
-
+                    
                     $form  = '';
                     $form .= 'text^name'.$bk_type.'^'.$this->getInitialValues4Demo('name').'~';
                     $form .= 'text^secondname'.$bk_type.'^'.$second_name.'~';
@@ -4303,38 +2824,56 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                     $form .= 'text^country'.$bk_type.'^'.$city[1].'~';
                     $form .= 'text^phone'.$bk_type.'^'.$this->getInitialValues4Demo('phone').'~';
                     $form .= 'select-one^visitors'.$bk_type.'^'.rand(1,4).'~';
-                    $form .= 'checkbox^children'.$bk_type.'[]^false~';
+                    $form .= 'checkbox^children'.$bk_type.'[]^'.rand(0,3).'~';
                     $form .= 'textarea^details'.$bk_type.'^'.$this->getInitialValues4Demo('info').'~';
-                    $form .= 'text^starttime'.$bk_type.'^14:00~';
-                    $form .= 'text^endtime'.$bk_type.'^12:00';
+                    $form .= 'text^starttime'.$bk_type.'^'.$start_time.'~';
+                    $form .= 'text^endtime'.$bk_type.'^'.$end_time;
 
                     $wp_bk_querie = "INSERT INTO ".$wpdb->prefix ."booking ( form, booking_type, cost, hash, modification_date ) VALUES
                                                        ( '".$form."', ".$bk_type .", ".rand(0,1000).", MD5('". time() . '_' . rand(1000,1000000)."'), NOW() ) ;";
                     $wpdb->query(wpdevbk_db_prepare($wp_bk_querie));
                     $temp_id = $wpdb->insert_id;
+                    
                     $wp_queries_sub = "INSERT INTO ".$wpdb->prefix ."bookingdates (
                                          booking_id,
                                          booking_date,
                                          approved
-                                        ) VALUES
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL \"".(2*($i+1)*$evry_one+2)." ".$start_time.":01"."\" DAY_SECOND ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+3)." day  ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL \"".(2*($i+1)*$evry_one+4)." ".$end_time.":02"."\" DAY_SECOND ,". $is_appr." );";
+                                        ) VALUES ";
+                    for ($d_num = 0; $d_num < $num_days; $d_num++) {
+                        $my_interval = ( $i*$evry_one + $d_num);
+                        if ($d_num == 0) {                                       // Check In
+                            $wp_queries_sub .= "( ". $temp_id .", DATE_ADD(CURDATE(), INTERVAL  -".$days_start_shift." day) + INTERVAL \"".$my_interval." ".$start_time.":01\" DAY_SECOND  ,". $is_appr." ),";
+                        } elseif ($d_num == ($num_days-1) ) {                   // Check Out
+                            $wp_queries_sub .= "( ". $temp_id .", DATE_ADD(CURDATE(), INTERVAL -".$days_start_shift." day) + INTERVAL \"".$my_interval." ".$end_time.":02\" DAY_SECOND  ,". $is_appr." ),";
+                        } else {
+                            $wp_queries_sub .= "( ". $temp_id .", DATE_ADD(CURDATE(), INTERVAL  -".$days_start_shift." day) + INTERVAL ".$my_interval." day  ,". $is_appr." ),";
+                        }                        
+                    }
+                    $wp_queries_sub = substr($wp_queries_sub,0,-1) . ";";
+                    
                     $wpdb->query(wpdevbk_db_prepare($wp_queries_sub));
                  }
 
             } else if ( $version == 'biz_l' ) {
-                 for ($i = 0; $i < 4; $i++) {
-
-                    $bk_type  = $i+1;
-                    $is_appr  = rand(0,1);
-                    $evry_one = 2;//rand(1,7);
+                    $max_num_bookings = 12;                                                  // How many bookings exist     
+                for ($res_groups = 0; $res_groups < 2; $res_groups++)    
+                for ($i = 0; $i < $max_num_bookings; $i++) {               
+                    if($res_groups) 
+                        $bk_type  = rand(1,6);                                                  // Booking Resource
+                    else $bk_type  = rand(7,12);                                                  // Booking Resource
+                    $min_days = 2;
+                    $max_days = 7;                    
+                    $is_appr  = rand(0,1);                                                  // Pending | Approved
+                    $evry_one = $max_days;                                                  // Multiplier of interval between 2 dates of different bookings
+                    $num_days = rand($min_days,$max_days);                                  // Max Number of Dates for specific booking
+                    $days_start_shift =  (ceil($max_num_bookings/2)) * $max_days;       // How long far ago we are start bookings    
 
                     $second_name = $this->getInitialValues4Demo('second_name');
                     $city =  $this->getInitialValues4Demo('city');
                     $start_time = '14:00';
                     $end_time   = '12:00';
 
+                    
                     $form  = '';
                     $form .= 'text^name'.$bk_type.'^'.$this->getInitialValues4Demo('name').'~';
                     $form .= 'text^secondname'.$bk_type.'^'.$second_name.'~';
@@ -4345,7 +2884,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                     $form .= 'text^country'.$bk_type.'^'.$city[1].'~';
                     $form .= 'text^phone'.$bk_type.'^'.$this->getInitialValues4Demo('phone').'~';
                     $form .= 'select-one^visitors'.$bk_type.'^1~';
-                    $form .= 'checkbox^children'.$bk_type.'[]^false~';
+                    //$form .= 'checkbox^children'.$bk_type.'[]^0~';
                     $form .= 'textarea^details'.$bk_type.'^'.$this->getInitialValues4Demo('info').'~';
                     $form .= 'coupon^coupon'.$bk_type.'^ ';
 
@@ -4353,14 +2892,19 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
                                                        ( '".$form."', ".$bk_type .", ".rand(0,1000).", MD5('". time() . '_' . rand(1000,1000000)."'), NOW() ) ;";
                     $wpdb->query(wpdevbk_db_prepare($wp_bk_querie));
                     $temp_id = $wpdb->insert_id;
+                    
                     $wp_queries_sub = "INSERT INTO ".$wpdb->prefix ."bookingdates (
                                          booking_id,
                                          booking_date,
                                          approved
-                                        ) VALUES
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+2)." day  ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+3)." day  ,". $is_appr." ),
-                                        ( ". $temp_id .", CURDATE()+ INTERVAL ".(2*($i+1)*$evry_one+4)." day  ,". $is_appr." );";
+                                        ) VALUES ";
+                    for ($d_num = 0; $d_num < $num_days; $d_num++) {
+                        $my_interval = ( $i*$evry_one + $d_num);
+                        
+                        $wp_queries_sub .= "( ". $temp_id .", DATE_ADD(CURDATE(), INTERVAL  -".$days_start_shift." day) + INTERVAL ".$my_interval." day  ,". $is_appr." ),";                                                
+                    }
+                    $wp_queries_sub = substr($wp_queries_sub,0,-1) . ";";
+                    
                     $wpdb->query(wpdevbk_db_prepare($wp_queries_sub));
                  }
             }
@@ -4501,7 +3045,8 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 // </editor-fold>
 
 
-
+    
+    // <editor-fold defaultstate="collapsed" desc="  M A I N T E N C E      F U N C T I O N S  ">
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///   M A I N T E N C E      F U N C T I O N S     ////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4604,8 +3149,7 @@ if ( jQuery('#togle_settings_range_times').length > 0 )     { jQuery('#togle_set
 
     }
 
-
-
+    // </editor-fold>
 
 }
 }
