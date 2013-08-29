@@ -1,176 +1,269 @@
 === Booking Calendar ===
 Contributors: wpdevelop
 Donate link: http://wpbookingcalendar.com/buy/
-Tags:  booking calendar, booking, bookings, to book, calendar, reservation, calendar, hotel, rooms, rent, appointment, scheduling, availability, availability calendar, event, events, event calendar, resource scheduling, rental, meeting scheduling, reservation plugin, accommodations, bookable, bookable events
-Requires at least: 3.2
+Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
+Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 4.1.6
+Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Booking Calendar - its plugin for online reservation and availability checking service for your site.
+Booking Calendar plugin - it's ultimate booking system for online reservation and availability checking service for your site.
+
 == Description ==
-[Plugin Homepage](http://wpbookingcalendar.com/) | [Features](http://wpbookingcalendar.com/features/) | [Support Forum](http://wpbookingcalendar.com/support/) | [FAQ](http://wpbookingcalendar.com/faq/) | [Premium Demos](http://wpbookingcalendar.com/demo/)
+Booking Calendar plugin will enable **online booking services** for your site.
+It's highly supported, *oldest ([since 2009](http://wpbookingcalendar.com/changelog/)) booking wordpress plugin* with **intuitive interface** and **flexible functionality**, which is possible to use in wide range of businesses.
+>[Plugin Homepage](http://wpbookingcalendar.com/ "Booking Calendar Homepage") | [Features](http://wpbookingcalendar.com/features/ "Features") | [Support Forum](http://wpbookingcalendar.com/support/ "Support") | [FAQ](http://wpbookingcalendar.com/faq/ "FAQ on Plugin site") | [Premium Demos](http://wpbookingcalendar.com/demo/ "Live Demos of Premium versions")
 
-This Wordpress plugin will enable <strong>online booking services</strong> for your site. Visitors to your site will be able to <strong>check availability</strong> of apartments, houses, hotel rooms, or services you offer. They can also <strong>make reservations and appointments</strong> with the ability to choose from multi-day, single day, or by the hour booking. Your clients can even view and register for upcoming events. With integrated payment support of popular payment systems your clients can pay online.
+Your website visitors can **check availability** of **properties** *(apartments, houses, hotel rooms, etc.)* or any **services** you offer and **make a booking** in a minute.
 
-This plugin is extremely easy to use and very flexible, built with full Ajax and jQuery support.
+  
+Your Customers will be able to:  
+**(1)** select day(s) in calendar *(which is possible to customize for fitting to your site design)*,  
+**(2)** fill booking form fields *(which is possible to configure - change fields labels, activate/deactivate or set as required)*,  
+**(3)** and submit a booking.  
+Administrator *(and also your visitors)* will **receive notification email(s)** about the new booking, 
+and be able to **Approve** or **Decline** this reservation in Easy to Understand, sleek Admin Booking Panel 
+(with possibility to **see all bookings** in day/week/month view of Calendar Overview mode - **Timeline** or just in Booking **Listing Table**).  
 
-You can view a live demo of Booking Calendar in action <a href="http://wpbookingcalendar.com/demo/" title="Booking Calendar Live Demo">here</a>.
+  
+= KEY BENEFITS: =
+- Extremely **easy to use**.
+- Very **flexible** functionality. Fit to very wide range of business.
+- All bookings and settings are stored **in your DB**. You don't need third party account(s).
+- Sleek and **customizable design** of calendars, for fitting to your site design.
+- **Responsive** front end design.
+- An easy to use **Booking Admin Panel** that displays bookings in **Calendar Overview** or **Listing Table** and lets you manages bookings.
+- Built with **Bootstrap**, **jQuery**, **Ajax** and other technologies.
+- **Easy to install and integrate** into your site. *For example, using booking button in edit toolbar for configuration and inserting booking shortcode into post or page.*
 
-<strong>WP Booking Calendar is great for:</strong>
+= PLUG-N-PLAY =
+Booking Calendar is built to work out of the box. Just activate it and insert booking shortcode into the post or page and you are ready to receive new bookings. Most of the settings have the predefined values and small descriptions.
 
-* Resource scheduling (Rental, Rooms, houses, apartments, Equipment Car pools, Hotel rooms)
-* Client scheduling ( Beauty salon, Spa management, Hairdresser, Massage therapist, Acupuncture)
-* Meeting scheduling (Coaching, Phone advice)
-* Event scheduling (Conference, Course, Fitness center, Yoga class, Gym)
-* Patient scheduling (Doctor, Clinic, Medical)
-* Or any other service, where can be done reservation for some days or hours.
+= FEATURES: =   
+   
+   
+**Make New Bookings on Client side.**  
 
-<strong>Features</strong>:
+- Make bookings in **friendly booking interface** - select the date(s) and fill form fields.
+- **Prevent of double booking** for already reserved days.
+- Booking form and calendar support fully **responsive design** that looks great on any device.
 
-* Make booking reservations by selecting dates at one or several calendar(s) 			
-* Email notifications for administrator and site visitors 			
-* Comfortable Admin panel for booking management 			
-* Easy integration into posts/pages, using TinyMCE button. 			
-* Booking calendar widget 			
-* Validations of required form fields and email field 			
-* Multi language support ( Check  all available languages at this <a href="http://wordpress.org/extend/plugins/booking/other_notes/">page</a> )
-* Much more ... 
-* Check all other features <a href="http://wpbookingcalendar.com/features/" title="Booking Calendar Features list">here</a>.
+**Manage your Bookings in Admin Panel.**  
+
+- **Email notifications** to administrator and site visitors about specific booking actions. Possibility to change the admin email.
+- Comfortable Admin Panel for booking management. View bookings in **Calendar Overview Panel (Timeline)** with  possibility to set Day/Week/Month view or in **Booking Listing Table**.
+- **Search the booking(s)** by different parameters, using the Filter in Admin Panel.
+- Possibility to **sort bookings** by several parameters.
+- Set default **dates format**.
+- **Pagination** of the booking listing.
+- Possibility to set the **different user roles** for the each plugin menu pages.
+- Administrator can **Approve** or **Decline** specific bookings.
+- View the number of new bookings on the **booking dashboard section**.
+
+**Configure Booking Form and Availability Calendar.**  
+
+- Set showing **1 or several  months  in calendar**.
+- Set the **width of calendar** and number of months in a row easily from the settings. *(For example, showing **3x2 months in calendar**)*.
+- Select your desire **calendar skin**, for better feet to your site design.
+- **Customize the calendar** colors by editing the CSS styles.
+- Set **single day selection** or **multiple days selection** mode.
+- Set the number of **unavailable days** in calendar, starting **from Today**.
+- Set specific **weekdays as unavailable**.
+- Possibility to customize the **calendar legend**.
+
+**Set different parameters.**  
+
+- Possibility to **change labels** near the each form field.
+- **Activate** or **deactivate** the specific form **fields**.
+- Set Specific **field(s) as required** in your booking form.
+- **Validations of required fields** and correct entering email.
+- Support **CAPTCHA**.
+- Possibility to **redirect** customer to the specific **"Thank you" page**, after the booking process.
+
+**And a little more.**  
+
+- **Easy integration into posts/pages**, using new TinyMCE button in the edit toolbar.
+- Plugin is **widget ready** so you can easily add a calendar or booking form to site sidebar.
+- **Multi language** support. *(Check all available languages at this [page](http://wordpress.org/extend/plugins/booking/other_notes/ "Translations")).*
+
+   
+And **much, much more**... *Please check ton of features in [premium versions](http://wpbookingcalendar.com/features/ "Booking Calendar Features list") of plugin.*
+
+   
+= BOOKING CALENDAR IS GREATE FOR: =
+Booking Calendar is used by thousands of users. Whether you're operating a big hotel with hundreds of rooms, or you're a sole business owner, which need to automatize the bookings for your service, we have you in mind.  
+
+- Resource scheduling (bed & breakfast, cottages, hotel rooms, houses, apartments etc).
+- Equipment rentals (cars, bikes, computers, hi-fi technics, pools, etc).
+- Client scheduling (photographers, lawyers, beauty salons, spas, massage therapists).
+- Meeting scheduling (coaching, phone advice).
+- Event scheduling (conference, course, fitness center, yoga class, gym).
+- Patient scheduling (doctor, dentists, clinic, medical).
+- Or any other service, where can be done reservation for specific day(s).
 
 == Installation ==
-<strong style="color:#f50;">Because of update CSS and JS files, please clear browser cache, after you made this update!!!</strong>
 
-1. Upload entire `booking` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Configure Settings at the submenu of "Booking" menu
-5. Add shortcode to your post/page using new button at toolbar.
+= Install & Activate =
+
+Installing the plugin is easy. Just follow these steps:
+
+1. From the dashboard of your site, navigate to Plugins --> Add New.
+2. Select the Upload option and hit "Choose File."
+3. When the popup appears select the booking.zip file from your desktop. (The file name of other versions can be different. For example: booking.bs.zip).
+4. Follow the on-screen instructions and wait as the upload completes.
+5. When it's finished, activate the plugin via the prompt. A message will show confirming activation was successful. And you will redirect to the Welcome page.
+
+Installation is complete!
+
+6. Now you can open (create new) post or page and using the "Booking" button in edit toolbar insert the booking shortcode. If you want to insert and configure the shortcode manually, please check  this [instruction](http://wpbookingcalendar.com/help/booking-calendar-shortcodes/)
+7. Update (publish) your post or page. Now your web site visitors can make new bookings in the booking form at that page.
+
+That's it! Just configure your settings (Booking --> Settings) and predefined booking form fields (Booking --> Settings --> Fields). 
+If you're unclear about the installation process, check out our [HELP](http://wpbookingcalendar.com/help/) instructions. Still having trouble from there? See the [FAQ](http://wpbookingcalendar.com/faq/) for more troubleshooting ideas or contact [support](http://wpbookingcalendar.com/support/).
+
+**Important notice:** Because of changes in CSS and JavaScript files, please clear browser cache, after you made this update.
+= Requirements =
+
+- PHP 5.2 or above
+- WordPress 3.3 or above
 
 == Frequently Asked Questions ==
 
-Please see <a href="http://wpbookingcalendar.com/faq/" title="faq">FAQ</a>.
+Please see [FAQ](http://wpbookingcalendar.com/faq/).
 
-If you have any further questions, please fill free to <a href="mailto:info@wpbookingcalendar.com" title="faq">contact directly</a>.
+If you have any further questions, please fill free to <a href="mailto:support@wpbookingcalendar.com" title="faq">contact directly</a>.
 
 == Screenshots ==
 
-1. Booking TimeLine Overview Listing page in admin panel. Showing bookings in nice calendar view mode.
-2. Booking Listing (Actions tab) admin panel. Approve, decline, delete and make other actions for selected bookings.
-3. Add new booking from admin panel
-4. Comfortable inserting booking form into post or page, using Booking button at editor toolbar.
-5. Example of booking form integration into the post or page.
-6. Skins of availability calendars from booking form.
-7. Example of Email, which is sending after specific actions.
-8. Booking dashboard info and short links for showing of bookings.
-9. General Booking Settings page. 
-10. Booking Listing (Filters tab) admin panel. Apply filter, for looking of your required bookings.
+1. **Calendar Overview Panel**. Easy to Understand Interface with Buttons for Fast Actions.
+2. **Booking Listing Panel**. Set Filter to show desire bookings. Approve, Decline your Bookings.
+3. **Add New Bookings**. Create new bookings directly from admin panel.
+4. **Form fields**. Change field Label, Activate or Deactivate or Set Required specific field.
+5. **Inserting booking shortcode into post or page**. Easily configure parameters.
+6. **Client side booking form**. Example of integration booking form into post or page.
+7. **Emails**. Admin and your website visitors, will receive emails, after specific action.
+8. **Settings**. Configure different parameters for fitting plugin to your needs.
+9. **Widgets**. Add booking form or availability calendar to your sidebar.
+10. **Calendar Skins**. Select calendar skin for better fitting to your site design.
+
 == Changelog ==
-= 4.1.6 =
- * Security and maintenance fix. Its important to update your version to this update.
-= 4.1.5 =
- * Support WordPress 3.6
-= 4.1.4 =
-* Fix several warning notices in the plugin, if the WP_DEBUG constant is set to  true at  the config.php file.
-* Showing one calendar and the warning message if at the same visible page is showing booking forms or calendars of the same booking resource more than one time.
-* Block loading of the unused JavaScript at the Booking Listing page.
-= 4.1.3 =
-* Translation of Booking Calendar Plugin, into Hebrew, by Eli Segev.
-* Fix issue of not submiting the booking form, when the blog is installed not to the root of site (when Site URL and WordPress URL at the WordPress Settings are different)
-* Define possibility to activate the 'https' mode for the site, by setting true value to the WP_BK_SSL constant at the wpdev-booking.php file
-* Load the jquerymigrate and rechecking for the minimum jQuery 1.7.1 in any versions of plugin, untill now its was only  in Business Small or higher versions.
-* Fix conflict issue (when mouse over specific buttons in the booking admin panel), which  is generated by the "Comprehensive Google Map Plugin"
-= 4.1.2 =
-* Fix issue with links in pagination at the Resources page (in paid versions).
-* Correct of font size in the links of "Powered by" notice.
-= 4.1.1 =
-* Fix issue of showing the warning message "mktime() expects parameter 1 to be long, string given in" if the time is not selected.
-* Fix issue of showing the "You do not have sufficient permissions to access this page" error.
-= 4.1 =
-* Features and issue fixings in All versions:
- * New Calendar Overview page (1 month/ 3 month / Year view mode) for the booking listing in the admin panel.
- * Showing the full booking info in the popover tooltip, when mouse over specific booking in the Calendar Overview page in admin panel.
- * Setting the default start page at the General Booking Settings page : Booking Listing or Booking Calendar Overview page.
- * Possibility to Sort the bookings by booking Dates in the Booking Listing page
- * Possibility  to  activate / deactivate and edit titles of specific items in the Legend under the calendar.
- * Showing the current date instead of "#" symbol at the cells of legend.
- * New technical section at the General Booking Settings page (for reindexing (possibility to sort by date field) the exist bookings)
- * Slovak translation by (<a href="http://webhostinggeeks.com/blog/">Branco, Slovak</a>)
- * Add possibility to send the "Approve" emails, if the "Auto-approve" feature is activated at the General Booking Settings page.
- * Use the "visitor email" from the booking form as a default "reply" email in the email template about the new booking, which  is sending to the booking administrator.
- * Set  the date and time of the booking(s) relative to the "Timezone", which  is set at the WordPress General Settings page.
- * Support of migration to the jQuery 1.9 or 2.0 
- * Fix issue of not sending emails at the "Add booking" admin page, if the "Not sending emails" checkbox is checked.
+= 5.0 =
+- Features and issue fixings in All versions: 
+ * **Responsive front end design.** We have completely rewritten the CSS of calendar skins and booking form. Booking form and calendar support fully responsive design that looks great on any device.
+ * **Smoother Booking Experience.** Booking form now has new nice calendar skins and sleek form fields with nice warning messages.
+ * **Easy to customize.** Much more easy to configure for fitting to your site design. Configure calendar width, height or even structure (number of months in a row) from settings in a minute.
+ * **Configure your predefined form fields set.** Write Labels for your fields. Now (at Booking > Settings > Fields page) is possible to change the form fields labels.
+ * **Activate or Deactivate fields.** You can activate or deactivate the fields from the predefined fields set. 
+ * **Set as required specific fields.** You can set as required specific fields in your booking form from the predefined fields set
+ * **Improved Performance.** WP Booking Calendar has been dramatically improved in terms of performance to make your site run better and faster.
+ * **Customize the Calendar Skins.** The calendar skins ../css/skins/ are located separately from the calendar structure file ../css/calendar.css and very well commented. So you needn't to worry about the structure, sizes or responsive design of the calendar and concentrate only on design.
+ * Possibility to define any custom "Start date" of bookings listing in Calendar Overview mode at Navigation toolbar instead of only Current date/month. 
+ * Change the "New bookings" parameter selection from the button to selectbox in the Extended Filter tab at Booking Listing page.
+ * Automatically set specific "Radio button" as checked in the "Booking dates" and the "Creation dates" parameters at the Filters tab if specific dates or other option is selected.
+ * Using the Bootstrap CSS for the booking form.
+ * New Welcome page.
+ * New "Get Started" panel.
+ * Prevent of submitting the booking form with the same CAPCTCHA after refreshing the page with old data.
+ * Fix issue of possibility several times submit booking form (at the same date/time will be several same bookings), by clicking several times on the Submit button, until the booking form is not hided. 
+ * Fix issue of showing the dates in correct language (locale) for the payment requests or some other actions, what are sending in Ajax requests.
+ * Fix compatibility with "Advanced Custom Fields" plugin (Version 4.1.5.1). Possibility to insert  the booking shortcode into the posts or pages.
+ * Fix issue of showing /n instead of the new line in the emails templates, if in the text area was type enter(s).
+ * Fix issue of non-translated the "Month titles" at the left column on the Booking Calendar Overview page in admin panel.
+ * Fix issue of possibility to filter the booking listing for the same check  in/out date, if the booking was done at specific timeslot at single date.
+ * Fix setting of state of Read / Unread button at the "Filter tab" on the Booking Listing page.
+ * Fix issue with the filter results in the admin area. If choose a particular date and use the same date for check-in and check-out, we haven't got any results even there are bookings. 
+ * Fix. Change the declaration of the wp_register_script from jquerymigrate to jquery-migrate (if we are in the WordPress 3.6, so load the default script then)
+ * Fix. Security vulnerability issue fixed to protect of from conduct cross-site request forgery attacks.
  * Many other small issue fixing and improvements...
-* Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
- * Check-in and check-out days visible like in the other booking systems (mark half of day,  instead of the clock icon).  This feature is active if the "Use check in/out time" option is checked at the General Booking Settings page (Business Small/Medium/Large, MultiUser)
- * New type of season filter - just selecting the specific dates during a year(s). /Removing the time filter/ (Business Medium/Large, MultiUser)
- * Emails templates (in subject and content of email templates) support any shortcodes, which you are used at booking form. You can use the shortcodes in the same way as you are used it in the bottom form at Settings Fieds page. (Personal, Business Small/Medium/Large, MultiUser)
- * Possibility to use the "visitor email" shortcode in the email template at the field "From", so if the admin click  on reply button he will send email directly to the visitor  (Personal, Business Small/Medium/Large, MultiUser)
- * New shortcode [bookingselect] for selecting in selectbox the specific booking form, instead of using the customizations of PHP theme files. Example: [bookingselect type='2,3,4' form_type='standard' nummonths=1 label='Please select the resource: '] (Personal, Business Small/Medium/Large, MultiUser)
- * Search. Possibility to use new parameters in the seacrh form: searchresults="URL of search  results", noresultstitle="Title of search results, when  nothing fount", searchresultstitle="Title of search results" Example: [bookingsearch searchresults="http://server.com/custom-search-results/" noresultstitle="Nothing Found" searchresultstitle="Search results"] ( Business Large, MultiUser)
- * Search. Possibility to show the search results in a  new seperate page, diferent from search form page. Use this shortcode: [bookingsearchresults] for showing the search  results inside of this page. Inside of the search form you will need to use this parameter:  bookingsearchresults - for definition of URL of search  results page. ( Business Large, MultiUser)
- * Search. Search  widget (Business Large, MultiUser)
- * Search. Availability Search Form (Booking > Settings > Search page) can have as parameter any "CUSTOM FIELDS" from the posts/pages, where you are inserted the booking form shortcodes. Please use only the custom field(s) with the names, which is starting with the "booking_" term. Exmaple: In the post or page, you can have the custom field like this: booking_width : 50. In the Settings Search form you can use this selectbox: <select name="booking_width" id="booking_width" ><option value="">Any</option><option value="50">50</option><option value="75">75</option></select> ( Business Large, MultiUser)
- * Search. Limit the search results based on the availability per user. Showing availability in search  results only for the specific users. Example of usage search  form shortcode: [bookingsearch users="1,2"]  ; where 1,2 - its a ID list of users.
- * Search. Add the translation possibility  for the "[booking info]" and "[booking_resource_title]" section  at the search  results, using the [lang=LOCALE] shortcode (Business Large, MultiUser)
- * Search. Usage the translation(s) of the Subject and Excerpt for the search  result in a format: <!--[lang=en_US]English translation<!-- --><!--[lang=pl_PL]Polish translation<!-- --><!--[lang=ru_RU]Russian  translation<!-- -->
- * Search. Fix issue of not updating the cost hint in the booking form, when the visitor is redirected from search form (Business Large, MultiUser)
- * Form Fields. Define for the each CUSTOM FORM the CUSTOM CONTENT, which is showing in the email templates (shortcode - [content]), and in the booking listing page. (Business Medium/Large)
- * Form Fields. Define the default CUSTOM FORM for the specific resource at the Booking > Resources page. (Business Medium/Large)
- * Form fields. Several  new default templates for reseting of booking forms.  (Personal, Business Small/Medium/Large, MultiUser)
- * Possibility to use the "url" parameter in the shortcodes: [visitorbookingediturl], [visitorbookingcancelurl], [visitorbookingpayurl] on the Booking > Settings > Emails page, for setting different page URL of the specific action . Example: [visitorbookingpayurl url="http://www.server.com/custom-page/"]  (Personal, Business Small/Medium/Large, MultiUser)
- * Showing the correct  content of the booking form at the Booking Listing page, if for the booking was used the Custom form. (Business Medium/Large)
- * Fix issue of not using the custom form, when editing the booking, which  was done in the custom form. For correct using of this feature, you must  correctly define the default custom  form for the specific resource at the Booking > Resources page. ( Business Medium/Large, MultiUser)
- * Possibility to show booking details in payment form ( Business Small/Medium/Large, MultiUser)
- * Customization of the booking title (ID or Name,... of the booking form, etc) in the Calendar Overview page  (Personal, Business Small/Medium/Large, MultiUser)
- * Configuration of the shortcodes: search form, search  results and the selection of booking forms; in the popup configuration dialog at the edit post page, using the booking calendar button at edit toolbar. (Personal, Business Small/Medium/Large, MultiUser)
- * Show the inactive rates and season filters for the availability  as grayed at the Settings page ( Business Medium/Large, MultiUser)
- * Do not show the Cost in mouseover tooltip, if the cost = 0 ( Business Medium/Large, MultiUser)
- * Possibility to use the additional cost per each night in the same way as with days at the Resources - Advanced cost page ( Business Medium/Large, MultiUser)
- * Possibility  to set the different colors of the for the days with the different rates. Each such date cell (which have the different rate) is have the specific CSS class in format: rate_150 or rate_300, where 150 and 300 its rate (cost) for the specific date. So inside of the some CSS file (for example: ../booking/css/client.css ) you can use construction like this:  .datepick-inline table.datepick td.rate_300 a{ background: #F00; } ( Business Medium/Large, MultiUser)
- * Fix issue of not possibility to select  the booking resources at the Booking Calendar widget, if your booking resources displayed at the several  pages in the Booking - Resources page.  (Personal, Business Small/Medium/Large, MultiUser)
- * Fix of not possibility to use the HTML tags in excerpts for the [booking_info] shortcode in the search results. (Business Large, MultiUser)
- * Fix issue of not possibility to modify/save the "Cancel Return URL from PayPal" at the settings page. (Business Small/Medium/Large, MultiUser)
- * Fix correct link of edit users profile at the Settings Users menu page (MultiUser)
- * Fix issue of auto cancellation pending not successfully payed bookings after specific time  (Business Small/Medium/Large, MultiUser).
- * Fix issue of not showing correct translation of message: 'The booking is cancel successfully', if visitor is cancel the reservation.
- * Fix issue of showing the correct availability in calendar with specific capacity (higher than 1), if the "season  filter(s) availability" are applied to the "child" booking resources (Business Large, MultiUser)
- * Fix issue of generating the JavaScript error at the page, when using the conditional season  filter, where is not selected any week days, even if this filter do not apply to the any of the days.
- * Fix issue of not correct showing values of checkbox fields, if the booking is saved to the "child" resource (Business Large, MultiUser).
- * Fix issue of disappearing the booking resource, if at the Resource menu is assign to the booking resource the parent element as itself (Business Large, MultiUser).
- * Fix issue of selecting the dates in correct  format in calendar after redirection from the search results  (Business Large, MultiUser).
- * Fix issue of not applying to the all "regular users" the "Deposit activation" feature from the General Booking Settings page in MultiUser version. (MultiUser)
- * Fix issue when Regular Users can see the bookings from other user(s) in MultiUser version, after reconfiguration parameters in filter tab.  (MultiUser)
-<br /><br />See full change logs at this <a href="http://wpbookingcalendar.com/changelog/" title="changelog">page</a>.
+- Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
+ * **New Calendar Overview panel for Multiple Booking Resources ("Matrix").** Beautiful Easy to Understand Interface. Resources at the first column and booking dates in right rows. (Personal, Business Small/Medium/Large, MultiUser) 
+ * **Day, Week, Month or 2 Months View Mode.** Possibility to set a Day, Week, Month or 2 Months view mode for the "Matrix" Calendar Overview panel. (Personal, Business Small/Medium/Large, MultiUser) 
+ * **Select Several Specific or All Resources.** Possibility to select several specific or all booking resources at "Filter tab" of Booking Listing or Calendar Overview panel. (Personal, Business Small/Medium/Large, MultiUser) 
+ * **Show Pending Days as Available.** Possibility to book Pending Days, until you Approve some booking. Do not lose any bookings, if some bookings were made by mistake or it was spam. (Business Large, MultiUser)
+ * **Auto Decline.** Activate the Auto decline (delete) all pending bookings in your booking resource for the specific date(s), if you approved other booking for these date(s). (Business Large, MultiUser)
+ * **Set Different Time Slots for the Different Days.** You can configure different Time Slots availability for the different days (weekday or date from season filter). Each week day (day of specific season filter) can have different time slots list. Check more here: http://wpbookingcalendar.com/help/different-time-slots-selections-for-different-days/ (Business Medium/Large, MultiUser)
+ * **Show Specific Form Content, if Desire Date is Selected.** You need to show specific field(s), form section or just text, if specific date is selected (weekday or date from season filter) - it's also possible. Check more here: http://wpbookingcalendar.com/help/different-content-for-different-days-selection/ (Business Medium/Large, MultiUser)
+ * **Configure Number of Days selection.** Specify that during certain seasons (or day of week), the specific minimum (or fixed) number of days must be booked. Check more about this "options" parameter here. Example: visitor can select only 3 days starting at Friday and Saturday, 4 days – Friday, 5 days – Monday, 7 days – Saturday, etc… (Business Medium/Large, MultiUser)
+ * **Set several Start Days.** Specify several weekdays as possible start day for the range days selection. For example visitor can make range days selection only from Sat, Mon and Fri. (Business Small/Medium/Large, MultiUser)
+ * **Easy configuration of range days selection.** Configure "specific day's selections", for the "range days selection" mode, in more comfortable way. Separate days by dash or comma. Example: "3-5,7,14". It's mean possibility to select: 3, 4, 5, 7 or 14 days. (Business Small/Medium/Large, MultiUser)
+ * **Integration Authorize.Net Payment Gateway** - Server Integration Method (SIM). (Business Small/Medium/Large, MultiUser)
+ * **Currency Format.** Configure format of showing the cost in the payment form. (Business Small/Medium/Large, MultiUser)
+ * **Do More with Less Actions.** Assign "Availability", "Rates", "Valuations days" or "Deposit amount" to the several booking resources in 1 step. Select several booking resources. Click on "Rate", "Availability", "Valuations days" or "Deposit" button. Configure and Update settings. That's it. (Business Medium/Large, MultiUser)
+ * **qTranslate Support.** Full support of the qTranslate plugin. Including the search results content and links to the post with booking forms in correct language. (Personal, Business Small/Medium/Large, MultiUser)
+ * **Edit Past Bookings.** Edit your bookings, where the time or dates are already in the past. (Personal, Business Small/Medium/Large, MultiUser)
+ * Trick: [denyreason] shortcode for "Approve" email. Its mean that we can write some text into the "Reason of cancelation" field for having this custom text in the "Approve" email template. (Personal, Business Small/Medium/Large, MultiUser)
+ * **Checking End Time only.** Set checking only end time of bookings for Today. So start time can be already in a past. Reactivate old checking using JavaScript code: is_check_start_time_gone=true; (Business Small/Medium/Large, MultiUser)   
+ * **Delete your Saved Filter.** Delete your Default saved filter template on the Booking Listing page at "Filter" tab. (Personal, Business Small/Medium/Large, MultiUser)
+ * **Set cost for the "Check Out" date.** Possibility to use new reserved word LAST ("Check Out" date) in the "Valuation days" cost settings page for the field "For". So you can define the cost of last selected date. Example of configuration: { "For" "LAST" day = "0" "USD per 1 day" "Any days" } (Business Medium/Large, MultiUser) 
+ * **Advanced Additional Cost.** Set additional cost of the booking as percentage of the original booking cost. This original booking cost doesn't have impact from any other additional cost settings. Usage: just write "+" sign before percentage number. Example: "+50%". (Business/Medium/Large, MultiUser)
+ * **Set "Check In/Out" dates as Available.** Set "check in/out" dates as available for resources with capacity higher than one. Its useful, if the check in date of booking have to be the same as check out date of other booking. (Business Large, MultiUser)
+ * **Visitors Selection in Search Result.** Auto selection of the correct visitor number in the booking form, when the user redirected from the search form. (Business Large, MultiUser)
+ * **Use "Unavailable days from today" settings in Search Form.** Using the settings of "Unavailable days from today" for the calendars in the search form. (Business Large, MultiUser)
+ * **New Shortcodes for Emails and Content Form.** Long list of useful shortcodes for the Email Templates and the "Content of Booking Fields" form: [cost_hint], [original_cost_hint], [additional_cost_hint], [deposit_hint], [balance_hint], [check_in_date_hint], [check_out_date_hint], [start_time_hint], [end_time_hint], [selected_dates_hint], [selected_timedates_hint], [selected_short_dates_hint], [selected_short_timedates_hint], [days_number_hint], [nights_number_hint] (Business Medium/Large, MultiUser)
+ * **New Shortcodes for Hints in booking form.** New shortcodes for showing real-time hints (like [cost_hint]) inside of the booking form: [deposit_hint], [balance_hint], [check_in_date_hint], [check_out_date_hint], [start_time_hint], [end_time_hint], [selected_dates_hint], [selected_timedates_hint], [selected_short_dates_hint], [selected_short_timedates_hint], [days_number_hint], [nights_number_hint] (Business Medium/Large, MultiUser)
+ * **Change titles of payment buttons.** Possibility to change the titles of the buttons in the payment forms. (Business Small/Medium/Large, MultiUser)   
+ * Support **Radio Button** fields. (Personal, Business Small/Medium/Large, MultiUser) 
+ * **New help system** for booking form fields configuration. You can configure different form field’s shortcodes easily using smart configuration panel.  (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Text Fields** - possibility to set CSS Class, ID, Size and Maxlength parameters. (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Email Fields** - possibility to set CSS Class, ID, Size and Maxlength parameters. (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Textarea Fields** - possibility to set CSS Class, ID, number of Rows and Columns parameters. (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Drop Down Fields** - possibility to set field as Required, Allow multile selections, Set default selected Option, Set Titles for the Options. (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Checkbox Fields** - set different parameters: Name, Default Selected option, Required state, Exclusive state, Set Options and Titles for the options, Set CSS Class and ID of element, Set using Labels. (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Radio Button Fields** - set different parameters: Name, Default Selected option, Set Options and Titles for the options, Set CSS Class and ID of element, Set using Labels. (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Drop Down Fields** - possibility to set field as Required, Allow multile selections, Set default selected Option, Set Titles for the Options. (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Submit button** - possibility to set CSS Class and ID parameters. (Personal, Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Time Slot List**. Set options and titles of the times selection, possibility to set ID, CSS Class Required state and "Long selection" view mode. (Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Start Time Drop Down List**. Set options and titles of the times selection, possibility to set ID, CSS Class Required state. (Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **End Time Drop Down List**. Set options and titles of the times selection, possibility to set ID, CSS Class Required state. (Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Duration Time Drop Down List**. Set options and titles of the times selection, possibility to set ID, CSS Class Required state. (Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. **Conditional sections** for possibility to set Different time slots, for the different week days or days from different seasons. (Business Medium/Large, MultiUser) 
+ * Help Fields Panel. **Time Field**. Set options and titles of the times selection, possibility to set ID, CSS Class Required state. (Personal Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. Description about **languge sections**. (Personal Business Small/Medium/Large, MultiUser) 
+ * Help Fields Panel. Conditional sections for activating specific **fields, depending from the different week days** or days of different seasons. (Business Medium/Large, MultiUser) 
+ * Help Fields Panel. **Coupon discount Fields** - possibility to set CSS Class, ID, Size and Maxlength parameters. (Business Large, MultiUser) 
+ * Help Fields Panel. **Cost Hints**: [cost_hint], [original_cost_hint], [additional_cost_hint], [deposit_hint], [balance_hint] (Business Medium/Large, MultiUser) 
+ * Help Fields Panel. **Dates Hints**: [check_in_date_hint], [check_out_date_hint], [start_time_hint], [end_time_hint], [selected_dates_hint], [selected_timedates_hint], [selected_short_dates_hint], [selected_short_timedates_hint], [days_number_hint], [nights_number_hint]  (Business Medium/Large, MultiUser) 
+ * Fix issue of showing available dates in search results, if these dates were set as unavailable in the season filter. (Business Large, MultiUser)
+ * Fix issue of incorrect links in the email templates shortcodes, if was used the "url" parameter and this URL was contain this symbol '=' (Business Small/Medium/Large, MultiUser)
+ * Fix of incorrect booking cost saving, if booking was added using "Add booking" admin menu page and in the booking form was used the [cost_correction] shortcode for the entering cost manually. It issue existed only for the cost, what is higher than 1000. (Business Small/Medium/Large, MultiUser)
+ * Fix of showing incorrect booking resource selections, when switching from the calendar overview mode to the booking listing mode.  (Personal, Business Small/Medium/Large, MultiUser)
+ * Fix of non-showing bookings, when was switching from the Booking Listing (on page higher than 1) to Calendar Overview mode, then  selecting other booking resource and switching back to the Booking Listing page. (Personal, Business Small/Medium/Large, MultiUser)
+ * Fix issue of non-showing the calendar if using the "agregate" parameter in the booking shortcode. (Personal, Business Small/Medium/Large, MultiUser)
+ * Fix issue in Calendar Overview mode for bookings by the hour, the calendar was displays an extra hour booked.  So, if we have a booking at 10:00 for 1 hour, the calendar was display that booking from 10:00 to 12:00, now its show from the 10:00 to 11:00 (Business Small/Medium/Large, MultiUser)
+ * Fix several issues relative to the bookings editing (including issues during editing of the bookings for the "child" booking resources). (Personal, Business Small/Medium/Large, MultiUser)
+ * Fix issue of not showing the "booking data" of the specific booking for the Super booking admin user, if this booking was done by the other Super booking admin user. (MultiUser)
+ * Fix. Changed Host header in the IPN PayPal listener to complies with HTTP 1.1 Specifications.
+
+For more information, see the [full release notes](http://wpbookingcalendar.com/changelog/).
 
 == Upgrade Notice ==
-= 4.1.6 =
- * Security and maintenance fix.
+= 5.0 =
+Responsive, stylish and easy to customize front end design. Configure your predefined form fields set. Improved Performance. Many other improvements.
 
 == Languages ==
 
 Right now plugin is support languages:
-<ul>
- <li>English</li>
- <li>Italian</li>
- <li>Spanish</li>
- <li>French</li>
- <li>German</li>
- <li>Danish</li>
- <li>Dutch</li>
- <li>Belarusian</li>
- <li>Russian</li>
- <li>Polish</li>
- <li>Croatian</li>
- <li>Slovak</li>
- <li>Hebrew</li>
-</ul>
-<strong> Many languages are partially translated, so please recheck your language before use of plugin. We are open for your help in new translations or correcting exist ones.</strong><br /> You can translate to new language or fix exist one, using this <a href="http://wpbookingcalendar.com/faq/make-translation-of-wp-plugin/" title="Tutorial of translation wordpress plugin">instruction</a> 
+
+- English
+- Italian[19% Completed]
+- Spanish[17% Completed]
+- French[41% Completed]
+- German[9% Completed]
+- Danish[31% Completed]
+- Dutch[28% Completed]
+- Belorussian[14% Completed]
+- Russian[26% Completed]
+- Polish[21% Completed]
+- Croatian[43% Completed]
+- Slovak [49% Completed]
+- Hebrew[21% Completed]
+
+Please recheck the status of each translation, before useing plugin. 
+We open for your help in new translations or correcting existing ones. You can translate to new language or update exist one, using this [tutorial of translation](http://wpbookingcalendar.com/faq/make-translation-of-wp-plugin/)
 == Tech support ==
 
-If you have some questions, which you do not found at <a href="http://wpbookingcalendar.com/faq/" title="FAQ">FAQ</a> you can post them at <a href="http://wpbookingcalendar.com/issues/" title="Help board">technical help board</a>
-
+If you have some questions, which you haven't found at [FAQ](http://wpbookingcalendar.com/faq/) you can post them at [technical help board](http://wpbookingcalendar.com/support/)
 == New ideas ==
 
-Please, fill free to propose new ideas or new features <a href="http://wpbookingcalendar.com/ideas/" title="new feature">here</a>
+Please, fill free for suggesting [new ideas](http://wpbookingcalendar.com/ideas/) or [new features](http://wpbookingcalendar.com/ideas/)

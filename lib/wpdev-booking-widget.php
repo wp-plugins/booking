@@ -27,7 +27,7 @@ class BookingWidget extends WP_Widget {
 
         if ($booking_widget_title != '') echo $before_title . htmlspecialchars_decode($booking_widget_title) . $after_title;
 
-        echo "<div class='widget_wpdev_booking' style='float:left;margin:5px 0px;' >";
+        echo "<div class='widget_wpdev_booking'>";
         if ($booking_widget_show == 'booking_form') {
             do_action('wpdev_bk_add_form', $booking_widget_type , $booking_widget_calendar_count);
         } else {
