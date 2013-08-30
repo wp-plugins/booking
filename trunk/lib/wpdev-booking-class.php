@@ -123,14 +123,15 @@ class wpdev_booking {
         // add_filter( 'plugin_row_meta', array(&$this, 'plugin_row_meta'), 10, 4 ); // donot show update for Personal active plugin
 
         // Load the jQuery in the client side
-        if( !is_admin() ) add_action('wp_enqueue_scripts', array(&$this, 'bc_enqueue_scripts'),100000); 
-		
-        $booking_version_num = get_option( 'booking_version_num');        
-        if ($booking_version_num === false ) $booking_version_num = '0';
-        if ( version_compare(WP_BK_VERSION_NUM, $booking_version_num) > 0 ){
-            add_action('plugins_loaded', array(&$this,'wpdev_booking_activate_initial'));
+        if( !is_admin() ) add_action('wp_enqueue_scripts', array(&$this, 'bc_enqueue_scripts'),100000);        
+        
+        if(defined('WP_ADMIN')){
+            $booking_version_num = get_option( 'booking_version_num');        
+            if ($booking_version_num === false ) $booking_version_num = '0';
+            if ( version_compare(WP_BK_VERSION_NUM, $booking_version_num) > 0 ){
+                add_action('plugins_loaded', array(&$this,'wpdev_booking_activate_initial'));
+            }
         }
-		
     }
     
     
@@ -2214,8 +2215,9 @@ class wpdev_booking {
     
     // Activate
     function wpdev_booking_activate() {
-	
-		update_bk_option( 'booking_version_num',WP_BK_VERSION_NUM);
+        
+        update_bk_option( 'booking_version_num',WP_BK_VERSION_NUM);
+        
         $version = get_bk_version();
         $is_demo = wpdev_bk_is_this_demo();
         
