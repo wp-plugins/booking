@@ -811,13 +811,16 @@
 
 
                 // Get Element Value
-                if (element.type =='checkbox'){
-                    if (element.value == '') inp_value = element.checked;       // if checkbox so then just check checked
-                    else {
+                if ( element.type == 'checkbox' ){
+                    
+                    if (element.value == '') {
+                        inp_value = element.checked;
+                    } else {
                         if (element.checked) inp_value = element.value;
                         else inp_value = '';
                     }
-                } if (element.type =='radio'){
+                    
+                } else if ( element.type == 'radio' ) {
  
                     if (element.checked) inp_value = element.value;
                     else continue;

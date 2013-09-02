@@ -3,7 +3,7 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://wpbookingcalendar.com/demo/
 Description: Online reservation and availability checking service for your site.
-Version: 5.0
+Version: 5.0.1
 Author: wpdevelop
 Author URI: http://wpbookingcalendar.com/
 Tested WordPress Versions: 3.3 - 3.6
@@ -35,27 +35,16 @@ Change Log and Features for Future Releases :
 -----------------------------------------------
  * New Files:
  * =====================================
- * css\
- *      calendar.css                            Done
- * inc\
- *      form\
- *          index.php  
- *          conditions.php                      Done
- *          *.php                               Done   
- *          js\     
- *              conditions.js                   Done
- *      lib_m.php                               Done
- *      \payments\authorizenet.php              Done
- *    
  * lib\
- *      \wpdev-bk-edit-toolbar-buttons.php      Done  
- *      \wpdev-bk-timeline.php                  Done
- *      \wpbc-welcome.php                       Done
- *      \wpbc-class-dismiss.php                 Done
  * ====================================
  *
  * 
 
+
+ 
+= 5.0.1 =
+* Fixed of incorrect saving checkbox data.
+* Customization of **setting specific week day(s)** as the **start day of selection in calendar**, for the specific **season filter**. (Business Medium/Large, MultiUser) 
  
 = 5.0 =
 * Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
@@ -183,7 +172,7 @@ Change Log and Features for Future Releases :
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //   D e f i n e     S T A T I C              //////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	if (!defined('WP_BK_VERSION_NUM'))   define('WP_BK_VERSION_NUM',  '5.0' );
+    if (!defined('WP_BK_VERSION_NUM'))   define('WP_BK_VERSION_NUM',  '5.0.1' );
     if (!defined('WP_BK_SSL'))           define('WP_BK_SSL',  false );
     if (!defined('WP_BK_MINOR_UPDATE'))  define('WP_BK_MINOR_UPDATE',  false );    
     if (!defined('IS_USE_WPDEV_BK_CACHE'))           define('IS_USE_WPDEV_BK_CACHE',  true );    
