@@ -51,6 +51,11 @@ div.date-content-bottom{
     border: 0 none;
     vertical-align: baseline;    
 }
+#content .datepick-days-cell,                                       /* Reset the padding in TD and TH elements of calendar to prevent conflict  with  some WP themes */
+#content .datepick-title-row th{
+    padding: 0px;
+    margin:  0px;    
+}
 /* RESET: width to 100% */
 .datepick-inline .datepick,
 .datepick-inline .datepick-header{

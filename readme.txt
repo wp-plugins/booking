@@ -3,8 +3,8 @@ Contributors: wpdevelop
 Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
-Tested up to: 3.6
-Stable tag: 5.0.1
+Tested up to: 3.6.1
+Stable tag: 5.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,6 +148,18 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 10. **Calendar Skins**. Select calendar skin for better fitting to your site design.
 
 == Changelog ==
+= 5.0.2 =
+* Features and issue fixings in All versions: 
+ * Fix CSS reseting padding and maring in calendar.css file for the calendar table to prevent conflicts with some WP themes.
+ * Fix issue of possible JavaScript error "SyntaxError: symbol is not a legal ECMA-262 octal constant", when selecting the start month of availability calendar for the booking shortcode lower then 10.
+* Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
+ * Set **day titles** in Calendar Overview mode as **links for setting start date** of booking listing. (Personal, Business Small/Medium/Large, MultiUser)
+ * **Edit booking link** in mouse over tooltip at Calendar Overview admin page. (Personal, Business Small/Medium/Large, MultiUser)
+ * Redirect to the exact previous page, after booking editing, where user was before. (Personal, Business Small/Medium/Large, MultiUser)   
+ * Fix issue of submitting booking form  for the several calendars of different booking resources. (Business Medium/Large, MultiUser)   
+ * Fix issue of showing sometimes Warning: Invalid argument supplied for foreach() in ../biz_m.php on line 638 (Business Medium/Large, MultiUser)   
+ * Fix issue of not showing the booking dates in calendar, if booking shortcode is contain empty "agregate" parameter, like this: agregate='' (Personal, Business Small/Medium/Large, MultiUser)   
+
 = 5.0.1 =
 * Fixed of incorrect saving checkbox data.
 * Customization of booking shortcode for **setting specific week day(s)** as the **start day of selection in calendar**, for the specific **season filter**. (Business Medium/Large, MultiUser) 

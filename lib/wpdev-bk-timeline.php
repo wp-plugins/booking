@@ -506,13 +506,14 @@ function wpdev_bk_timeline_header_row( $start_date = false ) {
                 <?php
 
                 $previous_month = '';
+                $bk_admin_url_today = get_params_in_url( array('scroll_month', 'scroll_day', 'scroll_start_date') );
                 for ($d_inc = 0; $d_inc < $days_num; $d_inc++) {
 
                     $real_date = mktime(0, 0, 0, $start_month, ($start_day+$d_inc) , $start_year);
 
                     if (date('m.d.Y') == date("m.d.Y", $real_date) ) $is_today = ' today_date ';
                     else  $is_today = '';
-
+ 
                     $yy = date("Y", $real_date);    //2012
                     $mm = date("m", $real_date);    //09
                     $dd = date("d", $real_date);    //31
@@ -589,9 +590,16 @@ function wpdev_bk_timeline_header_row( $start_date = false ) {
 
                            <?php if ($month_title != '') { ?>
                            <div class="month_year"><?php echo $month_title .', ' . $yy ;?></div>
-                           <?php } ?>
-                           <div class="day_num"><?php echo $day_title;?></div>
-                           <?php
+                           <?php }
+                                if ( ( $view_days_num==30 ) || ( $view_days_num == 60) ) { 
+                                    ?><a href='<?php echo $bk_admin_url_today . '&scroll_start_date=' . $yy . '-' . $mm . '-' . $dd ; ?>'><?php                                 
+                                }
+                                
+                                ?><div class="day_num"><?php echo $day_title;?></div><?php
+                                
+                                if ( ( $view_days_num==30 ) || ( $view_days_num == 60) ) {
+                                    ?></a><?php                                 
+                                } 
                             // T i m e   c e l l s
                             $tm = floor(24 / $time_selles_num);
                             for ($tt = 0; $tt < $time_selles_num; $tt++) { ?>
@@ -945,6 +953,13 @@ function get_booking_info_4_tooltip( $bk_id, $bookings, $booking_types, $title_i
    // $reload_time = 2000;
    // setTimeout(function ( ) {location.reload(true);} ,'.$reload_time.');
    $title_hint .= '<div style=\'text-align:right;\'>';
+   if ( class_exists('wpdev_bk_personal') ) {
+        $bk_url_add         = 'admin.php?page=' . WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME . 'wpdev-booking-reservation' ;        
+        $bk_hash            = (isset($bookings[$bk_id]->hash))?$bookings[$bk_id]->hash:'';         
+        $bk_booking_type    = $bookings[$bk_id]->booking_type;
+        $edit_booking_url = $bk_url_add . '&booking_type='.$bk_booking_type.'&booking_hash='.$bk_hash.'&parent_res=1' ; 
+        $title_hint .= '<a style=\'margin:-60px 0 0 2px;position:absolute;\' href=\''.$edit_booking_url .'\' onclick=\'\' ><img src=\'' . WPDEV_BK_PLUGIN_URL .'/img/edit_type.png\' style=\'width:12px; height:13px;\'></a>';
+   }
    $title_hint .= '<a style=\'margin:-40px 0 0 0;position:absolute;\' href=\'javascript:;\' onclick=\'javascript:approve_unapprove_booking('. $bk_id.',1, '. $user_bk_id .', &quot;'. getBookingLocale() .'&quot; , 1   );\' ><img src=\'' . WPDEV_BK_PLUGIN_URL .'/img/accept-24x24.gif\' style=\'width:14px; height:14px;\'></a>';   
    $title_hint .= '<a style=\'margin:-22px 0 0 -6px;position:absolute;\' href=\'javascript:;\' onclick=\'javascript:approve_unapprove_booking('. $bk_id.',0, '. $user_bk_id .', &quot;'. getBookingLocale() .'&quot; , 1   );\' ><img src=\'' . WPDEV_BK_PLUGIN_URL .'/img/remove-16x16.png\' style=\'margin:0px 5px;width:15px; height:15px;\'></a>';
    $title_hint .= '<a href=\'javascript:;\' onclick=\'javascript:delete_booking('. $bk_id.', '. $user_bk_id .', &quot;'. getBookingLocale() .'&quot; , 1   );\' ><img src=\'' . WPDEV_BK_PLUGIN_URL .'/img/delete_type.png\' style=\'width:13px; height:13px;\'></a>';
