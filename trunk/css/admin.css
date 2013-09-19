@@ -1920,6 +1920,18 @@ input.filter_avalaibility {
     color: #E33;
     font-weight: bold;
 }
+.calendar_timeline_frame .calendar_overview_cell.cell_header a,
+.calendar_timeline_frame .calendar_overview_cell.cell_header a:hover{
+    color: #777;
+    text-decoration: none;
+    cursor: pointer;
+}
+.calendar_timeline_frame .calendar_overview_cell.weekday6 a,
+.calendar_timeline_frame .calendar_overview_cell.weekday7 a,
+.calendar_timeline_frame .calendar_overview_cell.weekday6 a:hover,
+.calendar_timeline_frame .calendar_overview_cell.weekday7 a:hover {
+    color: #C33;
+}
 .calendar_timeline_frame .calendar_overview_cell.cell_header .day_num,
 .calendar_timeline_frame .calendar_overview_cell.cell_header .day_week {
     width: auto;

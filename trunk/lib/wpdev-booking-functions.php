@@ -1858,4 +1858,18 @@
     }
     }
 
+    function wpdevbk_show_booking_footer(){
+        $wpdev_copyright_adminpanel  = get_bk_option( 'booking_wpdev_copyright_adminpanel' );             // check
+        if ( ( $wpdev_copyright_adminpanel !== 'Off' ) && ( ! wpdev_bk_is_this_demo() ) ) {
+            $message = '';
+            $message .= '<a target="_blank" href="http://wpbookingcalendar.com/">Booking Calendar</a> ' . __('version','wpdev-booking') . ' ' . WP_BK_VERSION_NUM ;
+
+            $message .= ' | '. sprintf(__('Add your %s on %swordpress.org%s, if you enjoyed by this plugin.','wpdev-booking'), 
+                            '<a target="_blank" href="http://goo.gl/tcrrpK" >&#9733;&#9733;&#9733;&#9733;&#9733;</a>',
+                            '<a target="_blank" href="http://goo.gl/tcrrpK" >',
+                            '</a>'   );
+
+            echo '<div style="text-align:left;width:100%;font-size:10px;text-shadow:0 1px 0 #fff;margin:0;color:#888;">' . $message . '</div>';
+        }
+    }
 ?>

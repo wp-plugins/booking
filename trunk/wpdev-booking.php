@@ -3,10 +3,10 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://wpbookingcalendar.com/demo/
 Description: Online reservation and availability checking service for your site.
-Version: 5.0.1
+Version: 5.0.2
 Author: wpdevelop
 Author URI: http://wpbookingcalendar.com/
-Tested WordPress Versions: 3.3 - 3.6
+Tested WordPress Versions: 3.3 - 3.6.1
 */
 
 /*  Copyright 2009 - 2013  www.wpbookingcalendar.com  (email: info@wpbookingcalendar.com),
@@ -40,7 +40,17 @@ Change Log and Features for Future Releases :
  *
  * 
 
-
+= 5.0.2 =
+* Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
+ * Set **day titles** in Calendar Overview mode as **links for setting start date** of booking listing. (Personal, Business Small/Medium/Large, MultiUser)
+ * **Edit booking link** in mouse over tooltip at Calendar Overview admin page. (Personal, Business Small/Medium/Large, MultiUser)
+ * Redirect to the exact previous page, after booking editing, where user was before. (Personal, Business Small/Medium/Large, MultiUser)   
+ * Fix issue of submitting booking form  for the several calendars of different booking resources. (Business Medium/Large, MultiUser)   
+ * Fix issue of showing sometimes Warning: Invalid argument supplied for foreach() in ../biz_m.php on line 638
+ * Fix issue of not showing the booking dates in calendar, if booking shortcode is contain empty "agregate" parameter, like this: agregate=''
+* Features and issue fixings in All versions: 
+ * Fix issue of possible JavaScript error "SyntaxError: symbol is not a legal ECMA-262 octal constant", when selecting the start month of availability calendar for the booking shortcode lower then 10.
+ * Fix CSS reseting padding and maring in calendar.css file for the calendar table to prevent conflicts with some WP themes.
  
 = 5.0.1 =
 * Fixed of incorrect saving checkbox data.
@@ -172,9 +182,9 @@ Change Log and Features for Future Releases :
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //   D e f i n e     S T A T I C              //////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    if (!defined('WP_BK_VERSION_NUM'))   define('WP_BK_VERSION_NUM',  '5.0.1' );
+    if (!defined('WP_BK_VERSION_NUM'))   define('WP_BK_VERSION_NUM',  '5.0.2' );
     if (!defined('WP_BK_SSL'))           define('WP_BK_SSL',  false );
-    if (!defined('WP_BK_MINOR_UPDATE'))  define('WP_BK_MINOR_UPDATE',  false );    
+    if (!defined('WP_BK_MINOR_UPDATE'))  define('WP_BK_MINOR_UPDATE',  true );    
     if (!defined('IS_USE_WPDEV_BK_CACHE'))           define('IS_USE_WPDEV_BK_CACHE',  true );    
     if (!defined('WP_BK_DEBUG_MODE'))    define('WP_BK_DEBUG_MODE',  false );
     if (!defined('WP_BK_SHOW_INFO_IN_FORM'))    define('WP_BK_SHOW_INFO_IN_FORM',  false );                 // This feature can impact to the performace

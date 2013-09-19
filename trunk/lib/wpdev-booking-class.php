@@ -1033,6 +1033,7 @@ class wpdev_booking {
                 make_bk_action('write_content_for_popups' );
                 //debugq();
                 wpdevbk_show_booking_page();
+                wpdevbk_show_booking_footer();
                 //debugq(); ?>
            </div><?php
 //debugq();
@@ -1354,10 +1355,6 @@ class wpdev_booking {
 
     // Write copyright notice if its saved
     function wp_footer() {
-        if ( ( get_bk_option( 'booking_wpdev_copyright' )  == 'On' ) && (! defined('WPDEV_COPYRIGHT')) ) {
-            printf(__('%sPowered by wordpress plugins developed by %s', 'wpdev-booking'),'<center><span style="font-size:9px;text-align:center;margin:0 auto;">','<a style="font-size:9px;" href="http://www.wpdevelop.com" target="_blank">www.wpdevelop.com</a></span></center>','&amp;');
-            define('WPDEV_COPYRIGHT',  1 );
-        }
     }
 
     // Print     J a v a S cr i p t   &    C S S    scripts for admin and client side.
@@ -1603,7 +1600,7 @@ class wpdev_booking {
             $start_js_month = ", false " ;
             if ($start_month_calendar !== false)
                 if (is_array($start_month_calendar))
-                    $start_js_month = ", [" . $start_month_calendar[0] . "," . $start_month_calendar[1] . "] ";
+                    $start_js_month = ", [" . ($start_month_calendar[0]+0) . "," . ($start_month_calendar[1]+0) . "] ";
 
             $start_script_code .= $start_js_month .  "  );  ";
         }
@@ -2066,7 +2063,7 @@ class wpdev_booking {
         if ( isset( $attr['type'] ) )      { $my_boook_type = $attr['type'];        }
         if ( isset( $attr['form_type'] ) ) { $my_booking_form = $attr['form_type']; }
 
-        if ( isset( $attr['agregate'] ) ) {
+        if ( isset( $attr['agregate'] )  && (! empty( $attr['agregate'] )) ) {
             $additional_bk_types = $attr['agregate'];
             $my_boook_type .= ';'.$additional_bk_types;
         }
@@ -2095,7 +2092,7 @@ class wpdev_booking {
         $bk_otions = array();
         if ( isset( $attr['nummonths'] ) ) { $my_boook_count = $attr['nummonths']; }
         if ( isset( $attr['type'] ) )      { $my_boook_type = $attr['type'];       }
-        if ( isset( $attr['agregate'] ) ) {
+        if ( isset( $attr['agregate'] )  && (! empty( $attr['agregate'] )) ) {
             $additional_bk_types = $attr['agregate'];
             $my_boook_type .= ';'.$additional_bk_types;
         }
@@ -2338,7 +2335,7 @@ class wpdev_booking {
         add_bk_option( 'booking_widget_calendar_count',  '1');
         add_bk_option( 'booking_widget_last_field','');
 
-        add_bk_option( 'booking_wpdev_copyright','Off' );
+        add_bk_option( 'booking_wpdev_copyright_adminpanel','On' );
         add_bk_option( 'booking_is_show_powered_by_notice','On' );
         add_bk_option( 'booking_is_use_captcha' , 'Off' );
         add_bk_option( 'booking_is_show_legend' , 'Off' );
@@ -2408,7 +2405,7 @@ class wpdev_booking {
 
             if( $this->wpdev_bk_personal == false ) {
                 $wp_queries[] = "INSERT INTO ".$wpdb->prefix ."booking ( form, modification_date ) VALUES (
-                     'text^name1^Jony~text^secondname1^Smith~text^email1^example-free@wpdevelop.com~text^phone1^8(038)458-77-77~textarea^details1^Reserve a room with sea view', NOW() );";
+                     'text^name1^Jony~text^secondname1^Smith~text^email1^example-free@wpbookingcalendar.com~text^phone1^8(038)458-77-77~textarea^details1^Reserve a room with sea view', NOW() );";
             }
         }
 
@@ -2451,14 +2448,14 @@ class wpdev_booking {
         // Examples in demos
         if ( $is_demo ) {  $this->createExamples4Demo(); }
         
-        // Fill Development server by initial bookings
-        //if (  $_SERVER['HTTP_HOST'] === 'dev'  ) {  
-        //    for ($i = 0; $i < 5; $i++) {
-        //        //if (!class_exists('wpdev_bk_personal')) 
-        //        $this->createExamples4Demo( array(1,2,3,4,5,6,7,8,9,10,11,12) ); 
-        //    }
-        //}
-        //$this->setDefaultInitialValues();
+//        // Fill Development server by initial bookings
+//        if (  $_SERVER['HTTP_HOST'] === 'dev'  ) {  
+//            for ($i = 0; $i < 5; $i++) {
+//                //if (!class_exists('wpdev_bk_personal')) 
+//                $this->createExamples4Demo( array(1,2,3,4,5,6,7,8,9,10,11,12) ); 
+//            }
+//        }
+//        $this->setDefaultInitialValues();
 
         $this->reindex_booking_db();
 
@@ -2519,7 +2516,7 @@ class wpdev_booking {
             delete_bk_option( 'booking_date_format');
             delete_bk_option( 'booking_date_view_type');
             delete_bk_option( 'booking_is_delete_if_deactive' ); // check
-            delete_bk_option( 'booking_wpdev_copyright' );             // check
+            delete_bk_option( 'booking_wpdev_copyright_adminpanel' );             // check
             delete_bk_option( 'booking_is_show_powered_by_notice' );             // check
             delete_bk_option( 'booking_is_use_captcha' );
             delete_bk_option( 'booking_is_show_legend' );

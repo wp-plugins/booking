@@ -41,7 +41,7 @@
             
 
             if (isset($_POST['is_delete_if_deactive'])) $is_delete_if_deactive =  $_POST['is_delete_if_deactive']; // check
-            if (isset($_POST['wpdev_copyright'])) $wpdev_copyright  = $_POST['wpdev_copyright'];             // check
+            if (isset($_POST['wpdev_copyright_adminpanel'])) $wpdev_copyright_adminpanel  = $_POST['wpdev_copyright_adminpanel'];             // check
             if (isset($_POST['booking_is_show_powered_by_notice'])) $booking_is_show_powered_by_notice  = $_POST['booking_is_show_powered_by_notice'];             // check
 
             if (isset($_POST['is_use_captcha'])) $is_use_captcha  = $_POST['is_use_captcha'];             // check
@@ -172,9 +172,9 @@
             if (isset( $booking_is_show_powered_by_notice ))                  $booking_is_show_powered_by_notice = 'On';
             else                                            $booking_is_show_powered_by_notice = 'Off';
             update_bk_option( 'booking_is_show_powered_by_notice' , $booking_is_show_powered_by_notice );
-            if (isset( $wpdev_copyright ))                  $wpdev_copyright = 'On';
-            else                                            $wpdev_copyright = 'Off';
-            update_bk_option( 'booking_wpdev_copyright' , $wpdev_copyright );
+            if (isset( $wpdev_copyright_adminpanel ))                  $wpdev_copyright_adminpanel = 'On';
+            else                                            $wpdev_copyright_adminpanel = 'Off';
+            update_bk_option( 'booking_wpdev_copyright_adminpanel' , $wpdev_copyright_adminpanel );
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (isset( $is_use_captcha ))                  $is_use_captcha = 'On';
             else                                           $is_use_captcha = 'Off';
@@ -225,7 +225,7 @@
 
 
             $is_delete_if_deactive =  get_bk_option( 'booking_is_delete_if_deactive' ); // check
-            $wpdev_copyright  = get_bk_option( 'booking_wpdev_copyright' );             // check
+            $wpdev_copyright_adminpanel  = get_bk_option( 'booking_wpdev_copyright_adminpanel' );             // check
             $booking_is_show_powered_by_notice = get_bk_option( 'booking_is_show_powered_by_notice' );             // check
             $is_use_captcha  = get_bk_option( 'booking_is_use_captcha' );             // check
             $is_use_autofill_4_logged_user  = get_bk_option( 'booking_is_use_autofill_4_logged_user' );             // check
@@ -342,9 +342,9 @@
 
 
                                                     <tr valign="top">
-                                                        <th scope="row"><label for="wpdev_copyright" ><?php _e('Copyright notice', 'wpdev-booking'); ?>:</label></th>
-                                                        <td><input id="wpdev_copyright" type="checkbox" <?php if ($wpdev_copyright == 'On') echo "checked"; ?>  value="<?php echo $wpdev_copyright; ?>" name="wpdev_copyright"/>
-                                                            <span class="description"><?php printf(__(' Turn On/Off copyright %s notice at footer of site view.', 'wpdev-booking'),'wpdevelop.com');?></span>
+                                                        <th scope="row"><label for="wpdev_copyright_adminpanel" ><?php _e('Copyright notice', 'wpdev-booking'); ?>:</label></th>
+                                                        <td><input id="wpdev_copyright_adminpanel" type="checkbox" <?php if ($wpdev_copyright_adminpanel == 'On') echo "checked"; ?>  value="<?php echo $wpdev_copyright_adminpanel; ?>" name="wpdev_copyright_adminpanel"/>
+                                                            <span class="description"><?php printf(__(' Turn On/Off version notice at footer of booking admin panel.', 'wpdev-booking'),'wpbookingcalendar.com');?></span>
                                                         </td>
                                                     </tr>
 

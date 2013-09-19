@@ -548,7 +548,9 @@ function wpdev_bk_insert_new_booking(){  global $wpdb;
                     document.getElementById('ajax_message').innerHTML = '<?php echo __('Updated successfully', 'wpdev-booking'); ?>';
                     jQuery('#ajax_message').fadeOut(1000);
                     document.getElementById('submiting<?php echo $bktype; ?>').innerHTML = '<div style=&quot;height:20px;width:100%;text-align:center;margin:15px auto;&quot;><?php echo __('Updated successfully', 'wpdev-booking'); ?></div>';
-                    location.href='admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ;?>wpdev-booking&view_mode=vm_listing&tab=actions&wh_booking_id=<?php echo  $my_booking_id;?>';
+                    if ( jQuery('#wpdev_http_referer').length > 0 ) {
+                           location.href=jQuery('#wpdev_http_referer').val();
+                    } else location.href='admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ;?>wpdev-booking&view_mode=vm_listing&tab=actions&wh_booking_id=<?php echo  $my_booking_id;?>';
             <?php } ?>
             </script> <?php
 
