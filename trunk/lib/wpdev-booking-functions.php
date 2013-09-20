@@ -1869,7 +1869,14 @@
                             '<a target="_blank" href="http://goo.gl/tcrrpK" >',
                             '</a>'   );
 
-            echo '<div style="text-align:left;width:100%;font-size:10px;text-shadow:0 1px 0 #fff;margin:0;color:#888;">' . $message . '</div>';
+            echo '<div id="wpbc-footer" style="position:absolute;bottom:40px;text-align:left;width:100%;font-size:10px;text-shadow:0 1px 0 #fff;margin:0;color:#888;">' . $message . '</div>';
+            ?>
+            <script type="text/javascript">
+                jQuery(document).ready(function(){
+                    jQuery('#wpfooter').append( jQuery('#wpbc-footer') );
+                });
+            </script>
+            <?php
         }
     }
 ?>
