@@ -3,7 +3,7 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://wpbookingcalendar.com/demo/
 Description: Online reservation and availability checking service for your site.
-Version: 5.0.2
+Version: 5.0.3
 Author: wpdevelop
 Author URI: http://wpbookingcalendar.com/
 Tested WordPress Versions: 3.3 - 3.6.1
@@ -11,11 +11,9 @@ Tested WordPress Versions: 3.3 - 3.6.1
 
 /*  Copyright 2009 - 2013  www.wpbookingcalendar.com  (email: info@wpbookingcalendar.com),
 
-    www.wpdevelop.com - custom wp-plugins development & WordPress solutions.
-
-    This file (and only this file wpdev-booking.php) is free software; you can redistribute it and/or modify
+    This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
+    the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
     This program is distributed in the hope that it will be useful,
@@ -24,8 +22,7 @@ Tested WordPress Versions: 3.3 - 3.6.1
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+    along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
 // <editor-fold defaultstate="collapsed" desc=" T O D O : & Changelog lists ">
@@ -38,7 +35,12 @@ Change Log and Features for Future Releases :
  * lib\
  * ====================================
  *
- * 
+ *
+ *  
+= 5.0.3 =
+* Set position of the version number to the absolute bottom on the Booking Listing page.
+* Fixed issue. Sometimes the "number of unavailbale days from today" was working incorrectly.
+* Added new transaltion  to Swedish by Mattias Aslund [51% complete]
 
 = 5.0.2 =
 * Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
@@ -182,7 +184,7 @@ Change Log and Features for Future Releases :
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //   D e f i n e     S T A T I C              //////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    if (!defined('WP_BK_VERSION_NUM'))   define('WP_BK_VERSION_NUM',  '5.0.2' );
+    if (!defined('WP_BK_VERSION_NUM'))   define('WP_BK_VERSION_NUM',  '5.0.3' );
     if (!defined('WP_BK_SSL'))           define('WP_BK_SSL',  false );
     if (!defined('WP_BK_MINOR_UPDATE'))  define('WP_BK_MINOR_UPDATE',  true );    
     if (!defined('IS_USE_WPDEV_BK_CACHE'))           define('IS_USE_WPDEV_BK_CACHE',  true );    

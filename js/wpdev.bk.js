@@ -84,9 +84,8 @@
 
                         
                 if (is_this_admin == false) {
-                    var my_test_date = new Date();  //Anxo customizarion
-                    my_test_date.setFullYear(wpdev_bk_today[0],(wpdev_bk_today[1]-1), wpdev_bk_today[2] ,0,0,0); //Get today           
-                    if ( (days_between( date, my_test_date)+1) < block_some_dates_from_today ) 
+                    var my_test_date = new Date( wpdev_bk_today[0],(wpdev_bk_today[1]-1), wpdev_bk_today[2] ,0,0,0 );  //Get today           
+                    if ( (days_between( date, my_test_date)) < block_some_dates_from_today ) 
                         return [false, 'cal4date-' + class_day +' date_user_unavailable']; 
                 }
                 
