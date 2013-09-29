@@ -4,7 +4,7 @@ Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
 Tested up to: 3.6.1
-Stable tag: 5.0.2
+Stable tag: 5.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ and be able to **Approve** or **Decline** this reservation in Easy to Understand
 - Sleek and **customizable design** of calendars, for fitting to your site design.
 - **Responsive** front end design.
 - An easy to use **Booking Admin Panel** that displays bookings in **Calendar Overview** or **Listing Table** and lets you manages bookings.
-- Built with **Bootstrap**, **jQuery**, **Ajax** and other technologies.
+- Built with **jQuery**, **Ajax** and other technologies.
 - **Easy to install and integrate** into your site. *For example, using booking button in edit toolbar for configuration and inserting booking shortcode into post or page.*
 
 = PLUG-N-PLAY =
@@ -148,6 +148,11 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 10. **Calendar Skins**. Select calendar skin for better fitting to your site design.
 
 == Changelog ==
+= 5.0.3 =
+* Added new transaltion  to Swedish by Mattias Aslund [51% complete]
+* Fixed issue. Sometimes the "number of unavailbale days from today" was working incorrectly.
+* Set position of the version number to the absolute bottom on the Booking Listing page.
+
 = 5.0.2 =
 * Features and issue fixings in All versions: 
  * Fix CSS reseting padding and maring in calendar.css file for the calendar table to prevent conflicts with some WP themes.
@@ -177,7 +182,7 @@ If you have any further questions, please fill free to <a href="mailto:support@w
  * Possibility to define any custom "Start date" of bookings listing in Calendar Overview mode at Navigation toolbar instead of only Current date/month. 
  * Change the "New bookings" parameter selection from the button to selectbox in the Extended Filter tab at Booking Listing page.
  * Automatically set specific "Radio button" as checked in the "Booking dates" and the "Creation dates" parameters at the Filters tab if specific dates or other option is selected.
- * Using the Bootstrap CSS for the booking form.
+ * Using the BS CSS for the booking form.
  * New Welcome page.
  * New "Get Started" panel.
  * Prevent of submitting the booking form with the same CAPCTCHA after refreshing the page with old data.
@@ -274,6 +279,7 @@ Right now plugin is support languages:
 - Croatian[43% Completed]
 - Slovak [49% Completed]
 - Hebrew[21% Completed]
+- Swedish[51% Completed]
 
 Please recheck the status of each translation, before useing plugin. 
 We open for your help in new translations or correcting existing ones. You can translate to new language or update exist one, using this [tutorial of translation](http://wpbookingcalendar.com/faq/make-translation-of-wp-plugin/)
