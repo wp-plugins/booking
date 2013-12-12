@@ -1,10 +1,10 @@
-=== Booking Calendar ===
+﻿=== Booking Calendar ===
 Contributors: wpdevelop
 Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
-Tested up to: 3.7
-Stable tag: 5.0.3
+Tested up to: 3.8
+Stable tag: 5.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,6 +148,9 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 10. **Calendar Skins**. Select calendar skin for better fitting to your site design.
 
 == Changelog ==
+= 5.0.4 =
+* Fix CSS headers issue in admin panel for the WordPress 3.8
+
 = 5.0.3 =
 * Added new transaltion  to Swedish by Mattias Aslund [51% complete]
 * Fixed issue. Sometimes the "number of unavailbale days from today" was working incorrectly.

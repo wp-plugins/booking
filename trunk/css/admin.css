@@ -2145,8 +2145,14 @@ td.bk_resource_selector {
 }
 .time_section_in_day
 #wpdev-booking-general h2,
-#wpdev-booking-general .icon32 {
+#wpdev-booking-general .icon32,
+#wpdev-booking-option-general .icon32,
+#wpdev-booking-reservation-general .icon32,
+#wpdev-booking-resources-general .icon32{
     display: block;
+    float:left;
+    height: 34px;
+    width: 36px;
 }
 
 /******************************************************************************/
