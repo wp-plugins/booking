@@ -3,10 +3,10 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://wpbookingcalendar.com/demo/
 Description: Online reservation and availability checking service for your site.
-Version: 5.0.3
+Version: 5.0.4
 Author: wpdevelop
 Author URI: http://wpbookingcalendar.com/
-Tested WordPress Versions: 3.3 - 3.7
+Tested WordPress Versions: 3.3 - 3.8
 */
 
 /*  Copyright 2009 - 2013  www.wpbookingcalendar.com  (email: info@wpbookingcalendar.com),
@@ -37,6 +37,9 @@ Change Log and Features for Future Releases :
  *
  *
  *  
+= 5.0.4 =
+* Fix CSS headers issue in admin panel for the WordPress 3.8
+
 = 5.0.3 =
 * Set position of the version number to the absolute bottom on the Booking Listing page.
 * Fixed issue. Sometimes the "number of unavailbale days from today" was working incorrectly.
