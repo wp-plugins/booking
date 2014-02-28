@@ -187,33 +187,27 @@ If you have any further questions, please fill free to <a href="mailto:support@w
  * **Styles improvement on Settings Users page** for best feet to WordPress 3.8 update and better look on mobile devices. (MultiUser)
  * New. **Show deposit payment**, only if **difference between "Today" and "Check In"** dates higher then specific number of days. (Business Medium/Large, MultiUser)
  * Ability to set **"Valuation days"** cost for **"cost per night"** setting. (Business Medium/Large, MultiUser)
- * Calculation **"Valuation days" cost setting depend from Season Filter of "Check In" date**. Previous "Seson filter for all days", which was worked in limited situations removed. (Business Medium/Large, MultiUser)
+ * Calculation **"Valuation days" cost setting depend from Season Filter of "Check In" date**. Previous "Season filter for all days", which was worked in limited situations removed. (Business Medium/Large, MultiUser)
  * **Auto select Default Custom Form** for the specific resource, if use shortcode of "booking resource selection" and each booking resource have the default custom form. (Note, you must have no parameter "form_type" in the "bookingselect" shortcode). (Business Medium/Large, MultiUser)
  * Ability to **use "option" parameter in the [bookingselect ...] shortcode** in the same way, as it possible to use for [booking ...] shortcode (Personal, Business Small/Medium/Large, MultiUser)
  * Possibility to select default custom booking form during creation of the Booking Resources  (Business Large, MultiUser)
  * **Pagination of users** table at the Settings Users page (MultiUser)
  * Load the PayPal payment page depend from the locale of website  (Business Small/Medium/Large, MultiUser)
  * Show confirmation dialog for deletion of discount coupons. (Business Large, MultiUser)
- * Trick. Possibility to set TRUE of the constant WP_BK_CUSTOM_FORMS_FOR_REGULAR_USERS in wpdev-booking.php file for activation additonal "custom forms" functionality for "regular users" (MultiUser)
- * Trick. Possibility to set TRUE of the constant WP_BK_SHOW_BOOKING_NOTES in wpdev-booking.php file for showing by default all cooments for the specific bookings in booking listing page (Personal, Business Small/Medium/Large, MultiUser)
+ * Trick. Possibility to set TRUE of the constant WP_BK_CUSTOM_FORMS_FOR_REGULAR_USERS in wpdev-booking.php file for activation additional "custom forms" functionality for "regular users" (MultiUser)
+ * Trick. Possibility to set TRUE of the constant WP_BK_SHOW_BOOKING_NOTES in wpdev-booking.php file for showing by default all comments for the specific bookings in booking listing page (Personal, Business Small/Medium/Large, MultiUser)
  * Sanitize title of new Custom forms. Sometimes using not standard symbols, can generate issues in loading such  form  (Business Medium/Large, MultiUser)
  * Fix. Possibility to use the same booking shortcode parameters (like several months setting or options parameter) in the other defined calendars in a booking form. If was used the several  calendars and one booking form, relative to  this instruction: http://wpbookingcalendar.com/faq/booking-many-different-items-via-one-booking-form/  (Business Medium/Large, MultiUser)
  * Fix. Changed the name of submit button at the Settings Payment page, which can  generate issue of saving on some servers (Business Small/Medium/Large, MultiUser)
- * Fix "403 Error" during saving Settings page on some servers. Saving only relative URLs of the "successfuly paid" and "failed" URLs, which are saving in the Settings Payment page. Previously, absolute URLs saving can generate the "403 Error" during saving page on some servers. (Business Small/Medium/Large, MultiUser)
- * Fix issue of showing the HINTs (for exmaple the [check_in_date_hint] and other...) in the booking form, only in default language, even  if the system  was turned to other language (Business Medium/Large, MultiUser)
- * Fix of auto showing HINTs for the selcted dates and cost for the editing booking in admin panel  (Business Medium/Large, MultiUser)
+ * Fix "403 Error" during saving Settings page on some servers. Saving only relative URLs of the "successfully paid" and "failed" URLs, which are saving in the Settings Payment page. Previously, absolute URLs saving can generate the "403 Error" during saving page on some servers. (Business Small/Medium/Large, MultiUser)
+ * Fix issue of showing the HINTs (for example the [check_in_date_hint] and other...) in the booking form, only in default language, even  if the system  was turned to other language (Business Medium/Large, MultiUser)
+ * Fix of auto showing HINTs for the selected dates and cost for the editing booking in admin panel  (Business Medium/Large, MultiUser)
  * Fix issue of not showing the Payment form, but instead of that redirection to the "Thank you" page for the booking form (without calendar) (Business Large, MultiUser)
- * Fix issue in MultiUser version of not correctly showing booking resources (hierarhy) in the Calendar Overview mode, while logged in as not super booking admin user. (MultiUser)
- * Fix issue of not possibility to scroll the monthes in Calendar Overview page,  if was saved the "Filter tab" set as default template. (Personal, Business Small/Medium/Large, MultiUser)
+ * Fix issue in MultiUser version of not correctly showing booking resources (hierarchy) in the Calendar Overview mode, while logged in as not super booking admin user. (MultiUser)
+ * Fix issue of not possibility to scroll the months in Calendar Overview page,  if was saved the "Filter tab" set as default template. (Personal, Business Small/Medium/Large, MultiUser)
  * Fix issue with saving and configuring additional cost settings for the options, which  have the different titles and values (using @@ symbols in the options). (Business Medium/Large, MultiUser)
- * Fix issue of incorrect highlihiting check in/out dates in the calendar, when visitor select "check in" date in calendar. Its only in case if the "range days selection using 2 mouse clicks" is activated. (Business Medium/Large, MultiUser)
+ * Fix issue of incorrect highlighting check in/out dates in the calendar, when visitor select "check in" date in calendar. Its only in case if the "range days selection using 2 mouse clicks" is activated. (Business Medium/Large, MultiUser)
  * Fix issue of Sage Pay integrations. Add the "Sate" billing form integration into the billing form. (Business Small/Medium/Large, MultiUser)
-
-= 5.1 =
-* Features and issue fixings in All versions: 
- * Fix CSS reseting padding and maring in calendar.css file for the calendar table to prevent conflicts with some WP themes.
-* Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
- * Set **day titles** in Calendar Overview mode as **links for setting start date** of booking listing. (Personal, Business Small/Medium/Large, MultiUser)
 
 = 5.0.4 =
 * Fix CSS headers issue in admin panel for the WordPress 3.8
