@@ -45,6 +45,7 @@ function wpdev_check_nonce_in_admin_panel( $action_check = 'wpbc_ajax_admin_nonc
 function wpdev_bk_ajax_responder() {
 
     global $wpdb;
+    add_bk_filter(  'wpdev_check_for_active_language', 'wpdev_check_for_active_language');   // Check content according language shortcodes
     $action = $_POST['ajax_action'];
 
     if  (isset($_POST['wpdev_active_locale'])) {    // Reload locale according request parameter
