@@ -115,7 +115,7 @@
                 if(typeof(wpbc_check_in_dates[ bk_type ]) !== 'undefined')
                    if(typeof(wpbc_check_in_dates[ bk_type ][ class_day ]) !== 'undefined') {
                        // [ Number of check in bookings, Pending or Approved status ]
-                      checkin_days_count = [ parseInt( wpbc_check_in_dates[ bk_type ][ class_day ][ 0 ] ), parseInt( wpbc_check_in_dates[ bk_type ][ class_day ][ 1 ] ) ];
+                      checkin_days_count = [ wpbc_check_in_dates[ bk_type ][ class_day ][ 0 ] ,  wpbc_check_in_dates[ bk_type ][ class_day ][ 1 ] ];
                   }
 
                 // Number of Check Out Dates for BL 
@@ -124,8 +124,14 @@
                 if(typeof(wpbc_check_out_dates[ bk_type ]) !== 'undefined')
                    if(typeof(wpbc_check_out_dates[ bk_type ][ class_day ]) !== 'undefined') {
                        // [ Number of check Out bookings, Pending or Approved status ]
-                      checkout_days_count = [ parseInt( wpbc_check_out_dates[ bk_type ][ class_day ][ 0 ] ), parseInt( wpbc_check_out_dates[ bk_type ][ class_day ][ 1 ] ) ];
+                      checkout_days_count = [ wpbc_check_out_dates[ bk_type ][ class_day ][ 0 ] , wpbc_check_out_dates[ bk_type ][ class_day ][ 1 ] ];
                   }
+          
+                // Booked both  check  in/out dates in the same child resources  
+                var both_check_in_out_num = 0;
+                if ( typeof( getNumberClosedCheckInOutDays ) == 'function' ) {                       
+                      both_check_in_out_num =  getNumberClosedCheckInOutDays( bk_type, class_day );
+                }
 
 
                 // we have 0 available at this day - Only for resources, which have childs
@@ -205,7 +211,7 @@
 
 
 
-                var both_check_in_out_num = Math.min( checkin_days_count[0], checkout_days_count[0] );
+                
                 var is_exist_check_in_out_for_parent_resource = Math.max( checkin_days_count[0], checkout_days_count[0] );                        
 
                 if ( ( time_return_value !== false ) && ( is_exist_check_in_out_for_parent_resource == 0 ) ) { // Check  this only for single booking resources - is_exist_check_in_out_for_parent_resource == 0
@@ -225,42 +231,27 @@
                     
                 } else { 
                     
-                    if ( is_booking_used_check_in_out_time === true ) {
-                        
-                        // Check  Check  In / Out dates for the parent resources.
-                        if ( is_exist_check_in_out_for_parent_resource > 0 ) {
+                    if ( ( is_booking_used_check_in_out_time === true ) && ( is_exist_check_in_out_for_parent_resource > 0 ) ) { // Check  Check  In / Out dates for the parent resources.
                             
-                            if ( (reserved_days_count - both_check_in_out_num ) <= 0 ) {
-                                // Unavailable 
-                                if ( checkin_days_count[1] == 1 )   additional_class = ' date_approved';    // Check  Pending or Approved by the Check In date
-                                else                                additional_class = ' date2approve';                                                       
-                                return [false, 'cal4date-' + class_day + additional_class + blank_admin_class_day]; 
-
-                            } 
-
-                            // Recheck  if this date check in/out
-                            if ( (reserved_days_count - checkin_days_count[0]) <= 0 ) {
-                                if ( checkin_days_count[1] == 1 )   additional_class += ' date_approved';
-                                else                                additional_class += ' date2approve';                           
-                                additional_class += ' timespartly check_in_time';
-                            }
-                            if ( (reserved_days_count - checkout_days_count[0]) <= 0 ) {
-                                if ( checkout_days_count[1] == 1 )  additional_class += ' date_approved';
-                                else                                additional_class += ' date2approve';
-                                additional_class += ' timespartly check_out_time';
-                            } 
-
-                            // Reduce availability
-                            if ( both_check_in_out_num > 0 ) {
-                                reserved_days_count = reserved_days_count - both_check_in_out_num;
-                                if(typeof(availability_per_day) !== 'undefined')
-                                if(typeof(availability_per_day[ bk_type ]) !== 'undefined')
-                                   if(typeof(availability_per_day[ bk_type ][ class_day ]) !== 'undefined') {
-                                      availability_per_day[ bk_type ][ class_day ] = reserved_days_count; }                                
-                            }
-                            
+                        // Unavailable 
+                        if ( (reserved_days_count - both_check_in_out_num ) <= 0 ) {
+                            // Check  Pending or Approved by the Check In date
+                            if ( checkin_days_count[1] == 1 )   additional_class = ' date_approved';    
+                            else                                additional_class = ' date2approve';                                                       
+                            return [false, 'cal4date-' + class_day + additional_class + blank_admin_class_day]; 
                         }
-                                              
+
+                        // Recheck  if this date check in/out
+                        if ( (reserved_days_count - checkin_days_count[0]) <= 0 ) {
+                            if ( checkin_days_count[1] == 1 )   additional_class += ' date_approved';
+                            else                                additional_class += ' date2approve';                           
+                            additional_class += ' timespartly check_in_time';
+                        }
+                        if ( (reserved_days_count - checkout_days_count[0]) <= 0 ) {
+                            if ( checkout_days_count[1] == 1 )  additional_class += ' date_approved';
+                            else                                additional_class += ' date2approve';
+                            additional_class += ' timespartly check_out_time';
+                        }                                               
                     }
                     
                     return [true, 'date_available cal4date-' + class_day +' reserved_days_count' + reserved_days_count + ' '  + is_datepick_unselectable + additional_class+ ' '];
@@ -1244,12 +1235,12 @@ function verify_window_opening(us_id,  window_id ){
 //]]>
 
  function wpdev_in_array (array_here, p_val) {
-	for(var i = 0, l = array_here.length; i < l; i++) {
-		if(array_here[i] == p_val) {
-			return true;
-		}
-	}
-	return false;
+    for(var i = 0, l = array_here.length; i < l; i++) {
+        if(array_here[i] == p_val) {
+            return true;
+        }
+    }
+    return false;
 }
 
 

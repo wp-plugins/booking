@@ -154,6 +154,7 @@ If you have any further questions, please fill free to <a href="mailto:support@w
  * Fix issue of showing warning messages during activation of plugin in some versions.
 - Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
  * Fix. The issue relative to not correct language selections for email templates during creations new booking or other actions (during ajax requests). (Personal, Business Small/Medium/Large, MultiUser)
+ * Fixed showing of the number of availability days for the parent booking resources, when activated "check in/out" times option  on the General Booking Settings page (Business Large, MultiUser)
  
 = 5.1.1 =
 - Features and issue fixings in All versions:
