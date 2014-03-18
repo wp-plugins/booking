@@ -820,7 +820,7 @@ class wpdev_booking {
     function is_index_in_table_exists( $tablename , $fieldindex) {
         global $wpdb;
         if (strpos($tablename, $wpdb->prefix) ===false) $tablename = $wpdb->prefix . $tablename ;
-        $sql_check_table = $wpdb->prepare("SHOW INDEX FROM {$tablename} WHERE Key_name = %s", $fieldindex );
+        $sql_check_table = $wpdb->prepare("SHOW INDEX FROM {$tablename} WHERE Key_name = %s", $fieldindex );       
         $res = $wpdb->get_results( $sql_check_table );
         if (count($res)>0) return 1;
         else               return 0;
