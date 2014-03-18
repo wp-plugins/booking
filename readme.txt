@@ -4,7 +4,7 @@ Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
 Tested up to: 3.9
-Stable tag: 5.1.1
+Stable tag: 5.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,6 +148,13 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 10. **Calendar Skins**. Select calendar skin for better fitting to your site design.
 
 == Changelog ==
+= 5.1.2 =
+- Features and issue fixings in All versions:
+ * Fix issue of have no ability to click on the booking link on the "Calendar Overview" admin page for redirection to the "Booking Listing" page with  this selected booking.
+ * Fix issue of showing warning messages during activation of plugin in some versions.
+- Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
+ * Fix. The issue relative to not correct language selections for email templates during creations new booking or other actions (during ajax requests). (Personal, Business Small/Medium/Large, MultiUser)
+ 
 = 5.1.1 =
 - Features and issue fixings in All versions:
  * Support **WordPress 3.9**
@@ -158,7 +165,7 @@ If you have any further questions, please fill free to <a href="mailto:support@w
  * **Improve speed of page loading** for booking resources with  hight capacity and many season filters (Business Large, MultiUser)
  * Improve managment of Check In/Out dates for the booking resources with  capacity higher then 1. **Show vertival line for change-over days** in calendar (Business Large, MultiUser)
  * Fix. Loading correct "default custom booking form" for specific booking resource in widget at sidebar (Business Medium/Large, MultiUser)
-
+ 
 = 5.1 =
 - Features and issue fixings in All versions:
  * **Responsive Booking Admin panel** that looks great on any device.

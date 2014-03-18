@@ -2656,29 +2656,30 @@
                 // Repositioning of PopOver, which out of Window
                 jQuery( ".popover_bottom" ).on( "mouseenter", function() {
                     setTimeout(function(){
-                                                
-                        var right_pos = parseInt( jQuery( '.wpdevbk.popover.fade.bottom.in' ).css('right').replace('px', '') ); 
-                        var left_pos  = parseInt( jQuery( '.wpdevbk.popover.fade.bottom.in' ).css('left').replace('px', '') );
-
-                        if ( ( left_pos < 0 ) ) {
-                            jQuery('.wpdevbk.popover.fade.bottom.in').css( {left: "10px"} );
-                        }
-                        if ( ( right_pos < 0 ) ) {
-                            jQuery('.wpdevbk.popover.fade.bottom.in').css( {left: ( ( left_pos - Math.abs(right_pos) - 10) + "px" ) } );
-                        }
-                        
-                        setTimeout(function(){
+                        if ( jQuery( '.wpdevbk.popover.fade.bottom.in' ).length ) {
                             var right_pos = parseInt( jQuery( '.wpdevbk.popover.fade.bottom.in' ).css('right').replace('px', '') ); 
                             var left_pos  = parseInt( jQuery( '.wpdevbk.popover.fade.bottom.in' ).css('left').replace('px', '') );
 
-                            if ( ( left_pos < 0 ) || ( right_pos<0 ) ) {
-                                jQuery('.wpdevbk.popover.fade.bottom.in').css({'left':'10px','width':'95%'}) ;
-                                jQuery('.wpdevbk.popover.fade.bottom.in .popover-inner').css({'width':'95%'}) ;
-                            } else {
-                                jQuery('.wpdevbk.popover.fade.bottom.in').css({'width':'auto'}) ;
-                                jQuery('.wpdevbk.popover.fade.bottom.in .popover-inner').css({'width':'350px'}) ;
+                            if ( ( left_pos < 0 ) ) {
+                                jQuery('.wpdevbk.popover.fade.bottom.in').css( {left: "10px"} );
                             }
-                        },5);  
+                            if ( ( right_pos < 0 ) ) {
+                                jQuery('.wpdevbk.popover.fade.bottom.in').css( {left: ( ( left_pos - Math.abs(right_pos) - 10) + "px" ) } );
+                            }
+
+                            setTimeout(function(){
+                                var right_pos = parseInt( jQuery( '.wpdevbk.popover.fade.bottom.in' ).css('right').replace('px', '') ); 
+                                var left_pos  = parseInt( jQuery( '.wpdevbk.popover.fade.bottom.in' ).css('left').replace('px', '') );
+
+                                if ( ( left_pos < 0 ) || ( right_pos<0 ) ) {
+                                    jQuery('.wpdevbk.popover.fade.bottom.in').css({'left':'10px','width':'95%'}) ;
+                                    jQuery('.wpdevbk.popover.fade.bottom.in .popover-inner').css({'width':'95%'}) ;
+                                } else {
+                                    jQuery('.wpdevbk.popover.fade.bottom.in').css({'width':'auto'}) ;
+                                    jQuery('.wpdevbk.popover.fade.bottom.in .popover-inner').css({'width':'350px'}) ;
+                                }
+                            },5);
+                        }
                      },110);   
                 });
             <?php

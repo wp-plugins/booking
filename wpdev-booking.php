@@ -3,7 +3,7 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://wpbookingcalendar.com/demo/
 Description: Online reservation and availability checking service for your site.
-Version: 5.1.1
+Version: 5.1.2
 Author: wpdevelop
 Author URI: http://wpbookingcalendar.com/
 Tested WordPress Versions: 3.3 - 3.9
@@ -35,6 +35,13 @@ Change Log and Features for Future Releases :
  * lib\
  * ====================================
 
+= 5.1.2 =
+- Features and issue fixings in All versions:
+ * Fix issue of have no ability to click on the booking link on the "Calendar Overview" admin page for redirection to the "Booking Listing" page with  this selected booking.
+ * Fix issue of showing warning messages during activation of plugin in some versions.
+- Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
+ * Fix. The issue relative to not correct language selections for email templates during creations new booking or other actions (during ajax requests). (Personal, Business Small/Medium/Large, MultiUser)
+
 = 5.1.1 =
 - Features and issue fixings in All versions:
  * Support WordPress 3.9
@@ -45,6 +52,7 @@ Change Log and Features for Future Releases :
  * Improve speed of page loading for booking resources with  hight capacity and many season filters (Business Large, MultiUser)
  * Improve mnagemnt of Check In/Out dates for the booking resources with  capacity higher then 1. Show vertival line for change-over days in calendar (Business Large, MultiUser)
  * Fix. Loading correct "default custom booking form" for specific booking resource in widget at sidebar (Business Medium/Large, MultiUser)
+ * Fix. The issue relative to not correct language selections for email templates during creations new booking or other actions (during ajax requests).
 
 = 5.1 =
 - Features and issue fixings in All versions:
@@ -162,7 +170,7 @@ Change Log and Features for Future Releases :
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //   SYSTEM  CONSTANTS                        //////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    if (!defined('WP_BK_VERSION_NUM'))      define('WP_BK_VERSION_NUM',         '5.1.1' );
+    if (!defined('WP_BK_VERSION_NUM'))      define('WP_BK_VERSION_NUM',         '5.1.2' );
     if (!defined('WP_BK_MINOR_UPDATE'))     define('WP_BK_MINOR_UPDATE',        true );    
     if (!defined('IS_USE_WPDEV_BK_CACHE'))  define('IS_USE_WPDEV_BK_CACHE',     true );    
     if (!defined('WP_BK_DEBUG_MODE'))       define('WP_BK_DEBUG_MODE',          false );

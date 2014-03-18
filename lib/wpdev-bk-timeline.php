@@ -304,9 +304,9 @@ function wpdev_bk_timeline_booking_row( $current_resource_id, $start_date, $book
                                 }
 
                                 // Show the circle with  bk ID(s) in a day
-                                //href="'.$bk_url_listing.'&wh_booking_id='.$link_id_parameter.'&view_mode=vm_listing&tab=actions"
+                                //href="'.$bk_url_listing.'&wh_booking_id='.$link_id_parameter.'&view_mode=vm_listing&tab=actions"                                  
                                 echo '<a  
-                                      href="javascript:void(0)"                                       
+                                      href="'.$bk_url_listing.'&wh_booking_id='.$link_id_parameter.'&view_mode=vm_listing&tab=actions" 
                                       data-content="<div class=\'\'>'.$title_hint.'</div>"
                                       data-original-title="'.'ID: '.$title.'"
                                       rel="popover" class="'.write_bk_id_css_classes('a_bk_id_',$previous_booking_id).' popover_bottom  ' . ( ($title!='')?'first_day_in_bookin':'' ).' ">'.$title_in_day.'</a>';
