@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wpdev-booking\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-13 23:20+0200\n"
+"POT-Creation-Date: 2014-06-16 10:42+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: wpdevelop <info@wpdevelop.com>\n"
 "Language-Team: wpdevelop <info@wpbookingcalendar.com>\n"
@@ -3800,12 +3800,12 @@ msgid ""
 "option is selected. Please clear the selection, then add new resources."
 msgstr ""
 
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:729
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:733
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1376
 msgid "All resources"
 msgstr ""
 
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:743
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:747
 msgid "Booking resources"
 msgstr ""
 
@@ -5064,25 +5064,27 @@ msgid "Form / Calendar"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:114
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:127
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:140
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:154
-msgid "Insertion of"
-msgstr ""
-
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:114
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:127
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:140
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:154
-msgid "settings"
+msgid "Insertion of booking form or availability calendar shortcodes"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:125
 msgid "Selection of form"
 msgstr ""
 
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:127
+msgid "Insertion selection of booking form for specific booking resource"
+msgstr ""
+
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:140
+msgid "Insertion search form shortcode"
+msgstr ""
+
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:152
 msgid "Editing of booking"
+msgstr ""
+
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:154
+msgid "Insertion system shortcode for booking editing"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:174
@@ -5144,12 +5146,20 @@ msgstr ""
 msgid "Title of Search results:"
 msgstr ""
 
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:252
+msgid "Search results:"
+msgstr ""
+
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:253
 msgid "Type the title of Search results."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:259
 msgid "Nothing Found Message:"
+msgstr ""
+
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:261
+msgid "Nothing Found."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:262
@@ -5168,6 +5178,10 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:290
 msgid "Title:"
+msgstr ""
+
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:291
+msgid "Please select the resource:"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:292

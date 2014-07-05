@@ -846,8 +846,9 @@
 
 
         function showErrorMessage( element , errorMessage) {
-
-
+       
+            // bk_form_step_click(); // rollback  to 1st  step,  if system  will show warning and booking form  is using this customization: in the Exmaple #2 here: http://wpbookingcalendar.com/faq/customize-booking-form-for-having-several-steps-of-reservation/ 
+            
             makeScroll( element );
 
             jQuery("[name='"+ element.name +"']")

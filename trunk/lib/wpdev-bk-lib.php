@@ -1369,7 +1369,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
             <div class="nav-tabs-wrapper">
                 <div class="nav-tabs">
 
-                    <?php $title = __('Filter', 'wpdev-booking'); $my_icon = 'Season-64x64.png'; $my_tab = 'filter';  $my_additinal_class= ''; ?>
+                    <?php $title = __('Filter', 'wpdev-booking'); $my_icon = ''; $my_tab = 'filter';  $my_additinal_class= ''; ?>
                     <?php if ($_REQUEST['tab'] == 'filter') {  $slct_a = 'selected'; $selected_title = $title; $selected_icon = $my_icon; } else {  $slct_a = ''; } ?><a class="nav-tab <?php if ($slct_a == 'selected') { echo ' nav-tab-active '; } echo $my_additinal_class; ?>" title="<?php //echo __('Customization of booking form fields','wpdev-booking');  ?>"  href="javascript:void(0)" onclick="javascript:
                                 jQuery('.visibility_container').hide(); 
                                 jQuery('#<?php echo $my_tab; ?>').show();
@@ -1377,9 +1377,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
                                 jQuery(this).addClass('nav-tab-active');
                                 jQuery('.nav-tab i.icon-white').removeClass('icon-white');
                                 jQuery('.nav-tab-active i').addClass('icon-white');"
-                       ><i class="<?php if ($slct_a == 'selected') echo 'icon-white '; ?>icon-cog"></i><span class="nav-tab-text"> <?php /** ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php /**/ ?><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?></span></a>
+                       ><i class="<?php if ($slct_a == 'selected') echo 'icon-white '; ?>icon-cog"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?></span></a>
 
-                    <?php $title = __('Actions', 'wpdev-booking'); $my_icon = 'actionservices24x24.png'; $my_tab = 'actions';  $my_additinal_class= ''; ?>
+                    <?php $title = __('Actions', 'wpdev-booking'); $my_icon = ''; $my_tab = 'actions';  $my_additinal_class= ''; ?>
                     <?php if ($_REQUEST['tab'] == 'actions') {  $slct_a = 'selected'; $selected_title = $title; $selected_icon = $my_icon; } else {  $slct_a = ''; } ?><a class="nav-tab <?php if ($slct_a == 'selected') { echo ' nav-tab-active '; } echo $my_additinal_class;  ?>" title="<?php //echo __('Customization of booking form fields','wpdev-booking');  ?>"  href="javascript:void(0)" onclick="javascript:
                                 jQuery('.visibility_container').hide(); 
                                 jQuery('#<?php echo $my_tab; ?>').show();
@@ -1387,7 +1387,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
                                 jQuery(this).addClass('nav-tab-active');
                                 jQuery('.nav-tab i.icon-white').removeClass('icon-white');
                                 jQuery('.nav-tab-active i').addClass('icon-white');"
-                       ><i class="<?php if ($slct_a == 'selected') echo 'icon-white '; ?>icon-fire"></i><span class="nav-tab-text"> <?php /** ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><?php /**/ ?><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?></span></a>
+                       ><i class="<?php if ($slct_a == 'selected') echo 'icon-white '; ?>icon-fire"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?></span></a>
 
                     <?php wpdevbk_show_help_dropdown_menu_in_top_menu_line(); ?>
 
@@ -1823,6 +1823,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
             $bk_remark              = (isset($bk->remark))?$bk->remark:'';            //
             //BS
             $bk_cost                = (isset($bk->cost))?$bk->cost:'';                // 150.00
+            
             $bk_pay_status          = (isset($bk->pay_status))?$bk->pay_status:'';    // 30800
             $bk_pay_request         = (isset($bk->pay_request))?$bk->pay_request:'';  // 0
             $bk_status              = (isset($bk->status))?$bk->status:'';

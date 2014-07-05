@@ -14,9 +14,9 @@
     }
 
     /* Settings Top TABS */
-    #menu-wpdevplugin .nav-tab {
-        
-        padding: 10px 4px 5px;
+    #menu-wpdevplugin .nav-tab {        
+/*        padding: 10px 4px 5px;*/
+        padding: 10px 15px 5px;
     }
     #menu-wpdevplugin .nav-tab .nav-tab-text {
         display:none;
@@ -93,6 +93,7 @@
     #or_sort_selector,
     #filter_name {
         line-height: 16px !important;
+        height: 36px !important;
     }
     .branch-3-3 .bookingpage .button, 
     .branch-3-3 .bookingpage .button-secondary, 
@@ -173,7 +174,7 @@
         padding: 3px 0;
     }
     #denyreason {
-        height: 39px !important;
+        height: 34px !important;
     } 
     .bookingpage .wpdevbk input[type="text"], 
     .bookingpage .wpdevbk select{
@@ -182,6 +183,14 @@
     .bookingpage .form-table input[type="text"], 
     .bookingpage .wpdevbk input[type="text"]{
         line-height: 16px !important;
+    }
+    #booking_listings_interface_header .btn-group .dropdown-toggle {
+        height: 36px;
+        margin-bottom: 1px;
+        box-shadow:0 1px 0 #fff inset, 0 1px 0 rgba(0, 0, 0, 0.08)
+    }    
+    #booking_listings_interface_header .btn-group #start_date_selection_in_navigation_selector {
+        height: 34px;
     }
     /* Listing */
     #booking_listings_interface_header .nav-tabs .dropdown.pull-right .caret{
@@ -327,7 +336,7 @@
         margin-bottom: 0;
     }
     .resource_table.booking_table.wpbc_rates_table .rates_collumn input[type=text] {
-        height: 36px;
+        height: 36px !important;
         text-align: right;
         width: 50% !important;
         float:left;
@@ -356,7 +365,7 @@
     }
     /*  Valuation days Table ******************************************************/
     .resource_table.booking_table.wpbc_valuationdays_table td input[type=text] {
-        height: 36px;
+        height: 36px !important;
     }
     .resource_table.booking_table.wpbc_valuationdays_table td div,
     .resource_table.booking_table.wpbc_valuationdays_table td div div{

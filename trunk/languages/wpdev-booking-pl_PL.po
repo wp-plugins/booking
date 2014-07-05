@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wpdev-booking\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-13 23:20+0200\n"
+"POT-Creation-Date: 2014-06-16 10:42+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: wpdevelop <info@wpdevelop.com>\n"
 "Language-Team: wpdevelop <info@wpdevelop.com>\n"
@@ -4011,7 +4011,7 @@ msgstr "Dane"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1511
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1963
 msgid "Approved"
-msgstr "Wynajęty"
+msgstr "Zaakceptowana"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:421
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_s.php:147
@@ -4055,12 +4055,12 @@ msgstr ""
 "zasoby\" jest wybrana. Proszę usunąć zaznaczenie, a następnie dodać nowe "
 "zasoby."
 
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:729
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:733
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1376
 msgid "All resources"
 msgstr "Wszystkie zasoby"
 
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:743
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:747
 msgid "Booking resources"
 msgstr "Zasoby rezerwacji"
 
@@ -5409,29 +5409,31 @@ msgstr "Płatność odrzucona"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:112
 msgid "Form / Calendar"
-msgstr "Forma / Kalendarz"
+msgstr "Formularz / Kalendarz"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:114
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:127
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:140
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:154
-msgid "Insertion of"
-msgstr "Wstawienie"
-
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:114
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:127
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:140
-#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:154
-msgid "settings"
-msgstr "Ustawienia"
+msgid "Insertion of booking form or availability calendar shortcodes"
+msgstr "Wstawianie skrótu formularz rezerwacji lub kalendarz"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:125
 msgid "Selection of form"
-msgstr "Wybór formy"
+msgstr "Wybór formularza"
+
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:127
+msgid "Insertion selection of booking form for specific booking resource"
+msgstr "Wstawianie skrótu konkretny zasób rezerwacji"
+
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:140
+msgid "Insertion search form shortcode"
+msgstr "Wstawianie skrótu formularz wyszukiwania"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:152
 msgid "Editing of booking"
 msgstr "Edycja rezerwacji"
+
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:154
+msgid "Insertion system shortcode for booking editing"
+msgstr "Wstawianie skrótu edycja rezerwacji"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:174
 #, php-format
@@ -5504,13 +5506,21 @@ msgstr "Wpisz adres URL strony wyników wyszukiwania."
 msgid "Title of Search results:"
 msgstr "Tytuł wyniku wyszukiwania:"
 
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:252
+msgid "Search results:"
+msgstr "Wyniki wyszukiwania:"
+
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:253
 msgid "Type the title of Search results."
 msgstr "Wpisz tytuł wyników wyszukiwania."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:259
 msgid "Nothing Found Message:"
-msgstr "Wiadomość 'nic nie znaleziono':"
+msgstr "Wiadomość nic nie znaleziono:"
+
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:261
+msgid "Nothing Found."
+msgstr "Nic nie znaleziono."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:262
 msgid "Type the message, when nothing found."
@@ -5533,6 +5543,10 @@ msgstr ""
 msgid "Title:"
 msgstr "Tytuł:"
 
+#: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:291
+msgid "Please select the resource:"
+msgstr "Proszę wybrać zasób:"
+
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:292
 msgid "Title near your select box."
 msgstr "Tytuł w pobliżu twojego pola do zaznaczenia."
@@ -5545,7 +5559,7 @@ msgstr "Widoczne miesiące:"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:315
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:396
 msgid "Select number of month to show for calendar."
-msgstr "Wybierz liczbę miesięcy, aby pokazać na kalendarzu."
+msgstr "Wybierz liczbę miesięcy w kalendarzu"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:337
 msgid ""
@@ -5729,7 +5743,7 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1468
 msgid "New for Admin"
-msgstr "Nowa dla Admin"
+msgstr "Administrator"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1476
 msgid ""
@@ -5740,7 +5754,7 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1477
 msgid "New for Visitor"
-msgstr "Nowa dla Gościa"
+msgstr "Gość"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1485
 msgid ""
@@ -5770,7 +5784,7 @@ msgstr "Dostosowanie szablonu e-mail, który wysyła po modyfikacji rezerwacji"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1504
 msgid "Modified"
-msgstr "Zmodyfikowany"
+msgstr "Zmodyfikowana"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1513
 msgid ""
@@ -5906,7 +5920,7 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3260
 msgid "Email to \"Admin\" after a new booking"
-msgstr "Email do \"Admin\" po nowej rezerwacji"
+msgstr "Email do \"Administratora\" po zrobieniu nowej rezerwacji"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3280
 msgid "To"
@@ -5962,7 +5976,7 @@ msgstr "tutaj"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3327
 msgid "Email to \"Person\" after they make a new reservation"
-msgstr "Email do \"gościa\" po zrobieniu nowej rezerwacji"
+msgstr "Email do \"Gościa\" po zrobieniu nowej rezerwacji"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3357
 #, php-format
@@ -5993,7 +6007,7 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3387
 msgid "Email to \"Person\" after booking is approved"
-msgstr "Email do \"Osoby\" po zaakceptowaniu ich rezerwacji"
+msgstr "Email do \"Osoby\" po zaakceptowaniu rezerwacji"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3430
 #, php-format
@@ -6017,7 +6031,7 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3460
 msgid "Email to \"Person\" after their booking has been denied"
-msgstr "Email do \"Osoby\" po anulowaniu ich rezerwacji"
+msgstr "Email do \"Osoby\" po anulowaniu rezerwacji"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3505
 #, php-format
@@ -6040,7 +6054,7 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3537
 msgid "Email to \"Person\" after booking is modified"
-msgstr "Email do \"osoby\" po modyfikacji rezerwacji"
+msgstr "Email do \"Osoby\" po modyfikacji rezerwacji"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3582
 #, php-format
@@ -6391,7 +6405,7 @@ msgstr "Pokaż na stronie:"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:425
 msgid "Booking form with calendar"
-msgstr "Rezerwacja z kalendarza"
+msgstr "Formularz rezerwacji i kalendarz"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:426
 msgid "Only availability calendar"
@@ -7919,6 +7933,12 @@ msgstr ""
 msgid "Textarea Label"
 msgstr "Obszar tekstu etykiety"
 
+#~ msgid "Insertion of"
+#~ msgstr "Wstawienie"
+
+#~ msgid "settings"
+#~ msgstr "Ustawienia"
+
 #~ msgid "management"
 #~ msgstr "zarządzanie"
 
@@ -8122,10 +8142,6 @@ msgstr "Obszar tekstu etykiety"
 #, fuzzy
 #~ msgid "Set availability of days depending on the filter settings."
 #~ msgstr "do dyspozicji w zaleznosci od dni i od  filtru"
-
-#, fuzzy
-#~ msgid "Please enter the cost"
-#~ msgstr "wpisz koszt"
 
 #, fuzzy
 #~ msgid ""

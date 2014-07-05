@@ -1146,7 +1146,7 @@ class wpdev_booking {
     // Show top line menu
     function settings_menu_top_line() {
         
-        $selected_icon = 'General-setting-64x64.png';
+        $selected_icon = '';
         $version = get_bk_version();
         
         if (! isset($_GET['tab'])) $_GET['tab'] = '';
@@ -1158,42 +1158,42 @@ class wpdev_booking {
         <div style="height:1px;clear:both;margin-top:20px;"></div>
         <div id="menu-wpdevplugin">
             <div class="nav-tabs-wrapper">
-            <div class="nav-tabs" style="width:100%;">
+            <div class="nav-tabs wpdevbk" style="width:100%;">
                 <?php $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'only_super_admin');
                 if ($is_can) { ?>
 
                     <?php $title = __('General', 'wpdev-booking');
-                    $my_icon = 'General-setting-64x64.png'; $my_tab = 'main';  ?>
+                    $my_icon = 'icon-asterisk'; $my_tab = 'main';  ?>
                     <?php if ( ($_GET['tab'] == 'main') ||($_GET['tab'] == '') || (! isset($_GET['tab'])) ) {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
                     <?php if ($slct_a == 'selected') {  $selected_title = __('General Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a 
-                            title="<?php echo __('Customization of General Settings','wpdev-booking'); ?>" rel="tooltip" class="nav-tab tooltip_bottom"  href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><span class="nav-tab-text"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+                            title="<?php echo __('Customization of General Settings','wpdev-booking'); ?>" rel="tooltip" class="nav-tab tooltip_bottom"  href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
                 <?php } else {
                          if ( (! isset($_GET['tab'])) || ($_GET['tab']=='') ) $_GET['tab'] = 'form'; // For multiuser - common user set firt selected tab -> Form
                 } ?>
 
 
                     <?php $title = __('Fields', 'wpdev-booking');
-                    $my_icon = 'Form-fields-64x64.png'; $my_tab = 'form';  ?>
+                    $my_icon = 'icon-text-height'; $my_tab = 'form';  ?>
                     <?php if ($_GET['tab'] == 'form') {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
-                    <?php if ($slct_a == 'selected') {  $selected_title = __('Fields Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of booking form fields','wpdev-booking');  ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><span class="nav-tab-text"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+                    <?php if ($slct_a == 'selected') {  $selected_title = __('Fields Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of booking form fields','wpdev-booking');  ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
 
                 <?php $is_can_be_here = true; //Reduction version 3.0
                 if ($version == 'free') $is_can_be_here = false;
                 if ($is_can_be_here) { //Reduction version 3.0 ?>
                         
                     <?php $title = __('Emails', 'wpdev-booking');
-                    $my_icon = 'E-mail-64x64.png'; $my_tab = 'email';  ?>
+                    $my_icon = 'icon-envelope'; $my_tab = 'email';  ?>
                     <?php if ($_GET['tab'] == 'email') {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
-                    <?php if ($slct_a == 'selected') {  $selected_title = __('Emails Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of email templates','wpdev-booking');  ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><span class="nav-tab-text"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+                    <?php if ($slct_a == 'selected') {  $selected_title = __('Emails Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of email templates','wpdev-booking');  ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
 
                     <?php $is_can = true;
                             //$is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'only_super_admin'); ?>    
                     <?php if ( ( ($version == 'free') || ($version == 'biz_s') || ($version == 'biz_l') || ($version == 'biz_m') ) && ($is_can) ){ ?>
 
                         <?php $title = __('Payments', 'wpdev-booking');
-                        $my_icon = 'Paypal-cost-64x64.png'; $my_tab = 'payment';  ?>
+                        $my_icon = 'icon-shopping-cart'; $my_tab = 'payment';  ?>
                         <?php if ($_GET['tab'] == 'payment') {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
-                        <?php if ($slct_a == 'selected') {  $selected_title = __('Payments Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Integration of payment systems','wpdev-booking') ; ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><span class="nav-tab-text"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+                        <?php if ($slct_a == 'selected') {  $selected_title = __('Payments Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Integration of payment systems','wpdev-booking') ; ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
                     <?php } ?>
 
                     <?php if ( ($version == 'free') || ($version == 'biz_l') || ($version == 'biz_m') ) { ?>
@@ -1204,18 +1204,18 @@ class wpdev_booking {
                             <?php $is_can = apply_bk_filter('multiuser_is_user_can_be_here', true, 'only_super_admin'); ?>
                             <?php if ($is_can) { ?>
                                 <?php $title = __('Search', 'wpdev-booking');
-                                $my_icon = 'Booking-search-64x64.png'; $my_tab = 'search';  ?>
+                                $my_icon = 'icon-search'; $my_tab = 'search';  ?>
                                 <?php if ($_GET['tab'] == 'search') {  $slct_a = 'selected'; } else { $slct_a = ''; } ?>
-                                <?php if ($slct_a == 'selected') {  $selected_title = __('Search Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of search form','wpdev-booking') ; ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><span class="nav-tab-text"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+                                <?php if ($slct_a == 'selected') {  $selected_title = __('Search Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Customization of search form','wpdev-booking') ; ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
                             <?php } ?>
                         <?php } ?>
                     
 
                     <?php if ( ($version == 'free')   ) { ?>
                             <?php $title = __('Users', 'wpdev-booking');
-                        $my_icon = 'users-48x48.png'; $my_tab = 'users';  ?>
+                        $my_icon = 'icon-user'; $my_tab = 'users';  ?>
                         <?php if ($_GET['tab'] == 'users') {  $slct_a = 'selected'; } else { $slct_a = ''; } ?>
-                        <?php if ($slct_a == 'selected') {  $selected_title = __('Users Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php _e('Manage users settings','wpdev-booking'); ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><span class="nav-tab-text"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+                        <?php if ($slct_a == 'selected') {  $selected_title = __('Users Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php _e('Manage users settings','wpdev-booking'); ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
                     <?php } ?>
                     <?php } ?>
 
@@ -1231,17 +1231,17 @@ class wpdev_booking {
                     <?php if ( ($version == 'free')  ) { ?>
 
                         <?php $title = __('Buy now', 'wpdev-booking');
-                        $my_icon = 'shopping_trolley.png'; $my_tab = 'buy';  ?>
+                        $my_icon = 'icon-shopping-cart'; $my_tab = 'buy';  ?>
                         <?php if ( ($_GET['tab'] == $my_tab)  ) {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
-                        <?php if ($slct_a == 'selected') { $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a class="nav-tab" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><span class="nav-tab-text"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+                        <?php if ($slct_a == 'selected') { $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a class="nav-tab" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
 
                     <?php } elseif (   ( ($version !== 'biz_l') && ( ! wpdev_bk_is_this_demo() ) ) ||
                                        (($version === 'biz_l') && (class_exists('wpdev_bk_biz_l') === false)   )
                     ) { ?>
                         <?php $title = __('Upgrade', 'wpdev-booking');
-                        $my_icon = 'shopping_trolley.png'; $my_tab = 'upgrade';  ?>
+                        $my_icon = 'icon-shopping-cart'; $my_tab = 'upgrade';  ?>
                         <?php if ( ($_GET['tab'] == $my_tab)  ) {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
-                        <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active" style="float:right;"><?php } else { ?><a class="nav-tab tooltip_bottom" style="float:right;" title="<?php echo __('Upgrade to higher versions.','wpdev-booking'); ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><img class="menuicons" src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $my_icon; ?>"><span class="nav-tab-text"><?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+                        <?php if ($slct_a == 'selected') {  $selected_title = $title; $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active" style="float:right;"><?php } else { ?><a class="nav-tab tooltip_bottom" style="float:right;" title="<?php echo __('Upgrade to higher versions.','wpdev-booking'); ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
                     <?php }  ?>
                 <?php } //Reduction version 3.0 ?>
             </div>
@@ -1265,8 +1265,8 @@ class wpdev_booking {
                                   </div>';
         ?>
         <script type="text/javascript">
-                var val1 = '<img src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $selected_icon; ?>"><br />';
-                jQuery('div.wrap div.icon32').html(val1);
+                //var val1 = '<img src="<?php echo WPDEV_BK_PLUGIN_URL; ?>/img/<?php echo $selected_icon; ?>"><br />';
+                //jQuery('div.wrap div.icon32').html(val1);
                 jQuery('div.bookingpage h2').after('<?php echo $support_links; ?>');
                 jQuery('div.bookingpage h2').html( '<?php echo $selected_title; ?>');
         </script><?php
@@ -1539,6 +1539,8 @@ class wpdev_booking {
                 
         $calendar .= '<textarea id="date_booking'.$bk_type.'" name="date_booking'.$bk_type.'" autocomplete="off" style="display:none;"></textarea>';   // Calendar code
         
+        $calendar  .= $this->get_legend(); 
+        
         return $calendar;
     }
     
@@ -1719,7 +1721,7 @@ class wpdev_booking {
 
         $my_result = '<div style="clear:both;height:10px;"></div>' . $this->pre_get_calendar_html( $bk_type, $cal_count, $bk_otions );
 
-        $my_result .= $this->get_legend();                                  // Get Legend code here
+        // $my_result .= $this->get_legend();                                  // Get Legend code here
 
         $my_result .=   ' ' . $start_script_code ;
 
@@ -1740,7 +1742,7 @@ class wpdev_booking {
         } else {
             $calendar = '<textarea rows="3" cols="50" id="date_booking'.$my_boook_type.'" name="date_booking'.$my_boook_type.'"  autocomplete="off" style="display:none;">'.$my_selected_dates_without_calendar.'</textarea>';   // Calendar code
         }
-        $calendar  .= $this->get_legend();                                  // Get Legend code here
+        // $calendar  .= $this->get_legend();                                  // Get Legend code here
 
 
         $form = '<a name="bklnk'.$my_boook_type.'"></a><div id="booking_form_div'.$my_boook_type.'" class="booking_form_div">';

@@ -185,6 +185,9 @@ a.wpbc-help-tooltip:hover{
     margin: 1px 5px 0;
 }
 
+.bookingpage input[type="text"] {
+  height:28px;
+}
 /* Cehckbox Fix. Overwrite checbox settings of BS ********************************************/
 .wpdevbk input[type="checkbox"]{
     -moz-box-sizing: border-box;
@@ -1653,7 +1656,7 @@ html[xmlns] .clearfix-height.hidden_items {
     text-decoration: none;
     text-shadow: 0 1px 0 #F1F1F1;
     line-height: 18px;    
-    padding: 4px 14px 6px 34px;
+    padding: 4px 14px 6px;/* 34px; */
     margin: 0;
 }
 #booking_listings_interface_header #menu-wpdevplugin .nav-tab {
