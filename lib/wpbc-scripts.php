@@ -181,15 +181,15 @@ function wpbc_load_css( $where_to_load = 'both') {
     if ( ( $where_to_load == 'admin' ) || ( $where_to_load == 'both' ) ) {
         // Admin            
         wp_enqueue_style('wpbc-css-chosen',    WPDEV_BK_PLUGIN_URL . '/interface/chosen/chosen'.((WP_BK_MIN)?'.min':'').'.css', array( ), '1.0');
-        wp_enqueue_style('wpbc-css-admin', WPDEV_BK_PLUGIN_URL . '/css/admin'.((WP_BK_MIN)?'.min':'').'.css', array( ), '1.0');
-        wp_enqueue_style('wpbc-css-admin-booking-listing', WPDEV_BK_PLUGIN_URL . '/css/admin-booking-listing'.((WP_BK_MIN)?'.min':'').'.css', array( 'wpbc-css-admin'  ), '1.0');
-        wp_enqueue_style('wpbc-css-admin-mobile', WPDEV_BK_PLUGIN_URL . '/css/admin-mobile'.((WP_BK_MIN)?'.min':'').'.css', array( 'wpbc-css-admin' ), '1.0');        
+        wp_enqueue_style('wpbc-css-admin', WPDEV_BK_PLUGIN_URL . '/css/admin'.((WP_BK_MIN)?'.min':'').'.css', array( ), '1.1');
+        wp_enqueue_style('wpbc-css-admin-booking-listing', WPDEV_BK_PLUGIN_URL . '/css/admin-booking-listing'.((WP_BK_MIN)?'.min':'').'.css', array( 'wpbc-css-admin'  ), '1.1');
+        wp_enqueue_style('wpbc-css-admin-mobile', WPDEV_BK_PLUGIN_URL . '/css/admin-mobile'.((WP_BK_MIN)?'.min':'').'.css', array( 'wpbc-css-admin' ), '1.1');        
         // wp_enqueue_style(  'wpdev-bk-jquery-ui', WPDEV_BK_PLUGIN_URL. '/css/jquery-ui.css', array(), false, 'screen' );        
     }
     
     if ( ( $where_to_load == 'client' ) || ( $where_to_load == 'both' ) ) {
         // Client    
-        wp_enqueue_style('wpbc-css-client', WPDEV_BK_PLUGIN_URL . '/css/client'.((WP_BK_MIN)?'.min':'').'.css', array( ), '1.0');    
+        wp_enqueue_style('wpbc-css-client', WPDEV_BK_PLUGIN_URL . '/css/client'.((WP_BK_MIN)?'.min':'').'.css', array( ), '1.1');    
         wp_enqueue_style('wpbc-css-calendar', WPDEV_BK_PLUGIN_URL . '/css/calendar'.((WP_BK_MIN)?'.min':'').'.css', array( ), '1.0');
         wp_enqueue_style('wpbc-css-calendar-skin', WPDEV_BK_PLUGIN_URL . str_replace(WPDEV_BK_PLUGIN_URL, '', get_bk_option( 'booking_skin')) , array( ), '1.0');
     }

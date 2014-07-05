@@ -50,9 +50,21 @@
 }
 .booking_form_div textarea,
 .booking_form_div input[type="text"] {
-/*    box-sizing: content-box;
+    box-sizing: padding-box;
+    -mox-box-sizing: padding-box;
+    -webkit-box-sizing: padding-box;
+    height:28px;
+    padding:4px;
+}
+.booking_search_form input[type="text"] {
+    box-sizing: content-box;
     -mox-box-sizing: content-box;
-    -webkit-box-sizing: content-box;*/
+    -webkit-box-sizing: content-box;
+    height:18px;
+    padding:4px;
+}
+.booking_form_div textarea {
+    height:auto;
 }
 .booking_form_div .button,
 .booking_form_div .submit,

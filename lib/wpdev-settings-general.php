@@ -927,8 +927,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
                         <div <?php $my_close_open_win_id = 'bk_general_settings_recomended_plugins'; ?>  id="<?php echo $my_close_open_win_id; ?>" class="gdrgrid postbox <?php if ( '1' == get_user_option( 'booking_win_' . $my_close_open_win_id ) ) echo 'closed'; ?>" > <div title="<?php _e('Click to toggle','wpdev-booking'); ?>" class="handlediv"  onclick="javascript:verify_window_opening(<?php echo get_bk_current_user_id(); ?>, '<?php echo $my_close_open_win_id; ?>');"><br></div>
                             <h3 class='hndle'><span><?php _e('Recommended WordPress Plugins','wpdev-booking'); ?></span></h3>
                             <div class="inside">
-                                <h2 style="margin:10px;"><?php _e('Booking Manager - show all old bookings'); ?> </h2>
-                                <img src="<?php echo WPDEV_BK_PLUGIN_URL . '/img/users-48x48.png'; ?>" style="float:left; padding:0px 10px 10px 0px;">
+                                <h2 style="margin:10px;"><?php _e('Booking Manager - show all old bookings'); ?> </h2>                                
 
                                 <p style="margin:0px;">
                             <?php printf(__('This wordpress plugin is  %sshow all approved and pending bookings from past%s. Show how many each customer is made bookings. Paid versions support %sexport to CSV, print layout, advanced filter%s. ','wpdev-booking'),'<strong>','</strong>','<strong>','</strong>'); ?> <br/>

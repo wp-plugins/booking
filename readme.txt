@@ -4,7 +4,7 @@ Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 5.1.4
+Stable tag: 5.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,6 +148,14 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 10. **Calendar Skins**. Select calendar skin for better fitting to your site design.
 
 == Changelog ==
+= 5.1.5 =
+- Features and issue fixings in All versions:
+ * Updates Polish translation, by Danek Szczepan
+ * New icons at setting tabs.
+ * CSS improvements for the text fields.
+-- Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
+ * New. Ability to use "placeholders" for the text fields in booking form fields customizaion. Exmaple: First Name (required: [text* name  placeholder:First_Name] , where "_" is meaning white space " ". (Personal, Business Small/Medium/Large, MultiUser)
+
 = 5.1.4 =
 - Features and issue fixings in All versions:
  * Improvement. Huge source code refactoring.

@@ -3,7 +3,7 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://wpbookingcalendar.com/demo/
 Description: Online reservation and availability checking service for your site.
-Version: 5.1.4
+Version: 5.1.5
 Author: wpdevelop
 Author URI: http://wpbookingcalendar.com/
 Tested WordPress Versions: 3.3 - 3.9.1
@@ -31,16 +31,26 @@ Change Log and Features for Future Releases :
 -----------------------------------------------
  * New/OLD Files:
  * =====================================
- * + ../lib/wpbc.php,
- * + ../lib/wpbc-ajax.php
- * + ../lib/wpbc-constants.php
- * + ../lib/wpbc-include.php
- * + ../lib/wpbc-scripts.php
- * - ../lib/wpdev-booking-ajax.php
- * - ../img/remove-32x32.png
- * - ../img/info-32x32.png
- * - ../img/accept-32x32.png
- * - ../img/warning-32x32.png
+ * - ../img/shopping_trolley.png
+ * - ../img/Season-64x64.png
+ * - ../img/users-48x48.png
+ * - ../img/General-setting-64x64.png
+ * - ../img/E-mail-64x64.png
+ * - ../img/Form-fields-64x64.png
+ * - ../img/availability.png
+ * - ../img/advanced_cost.png
+ * - ../img/coupon.png
+ * - ../img/Paypal-cost-64x64.png
+ * - ../img/Resources-64x64.png
+ * - ../img/Booking-search-64x64.png
+ * - ../img/Booking-costs-64x64.png
+ * - ../img/add-1-48x48.png
+ * - ../img/
+ * - ../img/
+ * - ../img/
+ * - ../img/
+ * 
+ * 
  * ====================================
 */
     

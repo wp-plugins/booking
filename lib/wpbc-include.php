@@ -30,6 +30,8 @@ require_once WPDEV_BK_PLUGIN_DIR . '/lib/wpbc-booking-new.php';                 
     
 require_once WPDEV_BK_PLUGIN_DIR . '/lib/wpbc-scripts.php';                     // Load CSS and JS
 
+// require_once WPDEV_BK_PLUGIN_DIR . '/lib/wpbc-google-calendar.php';             // Sync with Google Calendar 5.2.0
+
 if( is_admin() ) {
     
     require_once WPDEV_BK_PLUGIN_DIR . '/lib/wpdev-settings-general.php';       // S e t t i n g s        
