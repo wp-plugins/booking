@@ -153,7 +153,7 @@ If you have any further questions, please fill free to <a href="mailto:support@w
  * Updates Polish translation, by Danek Szczepan
  * New icons at setting tabs.
  * CSS improvements for the text fields.
--- Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
+- Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
  * New. Ability to use "placeholders" for the text fields in booking form fields customizaion. Exmaple: First Name (required: [text* name  placeholder:First_Name] , where "_" is meaning white space " ". (Personal, Business Small/Medium/Large, MultiUser)
 
 = 5.1.4 =
