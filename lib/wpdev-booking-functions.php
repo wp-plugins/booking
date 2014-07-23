@@ -893,7 +893,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
                                                          'siteurl' => htmlspecialchars_decode( '<a href="'.home_url().'">' . home_url() . '</a>'),
                                                          'resource_title'=> apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
                                                          'bookingtype' => apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
-                                                         'denyreason' => $denyreason                                                       
+                                                         'denyreason' => $denyreason,
+                                                         'remote_ip'     => $_SERVER['REMOTE_ADDR'],           // The IP address from which the user is viewing the current page. 
+                                                         'user_agent'    => $_SERVER['HTTP_USER_AGENT'],       // Contents of the User-Agent: header from the current request, if there is one. 
+                                                         'request_url'   => $_SERVER['HTTP_REFERER'],          // The address of the page (if any) where action was occured. Because we are sending it in Ajax request, we need to use the REFERER HTTP
+                                                         'current_date' => date_i18n(get_bk_option( 'booking_date_format') ),
+                                                         'current_time' => date_i18n(get_bk_option( 'booking_time_format') )                                                    
+                                                       
                                                        )
                                                  );
 
@@ -986,7 +992,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
                                                          'siteurl' => htmlspecialchars_decode( '<a href="'.home_url().'">' . home_url() . '</a>'),
                                                          'resource_title'=> apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
                                                          'bookingtype' => apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
-                                                         'denyreason' => $denyreason
+                                                         'denyreason' => $denyreason,
+                                                         'remote_ip'     => $_SERVER['REMOTE_ADDR'],           // The IP address from which the user is viewing the current page. 
+                                                         'user_agent'    => $_SERVER['HTTP_USER_AGENT'],       // Contents of the User-Agent: header from the current request, if there is one. 
+                                                         'request_url'   => $_SERVER['HTTP_REFERER'],          // The address of the page (if any) where action was occured. Because we are sending it in Ajax request, we need to use the REFERER HTTP
+                                                         'current_date' => date_i18n(get_bk_option( 'booking_date_format') ),
+                                                         'current_time' => date_i18n(get_bk_option( 'booking_time_format') )                                                                                                           
                                                        )
                                                  );
 
@@ -1069,6 +1080,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
                                                      'siteurl' => htmlspecialchars_decode( '<a href="'.home_url().'">' . home_url() . '</a>'),
                                                      'resource_title'=> apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
                                                      'bookingtype' => apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
+                                                     'remote_ip'     => $_SERVER['REMOTE_ADDR'],           // The IP address from which the user is viewing the current page. 
+                                                     'user_agent'    => $_SERVER['HTTP_USER_AGENT'],       // Contents of the User-Agent: header from the current request, if there is one. 
+                                                     'request_url'   => $_SERVER['HTTP_REFERER'],          // The address of the page (if any) where action was occured. Because we are sending it in Ajax request, we need to use the REFERER HTTP
+                                                     'current_date' => date_i18n(get_bk_option( 'booking_date_format') ),
+                                                     'current_time' => date_i18n(get_bk_option( 'booking_time_format') )                                                                                                       
                                                    )
                                              );
         $mail_body_to_send = str_replace('[content]', $booking_form_show['content'], $mail_body_to_send);
@@ -1145,9 +1161,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
                                                      'siteurl' => htmlspecialchars_decode( '<a href="'.home_url().'">' . home_url() . '</a>'),
                                                      'resource_title'=> apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
                                                      'bookingtype' => apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
+                                                     'remote_ip'     => $_SERVER['REMOTE_ADDR'],           // The IP address from which the user is viewing the current page. 
+                                                     'user_agent'    => $_SERVER['HTTP_USER_AGENT'],       // Contents of the User-Agent: header from the current request, if there is one. 
+                                                     'request_url'   => $_SERVER['HTTP_REFERER'],          // The address of the page (if any) where action was occured. Because we are sending it in Ajax request, we need to use the REFERER HTTP
+                                                     'current_date' => date_i18n(get_bk_option( 'booking_date_format') ),
+                                                     'current_time' => date_i18n(get_bk_option( 'booking_time_format') )                                                    
                                                    )
                                              );
-        
         $mail_body_to_send = str_replace('[content]', $booking_form_show['content'], $mail_body_to_send);
         $mail_body_to_send = str_replace('[moderatelink]', htmlspecialchars_decode(
                 '<a href="'.site_url()  . '/wp-admin/admin.php?page='. WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME .'wpdev-booking&view_mode=vm_listing&tab=actions&wh_booking_id='. $booking_id .'">'
@@ -1274,7 +1294,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
                                                      'siteurl' => htmlspecialchars_decode( '<a href="'.home_url().'">' . home_url() . '</a>'),
                                                      'resource_title'=> apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
                                                      'bookingtype' => apply_bk_filter('wpdev_check_for_active_language', $bk_title ),
-                                                     'paymentreason' => $reason
+                                                     'paymentreason' => $reason,
+                                                     'remote_ip'     => $_SERVER['REMOTE_ADDR'],           // The IP address from which the user is viewing the current page. 
+                                                     'user_agent'    => $_SERVER['HTTP_USER_AGENT'],       // Contents of the User-Agent: header from the current request, if there is one. 
+                                                     'request_url'   => $_SERVER['HTTP_REFERER'],          // The address of the page (if any) where action was occured. Because we are sending it in Ajax request, we need to use the REFERER HTTP
+                                                     'current_date' => date_i18n(get_bk_option( 'booking_date_format') ),
+                                                     'current_time' => date_i18n(get_bk_option( 'booking_time_format') )                                                                                                       
                                                    )
                                              );
         $mail_body_to_send = str_replace('[content]', $booking_form_show['content'], $mail_body_to_send);
