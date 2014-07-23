@@ -4,7 +4,7 @@ Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 5.1.5
+Stable tag: 5.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,11 +148,23 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 10. **Calendar Skins**. Select calendar skin for better fitting to your site design.
 
 == Changelog ==
+= 5.1.6 =
+- Features and issue fixings in All versions:
+ * Fix issue of not saving Booking Calendar Widget for sidebars at the WordPress > Appearance > Widgets menu page. Issue was existing in updates 5.1.4 and 5.1.5
+ * Updated Italian transaltion by Nuoro di Murgia Ivan. 
+- Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
+ * New shortcode for email templates. [remote_ip] - inserting IP address of the user who made this action (Personal, Business Small/Medium/Large, MultiUser)
+ * New shortcode for email templates. [user_agent] - inserting contents of the User-Agent: header from the current request, if there is one (Personal, Business Small/Medium/Large, MultiUser)
+ * New shortcode for email templates. [request_url] - inserting address of the page (if any), where visitor make this action (Personal, Business Small/Medium/Large, MultiUser)
+ * New shortcode for email templates. [current_date] - inserting date of this action (Personal, Business Small/Medium/Large, MultiUser)
+ * New shortcode for email templates. [current_time] - inserting time of this action (Personal, Business Small/Medium/Large, MultiUser)
+ * Fix issue (exist  in versions 5.1.4 - 5.1.5) of not sending emails to  the correct ("owner") regular  user, depending from the booking resource, where visitor make the new booking, but sending this email  to the last logged in user (MultiUser). 
+
 = 5.1.5 =
 - Features and issue fixings in All versions:
+ * Updates Polish translation, by Danek Szczepan
  * New icons at setting tabs.
  * CSS improvements for the text fields.
- * Updates Polish translation, by Danek Szczepan
 - Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
  * New. Ability to use "placeholders" for the text fields in booking form fields customizaion. Exmaple: First Name (required: [text* name  placeholder:First_Name] , where "_" is meaning white space " ". (Personal, Business Small/Medium/Large, MultiUser)
 
@@ -404,6 +416,7 @@ Plugin supports following languages:
 - Croatian[95% Completed]
 - Norwegian[81% Completed]
 - Danish[82% Completed]
+- Italian[47% Completed]
 - Slovak [43% Completed]
 - French[37% Completed]
 - Swedish[28% Completed]
@@ -412,7 +425,6 @@ Plugin supports following languages:
 - Dutch[23% Completed]
 - Hebrew[20% Completed]
 - Czech [20% Completed]
-- Italian[17% Completed]
 - Spanish[16% Completed]
 - Belorussian[13% Completed]
 - German[8% Completed]

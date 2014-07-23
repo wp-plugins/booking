@@ -35,7 +35,6 @@ msgstr "Date"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:121
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:242
-#, fuzzy
 msgid "Full cost of the booking"
 msgstr "Costo"
 
@@ -91,7 +90,6 @@ msgstr "Indirizzo (richiesto)"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:249
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_s.php:111
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3815
-#, fuzzy
 msgid "City (required)"
 msgstr "Città"
 
@@ -99,7 +97,6 @@ msgstr "Città"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:250
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_s.php:112
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3816
-#, fuzzy
 msgid "Post code (required)"
 msgstr "Codice postale"
 
@@ -107,7 +104,6 @@ msgstr "Codice postale"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:251
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_s.php:113
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3817
-#, fuzzy
 msgid "Country (required)"
 msgstr "Paese"
 
@@ -128,7 +124,6 @@ msgid "Details"
 msgstr "Dettagli"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:133
-#, fuzzy
 msgid "Coupon"
 msgstr "Paese"
 
@@ -153,7 +148,6 @@ msgid "Send"
 msgstr "Invia"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:170
-#, fuzzy
 msgid ""
 "Try selecting fewer visitors. The number of visitors may be more than the "
 "number of available units on selected day(s)!"
@@ -179,7 +173,6 @@ msgid "Search results"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:842
-#, fuzzy
 msgid "Book now"
 msgstr "Compra adesso"
 
@@ -191,7 +184,6 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:1153
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:138
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1206
-#, fuzzy
 msgid "Search"
 msgstr "Marzo"
 
@@ -209,7 +201,6 @@ msgid "The folowing pending booking(s): %s deleted."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:2612
-#, fuzzy
 msgid "Maximum available booking resource items"
 msgstr "Limite massimo di camere disponibili per ogni tipologia"
 
@@ -252,7 +243,6 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:2852
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:735
-#, fuzzy
 msgid "Booking resources management"
 msgstr "Gestione di"
 
@@ -290,7 +280,6 @@ msgstr "Nome della tipologia"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:2861
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3920
-#, fuzzy
 msgid "Number of resource items inside of parent resource"
 msgstr "Nomi degli articoli dalla risorsa"
 
@@ -303,7 +292,6 @@ msgstr "Capienza"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:2966
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3921
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4063
-#, fuzzy
 msgid "Parent"
 msgstr "Pagamento"
 
@@ -316,20 +304,17 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:2865
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3924
-#, fuzzy
 msgid "Maximum number of visitors for resource"
 msgstr "Numero di ospiti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:2865
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3924
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_s.php:1737
-#, fuzzy
 msgid "Max"
 msgstr "Mar"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:2865
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3924
-#, fuzzy
 msgid "visitors"
 msgstr "Ospiti"
 
@@ -366,7 +351,6 @@ msgid "Title"
 msgstr "Titolo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:2981
-#, fuzzy
 msgid "Add new resource"
 msgstr "Aggiungi una nuova risorsa da prenotare"
 
@@ -384,12 +368,11 @@ msgstr "Parametri avanzati"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3045
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3169
-#, fuzzy
 msgid "Set capacity based on number of visitors"
 msgstr "Numero di ospiti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3051
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Check this box if you want total availability (daily capacity) to depend on "
 "the number of selected visitors %s."
@@ -423,13 +406,11 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3089
-#, fuzzy
 msgid "Show availability"
 msgstr "Disponibilità"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3096
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3318
-#, fuzzy
 msgid ""
 "Check this box to display the available number of booking resources with a "
 "tooltip, when mouse hovers over each day on the calendar(s)."
@@ -449,7 +430,6 @@ msgstr "Immetti la tua descrizione per la %sdisponibilità%s "
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3116
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3216
-#, fuzzy
 msgid "Disable bookings in different booking resources"
 msgstr "Errore durante laggiornamento dal DB dei filtri di prenotazione"
 
@@ -461,12 +441,10 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3162
-#, fuzzy
 msgid "Advanced"
 msgstr "Parametri avanzati"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3176
-#, fuzzy
 msgid ""
 "Check this box if you want total availability (daily capacity) to depend on "
 "the number of selected visitors."
@@ -500,7 +478,6 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3190
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:519
-#, fuzzy
 msgid "Type of days selection"
 msgstr "Selezione multipla dei giorni"
 
@@ -517,7 +494,6 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:618
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:654
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1225
-#, fuzzy
 msgid "Note"
 msgstr ""
 "%sImportante!!!%s Nota bene, se mostri il calendario di prenotazione "
@@ -546,7 +522,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3221
-#, fuzzy
 msgid ""
 "Check this box to dissable reservations, which can be stored in different "
 "booking resources."
@@ -563,7 +538,6 @@ msgid "Use pending days as available"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3262
-#, fuzzy
 msgid ""
 "Check this box if you want to show the pending days as available in calendars"
 msgstr ""
@@ -584,12 +558,10 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3311
-#, fuzzy
 msgid "Show availability in tooltip"
 msgstr "Disponibilità"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3327
-#, fuzzy
 msgid "Availability Title"
 msgstr "Disponibilità"
 
@@ -606,41 +578,34 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3397
-#, fuzzy
 msgid "Coupon Deleted"
 msgstr "Cancellato"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3443
-#, fuzzy
 msgid "Coupon created"
 msgstr "Codice postale"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3451
-#, fuzzy
 msgid "Add New Discount Coupon"
 msgstr "Aggiungi nuovo prezzo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3458
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3562
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3603
-#, fuzzy
 msgid "Coupon Code"
 msgstr "Codice postale"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3461
-#, fuzzy
 msgid "Enter coupon code."
 msgstr "Codice postale"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3466
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3563
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3606
-#, fuzzy
 msgid "Savings"
 msgstr "Salvataggio..."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3470
-#, fuzzy
 msgid "Fixed Amount"
 msgstr "deposito fisso"
 
@@ -655,7 +620,6 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3479
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3565
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3617
-#, fuzzy
 msgid "Expiration Date"
 msgstr "Formato data"
 
@@ -664,7 +628,6 @@ msgid "Select Expiration Date of the coupon."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3493
-#, fuzzy
 msgid "Minimum Booking Cost"
 msgstr "Costo"
 
@@ -686,7 +649,6 @@ msgstr "Risorse"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3510
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3587
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:324
-#, fuzzy
 msgid "All"
 msgstr "per tutti i giorni"
 
@@ -695,7 +657,6 @@ msgid "Select booking resources, where is possible to apply this coupon code."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3530
-#, fuzzy
 msgid "Add New Coupon"
 msgstr "Aggiungi nuovo prezzo"
 
@@ -704,7 +665,6 @@ msgid "The coupon code your customers will be using to receive the discount."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3563
-#, fuzzy
 msgid "The amount which will be saved. Enter only digits."
 msgstr "di ogni camera da prenotare. Inserire solo numeri."
 
@@ -714,7 +674,6 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3564
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3612
-#, fuzzy
 msgid "Minimum Purchase"
 msgstr "Acquista"
 
@@ -739,14 +698,13 @@ msgid "Warning"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3623
-#, fuzzy
 msgid "Do you really want to delete this item?"
 msgstr "Vuoi realmente cancellare?"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3638
-#, fuzzy, php-format
+#, php-format
 msgid "%s - coupon field, "
-msgstr "Questo campo è obbligatorio"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3639
 #, php-format
@@ -754,28 +712,23 @@ msgid "Example: %s "
 msgstr "Esempio: %s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3676
-#, fuzzy
 msgid "Search form customization"
 msgstr "Personalizzazione campi modulo di fatturazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3681
-#, fuzzy
 msgid "Inlinee Search Form Template"
 msgstr "Formato ora"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3682
-#, fuzzy
 msgid "Horizontal Search Form Template"
 msgstr "Mostra / nascondi suggerimenti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3683
-#, fuzzy
 msgid "Standard Search Form Template"
 msgstr "Standard"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3685
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1581
-#, fuzzy
 msgid "Reset current Form"
 msgstr "Modulo"
 
@@ -806,40 +759,39 @@ msgid "%s - search inside posts/pages which have this tag, "
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3701
-#, fuzzy, php-format
+#, php-format
 msgid "%s - check-in date, "
-msgstr "Formato data"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3702
-#, fuzzy, php-format
+#, php-format
 msgid "%s - check-out date, "
 msgstr "%s - campo casella di controllo,"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3703
-#, fuzzy, php-format
+#, php-format
 msgid "%s - default selection number of visitors, "
-msgstr "Numero di ospiti"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3704
-#, fuzzy, php-format
+#, php-format
 msgid "Example: %s - custom number of visitor selections\""
-msgstr "Numero di ospiti"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3705
-#, fuzzy, php-format
+#, php-format
 msgid "%s - search button, "
 msgstr "Esempio: %s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3706
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3745
-#, fuzzy, php-format
+#, php-format
 msgid "%s - new line "
 msgstr "%s - inserimento nuova linea"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3707
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3746
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3736
-#, fuzzy
 msgid "Use any other HTML tags (carefully)."
 msgstr "utilizza altri tags HTML (attenzione)."
 
@@ -850,7 +802,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3718
-#, fuzzy
 msgid "Reset to default search form content"
 msgstr "Azzera al contenuto del modulo di default"
 
@@ -882,32 +833,31 @@ msgid "Save Changes"
 msgstr "Salva modifiche"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3728
-#, fuzzy
 msgid "Customization of found booking resource items"
 msgstr "Costo prenotazione di ogni camera"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3737
-#, fuzzy, php-format
+#, php-format
 msgid "%s - resource title, "
-msgstr "Titolo"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3738
-#, fuzzy, php-format
+#, php-format
 msgid "%s - link to the page with booking form, "
 msgstr "%s - inserimento risorsa per la tipologia di camera"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3739
-#, fuzzy, php-format
+#, php-format
 msgid "%s - availability of booking resource, "
 msgstr "%s - inserimento risorsa per la tipologia di camera"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3740
-#, fuzzy, php-format
+#, php-format
 msgid "%s - maximum number of visitors for the booking resource, "
 msgstr "%s - inserimento risorsa per la tipologia di camera"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3741
-#, fuzzy, php-format
+#, php-format
 msgid "%s - cost of booking the resource, "
 msgstr "%s - inserimento risorsa per la tipologia di camera"
 
@@ -923,21 +873,18 @@ msgid "%s - booking info, taken from the excerpt associated with the post, "
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3755
-#, fuzzy
 msgid "Reset to default form"
 msgstr "Predefinito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3773
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3783
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3791
-#, fuzzy
 msgid "Check in"
 msgstr "durata"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3774
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3784
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3792
-#, fuzzy
 msgid "Check out"
 msgstr "durata"
 
@@ -948,7 +895,6 @@ msgid "Guests"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3832
-#, fuzzy
 msgid "Search Cache Settings"
 msgstr "configurazioni"
 
@@ -957,7 +903,6 @@ msgid "Cache expiration"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3844
-#, fuzzy
 msgid "hour(s)"
 msgstr "per 1 ora"
 
@@ -985,17 +930,14 @@ msgid "Reset cache"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3959
-#, fuzzy
 msgid "Parent Resource"
 msgstr "Nome della tipologia"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3984
-#, fuzzy
 msgid "Max visitors"
 msgstr "Ospiti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4048
-#, fuzzy
 msgid "Capacity: "
 msgstr "Capienza"
 
@@ -1012,18 +954,15 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4091
-#, fuzzy
 msgid "Resources count"
 msgstr "Risorse"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4098
-#, fuzzy
 msgid "Create several booking resources for one time"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4112
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2256
-#, fuzzy
 msgid "Default form"
 msgstr "Predefinito"
 
@@ -1040,7 +979,6 @@ msgid "Standard"
 msgstr "Standard"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4122
-#, fuzzy
 msgid "Select default custom booking form"
 msgstr "Cancella i  dati di prenotazione"
 
@@ -1065,7 +1003,6 @@ msgstr "Superior"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4317
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_s.php:2376
-#, fuzzy
 msgid "Resource #1"
 msgstr "per 1 giorno"
 
@@ -1076,7 +1013,6 @@ msgstr "Suite Presidenziale"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4318
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_s.php:2377
-#, fuzzy
 msgid "Resource #2"
 msgstr "Nome della tipologia"
 
@@ -1088,12 +1024,10 @@ msgstr "Royal Villa"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:4319
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_s.php:2378
-#, fuzzy
 msgid "Resource #3"
 msgstr "Nome della tipologia"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:241
-#, fuzzy
 msgid "night(s)"
 msgstr "per una notte"
 
@@ -1131,7 +1065,6 @@ msgstr "per 1 giorno"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:311
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2952
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2992
-#, fuzzy
 msgid "from the cost of 1 day "
 msgstr "per 1 giorno"
 
@@ -1139,9 +1072,9 @@ msgstr "per 1 giorno"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:312
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2953
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2994
-#, fuzzy, php-format
+#, php-format
 msgid "Additional cost in %s per 1 day"
-msgstr "Costo aggiuntivo per"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:284
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:313
@@ -1150,12 +1083,10 @@ msgstr "Costo aggiuntivo per"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2958
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3000
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3001
-#, fuzzy
 msgid " for all days!"
 msgstr "per tutti i giorni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:285
-#, fuzzy
 msgid "for all days!"
 msgstr "per tutti i giorni"
 
@@ -1163,13 +1094,11 @@ msgstr "per tutti i giorni"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:892
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:4305
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:4311
-#, fuzzy
 msgid "Custom Form"
 msgstr "Personalizza"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:902
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:4326
-#, fuzzy
 msgid "Load selected booking form"
 msgstr "Modulo di prenotazione"
 
@@ -1179,32 +1108,26 @@ msgid "Load"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:910
-#, fuzzy
 msgid "Delete selected booking form"
 msgstr "Modulo di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:913
-#, fuzzy
 msgid "Do you really want to delete selected booking form ?"
 msgstr "Vuoi veramente cancellare questa tipologia?"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:920
-#, fuzzy
 msgid "Add new custom form"
 msgstr "Aggiungi nuovo prezzo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:921
-#, fuzzy
 msgid "Add New Custom Form"
 msgstr "Aggiungi nuovo prezzo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:926
-#, fuzzy
 msgid "Type the name of booking form"
 msgstr "Modulo di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:929
-#, fuzzy
 msgid "Create new form"
 msgstr "Modulo"
 
@@ -1215,7 +1138,6 @@ msgid "Create"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:934
-#, fuzzy
 msgid "Delete form"
 msgstr "Cancella"
 
@@ -1238,42 +1160,37 @@ msgid "There are no extended booking forms"
 msgstr "Non ci sono moduli di prenotazione estesa"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1092
-#, fuzzy
 msgid "Booking form type:"
 msgstr "Modulo di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1099
-#, fuzzy
 msgid "Select type of booking form"
 msgstr "Modulo di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1132
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1625
-#, fuzzy
 msgid "Booking Form"
 msgstr "Modulo di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1212
-#, fuzzy
 msgid "Standard booking resource cost"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1213
-#, fuzzy
 msgid "Total booking resource cost"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1525
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "%s - show cost hint for full booking in real time, depending on number of "
 "days selected and form elements."
-msgstr "Sconti / Costo aggiuntivo"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1526
-#, fuzzy, php-format
+#, php-format
 msgid "Example: %sThe full cost of payment: %s"
-msgstr "%s - inserimento prezzo di questa prenotazione,"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1527
 #, php-format
@@ -1283,16 +1200,16 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1528
-#, fuzzy, php-format
+#, php-format
 msgid "Example: %sThe original cost for payment: %s "
-msgstr "%s - inserimento prezzo di questa prenotazione,"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1529
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "%s - show cost hint of additional booking cost, which depends from selection "
 "of form elements."
-msgstr "Sconti / Costo aggiuntivo"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1530
 #, php-format
@@ -1312,7 +1229,7 @@ msgid "Add booking"
 msgstr "Aggiungi prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:1532
-#, fuzzy, php-format
+#, php-format
 msgid "Example: %s"
 msgstr "Esempio: %s"
 
@@ -1323,7 +1240,6 @@ msgstr "si"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2178
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2182
-#, fuzzy
 msgid ""
 "Setting rate or cost, which  is depend from number of selected days for the "
 "resource"
@@ -1340,7 +1256,6 @@ msgstr "Tariffe"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2179
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2221
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2225
-#, fuzzy
 msgid "Valuation days"
 msgstr "giorni"
 
@@ -1349,7 +1264,6 @@ msgstr "giorni"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/ipay88.php:448
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/paypal.php:763
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/sage.php:526
-#, fuzzy
 msgid "Deposit"
 msgstr "deposito fisso"
 
@@ -1364,12 +1278,10 @@ msgid "Setting the default form for the specific resource"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2188
-#, fuzzy
 msgid "Default Form"
 msgstr "Predefinito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2224
-#, fuzzy
 msgid "Set the cost based on the number of days selected for the reservation"
 msgstr ""
 "Configurazione dei costi in base al numero di giorni selezionati per la "
@@ -1383,12 +1295,10 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2232
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2236
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3231
-#, fuzzy
 msgid "Deposit amount"
 msgstr "deposito fisso"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2235
-#, fuzzy
 msgid "Set the deposit payment required for the payment form"
 msgstr "Inserisci il nome del servizio o la motivazione per il pagamento qui."
 
@@ -1411,17 +1321,16 @@ msgid "available"
 msgstr "disponibile"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2369
-#, fuzzy
 msgid "Availability booking type"
 msgstr "Disponibilità"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2374
-#, fuzzy, php-format
+#, php-format
 msgid "All days for %s"
-msgstr "per tutti i giorni"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2384
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Select %s days by activating specific season filter below or %sadd new "
 "season filter%s"
@@ -1431,7 +1340,6 @@ msgstr "Seleziona %s i giorni sotto o %saggiungi un nuovo filtro di stagione%s"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2417
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:4117
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:4138
-#, fuzzy
 msgid "Season Filter Name"
 msgstr "Filtro"
 
@@ -1444,7 +1352,6 @@ msgstr "Filtro"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/form/class-wpbc-form-help.php:566
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:473
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:481
-#, fuzzy
 msgid "Description"
 msgstr "Descrizione disponibilità"
 
@@ -1473,12 +1380,11 @@ msgid "Active"
 msgstr "Attivo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2505
-#, fuzzy
 msgid "Seasonal rates of booking resource"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2511
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Enter seasonal rate(s) (cost diference in %s from standard cost %s or a "
 "fixed cost) of the booking resource (%s) or %sAdd a new seasonal filter%s"
@@ -1493,12 +1399,10 @@ msgid "Final cost"
 msgstr "Costo finale"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2527
-#, fuzzy
 msgid "Season Filter"
 msgstr "Filtro"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2558
-#, fuzzy
 msgid "Rate"
 msgstr "Tariffe"
 
@@ -1528,7 +1432,6 @@ msgstr "per 1 ora"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2596
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3548
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3797
-#, fuzzy
 msgid "Filter Name"
 msgstr "Filtro"
 
@@ -1536,7 +1439,6 @@ msgstr "Filtro"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2844
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3297
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/authorizenet.php:340
-#, fuzzy
 msgid "Note!"
 msgstr ""
 "%sImportante!!!%s Nota bene, se mostri il calendario di prenotazione "
@@ -1548,19 +1450,17 @@ msgid "Check boxe(s) at left side if you want to activate specific cost."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2608
-#, fuzzy
 msgid "Update Rates"
 msgstr "Tariffe"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2843
-#, fuzzy
 msgid "Set cost of booking resource based on the number of days selected"
 msgstr ""
 "Fissa il costo della tipologia di camera in base al numero di giorni "
 "selezionati per la prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2844
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "If you add costs here, %srates%s for this booking resource will not take "
 "effect !!!"
@@ -1599,12 +1499,10 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2864
-#, fuzzy
 msgid "Number of Days"
 msgstr "giorni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2865
-#, fuzzy
 msgid "Cost Settings"
 msgstr "configurazioni"
 
@@ -1612,7 +1510,6 @@ msgstr "configurazioni"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2913
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3010
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3104
-#, fuzzy
 msgid "Season Filter of Check In date"
 msgstr "Date filtro"
 
@@ -1625,7 +1522,6 @@ msgstr "Per"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2890
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2966
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3078
-#, fuzzy
 msgid "Day Number(s)"
 msgstr "giorno/i"
 
@@ -1664,7 +1560,6 @@ msgstr "Costo"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2915
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3012
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3106
-#, fuzzy
 msgid "Any days"
 msgstr "giorni"
 
@@ -1682,7 +1577,6 @@ msgstr "Da"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:2964
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3075
-#, fuzzy
 msgid "Together"
 msgstr "Insieme"
 
@@ -1710,17 +1604,14 @@ msgid "for all days"
 msgstr "per tutti i giorni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3197
-#, fuzzy
 msgid "Set amount of deposit payment"
 msgstr "%s - inserimento prezzo di questa prenotazione,"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3206
-#, fuzzy
 msgid "Deposit payment total"
 msgstr "deposito fisso"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3209
-#, fuzzy
 msgid "Deposit payment is not active for booking resource"
 msgstr "Tariffe di stagione delle camere da prenotare"
 
@@ -1736,22 +1627,18 @@ msgid "Status"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3225
-#, fuzzy
 msgid "deposit payment for booking resource"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3240
-#, fuzzy
 msgid "fixed total in"
 msgstr "deposito fisso"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3241
-#, fuzzy
 msgid "of payment"
 msgstr "Pagamento"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:3247
-#, fuzzy
 msgid "Condition"
 msgstr "Cancella i  dati di prenotazione"
 
@@ -4089,7 +3976,7 @@ msgstr "per tutti i giorni"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/multiuser.php:1228
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1766
 msgid "Labels"
-msgstr ""
+msgstr "Etichette"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/lib_p.php:403
 #, fuzzy
@@ -5364,7 +5251,6 @@ msgid "Return URL from PayPal"
 msgstr "URL di ritorno da PayPal"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/paypal.php:553
-#, fuzzy
 msgid "The URL where visitor will be redirected after completing payment."
 msgstr ""
 "Un URL al quale verrà ricondotto il browser dellacquirente dopo aver "
@@ -5372,21 +5258,17 @@ msgstr ""
 "{Payment Canceled} pagina."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/paypal.php:554
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "For example, a URL to your site that displays a %s\"Thank you for the payment"
 "\"%s."
 msgstr ""
-"URL al quale verrà ricondotto il browser dellacquirente dopo aver completato "
-"il pagamento; per esempio, un URL nel tuo sito che mostra un messaggio di "
-"ringraziamento {Thank you for your payment page}."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/paypal.php:561
 msgid "Cancel Return URL from PayPal"
 msgstr "Cancella lURL di Ritorno da PayPal"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/paypal.php:568
-#, fuzzy
 msgid "The URL where the visitor will be redirected after completing payment."
 msgstr ""
 "Un URL al quale verrà ricondotto il browser dellacquirente dopo aver "
@@ -5394,14 +5276,11 @@ msgstr ""
 "{Payment Canceled} pagina."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/paypal.php:569
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "For example, the URL to your website that displays a %s\"Payment Canceled"
 "\"%s page."
 msgstr ""
-"Un URL al quale verrà ricondotto il browser dellacquirente dopo aver "
-"cancellato il pagamento; per esempio, un URL nel tuo sito che mostra una "
-"{Payment Canceled} pagina."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/paypal.php:582
 msgid ""
@@ -5415,17 +5294,14 @@ msgid "Make payments with payPal - its fast, free and secure!"
 msgstr "Effettua il pagamento con Paypal - è veloce, gratis e sicuro!"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/paypal.php:971
-#, fuzzy
 msgid "Enter your phone number"
 msgstr "Inserisci il tuo telefono"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/sage.php:20
-#, fuzzy
 msgid "Integration of Sage payment system"
 msgstr "Saggio per personalizzare il pagamento"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/sage.php:21
-#, fuzzy
 msgid "Sage"
 msgstr "Saggio per personalizzare il pagamento"
 
@@ -5434,7 +5310,7 @@ msgid "Sage payment customization"
 msgstr "Saggio per personalizzare il pagamento"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/sage.php:84
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "If you have no account on this system, please visit %s to create one. "
 "Simulator account emulates the Sage Pay account as well as a Test and Live "
@@ -5445,12 +5321,10 @@ msgstr ""
 "Test di Pagamento ed il sistema dal vivo."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/sage.php:88
-#, fuzzy
 msgid "Active Sage Pay"
 msgstr "Attivo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/sage.php:95
-#, fuzzy
 msgid " Check this box to use Sage Pay payment."
 msgstr "Seleziona questa casella per utilizzare il Saggio di pagamento."
 
@@ -5510,7 +5384,6 @@ msgid "AUTHENTICATE"
 msgstr "CONVALIDATO"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/sage.php:148
-#, fuzzy
 msgid ""
 "This can be DEFERRED or AUTHENTICATED if your Sage Pay account supports "
 "those payment types"
@@ -5527,7 +5400,6 @@ msgid "Israeli Shekel"
 msgstr "Shekel Israeliano"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/sage.php:312
-#, fuzzy
 msgid "ALL"
 msgstr "per tutti i giorni"
 
@@ -5537,12 +5409,10 @@ msgid "Pay using %s payment service"
 msgstr "Paga utilizzando %s servizi di pagamento"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/payments/wpbc-response.php:92
-#, fuzzy
 msgid "Payment rejected"
 msgstr "Pagamento"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:112
-#, fuzzy
 msgid "Form / Calendar"
 msgstr "Modulo"
 
@@ -5550,7 +5420,6 @@ msgstr "Modulo"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:127
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:140
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:154
-#, fuzzy
 msgid "Insertion of"
 msgstr "Informazione"
 
@@ -5562,12 +5431,10 @@ msgid "settings"
 msgstr "configurazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:125
-#, fuzzy
 msgid "Selection of form"
 msgstr "Modulo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:152
-#, fuzzy
 msgid "Editing of booking"
 msgstr "Prenotazione"
 
@@ -5600,12 +5467,10 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:204
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:206
-#, fuzzy
 msgid "Select shortcode to insert"
 msgstr "Inserisci calendario di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:211
-#, fuzzy
 msgid "Search form"
 msgstr "Modulo"
 
@@ -5617,13 +5482,11 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:236
-#, fuzzy
 msgid "Check this box to show search results on other page"
 msgstr ""
 "Flaggare se si desidera mostrare suggerimenti nel pannello di controllo."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:242
-#, fuzzy
 msgid "URL of search results:"
 msgstr "URL di ritorno da PayPal"
 
@@ -5632,7 +5495,6 @@ msgid "Type the URL of search results page."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:250
-#, fuzzy
 msgid "Title of Search results:"
 msgstr "Titolo"
 
@@ -5649,7 +5511,6 @@ msgid "Type the message, when nothing found."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:269
-#, fuzzy
 msgid "Search only for users:"
 msgstr "Reali Brasiliani (solo per utenti brasiliani)"
 
@@ -5660,7 +5521,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:290
-#, fuzzy
 msgid "Title:"
 msgstr "Titolo"
 
@@ -5696,7 +5556,6 @@ msgid "Saved"
 msgstr "Salvato"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:551
-#, fuzzy
 msgid "This booking resources does not exist"
 msgstr "Risorsa da prenotare"
 
@@ -5709,7 +5568,6 @@ msgid "Generating columns..."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:622
-#, fuzzy
 msgid "Exporting booking data..."
 msgstr "Prenotazione"
 
@@ -5722,7 +5580,6 @@ msgid "Saving to file"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:711
-#, fuzzy
 msgid "Export bookings"
 msgstr "Prenotazioni"
 
@@ -5735,27 +5592,22 @@ msgid "Download"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:730
-#, fuzzy
 msgid "Done!"
 msgstr "Telefono"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:753
-#, fuzzy
 msgid "Please Select"
 msgstr "Perfavore, inserire il prezzo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:898
-#, fuzzy
 msgid "link"
 msgstr "Links"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1019
-#, fuzzy
 msgid "Print bookings"
 msgstr "Prenotazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1040
-#, fuzzy
 msgid "The booking was canceled by the visitor."
 msgstr "Prenotazione"
 
@@ -5767,17 +5619,14 @@ msgid "Wrong booking hash in URL (probably expired)"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1093
-#, fuzzy
 msgid "The booking has been canceled successfully"
 msgstr "La sua prenotazione è stata modificata"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1232
-#, fuzzy
 msgid "Add New Booking Resource(s)"
 msgstr "Aggiungi una nuova risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1237
-#, fuzzy
 msgid "New Resource"
 msgstr "Aggiungi una nuova risorsa da prenotare"
 
@@ -5786,49 +5635,41 @@ msgid "Enter title here"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1243
-#, fuzzy
 msgid "Enter name of booking resource"
 msgstr "Tariffe di stagione delle camere da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1252
-#, fuzzy
 msgid "Advanced Options"
 msgstr "Parametri avanzati"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1253
-#, fuzzy
 msgid "Add new resource(s)"
 msgstr "Aggiungi una nuova risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1369
-#, fuzzy
 msgid "Default booking resource"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1385
-#, fuzzy
 msgid "Select your default booking resource."
 msgstr "Tariffe di stagione delle camere da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1389
-#, fuzzy
 msgid "Resources number per page"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1398
-#, fuzzy
 msgid ""
 "Select number of booking resources (single or parent) per page at Resource "
 "menu page"
 msgstr "Nomi degli articoli dalla risorsa"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1412
-#, fuzzy
 msgid "URL to edit bookings"
 msgstr "Modifica"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1414
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Type URL for %svisitors%s to edit bookings. You must insert %s shortcode "
 "into this page."
@@ -5837,7 +5678,6 @@ msgstr ""
 "Puoi utilizzare questo %s codice."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1432
-#, fuzzy
 msgid "Change hash after the booking is approved"
 msgstr "Email alla \"Persona\" dopo lapprovazione della prenotazione"
 
@@ -5853,7 +5693,7 @@ msgid "%s - start new translation section, where %s - locale of translation"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1450
-#, fuzzy, php-format
+#, php-format
 msgid "Example #1: %s - start French translation section"
 msgstr "Esempio #3: %s - diversi valori"
 
@@ -5868,7 +5708,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1468
-#, fuzzy
 msgid "New for Admin"
 msgstr "Email Admin"
 
@@ -5879,12 +5718,10 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1477
-#, fuzzy
 msgid "New for Visitor"
 msgstr "Aggiungi nuovo prezzo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1485
-#, fuzzy
 msgid ""
 "Customization of email template, which is sending to Visitor after approval "
 "of booking"
@@ -5897,12 +5734,10 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1495
-#, fuzzy
 msgid "Declined"
 msgstr "Cancellato"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1503
-#, fuzzy
 msgid ""
 "Customization of email template, which is sending after modification of "
 "booking"
@@ -5919,17 +5754,14 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1514
-#, fuzzy
 msgid "Payment request"
 msgstr "Pagamento"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1568
-#, fuzzy
 msgid "Standard Form Template"
 msgstr "Standard"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1569
-#, fuzzy
 msgid "2 Columns Form Template"
 msgstr "Numero di calendari"
 
@@ -5938,12 +5770,10 @@ msgid "Wizard Form Template(several steps)"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1572
-#, fuzzy
 msgid "Payment Form Template"
 msgstr "Pagamento"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1573
-#, fuzzy
 msgid "Time Slots Form Template"
 msgstr "Formato ora"
 
@@ -5952,12 +5782,10 @@ msgid "Time slots for different weekends Form Template"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1576
-#, fuzzy
 msgid "Hints Form Template"
 msgstr "Mostra / nascondi suggerimenti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1589
-#, fuzzy
 msgid "Reset Booking Form and Content of Booking Fields Form"
 msgstr "Costo prenotazione di ogni camera"
 
@@ -5972,30 +5800,25 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1613
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3761
-#, fuzzy
 msgid "Please configure the form fields!"
 msgstr "Campi modulo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1622
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1178
-#, fuzzy
 msgid "Customization of booking form fields"
 msgstr "Personalizzazione campi modulo di fatturazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1627
-#, fuzzy
 msgid ""
 "Customization of fields, which showing in the Booking Listing page for the "
 "specific booking"
 msgstr "Email alla \"Persona\" dopo la modifica della prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1630
-#, fuzzy
 msgid "Content of Booking Fields"
 msgstr "Campi"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1646
-#, fuzzy
 msgid "Default title of bookings"
 msgstr "Titolo"
 
@@ -6008,18 +5831,15 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1662
-#, fuzzy
 msgid "Incorrect date format"
 msgstr "Formato data"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1921
-#, fuzzy
 msgid "Booking Resource"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1931
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1540
-#, fuzzy
 msgid "All bookings"
 msgstr "Prenotazioni in sospeso"
 
@@ -6028,12 +5848,10 @@ msgid "All incoming bookings"
 msgstr "Prenotazioni in sospeso"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1940
-#, fuzzy
 msgid "New reservations made today"
 msgstr "Nuova prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1945
-#, fuzzy
 msgid "Reservations for today"
 msgstr "Informazione"
 
@@ -6055,7 +5873,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3260
-#, fuzzy
 msgid "Email to \"Admin\" after a new booking"
 msgstr "Email a \"Admin\" dopo la prenotazione nel sito"
 
@@ -6065,42 +5882,39 @@ msgstr "A"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3282
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:282
-#, fuzzy, php-format
+#, php-format
 msgid "Type default %sadmin email%s for booking confirmation"
 msgstr ""
 "Immettere %sla email amministratore%s per il controllo delle prenotazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3289
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Type the default %sadmin email%s sending the booking confimation. You can "
 "use this %s shortcode."
 msgstr ""
-"Immetti %sla mail di amministrazione%s dalla quale questa mail verrà inviata"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3296
-#, fuzzy, php-format
+#, php-format
 msgid "Type your email %ssubject%s for the booking confimation message."
 msgstr ""
 "Immetti la tua %smessaggio email per il controllo della prenotazione%s al "
 "sito."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3304
-#, fuzzy, php-format
+#, php-format
 msgid "Type your %semail message content for checking booking%s in. "
 msgstr ""
 "Immetti la tua %smessaggio email per il controllo della prenotazione%s al "
 "sito."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3312
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "For example: \"You have a new reservation %s on the following date(s): %s "
 "Contact information: %s You can approve or edit this booking at: %s Thank "
 "you, Reservation service.\""
 msgstr ""
-"Per esempio: \"Devi approvare una nuova prenotazione %s per la data: %s "
-"Informazione di dettaglio della persona:%s Grazie, Servizio prenotazioni.\""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3312
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3373
@@ -6111,24 +5925,23 @@ msgid "here"
 msgstr "qui"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3327
-#, fuzzy
 msgid "Email to \"Person\" after they make a new reservation"
 msgstr "Email alla \"Persona\"dopo che ha effettuato una prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3357
-#, fuzzy, php-format
+#, php-format
 msgid "Type email subject for %svisitor after creating a new reservation%s."
 msgstr ""
 "Immetti il tuo %smessaggio email per lospite dopo che ha effettuato una "
 "nuova prenotazione%s nel sito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3358
-#, fuzzy, php-format
+#, php-format
 msgid "Use these %s shortcodes."
-msgstr "Utilizza questi codici per la personalizzazione:"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3367
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Type your %semail message for visitor after creating a new reservation%s"
 msgstr ""
@@ -6136,64 +5949,56 @@ msgstr ""
 "nuova prenotazione%s nel sito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3373
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "For example: \"Your reservation %s on these date(s): %s is processing now! "
 "We will send confirmation by email. %s  You can edit the booking at this "
 "page: %s Thank you, Reservation service.\""
 msgstr ""
-"Per esempio: \"La sua prenotazione %s in data: %s è in fase di elaborazione! "
-"Perfavore, attenda la mail conferma. %sGrazie, Servizio Prenotazione.\""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3387
-#, fuzzy
 msgid "Email to \"Person\" after booking is approved"
 msgstr "Email alla \"Persona\" in seguito al rifiuto della prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3430
-#, fuzzy, php-format
+#, php-format
 msgid "Type your email subject for the %sapproved booking%s."
 msgstr ""
 "Immetti il tuo %smessaggio email per lapprovazione della prenotazione%s nel "
 "sito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3438
-#, fuzzy, php-format
+#, php-format
 msgid "Type your %semail message for the approved booking%s from the website"
 msgstr ""
 "Immetti il tuo %smessaggio email per lapprovazione della prenotazione%s nel "
 "sito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3446
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "For example: \"Your reservation %s on these date(s): %s has been approved."
 "%s  You can edit this booking on this page: %s . Thank you, Reservation "
 "service.\""
 msgstr ""
-"Per esempio: \"La sua prenotazione %s in data: %s è stata approvata.%sLa "
-"ringraziamo, Servizio Prenotazione.\""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3460
-#, fuzzy
 msgid "Email to \"Person\" after their booking has been denied"
 msgstr "Email alla \"Persona\"dopo che ha effettuato una prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3505
-#, fuzzy, php-format
+#, php-format
 msgid "Type your email subject for the %sdenied booking%s."
 msgstr ""
-"Immetti il soggetto della tua email per %sil rifiuto della prenotazione%s. "
-"Puoi utilizzare questi %s codici."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3512
-#, fuzzy, php-format
+#, php-format
 msgid "Type your %semail message for the denied booking%s from the website"
 msgstr ""
 "Immetti il tuo %smessaggio email per il rifiuto della prenotazione%s nel sito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3521
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "For example: \"Your reservation %s on these date(s): %s has been canceled. "
 "Please contact us for more information. %s Thank you, Reservation service.\""
@@ -6202,33 +6007,30 @@ msgstr ""
 "ringraziamo, Servizio Prenotazione.\""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3537
-#, fuzzy
 msgid "Email to \"Person\" after booking is modified"
 msgstr "Email alla \"Persona\" in seguito al rifiuto della prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3582
-#, fuzzy, php-format
+#, php-format
 msgid "Type your email subject for the %smodified booking%s. "
 msgstr ""
 "Immetti il tuo %smessaggio email per la modifica della prenotazione%s nel "
 "sito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3590
-#, fuzzy, php-format
+#, php-format
 msgid "Type your %semail message for the modified booking%s from the website"
 msgstr ""
 "Immetti il tuo %smessaggio email per la modifica della prenotazione%s nel "
 "sito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3599
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "For example: \"The reservation %s on these date(s): %s has been modified. "
 "%s  You can edit this booking on this page: %s . Thank you, Reservation "
 "service.\""
 msgstr ""
-"Per esempio: \"La sua prenotazione %s in data: %s è stata modificata dal "
-"nostro staff. %s La ringraziamo, Servizio Prenotazione.\""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3697
 msgid "Form fields"
@@ -6242,7 +6044,7 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3734
-#, fuzzy, php-format
+#, php-format
 msgid "%s - inserting data from fields of booking form"
 msgstr "%s - inserimento dati dai campi del modulo di prenotazione,"
 
@@ -6273,7 +6075,6 @@ msgstr "Email"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:3855
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:220
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:559
-#, fuzzy
 msgid "Times"
 msgstr "Durata"
 
@@ -6295,32 +6096,26 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:4013
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2148
-#, fuzzy
 msgid "New booking"
 msgstr "Aggiungi una nuova risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:4015
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Your reservation %s for: %s is processing now! We will send confirmation by "
 "email. %sYou can edit this booking at this page: %s  Thank you, %s"
 msgstr ""
-"La sua prenotazione %s per: %s è in fase di elaborazione! La preghiamo di "
-"attendere la email di conferma. %sLa ringrazio, %s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:4019
-#, fuzzy
 msgid "The reservation has been modified"
 msgstr "La sua prenotazione è stata modificata"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:4021
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "The reservation %s for: %s has been modified. %sYou can edit this booking on "
 "this page: %s  Thank you, %s"
 msgstr ""
-"La sua prenotazione %s per: %s è stata modificata dal nostro staff. %sLa "
-"ringraziamo, %s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:4082
 msgid "Sending request..."
@@ -6331,7 +6126,6 @@ msgid "Order number"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:4112
-#, fuzzy
 msgid "Register"
 msgstr "Riservato"
 
@@ -6349,7 +6143,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/wpdev-booking-search-widget.php:53
-#, fuzzy
 msgid "Search availability"
 msgstr "Disponibilità"
 
@@ -6358,17 +6151,14 @@ msgid "Nothing found."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/wpdev-booking-search-widget.php:65
-#, fuzzy
 msgid "Search results."
 msgstr "Diversi moduli"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/wpdev-booking-search-widget.php:71
-#, fuzzy
 msgid "Title of search widget"
 msgstr "Titolo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/wpdev-booking-search-widget.php:79
-#, fuzzy
 msgid "Title of search results"
 msgstr "Titolo"
 
@@ -6387,7 +6177,6 @@ msgid "Please type the %smessage ,what is showing, when  nothing found%s."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/wpdev-booking-search-widget.php:97
-#, fuzzy
 msgid "URL of Search Results"
 msgstr "URL di ritorno da PayPal"
 
@@ -6406,28 +6195,23 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-ajax.php:102
-#, fuzzy
 msgid "Set as Read"
 msgstr "Saggio di pagamento attivo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-ajax.php:102
-#, fuzzy
 msgid "Set as Unread"
 msgstr "Saggio di pagamento attivo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-ajax.php:159
-#, fuzzy
 msgid "Set as Approved"
 msgstr "Approvato"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-ajax.php:159
-#, fuzzy
 msgid "Set as Pending"
 msgstr "In sospeso"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-ajax.php:177
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1706
-#, fuzzy
 msgid "Reason for cancellation here"
 msgstr "Inserire qui il motivo della cancellazione"
 
@@ -6436,7 +6220,6 @@ msgid "Reason of cancellation here"
 msgstr "Inserire qui il motivo della cancellazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-booking-new.php:280
-#, fuzzy
 msgid "The code you entered is incorrect"
 msgstr "Il suo codice di accesso non è corretto"
 
@@ -6462,7 +6245,6 @@ msgid "Your emails do not the same"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-scripts.php:60
-#, fuzzy
 msgid "Please, select booking date(s) at Calendar."
 msgstr "Perfavore, seleziona la data della prenotazione/i nel calendario."
 
@@ -6495,7 +6277,6 @@ msgid "Add new booking from your post/page or from %sAdmin Panel%s."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-welcome.php:1039
-#, fuzzy
 msgid "Next Steps"
 msgstr "Mesi"
 
@@ -6505,7 +6286,7 @@ msgid "Check %sBooking Listing%s page for new bookings."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-welcome.php:1044
-#, fuzzy, php-format
+#, php-format
 msgid "Configure booking %sSettings%s."
 msgstr "%sprenotazione ora di arrivo%s"
 
@@ -6515,7 +6296,6 @@ msgid "Configure predefined set of your %sForm Fields%s."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-welcome.php:1053
-#, fuzzy
 msgid "Have a questions?"
 msgstr "configurazioni"
 
@@ -6525,9 +6305,9 @@ msgid "Check out our %sHelp%s"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-welcome.php:1058
-#, fuzzy, php-format
+#, php-format
 msgid "See %sFAQ%s."
-msgstr "Esempio: %s"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-welcome.php:1061
 #, php-format
@@ -6555,52 +6335,42 @@ msgid "Ok"
 msgstr "Ok"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:369
-#, fuzzy
 msgid "Select booking resource"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:402
-#, fuzzy
 msgid "Start month:"
 msgstr "Giorni del mese"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:412
-#, fuzzy
 msgid "Select start month of calendar"
 msgstr "Seleziona il numero di mesi da visualizzare per calendario."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:419
-#, fuzzy
 msgid "Show in the page:"
 msgstr "Mostrare il titolo della durata"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:425
-#, fuzzy
 msgid "Booking form with calendar"
 msgstr "Calendario di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:426
-#, fuzzy
 msgid "Only availability calendar"
 msgstr "Disponibilità"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:427
-#, fuzzy
 msgid "Only booking form"
 msgstr "Modulo di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:432
-#, fuzzy
 msgid "for"
 msgstr "Per"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:435
-#, fuzzy
 msgid "date"
 msgstr "Formato data"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:439
-#, fuzzy
 msgid ""
 "Select to show the entire booking form or the availability calendar only."
 msgstr ""
@@ -6608,12 +6378,10 @@ msgstr ""
 "disponibilità."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:454
-#, fuzzy
 msgid "Show advanced settings"
 msgstr "Parametri avanzati"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:455
-#, fuzzy
 msgid "Hide advanced settings"
 msgstr "Parametri avanzati"
 
@@ -6639,7 +6407,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:468
-#, fuzzy
 msgid "Options:"
 msgstr "Azioni"
 
@@ -6657,7 +6424,6 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:475
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-edit-toolbar-buttons.php:483
-#, fuzzy
 msgid "Code Example"
 msgstr "Codice postale"
 
@@ -6674,7 +6440,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:298
-#, fuzzy
 msgid "week"
 msgstr "Giorni della settimana"
 
@@ -6683,14 +6448,12 @@ msgid "weeks"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:300
-#, fuzzy
 msgid "month"
 msgstr "Giorni del mese"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:301
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:302
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:303
-#, fuzzy
 msgid "months"
 msgstr "mese/i"
 
@@ -6698,27 +6461,22 @@ msgstr "mese/i"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2215
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:737
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:743
-#, fuzzy
 msgid "Year"
 msgstr "anno/i"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:307
-#, fuzzy
 msgid "Current dates"
-msgstr "Date"
+msgstr "Data corrente"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:308
-#, fuzzy
 msgid "Today"
 msgstr "giorno"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:309
-#, fuzzy
 msgid "Previous dates"
 msgstr "Date"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:310
-#, fuzzy
 msgid "All dates"
 msgstr "Date"
 
@@ -6730,7 +6488,6 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:312
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:447
-#, fuzzy
 msgid "Prior"
 msgstr "Superior"
 
@@ -6754,28 +6511,23 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:567
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:623
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1471
-#, fuzzy
 msgid "Apply"
-msgstr "Aprile"
+msgstr "Applica"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:605
-#, fuzzy
 msgid "Start Date"
 msgstr "Formato data"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:646
-#, fuzzy
 msgid "Booking Listing"
 msgstr "Prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:650
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:708
-#, fuzzy
 msgid "Calendar Overview"
 msgstr "Calendario di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:659
-#, fuzzy
 msgid "Booking Calendar - Overview"
 msgstr "Calendario di prenotazione"
 
@@ -6785,7 +6537,6 @@ msgid "Help"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:686
-#, fuzzy
 msgid "About Booking Calendar"
 msgstr "Calendario di prenotazione"
 
@@ -6797,7 +6548,6 @@ msgid "FAQ"
 msgstr "FAQ"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:690
-#, fuzzy
 msgid "Technical Support"
 msgstr "Supporto Premium"
 
@@ -6816,12 +6566,10 @@ msgid "Filter"
 msgstr "Filtro"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1417
-#, fuzzy
 msgid "Expand Advanced Filter"
 msgstr "Filtro"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1418
-#, fuzzy
 msgid "Collapse Advanced Filter"
 msgstr "Filtro"
 
@@ -6832,32 +6580,26 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1436
-#, fuzzy
 msgid "Emails sending"
 msgstr "Emails"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1459
-#, fuzzy
 msgid "Booking ID"
 msgstr "ID"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1468
-#, fuzzy
 msgid "Refresh booking listing"
 msgstr "Prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1472
-#, fuzzy
 msgid "Reset filter to default values"
 msgstr "Azzera al modulo di default"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1513
-#, fuzzy
 msgid "Any"
-msgstr "Ogni giorno della settimana"
+msgstr "Tutti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1541
-#, fuzzy
 msgid "New bookings"
 msgstr "Prenotazioni"
 
@@ -6867,14 +6609,12 @@ msgid "Show"
 msgstr "Visualizza"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1556
-#, fuzzy
 msgid "Creation"
 msgstr "Cancella i  dati di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1590
-#, fuzzy
 msgid "Order by"
-msgstr "URL di ritorno a seguito dellordine terminato con successo"
+msgstr "Ordina per"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1604
 msgid ""
@@ -6883,7 +6623,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1607
-#, fuzzy
 msgid "Save as Default"
 msgstr "Salva"
 
@@ -6892,12 +6631,10 @@ msgid "Delete your previously saved default filer template!"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1615
-#, fuzzy
 msgid "Delete template"
 msgstr "Cancella"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1686
-#, fuzzy
 msgid "Approve selected bookings"
 msgstr "Approva"
 
@@ -6907,39 +6644,32 @@ msgid "Approve"
 msgstr "Approva"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1691
-#, fuzzy
 msgid "Set selected bookings as pending"
 msgstr "inserisci la durata della prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1693
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1997
-#, fuzzy
 msgid "Do you really want to set booking as pending ?"
 msgstr "Vuoi veramente cancellare questa tipologia?"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1696
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1998
-#, fuzzy
 msgid "Reject"
 msgstr "Cancellato"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1699
-#, fuzzy
 msgid "Delete selected bookings"
 msgstr "Cancella"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1701
-#, fuzzy
 msgid "Do you really want to delete selected booking(s) ?"
 msgstr "Vuoi veramente cancellare questa tipologia?"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1711
-#, fuzzy
 msgid "Mark as read all bookings"
 msgstr "Prenotazioni in sospeso"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1715
-#, fuzzy
 msgid "Read All"
 msgstr "per tutti i giorni"
 
@@ -6957,27 +6687,22 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1725
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1935
-#, fuzzy
 msgid "Unread"
 msgstr "Aggiorna"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1767
-#, fuzzy
 msgid "Booking Data"
 msgstr "Prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1768
-#, fuzzy
 msgid "Booking Dates"
 msgstr "Date"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1773
-#, fuzzy
 msgid "Show ALL dates of booking"
 msgstr "Gestione prenotazioni - mostra tutte le vecchie prenotazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1778
-#, fuzzy
 msgid "Show only check in/out dates"
 msgstr "%s - campo casella di controllo,"
 
@@ -6986,7 +6711,6 @@ msgid "Nothing found!"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:1819
-#, fuzzy
 msgid "Resource not exist"
 msgstr "Nome della tipologia"
 
@@ -6995,18 +6719,15 @@ msgid "Mark"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2002
-#, fuzzy
 msgid "Do you really want to delete this booking ?"
 msgstr "Vuoi realmente cancellare?"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2055
-#, fuzzy
 msgid "Prev"
 msgstr "Prezzo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2204
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2236
-#, fuzzy
 msgid "Show month"
 msgstr "Mostra suggerimenti"
 
@@ -7014,63 +6735,52 @@ msgstr "Mostra suggerimenti"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2239
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:732
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:741
-#, fuzzy
 msgid "Month"
 msgstr "Giorni del mese"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2208
-#, fuzzy
 msgid "Show 3 months"
 msgstr "Visualizza"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2211
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:736
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:742
-#, fuzzy
 msgid "3 Months"
 msgstr "Mesi"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2212
-#, fuzzy
 msgid "Show year"
 msgstr "anno/i"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2221
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2255
-#, fuzzy
 msgid "Calendar view mode"
 msgstr "Vista date"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2228
-#, fuzzy
 msgid "Show day"
 msgstr "giorno"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2231
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:729
-#, fuzzy
 msgid "Day"
 msgstr "giorno"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2232
-#, fuzzy
 msgid "Show week"
 msgstr "Visualizza"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2235
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:730
-#, fuzzy
 msgid "Week"
 msgstr "Giorni della settimana"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2240
-#, fuzzy
 msgid "Show 2 months"
 msgstr "Visualizza"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2243
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:734
-#, fuzzy
 msgid "2 Months"
 msgstr "Mesi"
 
@@ -7083,21 +6793,18 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2282
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2296
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2343
-#, fuzzy
 msgid "Previous week"
 msgstr "Giorni della settimana"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2283
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2297
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2344
-#, fuzzy
 msgid "Current week"
 msgstr "Giorni della settimana"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2284
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2298
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2345
-#, fuzzy
 msgid "Next week"
 msgstr "Giorni della settimana"
 
@@ -7116,79 +6823,66 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2310
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2360
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2375
-#, fuzzy
 msgid "Previous month"
 msgstr "Giorni del mese"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2311
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2361
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2376
-#, fuzzy
 msgid "Current month"
 msgstr "Giorni del mese"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2312
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2362
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2377
-#, fuzzy
 msgid "Next month"
 msgstr "Giorni del mese"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2313
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2363
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2378
-#, fuzzy
 msgid "Next 3 months"
 msgstr "Mesi"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2327
-#, fuzzy
 msgid "Previous 7 days"
 msgstr "giorni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2328
-#, fuzzy
 msgid "Previous day"
 msgstr "giorno"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2329
-#, fuzzy
 msgid "Current day"
 msgstr "giorno"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2330
-#, fuzzy
 msgid "Next day"
 msgstr "giorno"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2331
-#, fuzzy
 msgid "Next 7 days"
 msgstr "giorni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-lib.php:2402
-#, fuzzy
 msgid "Calendar Navigation"
 msgstr "Calendario di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:116
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:146
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:153
-#, fuzzy
 msgid "M"
 msgstr "Lun"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:116
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:146
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:153
-#, fuzzy
 msgid "W"
 msgstr "Mer"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:116
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:146
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:153
-#, fuzzy
 msgid "F"
 msgstr "F j, Y"
 
@@ -7200,7 +6894,6 @@ msgstr "F j, Y"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:465
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:481
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:487
-#, fuzzy
 msgid "Mon"
 msgstr "Lun"
 
@@ -7212,7 +6905,6 @@ msgstr "Lun"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:465
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:481
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:487
-#, fuzzy
 msgid "Tue"
 msgstr "Mar"
 
@@ -7224,7 +6916,6 @@ msgstr "Mar"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:465
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:481
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:487
-#, fuzzy
 msgid "Wed"
 msgstr "Mer"
 
@@ -7236,7 +6927,6 @@ msgstr "Mer"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:465
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:481
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:487
-#, fuzzy
 msgid "Thu"
 msgstr "Mar"
 
@@ -7248,7 +6938,6 @@ msgstr "Mar"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:465
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:481
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:487
-#, fuzzy
 msgid "Fri"
 msgstr "Ven"
 
@@ -7260,7 +6949,6 @@ msgstr "Ven"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:465
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:481
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:487
-#, fuzzy
 msgid "Sat"
 msgstr "Sab"
 
@@ -7272,57 +6960,46 @@ msgstr "Sab"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:465
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:481
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:487
-#, fuzzy
 msgid "Sun"
 msgstr "Dom"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:146
-#, fuzzy
 msgid "T"
 msgstr "Mar"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-bk-timeline.php:146
-#, fuzzy
 msgid "S"
 msgstr "Esempio: %s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:129
-#, fuzzy
 msgid "Booking Calendar"
 msgstr "Calendario di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:329
-#, fuzzy
 msgid "Statistic"
 msgstr "Ora di arrivo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:333
-#, fuzzy
 msgid "New (unverified) booking(s)"
 msgstr "%s - inserimento nuova linea"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:337
-#, fuzzy
 msgid "Pending booking(s)"
 msgstr "In sospeso"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:343
-#, fuzzy
 msgid "Agenda"
 msgstr "Invia"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:347
-#, fuzzy
 msgid "New booking(s) made today"
 msgstr "Nuova prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:351
-#, fuzzy
 msgid "Bookings for today"
 msgstr "Prenotazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:373
-#, fuzzy
 msgid "Upgrade to higher versions"
 msgstr "Aggiorna"
 
@@ -7331,7 +7008,6 @@ msgid "Commercial versions"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:377
-#, fuzzy
 msgid "Upgrade now"
 msgstr "Aggiorna"
 
@@ -7345,7 +7021,6 @@ msgid "Test online Demo of each version"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:397
-#, fuzzy
 msgid "Current version"
 msgstr "Versione"
 
@@ -7354,7 +7029,6 @@ msgid "Version"
 msgstr "Versione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:405
-#, fuzzy
 msgid "Type"
 msgstr "Tipologia di transazione"
 
@@ -7363,17 +7037,14 @@ msgid "Used for"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:414
-#, fuzzy
 msgid "Release date"
 msgstr "Formato data"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:421
-#, fuzzy
 msgid "Support"
 msgstr "Superior"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:424
-#, fuzzy
 msgid "Contact email"
 msgstr "Contatti"
 
@@ -7387,7 +7058,6 @@ msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:438
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:442
-#, fuzzy
 msgid "Explore Premium Features"
 msgstr "Caratteristiche"
 
@@ -7407,7 +7077,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:509
-#, fuzzy
 msgid "settings page"
 msgstr "configurazioni"
 
@@ -7424,7 +7093,6 @@ msgstr "Prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:680
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:729
-#, fuzzy
 msgid "Booking settings customization"
 msgstr "Personalizzazione di"
 
@@ -7435,7 +7103,6 @@ msgid "Bookings"
 msgstr "Prenotazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:717
-#, fuzzy
 msgid "Bookings listing"
 msgstr "Prenotazioni"
 
@@ -7448,12 +7115,10 @@ msgid "General"
 msgstr "Generali"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1168
-#, fuzzy
 msgid "General Settings"
 msgstr "Generali"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1169
-#, fuzzy
 msgid "Customization of General Settings"
 msgstr "Generali"
 
@@ -7462,7 +7127,6 @@ msgid "Fields"
 msgstr "Campi"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1178
-#, fuzzy
 msgid "Fields Settings"
 msgstr "configurazioni"
 
@@ -7471,12 +7135,10 @@ msgid "Emails"
 msgstr "Emails"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1187
-#, fuzzy
 msgid "Emails Settings"
 msgstr "Emails"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1187
-#, fuzzy
 msgid "Customization of email templates"
 msgstr "Personalizzazione di"
 
@@ -7485,37 +7147,30 @@ msgid "Payments"
 msgstr "Pagamenti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1196
-#, fuzzy
 msgid "Payments Settings"
 msgstr "Pagamenti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1196
-#, fuzzy
 msgid "Integration of payment systems"
 msgstr "Pagamento"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1209
-#, fuzzy
 msgid "Search Settings"
 msgstr "configurazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1209
-#, fuzzy
 msgid "Customization of search form"
 msgstr "Personalizzazione campi modulo di fatturazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1218
-#, fuzzy
 msgid "Users Settings"
 msgstr "Utenti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1218
-#, fuzzy
 msgid "Manage users settings"
 msgstr "Utenti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1244
-#, fuzzy
 msgid "Upgrade to higher versions."
 msgstr "Aggiorna"
 
@@ -7524,7 +7179,6 @@ msgid "Features"
 msgstr "Caratteristiche"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1256
-#, fuzzy
 msgid "Live Demos"
 msgstr "Dal vivo"
 
@@ -7538,7 +7192,6 @@ msgid "Buy"
 msgstr "Acquista"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1531
-#, fuzzy
 msgid "Calendar is loading..."
 msgstr "Calendario di prenotazione"
 
@@ -7549,13 +7202,11 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1801
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "%sWarning! Booking calendar for this booking resource are already at the "
 "page, please check more about this issue at %sthis page%s"
 msgstr ""
-"Il calendario di prenotazione per questa risorsa(alloggio) è già presente "
-"nella pagina"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:1889
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:446
@@ -7573,7 +7224,7 @@ msgid "You do not set any parameters for booking editing"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2078
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Thank you for your online booking. %s We will send confirmation of your "
 "booking as soon as possible."
@@ -7582,7 +7233,7 @@ msgstr ""
 "conferma della prenotazione."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2149
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "You need to approve a new booking %s for: %s Person detail information:%s "
 "Currently a new booking is waiting for approval. Please visit the moderation "
@@ -7593,29 +7244,27 @@ msgstr ""
 "approvazione. Perfavore visita il pannello di gestione%sLa ringraziamo, %s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2152
-#, fuzzy
 msgid "Your booking has been approved"
 msgstr "La sua prenotazione è stata approvata"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2154
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Your reservation %s for: %s has been approved.%sYou can edit the booking on "
 "this page: %s Thank you, %s"
-msgstr "La sua prenotazione %s per: %s è stata confermata.%sLa ringraziamo, %s"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2155
-#, fuzzy, php-format
+#, php-format
 msgid "Your booking %s for: %s has been approved.%sThank you, %s"
 msgstr "La sua prenotazione %s per: %s è stata confermata.%sLa ringraziamo, %s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2158
-#, fuzzy
 msgid "Your booking has been declined"
 msgstr "La sua prenotazione è stata rifiutata"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2159
-#, fuzzy, php-format
+#, php-format
 msgid "Your booking %s for: %s has been  canceled. %sThank you, %s"
 msgstr ""
 "La sua prenotazione %s per: %s è stata cancellata. %sLa ringraziamo, %s"
@@ -7634,17 +7283,14 @@ msgid "Booked"
 msgstr "Prenotato"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2185
-#, fuzzy
 msgid "Partially booked"
 msgstr "Prenotato"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2899
-#, fuzzy
 msgid "Technical support section"
 msgstr "Supporto Premium"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2903
-#, fuzzy
 msgid "Reindex booking data"
 msgstr "Prenotazione"
 
@@ -7669,9 +7315,9 @@ msgid "%s Finish getting sort dates. %s"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-class.php:2980
-#, fuzzy, php-format
+#, php-format
 msgid "Updated booking: %s"
-msgstr "Aggiornato con successo"
+msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:301
 msgid "no"
@@ -7689,7 +7335,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-functions.php:1986
-#, fuzzy
 msgid "version"
 msgstr "Versione"
 
@@ -7703,7 +7348,6 @@ msgid "Booking resource"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-booking-widget.php:115
-#, fuzzy
 msgid "Visible months"
 msgstr "Numero di mesi"
 
@@ -7744,7 +7388,6 @@ msgid "Show / hide hints"
 msgstr "Mostra / nascondi suggerimenti"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:298
-#, fuzzy
 msgid "Check this box if you want to show help hints on the admin panel."
 msgstr ""
 "Flaggare se si desidera mostrare suggerimenti nel pannello di controllo."
@@ -7780,17 +7423,14 @@ msgid "Disable Bootstrap loading on Back-End"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:363
-#, fuzzy
 msgid "Show settings of powered by notice"
 msgstr "Mostra le configuarazioni dei giorni della settimana non disponibili"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:364
-#, fuzzy
 msgid "Hide settings of powered by notice"
 msgstr "Mostra le configuarazioni dei giorni della settimana non disponibili"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:372
-#, fuzzy
 msgid "Powered by notice"
 msgstr "Avviso sul copyright"
 
@@ -7803,22 +7443,18 @@ msgid "Copyright notice"
 msgstr "Avviso sul copyright"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:393
-#, fuzzy
 msgid " Turn On/Off version notice at footer of booking admin panel."
 msgstr "Attiva/Disattiva lavviso di copyright %s nel footer del sito."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:414
-#, fuzzy
 msgid "Calendar Skin"
 msgstr "Calendario di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:425
-#, fuzzy
 msgid "Select the skin of the booking calendar"
 msgstr "Seleziona il numero di mesi da visualizzare per calendario."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:430
-#, fuzzy
 msgid "Number of months"
 msgstr "Numero di ospiti"
 
@@ -7831,12 +7467,10 @@ msgid "year(s)"
 msgstr "anno/i"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:443
-#, fuzzy
 msgid "Select the maximum number of months to show (scroll)"
 msgstr "Selezione il numero massimo di mesi del calendario di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:448
-#, fuzzy
 msgid "Start Day of the week"
 msgstr "Seleziona il tuo giorno di inizio della settimana"
 
@@ -7845,7 +7479,6 @@ msgid "Select your start day of the week"
 msgstr "Seleziona il tuo giorno di inizio della settimana"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:466
-#, fuzzy
 msgid "Unavailable days from today"
 msgstr "Giorni non disponibili"
 
@@ -7854,7 +7487,6 @@ msgid "Select number of unavailable days in calendar start from today."
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:479
-#, fuzzy
 msgid "Unavailable week days"
 msgstr "Giorni della settimana"
 
@@ -7865,23 +7497,19 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:516
-#, fuzzy
 msgid "Type of days selection in calendar"
 msgstr ""
 "Flaggare se si desidera la selezione multipla dei giorni nel calendario"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:532
-#, fuzzy
 msgid "Single day"
 msgstr "giorno"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:542
-#, fuzzy
 msgid "Multiple days"
 msgstr "giorni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:553
-#, fuzzy
 msgid "Range days"
 msgstr "Selezione intervallo"
 
@@ -7890,22 +7518,18 @@ msgid "Form"
 msgstr "Modulo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:593
-#, fuzzy
 msgid "Check the box to activate CAPTCHA inside the booking form."
 msgstr "Flaggare se si desidera attivare CAPTCHA nel modulo di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:600
-#, fuzzy
 msgid "Auto-fill fields"
 msgstr "Campi"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:603
-#, fuzzy
 msgid "Check the box to activate auto-fill form fields for logged in users."
 msgstr "Flaggare se si desidera attivare CAPTCHA nel modulo di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:610
-#, fuzzy
 msgid "Use CSS BootStrap"
 msgstr "Utilizza questi codici per la personalizzazione:"
 
@@ -7920,14 +7544,12 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:635
-#, fuzzy
 msgid "Action after booking is done"
 msgstr ""
 "Mostra i parametri di configurazione del messaggio di ringraziamento al "
 "cliente"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:643
-#, fuzzy
 msgid "Show \"Thank You\" message"
 msgstr ""
 "Mostra i parametri di configurazione del messaggio di ringraziamento al "
@@ -7942,19 +7564,17 @@ msgid "This action will have no effect, if the payment form(s) is active!"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:663
-#, fuzzy
 msgid "Message title"
 msgstr "Titolo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:666
-#, fuzzy, php-format
+#, php-format
 msgid "Type title of message %safter booking has done by user%s"
 msgstr ""
 "Immettere il titolo della nuova prenotazione %sdopo che lutente ha "
 "effettuato la prenotazione%s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:671
-#, fuzzy
 msgid "Time of message showing"
 msgstr "durata"
 
@@ -7972,22 +7592,18 @@ msgid "Type URL of %s\"Thank You\" page%s"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:701
-#, fuzzy
 msgid "Listing of bookings"
 msgstr "Prenotazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:704
-#, fuzzy
 msgid "Default booking admin page"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:707
-#, fuzzy
 msgid "Bookings Listing"
 msgstr "Prenotazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:715
-#, fuzzy
 msgid "Select your default view mode of bookings at the booking listing page"
 msgstr "Tariffe di stagione delle camere da prenotare"
 
@@ -7996,43 +7612,35 @@ msgid "Default calendar view mode"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:777
-#, fuzzy
 msgid ""
 "Select your default calendar view mode at booking calendar overview page"
 msgstr "Tariffe di stagione delle camere da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:787
-#, fuzzy
 msgid "Default toolbar tab"
 msgstr "Predefinito"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:789
-#, fuzzy
 msgid "Filter tab"
 msgstr "Filtro"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:790
-#, fuzzy
 msgid "Actions tab"
 msgstr "Azioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:797
-#, fuzzy
 msgid "Select your default opened tab in toolbar at booking listing page"
 msgstr "Tariffe di stagione delle camere da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:802
-#, fuzzy
 msgid "Bookings number per page"
 msgstr "Risorsa da prenotare"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:811
-#, fuzzy
 msgid "Select number of bookings per page in booking listing"
 msgstr "Selezione il numero massimo di mesi del calendario di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:817
-#, fuzzy
 msgid "Bookings default order"
 msgstr "Predefinito"
 
@@ -8051,7 +7659,6 @@ msgid "DESC"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:846
-#, fuzzy
 msgid "Select your default order of bookings in the booking listing"
 msgstr "Tariffe di stagione delle camere da prenotare"
 
@@ -8064,7 +7671,7 @@ msgid "F j, Y"
 msgstr "F j, Y"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:879
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Type your date format for emails and the booking table. %sDocumentation on "
 "date formatting%s"
@@ -8085,7 +7692,6 @@ msgid "Wide days view"
 msgstr "Visualizzazione giorni estesa"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:893
-#, fuzzy
 msgid "Select the default view for dates on the booking tables"
 msgstr ""
 "Seleziona la tipologia predefinita per la vista delle date nelle tabelle di "
@@ -8096,7 +7702,6 @@ msgid "Information"
 msgstr "Informazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:928
-#, fuzzy
 msgid "Recommended WordPress Plugins"
 msgstr "Plugins wordpress consigliati"
 
@@ -8105,7 +7710,7 @@ msgid "Booking Manager - show all old bookings"
 msgstr "Gestione prenotazioni - mostra tutte le vecchie prenotazioni"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:934
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "This wordpress plugin is  %sshow all approved and pending bookings from past"
 "%s. Show how many each customer is made bookings. Paid versions support "
@@ -8121,7 +7726,6 @@ msgid "User permissions for plugin menu pages"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1008
-#, fuzzy
 msgid "Select user access level for the menu pages of plugin"
 msgstr ""
 "Seleziona il livello di accesso utente per questa pagina di amministrazione"
@@ -8131,7 +7735,6 @@ msgid "Uninstall / deactivation"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1022
-#, fuzzy
 msgid "Delete booking data, when plugin deactivated"
 msgstr "quando il plugin è disattivato"
 
@@ -8142,7 +7745,6 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1029
-#, fuzzy
 msgid ""
 "Check this box to delete all booking data when you uninstal this plugin."
 msgstr ""
@@ -8150,19 +7752,16 @@ msgstr ""
 "plugin."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1164
-#, fuzzy
 msgid "Show legend below calendar"
 msgstr "Seleziona il numero di mesi da visualizzare per calendario."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1172
-#, fuzzy
 msgid "Check this box to display a legend of dates below the booking calendar."
 msgstr ""
 "Flaggare se si desidera mostrare la legenda delle date sotto il calendario "
 "di prenotazione"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1182
-#, fuzzy
 msgid "Available item"
 msgstr "Disponibile:"
 
@@ -8172,7 +7771,6 @@ msgid "Activate and type your %stitle of available%s item in legend"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1194
-#, fuzzy
 msgid "Pending item"
 msgstr "In sospeso"
 
@@ -8182,7 +7780,6 @@ msgid "Activate and type your %stitle of pending%s item in legend"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1206
-#, fuzzy
 msgid "Approved item"
 msgstr "Approvato"
 
@@ -8192,7 +7789,6 @@ msgid "Activate and type your %stitle of approved%s item in legend"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1218
-#, fuzzy
 msgid "Partially booked item"
 msgstr "Prenotato"
 
@@ -8207,14 +7803,12 @@ msgid ""
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1249
-#, fuzzy
 msgid "Form fields labels"
 msgstr "Campi modulo"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1271
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1314
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1402
-#, fuzzy
 msgid "Field Label"
 msgstr "Questo campo è obbligatorio"
 
@@ -8223,7 +7817,6 @@ msgstr "Questo campo è obbligatorio"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1376
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1419
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1462
-#, fuzzy
 msgid "Required"
 msgstr "Email (richiesto)"
 
@@ -8235,7 +7828,6 @@ msgid "Activate or deactivate field and change the label title"
 msgstr ""
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1359
-#, fuzzy
 msgid "Email Label"
 msgstr "Email"
 

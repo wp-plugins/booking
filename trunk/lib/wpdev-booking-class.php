@@ -68,8 +68,6 @@ class wpdev_booking {
         add_action('wp_dashboard_setup', array($this, 'dashboard_bk_widget_setup'));
         add_bk_action('wpdev_booking_technical_booking_section', array(&$this, 'wpdev_booking_technical_booking_section'));
 
-        // register widget - New, since WordPress - 2.8
-        add_action('widgets_init', create_function('', 'return register_widget("BookingWidget");'));
         
         // Install / Uninstall
         register_activation_hook( WPDEV_BK_FILE, array(&$this,'wpdev_booking_activate_initial' ));
@@ -1196,6 +1194,13 @@ class wpdev_booking {
                         <?php if ($slct_a == 'selected') {  $selected_title = __('Payments Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Integration of payment systems','wpdev-booking') ; ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
                     <?php } ?>
 
+<?php /** ?>            
+                    <?php $title = __('Sync', 'wpdev-booking');
+                    $my_icon = 'icon-refresh'; $my_tab = 'sync';  ?>
+                    <?php if ($_GET['tab'] == 'sync') {  $slct_a = 'selected'; } else {  $slct_a = ''; } ?>
+                    <?php if ($slct_a == 'selected') {  $selected_title = __('Synchronization Bookings Settings', 'wpdev-booking'); $selected_icon = $my_icon;  ?><span class="nav-tab nav-tab-active"><?php } else { ?><a rel="tooltip" class="nav-tab tooltip_bottom" title="<?php echo __('Configurations of bookings synchronization','wpdev-booking');  ?>" href="admin.php?page=<?php echo WPDEV_BK_PLUGIN_DIRNAME . '/'. WPDEV_BK_PLUGIN_FILENAME ; ?>wpdev-booking-option&tab=<?php echo $my_tab; ?>"><?php } ?><i class="<?php if ($slct_a == 'selected') { echo 'icon-white '; } echo $my_icon; ?>"></i><span class="nav-tab-text"> <?php  if ($is_only_icons) echo '&nbsp;'; else echo $title; ?><?php if ($slct_a == 'selected') { ?></span></span><?php } else { ?></span></a><?php } ?>
+<?php /**/ ?>                        
+            
                     <?php if ( ($version == 'free') || ($version == 'biz_l') || ($version == 'biz_m') ) { ?>
                         
                         <?php if ( ($version == 'free') || ($version == 'biz_l') ) { ?>

@@ -998,7 +998,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
 
         
         $sql_limit = $wpdb->prepare( " LIMIT %d, %d ", $page_start, $page_items_count ) ;
-        
         return array( $sql_start_count, $sql_start_select , $sql , $sql_where , $sql_order , $sql_limit );        
     }
 

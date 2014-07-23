@@ -54,6 +54,9 @@ $plugin_data = get_file_data_wpdev(  WPDEV_BK_FILE , array( 'Name' => 'Plugin Na
 if (!defined('WPDEV_BK_VERSION'))    define('WPDEV_BK_VERSION',   $plugin_data['Version'] );                             // 0.1
 
 
+// register widget - New, since WordPress - 2.8
+add_action('widgets_init', create_function('', 'return register_widget("BookingWidget");'));
+
 if (  ( defined( 'DOING_AJAX' ) )  && ( DOING_AJAX )  ){                        // New A J A X    R e s p o n d e r
     
     if ( class_exists('wpdev_bk_personal')) { $wpdev_bk_personal_in_ajax = new wpdev_bk_personal(); }
