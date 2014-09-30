@@ -161,9 +161,9 @@ If you have any further questions, please fill free to <a href="mailto:support@w
  * **New** Email template configuration about the approval of booking, which is sending to visitor, who made the booking.
  * **New** Email template configuration about the decline of booking, which is sending to visitor, who made the booking.
  * **New** Google Calendar Events importing. Activate and configure different parameters for the Google Calendar import.
- * **New** Activate auto-import of Goolge Calendar events during specific times.
+ * **New** Activate auto-import of Google Calendar events during specific times.
  * **Improvement** Do not show CAPTCHA in booking form at the "Add booking" page in admin panel, if the CAPTCHA activated. 
- * Update of several screenshots in plugin  descrition.
+ * Update of several screenshots in plugin  description.
  * Support of WordPress 4.0
  * Updated Spanish translation, by Juan C.
  * Updated German translation by Andreas Dupp
@@ -173,15 +173,15 @@ If you have any further questions, please fill free to <a href="mailto:support@w
  * *Fix* apply parameter "Check in/out - Tomorrow" from Filter tab at Booking Listing page based on the "time-zone" offset (which is set at  the WordPress > Settings menu).
 - Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
  * **New** Advanced Google Calendar Events import. Configuration of import **Google Calendar Events** for the each specific booking resources (Personal, Business Small/Medium/Large, MultiUser) 
- * **New** Ability to set the radio buttons fields as required fields at the Booking > Settings > Fields  page. Exmaple: [radio* field_name "1" "2" "3" "4"] (Personal, Business Small/Medium/Large, MultiUser) 
- * **Tips & Tricks** Ability to use [sync_gid] shortcode at the Booking > Settings > Fields > Conten of Booking Fields page to  show the ID of Google Calendar Event, which was imported by Booking Calendar (Personal, Business Small/Medium/Large, MultiUser) 
+ * **New** Ability to set the radio buttons fields as required fields at the Booking > Settings > Fields  page. Example: [radio* field_name "1" "2" "3" "4"] (Personal, Business Small/Medium/Large, MultiUser) 
+ * **Tips & Tricks** Ability to use [sync_gid] shortcode at the Booking > Settings > Fields > Content of Booking Fields page to  show the ID of Google Calendar Event, which was imported by Booking Calendar (Personal, Business Small/Medium/Large, MultiUser) 
  * **Improvement** New parameter *selected_type* for *[bookingselect...* shortcode for auto selection booking form of specific booking resource. Example: [bookingselect label='Select:' form_type='standard' nummonths=1 type='17,16,15' selected_type='15']  (Personal, Business Small/Medium/Large, MultiUser)
  * **Improvement** Disabling (set grayed) of "starttime" options selection for the times, which already booked by visitors, for the selected date. (Business Small/Medium/Large, MultiUser)
  * **Improvement** Rechecking system, if the update from  the previous version was making in not correct  way (relative to FAQ instruction) and then reupdate plugin. (Personal, Business Small/Medium/Large, MultiUser)
  * **Improvement** Sort booking resources by booking resources titles in ASC order (instead of DESC) (Personal, Business Small/Medium/Large, MultiUser)
- * **Improvement** Added "placeholder" parmeter  to the text field shortcode generator at the Booking > Settings > Fields page (Personal, Business Small/Medium/Large, MultiUser)
- * **Improvement** Added new section "Tips and Tricks" to the shortcode generator at  Booking > Settings > Fields page. Descriptin  about usage of email verification field.  (Personal, Business Small/Medium/Large, MultiUser)
- * **Improvement** Ability to use the several "comma separated" paramters in search availability form for the Custom Fields Parameter. Example:  &lt;select id="booking_color" name="booking_color"&gt; &lt;option value="Green"&gt;Only Green&lt;/option&gt; &lt;option value="Green, Red"&gt;Green, Red all together&lt;/option&gt; &lt;option value="Red"&gt;Only Red&lt;/option&gt;  &lt;/select&gt; ( Business Large, MultiUser)
+ * **Improvement** Added "placeholder" parameter to the text field shortcode generator at the Booking > Settings > Fields page (Personal, Business Small/Medium/Large, MultiUser)
+ * **Improvement** Added new section "Tips and Tricks" to the shortcode generator at  Booking > Settings > Fields page. Description about usage of email verification field.  (Personal, Business Small/Medium/Large, MultiUser)
+ * **Improvement** Ability to use the several "comma separated" parameters in search availability form for the Custom Fields Parameter. Example:  &lt;select id="booking_color" name="booking_color"&gt; &lt;option value="Green"&gt;Only Green&lt;/option&gt; &lt;option value="Green, Red"&gt;Green, Red all together&lt;/option&gt; &lt;option value="Red"&gt;Only Red&lt;/option&gt;  &lt;/select&gt; ( Business Large, MultiUser)
  * *Fix* issue of do not correctly export CSV file, if the upload directory do not default (Personal, Business Small/Medium/Large, MultiUser)
  * *Fix* setting exported CSV file to  UTF-8 encoding (Personal, Business Small/Medium/Large, MultiUser)
  * *Fix* issue of saving info about each "legend items under calendar" for the "regular users" if the changes was making by super booking admin (MultiUser)
@@ -189,7 +189,7 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 = 5.1.6 =
 - Features and issue fixings in All versions:
  * Fix issue of not saving Booking Calendar Widget for sidebars at the WordPress > Appearance > Widgets menu page. Issue was existing in updates 5.1.4 and 5.1.5
- * Updated Italian transaltion by Nuoro di Murgia Ivan. 
+ * Updated Italian translation by Nuoro di Murgia Ivan. 
 - Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
  * New shortcode for email templates. [remote_ip] - inserting IP address of the user who made this action (Personal, Business Small/Medium/Large, MultiUser)
  * New shortcode for email templates. [user_agent] - inserting contents of the User-Agent: header from the current request, if there is one (Personal, Business Small/Medium/Large, MultiUser)
@@ -204,7 +204,7 @@ If you have any further questions, please fill free to <a href="mailto:support@w
  * New icons at setting tabs.
  * CSS improvements for the text fields.
 - Personal / Business Small / Business Medium / Business Large / MultiUser versions features:
- * New. Ability to use "placeholders" for the text fields in booking form fields customizaion. Exmaple: First Name (required: [text* name  placeholder:First_Name] , where "_" is meaning white space " ". (Personal, Business Small/Medium/Large, MultiUser)
+ * New. Ability to use "placeholders" for the text fields in booking form fields customizaion. Example: First Name (required: [text* name  placeholder:First_Name] , where "_" is meaning white space " ". (Personal, Business Small/Medium/Large, MultiUser)
 
 = 5.1.4 =
 - Features and issue fixings in All versions:
