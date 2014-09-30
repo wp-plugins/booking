@@ -251,7 +251,7 @@ class WPBC_Welcome {
                         <div class="col-2">
                             <h4>Code refactoring and CSS optimization</h4>
                             <p>Code refactoring and CSS optimization. 
-                                <br/>Replacing <code>/js/wpdev.bk.js</code> file to <code>/js/client.js</code> and <code>/js/admin.js</code> files,  which are loading accordinaly.
+                                <br/>Replacing <code>/js/wpdev.bk.js</code> file to <code>/js/client.js</code> and <code>/js/admin.js</code> files,  which are loading accordingly.
                             </p>
                         </div>     
                         
@@ -302,7 +302,7 @@ class WPBC_Welcome {
                         </div>
                         <div class="col-2 last-feature">                            
                             <h3>Advanced configuration of importing Google Calendar Events</h3>
-                            <p>Configurations of Google Calendar Events feeds separatelty for the each specific booking resources.</p>
+                            <p>Configurations of Google Calendar Events feeds separately for the each specific booking resources.</p>
                         </div>
                     </div>
                 </div>
@@ -328,7 +328,7 @@ class WPBC_Welcome {
                         
                         <div class="col-3 last-feature">
                             <h4>Show events ID for bookings</h4>
-                            <p>Ability to use <code>[sync_gid]</code> shortcode at the Booking > Settings &gt; Fields &gt; Conten of Booking Fields page to  show ID of Google Calendar Event, which was imported by Booking Calendar</p>
+                            <p>Ability to use <code>[sync_gid]</code> shortcode at the Booking > Settings &gt; Fields &gt; Content of Booking Fields page to  show ID of Google Calendar Event, which was imported by Booking Calendar</p>
                             <span class="versions">{ <?php echo( "Available in" ); ?> <a href="http://wpbookingcalendar.com" target="_blank">Personal, Business Small / Medium / Large, MultiUser</a> <?php echo( "versions" ); ?> }</span>
                         </div>
                                              
@@ -342,13 +342,13 @@ class WPBC_Welcome {
                         
                         <div class="col-2">
                             <h4>Placeholders for Text Fields</h4>
-                            <p>New "placeholder" parmeter for text fields at the Booking &gt; Settings &gt; Fields page. Example: <code>[text myname placeholder:First_Name]</code></p>
+                            <p>New "placeholder" parameter for text fields at the Booking &gt; Settings &gt; Fields page. Example: <code>[text myname placeholder:First_Name]</code></p>
                             <span class="versions">{ <?php echo( "Available in" ); ?> <a href="http://wpbookingcalendar.com" target="_blank">Personal, Business Small / Medium / Large, MultiUser</a> <?php echo( "versions" ); ?> }</span>
                         </div>   
                         
                         <div class="col-3 last-feature">
                             <h4>New help section</h4>
-                            <p>New <strong>"Tips and Tricks"</strong> section at the shortcode generator at Booking &gt; Settings &gt; Fields page. Descriptin  about usage of email verification field.</p>
+                            <p>New <strong>"Tips and Tricks"</strong> section at the shortcode generator at Booking &gt; Settings &gt; Fields page. Description  about usage of email verification field.</p>
                             <span class="versions">{ <?php echo( "Available in" ); ?> <a href="http://wpbookingcalendar.com" target="_blank">Personal, Business Small / Medium / Large, MultiUser</a> <?php echo( "versions" ); ?> }</span>
                         </div>     
                         
