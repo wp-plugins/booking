@@ -454,7 +454,7 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1428
 #, php-format
 msgid "Please read more info about configuration of this parameter %shere%s"
-msgstr ""
+msgstr "weitere Informationen zu dieser Einstellung findest du %shere%s"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_l.php:3084
 #, php-format
@@ -2513,7 +2513,6 @@ msgstr ""
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:4589
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1283
-#, fuzzy
 msgid "Bulk Actions"
 msgstr "Aktionen"
 
@@ -2534,9 +2533,8 @@ msgstr "Info"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1314
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/wpbc-br-table-for-settings.php:92
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpbc-gcal-class.php:580
-#, fuzzy
 msgid "Selection"
-msgstr "Aktionen"
+msgstr "Auswahl"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/biz_m.php:4625
@@ -3538,9 +3536,8 @@ msgstr "Buchungsformular"
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/form/class-wpbc-form-help.php:117
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:38
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:483
-#, fuzzy
 msgid "Calendar"
-msgstr "Buchungskalender"
+msgstr "Kalender"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/form/class-wpbc-form-help.php:119
 #, php-format
@@ -5945,6 +5942,8 @@ msgid ""
 "The content of field %sURL to edit bookings%s on the %sgeneral booking "
 "settings page%s must link to this page"
 msgstr ""
+"Das Text des Feld %sURL um die bookings%s zu bearbeiten auf der %sgeneral "
+"booking settings page%s als Link zu dieser Seite"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:186
@@ -6177,9 +6176,8 @@ msgid "New Resource"
 msgstr "Hinzufügen einer neuen Unterkunft zum buchen"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1254
-#, fuzzy
 msgid "Enter title here"
-msgstr "hier"
+msgstr "Titel erfassen"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1256
@@ -6224,35 +6222,32 @@ msgstr ""
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1425
-#, fuzzy
 msgid "URL to edit bookings"
-msgstr "Buchungen"
+msgstr "URL für Buchung Editor"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1427
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Type URL for %svisitors%s to edit bookings. You must insert %s shortcode "
 "into this page."
 msgstr ""
-"Schreibe die Adresse der Buchung durch %sBesucher%s. Man muss %s die "
-"Shortcodes auf dieser Seite benutzen."
+"URL für Buchungsbearbeitung %sBesucher%s. Du musst diesen %s die Shortcodes "
+"auf dieser Seite benutzen."
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1445
-#, fuzzy
 msgid "Change hash after the booking is approved"
-msgstr "Ändere Hash nach der Bestätigung der Buchung"
+msgstr "Haken für die Änderung der Buchung nach einer Bestätigung"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1451
-#, fuzzy
 msgid ""
 "Check this box if you want to change the booking hash after approval. When "
 "checked, visitor will not be able to edit or cancel the booking."
 msgstr ""
-"Wähle an, wenn Du den Hash nach der Bestätigung ändern willst. Dies wird "
-"verhindern, dass  mögliche Besucher eine Buchung verändern oder löschen."
+"Wenn du diesen Haken setzt, kann ein Kunde die Buchung nach der Bestätigung "
+"noch ändern oder löschen"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./inc/personal.php:1462
@@ -8715,7 +8710,7 @@ msgstr ""
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:35
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:349
 msgid "Main"
-msgstr ""
+msgstr "Einstellungen"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:41
@@ -8737,7 +8732,7 @@ msgstr "Einstellungsseite"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:68
 msgid "Uninstall"
-msgstr ""
+msgstr "Deinstallieren"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:71
 #, fuzzy
@@ -8751,22 +8746,20 @@ msgstr "Anzeigen / verbergen von Hinweisen"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:371
-#, fuzzy
 msgid "Check this box if you want to show help hints on the admin panel."
-msgstr ""
-"Auswählen, wenn Du hilfreiche Hinweise im Admin Kontrollzentrum sehen willst."
+msgstr "Auswählen, wenn Du hilfreiche Hinweise im Admin Bereich sehen willst."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:384
 msgid "Show advanced settings of JavaScript loading"
-msgstr ""
+msgstr "Alle JavaScript Einstellungen anzeigen"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:385
 msgid "Hide advanced settings of JavaScript loading"
-msgstr ""
+msgstr "Einstellungen für JavaScript beim laden von Seiten"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:395
 msgid "Disable Bootstrap loading on Front-End"
-msgstr ""
+msgstr "Ausschalten des Bootvorgangs der Webseite"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:401
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:416
@@ -8774,6 +8767,8 @@ msgid ""
 "You are need to be sure what you are doing. You are disable of loading some "
 "JavaScripts Do you really want to do this?"
 msgstr ""
+"Bist du sicher, das du dieses einstellen willst? Einige JavaScripts werden "
+"nicht mehr geladen. "
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:403
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:418
@@ -8781,57 +8776,51 @@ msgid ""
 " If your theme or some other plugin is load the BootStrap JavaScripts, you "
 "can disable  loading of this script by this plugin."
 msgstr ""
+"Im Template und Plugins werden JavaScipts beim Start geladen. Hier kannst du "
+"dieses Buchungsscript deaktivieren"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:410
 msgid "Disable Bootstrap loading on Back-End"
-msgstr ""
+msgstr "Ausschalten des Bootvorgangs im Adminbereich"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:436
-#, fuzzy
 msgid "Show settings of powered by notice"
-msgstr "Zeige Einstellungen für nicht verfügbare Tage in der Woche"
+msgstr "Einstellungen für \"powered by\" Hinweise"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:437
-#, fuzzy
 msgid "Hide settings of powered by notice"
-msgstr "Zeige Einstellungen für nicht verfügbare Tage in der Woche"
+msgstr "Einstellung für \"powered by\" Hinweise"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:445
-#, fuzzy
 msgid "Powered by notice"
 msgstr "Copyright Notiz "
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:450
 msgid " Turn On/Off powered by \"Booking Calendar\" notice under the calendar."
-msgstr ""
+msgstr "Ein/Aus für  \"powered by Booking Calendar\" unter dem Kalender."
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:460
-#, fuzzy
 msgid "Help and info notices"
-msgstr "Hilfe"
+msgstr "Hilfe und Info Hinweise"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:466
-#, fuzzy
 msgid " Turn On/Off version notice and help info links at booking admin panel."
 msgstr ""
-"Ein/Ausschalten des Copyrighthinweis %s im Footer der Seitenansicht "
-"(Frontend) "
+"Ein/Ausschalten des Copyrighthinweis %s im Fuß der Seitenansicht (Frontend) "
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:487
-#, fuzzy
 msgid "Calendar Skin"
-msgstr "Buchungskalender"
+msgstr "Buchungskalender Design"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:498
-#, fuzzy
 msgid "Select the skin of the booking calendar"
-msgstr "Wähle den Startmonat für den Kalender aus"
+msgstr "Wähle das Design für den Kalender aus"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:503
@@ -8850,15 +8839,13 @@ msgstr "Jahr(e)"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:516
-#, fuzzy
 msgid "Select the maximum number of months to show (scroll)"
-msgstr "Auswählen der maximalen Anzahl der Monate im Buchungs Kalender"
+msgstr "Auswählen der maximalen Anzahl von Monaten im Buchungskalender"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:521
-#, fuzzy
 msgid "Start Day of the week"
-msgstr "Wähle welcher Wochentag  der Erste in der Woche sein soll."
+msgstr "Erster Tag einer Woche"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:532
@@ -8879,19 +8866,20 @@ msgstr ""
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:552
-#, fuzzy
 msgid "Unavailable week days"
-msgstr "Nicht verfügbare Tage von heute an"
+msgstr "Nicht verfügbare Wochentage"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:582
 msgid ""
 "Check unavailable days in calendars. This option will overwrite all other "
 "settings."
 msgstr ""
+"Welche Tage sollen nicht buchbar sein. Diese Einstellung überschreibt alle "
+"anderen."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:589
 msgid "Allow multiple bookings per same day"
-msgstr ""
+msgstr "Erlaubt mehrere Buchungen pro Tag"
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:596
 msgid ""
@@ -8906,6 +8894,10 @@ msgid ""
 "Your visitors will be able to make %sunlimited bookings per same date(s) in "
 "calendar and do not see any booked date(s)%s of other visitors."
 msgstr ""
+"Aktiviere die Einstellung %sset any days as available%s im Kalender nur, "
+"wenn deine Besucher mehrere gleiche Buchungen eintragen sollen und dürfen. "
+"%sunlimited bookings per same date(s) in calendar and do not see any booked "
+"date(s)%s."
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:609
@@ -9143,7 +9135,6 @@ msgstr ""
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:980
-#, fuzzy
 msgid "Dates view"
 msgstr "Datum"
 
@@ -9159,7 +9150,6 @@ msgstr "Ausführliche Tagesansicht"
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:986
-#, fuzzy
 msgid "Select the default view for dates on the booking tables"
 msgstr ""
 "Einstellung in welcher Reihenfolge die Buchungen angezeigt werden sollen"
@@ -9200,9 +9190,10 @@ msgstr ""
 
 # @ wpdev-booking
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1114
-#, fuzzy
 msgid "Delete booking data, when plugin deactivated"
-msgstr "Alle Buchungsdaten werden gelöscht bei Deaktivierung des Plugins-"
+msgstr ""
+"Wichtig! Alle Buchungsdaten werden gelöscht, wenn unter Plugins der "
+"Buchungskalender deaktiviert wird."
 
 #: w:\www\home\dev\www\wp-content\plugins\booking\./lib/wpdev-settings-general.php:1119
 msgid ""
