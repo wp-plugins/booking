@@ -690,7 +690,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;                                             
             <li><a href="http://wpbookingcalendar.com/support/" target="_blank"><?php _e('Technical Support', 'wpdev-booking'); ?></a></li>
             <?php if ($version == 'free') { ?>
             <li class="divider"></li>
-            <li><a href="http://wpbookingcalendar.com/buy/" target="_blank"><?php _e('Purchase', 'wpdev-booking'); ?></a></li>
+            <li><a href="http://wpbookingcalendar.com/" target="_blank"><?php _e('Purchase', 'wpdev-booking'); ?></a></li>
             <?php } else if ($version != 'biz_l') { ?>
             <li class="divider"></li>
             <li><a href="<?php echo $upgrade_lnk; ?>" target="_blank"><?php _e('Upgrade', 'wpdev-booking'); ?></a></li>
