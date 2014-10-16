@@ -1228,7 +1228,7 @@ class wpdev_booking {
                                                         , 'description' => __('Upgrade', 'wpdev-booking')
                                                         , 'icon'        => 'icon-shopping-cart' 
                                                         , 'style'       => 'float:right;' 
-                                                        , 'link'        => 'http://wpbookingcalendar.com/buy/') ); 
+                                                        , 'link'        => 'http://wpbookingcalendar.com/') ); 
         }
         
         //HOOK: Definition of other Settings pages
