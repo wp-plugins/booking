@@ -3,7 +3,7 @@
 Plugin Name: Booking Calendar
 Plugin URI: http://wpbookingcalendar.com/demo/
 Description: Online reservation and availability checking service for your site.
-Version: 5.2
+Version: 5.2.1
 Author: wpdevelop
 Author URI: http://wpbookingcalendar.com/
 Tested WordPress Versions: 3.3 - 4.0

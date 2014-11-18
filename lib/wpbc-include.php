@@ -45,8 +45,8 @@ if( is_admin() ) {
     
 }
 
-require_once WPDEV_BK_PLUGIN_DIR . '/lib/wpbc-gcal-class.php';                  // Google Calendar Feeds Import @since: 5.2.0
-require_once WPDEV_BK_PLUGIN_DIR . '/lib/wpbc-gcal.php';                        // Sync Google Calendar Events with  WPBC @since: 5.2.0
-if(1) if (file_exists(WPDEV_BK_PLUGIN_DIR.'/inc/sync/index.php')){              // Other Sync(s)
-require_once WPDEV_BK_PLUGIN_DIR . '/inc/sync/index.php'; } 
+// require_once WPDEV_BK_PLUGIN_DIR . '/lib/wpbc-gcal-class.php';                  // Google Calendar Feeds Import @since: 5.2.0
+// require_once WPDEV_BK_PLUGIN_DIR . '/lib/wpbc-gcal.php';                        // Sync Google Calendar Events with  WPBC @since: 5.2.0
+// if(1) if (file_exists(WPDEV_BK_PLUGIN_DIR.'/inc/sync/index.php')){              // Other Sync(s)
+// require_once WPDEV_BK_PLUGIN_DIR . '/inc/sync/index.php'; } 
 ?>

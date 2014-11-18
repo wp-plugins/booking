@@ -4,7 +4,7 @@ Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
 Tested up to: 4.0
-Stable tag: 5.2
+Stable tag: 5.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,9 +60,6 @@ Booking Calendar is built to work out of the box. Just activate it and insert bo
 - Possibility to set the **different user roles** for the each plugin menu pages.
 - Administrator can **Approve** or **Decline** specific bookings.
 - View the number of new bookings on the **booking dashboard section**.
-
-**Google Calendar Events**  
-- **Import your Google Calendar** feeds to your booking admin panel.
 
 **Configure Booking Form and Availability Calendar.**  
 
@@ -149,10 +146,12 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 8. **Settings**. Configure different parameters for fitting plugin to your needs.
 9. **Form fields**. Change fields Label, Activate or Deactivate or Set Required specific field.
 10. **Emails**. Configure email templates for different booking actions.
-11. **Sync**. Configure importing Google Calendar events.
 12. **Calendar Skins**. Select calendar skin for better fitting to your web-site design.
 
 == Changelog ==
+= 5.2.1 =
+ * Because Google stop supporting of "Google Calendar API v2" (on Nov. 17, 2014), this update temporary remove import Google Calendar events, until we implement new API v.3 
+ 
 = 5.2 =
 - Features and issue fixings in All versions:
  * **New** **Allow multiple bookings per same day**. Your visitors will be able to make *unlimited bookings per same date(s) in calendar and do not see any booked date(s)* of other visitors.
@@ -442,8 +441,8 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 For more information, see the [full release notes](http://wpbookingcalendar.com/changelog/).
 
 == Upgrade Notice ==
-= 5.2 =
-Allow multiple bookings per same day. Import of Google Calendar Events. Many other improvements.
+= 5.2.1 =
+Allow multiple bookings per same day. Many other improvements.
 
 == Languages ==
 
