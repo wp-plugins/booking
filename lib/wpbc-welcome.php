@@ -220,17 +220,6 @@ class WPBC_Welcome {
                 </div>
             </div>
               
-            <div class="clear" style="height:1px;border-bottom:1px solid #DFDFDF;"></div>
-            
-            <div class="feature-section col two-col">
-                    <div class="col-1">
-                        <h3>Import Google Calendar Events</h3>
-                        <p>Importing Google Calendar Events. Configuration of different parameters for feeds importing. Ability to set auto-import of Google Calendar Events during specific times.</p>
-                    </div>
-                    <div class="col-2 last-feature">
-                        <img src="<?php echo $this->asset_path; ?>5.2/import-events.png" style="border:none;box-shadow: 0 1px 3px #777777;">
-                    </div>
-            </div>              
             
             <div class="clear" style="height:30px;border-bottom:1px solid #DFDFDF;"></div> 
             
@@ -295,19 +284,23 @@ class WPBC_Welcome {
                 ?>
                 <p class="update-nag"><?php echo( "New Features in the Paid versions of" ); ?> <?php echo ' Booking Calendar '.$display_version ; ?></p>
 
-                <div class="changelog">  
-                    <div class="feature-section col two-col">
-                        <div class="col-1">
-                            <img src="<?php echo $this->asset_path; ?>5.2/import.png" style="width: 85%;margin:10px 12%;float:right;border:none;box-shadow: 0 1px 3px #777777;">
-                        </div>
-                        <div class="col-2 last-feature">                            
-                            <h3>Advanced configuration of importing Google Calendar Events</h3>
-                            <p>Configurations of Google Calendar Events feeds separately for the each specific booking resources.</p>
-                        </div>
+                <div class="changelog">
+                    <h2 style="margin:0.2em 0;" class="about-headline-callout"><?php echo( "Responsive and easy to use Booking Admin Panel" ); ?></h2>
+                    <div style="margin:0 1% auto;width:100%">    
+                        <img src="<?php echo $this->asset_path; ?>5.1/booking-overview-p.png" style="width: 71%;float:left;border:none;box-shadow: 0 1px 3px #777777;">
+                        <img src="<?php echo $this->asset_path; ?>5.1/booking-overview-p-m.png" style="width: 21.9%;margin-left: 3%;float:left;border:none;box-shadow: 0 1px 3px #777777;">                        
+                        
                     </div>
+                    <div class="clear"></div>
+
+                    <p><?php echo( "Booking Admin Panel support fully responsive design that looks great on any device" ); ?>. <br/>
+                       <?php echo( "Industry standard Interface - resources at the first column and booking dates in right rows" ); ?>.
+                    </p>
+                    <span class="versions">{ <?php echo( "Available in" ); ?> <a href="http://wpbookingcalendar.com" target="_blank">Personal, Business Small / Medium / Large, MultiUser</a> <?php echo( "versions" ); ?> }</span>
                 </div>
                 
                 <div class="clear" style="height:20px;border-bottom:1px solid #DFDFDF;"></div>
+                <div class="clear" style="height:20px;"></div>
                 
                 
                 <div class="changelog"> 
