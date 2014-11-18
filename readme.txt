@@ -1,6 +1,6 @@
 ﻿=== Booking Calendar ===
 Contributors: wpdevelop
-Donate link: http://wpbookingcalendar.com/buy/
+Donate link: http://wpbookingcalendar.com/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
 Tested up to: 4.0
@@ -146,9 +146,10 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 8. **Settings**. Configure different parameters for fitting plugin to your needs.
 9. **Form fields**. Change fields Label, Activate or Deactivate or Set Required specific field.
 10. **Emails**. Configure email templates for different booking actions.
-12. **Calendar Skins**. Select calendar skin for better fitting to your web-site design.
+11. **Calendar Skins**. Select calendar skin for better fitting to your web-site design.
 
 == Changelog ==
+
 = 5.2.1 =
  * Because Google stop supporting of "Google Calendar API v2" (on Nov. 17, 2014), this update temporary remove import Google Calendar events, until we implement new API v.3 
  
