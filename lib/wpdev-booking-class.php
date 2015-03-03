@@ -607,8 +607,10 @@ class wpdev_booking {
             );
 
         for ($i = 0 ; $i < count($users_roles) ; $i++) {
+           
+		    if ( empty($users_roles[$i]) )              $users_roles[$i] = 'editor';         //Fix: 2015-03-02 Need to have this fix for WordPress MU installations.             
 
-            if ( $users_roles[$i] == 'administrator' )  $users_roles[$i] = 'activate_plugins';
+            if ( $users_roles[$i] == 'administrator' )  $users_roles[$i] = 'manage_options';
             if ( $users_roles[$i] == 'editor' )         $users_roles[$i] = 'publish_pages';
             if ( $users_roles[$i] == 'author' )         $users_roles[$i] = 'publish_posts';
             if ( $users_roles[$i] == 'contributor' )    $users_roles[$i] = 'edit_posts';
@@ -1513,42 +1515,42 @@ class wpdev_booking {
         $booking_form_field_label1      = get_bk_option( 'booking_form_field_label1');
         $booking_form_field_label1 = apply_bk_filter('wpdev_check_for_active_language', $booking_form_field_label1 );
         if (function_exists('icl_translate')) 
-            $booking_form_field_label1 = icl_translate( 'wpml_custom', 'wpml_custom_', $booking_form_field_label1);
+            $booking_form_field_label1 = icl_translate( 'wpml_custom', 'wpbc_custom_form_field_label1', $booking_form_field_label1);
 
         $booking_form_field_active2     = get_bk_option( 'booking_form_field_active2');
         $booking_form_field_required2   = get_bk_option( 'booking_form_field_required2');
         $booking_form_field_label2      = get_bk_option( 'booking_form_field_label2');
         $booking_form_field_label2 = apply_bk_filter('wpdev_check_for_active_language', $booking_form_field_label2 );
         if (function_exists('icl_translate')) 
-            $booking_form_field_label2 = icl_translate( 'wpml_custom', 'wpml_custom_', $booking_form_field_label2);
+            $booking_form_field_label2 = icl_translate( 'wpml_custom', 'wpbc_custom_form_field_label2', $booking_form_field_label2);
         
         $booking_form_field_active3     = get_bk_option( 'booking_form_field_active3');
         $booking_form_field_required3   = get_bk_option( 'booking_form_field_required3');
         $booking_form_field_label3      = get_bk_option( 'booking_form_field_label3');
         $booking_form_field_label3 = apply_bk_filter('wpdev_check_for_active_language', $booking_form_field_label3 );
         if (function_exists('icl_translate')) 
-            $booking_form_field_label3 = icl_translate( 'wpml_custom', 'wpml_custom_', $booking_form_field_label3);
+            $booking_form_field_label3 = icl_translate( 'wpml_custom', 'wpbc_custom_form_field_label3', $booking_form_field_label3);
         
         $booking_form_field_active4     = get_bk_option( 'booking_form_field_active4');
         $booking_form_field_required4   = get_bk_option( 'booking_form_field_required4');
         $booking_form_field_label4      = get_bk_option( 'booking_form_field_label4');
         $booking_form_field_label4 = apply_bk_filter('wpdev_check_for_active_language', $booking_form_field_label4 );
         if (function_exists('icl_translate')) 
-            $booking_form_field_label4 = icl_translate( 'wpml_custom', 'wpml_custom_', $booking_form_field_label4);
+            $booking_form_field_label4 = icl_translate( 'wpml_custom', 'wpbc_custom_form_field_label4', $booking_form_field_label4);
         
         $booking_form_field_active5     = get_bk_option( 'booking_form_field_active5');
         $booking_form_field_required5   = get_bk_option( 'booking_form_field_required5');
         $booking_form_field_label5      = get_bk_option( 'booking_form_field_label5');
         $booking_form_field_label5 = apply_bk_filter('wpdev_check_for_active_language', $booking_form_field_label5 );
         if (function_exists('icl_translate')) 
-            $booking_form_field_label5 = icl_translate( 'wpml_custom', 'wpml_custom_', $booking_form_field_label5);
+            $booking_form_field_label5 = icl_translate( 'wpml_custom', 'wpbc_custom_form_field_label5', $booking_form_field_label5);
         
         $booking_form_field_active6     = get_bk_option( 'booking_form_field_active6');
         $booking_form_field_required6   = get_bk_option( 'booking_form_field_required6');
         $booking_form_field_label6      = get_bk_option( 'booking_form_field_label6');
         $booking_form_field_label6 = apply_bk_filter('wpdev_check_for_active_language', $booking_form_field_label6 );
         if (function_exists('icl_translate')) 
-            $booking_form_field_label6 = icl_translate( 'wpml_custom', 'wpml_custom_', $booking_form_field_label6);
+            $booking_form_field_label6 = icl_translate( 'wpml_custom', 'wpbc_custom_form_field_label6', $booking_form_field_label6);
         $booking_form_field_values6     = get_bk_option( 'booking_form_field_values6' );
         
         $my_form =  '[calendar]';

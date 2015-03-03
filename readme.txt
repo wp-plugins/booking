@@ -4,7 +4,7 @@ Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
 Requires at least: 3.3
 Tested up to: 4.1.1
-Stable tag: 5.3.1
+Stable tag: 5.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -149,7 +149,10 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 11. **Calendar Skins**. Select calendar skin for better fitting to your web-site design.
 
 == Changelog ==
-= 5.3.1 =
+= 5.3.2 =
+ * **Fix** issue of conflict with WPML plugin in free version of plugin. If the customer use WPML plugin, sometimes was existing issue that labels in the booking form have the same title of first element.
+
+ = 5.3.1 =
 - Features and issue fixings in All versions:
  * Updated German translation [100% Completed] by Dirk Gabler. 
  * Updated Swedish translation [100% Completed] by Ruben Salas 
