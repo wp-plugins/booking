@@ -547,8 +547,8 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 For more information, see the [full release notes](http://wpbookingcalendar.com/changelog/).
 
 == Upgrade Notice ==
-= 5.3 =
-Ability to use drop down list in booking form. Visual editors in emails. Checking for prevent double booking, during submitting booking. Many other improvements.
+= 5.4 =
+Google Calendar Events importing. Many other improvements.
 
 == Languages ==
 
