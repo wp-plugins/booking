@@ -1,4 +1,4 @@
-﻿=== Booking Calendar ===
+﻿﻿=== Booking Calendar ===
 Contributors: wpdevelop
 Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
@@ -547,6 +547,7 @@ If you have any further questions, please fill free to <a href="mailto:support@w
 For more information, see the [full release notes](http://wpbookingcalendar.com/changelog/).
 
 == Upgrade Notice ==
+
 = 5.4 =
 Google Calendar Events importing. Many other improvements.
 
@@ -577,9 +578,11 @@ Plugin supports following languages:
 
 Please recheck the status of each translation, before using plugin. 
 We open for your help in new translations or correcting existing ones. You can translate to new language or update exist one, using this [tutorial of translation](http://wpbookingcalendar.com/faq/make-translation-of-wp-plugin/)
+
 == Tech support ==
 
 If you have some questions, which you haven't found at [FAQ](http://wpbookingcalendar.com/faq/) you can post them at [technical help board](http://wpbookingcalendar.com/support/)
+
 == New ideas ==
 
 Please, fill free for suggesting [new ideas](http://wpbookingcalendar.com/ideas/) or [new features](http://wpbookingcalendar.com/ideas/)
