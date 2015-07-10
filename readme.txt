@@ -1,4 +1,4 @@
-=== Booking Calendar ===
+﻿=== Booking Calendar ===
 Contributors: wpdevelop
 Donate link: http://wpbookingcalendar.com/buy/
 Tags:  booking, booking calendar, accommodations, appointment, availability, availability calendar, bed and breakfast, booking form, booking system, bookings, calendar, contact form, event, event calendar, events, hotel, meeting, online booking calendar, online reservation, reservation, reservation plugin, rooms, schedule, scheduling
@@ -15,7 +15,7 @@ Booking Calendar plugin will enable **online booking services** for your site.
 It's highly supported, *oldest ([since 2009](http://wpbookingcalendar.com/changelog/)) booking wordpress plugin* with **intuitive interface** and **flexible functionality**, which is possible to use in wide range of businesses.
 >[Plugin Homepage](http://wpbookingcalendar.com/ "Booking Calendar Homepage") | [Features](http://wpbookingcalendar.com/features/ "Features") | [Support Forum](http://wpbookingcalendar.com/support/ "Support") | [FAQ](http://wpbookingcalendar.com/faq/ "FAQ on Plugin site") | [Premium Demos](http://wpbookingcalendar.com/demo/ "Live Demos of Premium versions")
 
-Your website visitors can **check availability** of **properties** *(apartments, houses, hotel rooms, etc.)* or any **services** you offer and **make a booking** in a minute.
+Your website visitors can **check availability** of **property** *(like apartment, house, hotel room, etc.)* or any **service** you offer and **make a booking** in a minute.
 
   
 Your Customers will be able to:  
