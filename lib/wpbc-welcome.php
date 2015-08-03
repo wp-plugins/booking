@@ -61,12 +61,12 @@ class WPBC_Welcome {
                     unset($sections_array[ 'h2' ]);
                 }
 
-                ?><div class="feature-section col <?php 
+                ?><div class="feature-section <?php 
                         if ( $columns_num == 2 ) {
-                            echo ' two-col ';
+                            echo ' two-col';
                         } if ( $columns_num == 3 ) {
-                            echo ' three-col ';
-                        } ?>">
+                            echo ' three-col';
+                        } ?>  col">
                     <?php
                     foreach ( $sections_array as $section_key => $section ) {
                         $col_num = ( $section_key + 1 );
@@ -75,7 +75,7 @@ class WPBC_Welcome {
                         else
                             $is_last_feature = '';
 
-                        echo "<div class='col-{$col_num}{$is_last_feature}'>";
+                        echo "<div class='col col-{$col_num}{$is_last_feature}'>";
 
                         if ( isset( $section[ 'header' ] ) ) 
                             echo "<h4>" . wpbc_recheck_strong_symbols( $section[ 'header' ] ) . "</h4>";
@@ -607,8 +607,8 @@ class WPBC_Welcome {
                                            ) );
 
                 ?>
-                <div class="feature-section col two-col"> 
-                    <div class="col-1 last-feature"  style="margin-top: 0px;width:59%">                    
+                <div class="feature-section col two-col two-col"> 
+                    <div class="col col-1 last-feature"  style="margin-top: 0px;width:59%">                    
                         <h4><?php printf( 'Check and manage your bookings' ); ?></h4>
                         <p><?php echo wpbc_recheck_strong_symbols( 'After email notification about new booking(s), you can check and **approve** or **decline** your **booking(s)** in **responsive**, modern and **easy to use Booking Admin Panel**.'); ?></p>                
 
